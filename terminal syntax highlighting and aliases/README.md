@@ -1,1 +1,1 @@
-Place `bash_profile` in your home directory "~/" and add a "." to the beginning of the file so that it looks like this: `.bash_profile`. The file enables terminal syntax highlighting and contains a few useful alaises.
+Place `bash_profile` in your home directory "~/" and add a "." to the beginning of the file so that it looks like this: `.bash_profile`. The file enables terminal syntax highlighting and contains a few useful aliases.
