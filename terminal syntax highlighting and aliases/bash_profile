@@ -1,0 +1,11 @@
+export PS1="\[\033[32m\]\h:\[\033[33;34m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=exgxfxDxcxegDhabagacaD
+
+# custom aliases
+alias ll="ls -alF"
+alias la="ls -A"
+alias edisk="cd /Volumes && ll"
+alias find2="sudo find / -iname $1"
+alias grep2="sudo grep -r -i -l $1 $2"
+alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
