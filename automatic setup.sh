@@ -33,6 +33,8 @@ else
 	done
 fi
 
+# sudo xcodebuild -license ... check....
+
 echo " "
 if [ -d /usr/local/Homebrew/ ]; then
 	read -p "It seems as though you already have Homebrew installed. Press 'enter' to continue."
