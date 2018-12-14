@@ -49,7 +49,7 @@ fi
 echo " "
 read -p "Press 'enter' to install/override current vim"
 echo "Installing/overriding current vim"
-#brew install vim --override-system-vim
+brew install vim --override-system-vim
 echo "Successfully overwrote vim"
 
 echo " "
