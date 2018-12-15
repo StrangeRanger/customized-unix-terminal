@@ -49,7 +49,9 @@ read -p "Press 'enter' to install/override current vim"
 echo "Installing/overriding current vim"
 brew install vim --override-system-vim
 # sometimes, depending on how things were set up, an error occurs telling the user to accept Xcode Lisence agreement...
+skldjf;ajdsf;k
 if [ "$?" != "0" ]; then
+	echo "Even though you have agreed to Xcode command line tools License Agreement, it seems as though you have not agreed to the License Agreement for the Xcode Application. Please open the application and agree to its terms, then re-run this script"
 	exit 1
 fi
 echo "Successfully overwrote vim"
