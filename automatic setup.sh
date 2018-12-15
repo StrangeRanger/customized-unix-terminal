@@ -33,8 +33,6 @@ else
 	done
 fi
 
-# sudo xcodebuild -license ... check....
-
 echo " "
 if [ -d /usr/local/Homebrew/ ]; then
 	read -p "It seems as though you already have Homebrew installed. Press 'enter' to continue."
@@ -50,6 +48,10 @@ echo " "
 read -p "Press 'enter' to install/override current vim"
 echo "Installing/overriding current vim"
 brew install vim --override-system-vim
+# sometimes, depending on how things were set up, an error occurs telling the user to accept Xcode Lisence agreement...
+if [ "$?" != "0" ]; then
+	exit 1
+fi
 echo "Successfully overwrote vim"
 
 echo " "
