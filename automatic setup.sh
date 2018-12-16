@@ -1,28 +1,44 @@
 #!/bin/bash
 
-# functions
-error_trap() {
+# FUNCTIONS 
+xcode_error() {
 	if [ "$?" != "0" ]; then
-		echo "This error can be circumvented by changing the active developer directory from '/Applications/Xcode.app/Contents/Developer/' to '/Library/Developer/CommandLineTools/'. Otherwise, you can open Xcode.app, accept the License Agreement, then re-run the script. In order to make it easier, here are a few options to choose from."
+		echo "This error can be circumvented by changing the active developer directory from '/Applications/Xcode.app/Contents/Developer/' to '/Library/Developer/CommandLineTools/'. Otherwise, you can either open Xcode.app, accept the License Agreement, then re-run the script, or accept the License Agreement via the terminal. In order to make it easier, I have provided the options/menu below."
 		while true; do
-			echo -e "$(tput smso)a$(tput sgr0)) Change the active developer directory\n$(tput smso)b$(tput sgr0)) Accept Xcode License Agreement via terminal\n$(tput smso)c$(tput sgr0)) Open Xcode.app, read License Agreement, accept or deny\n$(tput smso)d$(tput sgr0)) Stop, exit, and do later"
+			echo -e "$(tput smso)a$(tput sgr0)) Change the active developer directory\n$(tput smso)b$(tput sgr0)) Accept Xcode.app License Agreement via terminal\n$(tput smso)c$(tput sgr0)) Open Xcode.app, read License Agreement, accept or deny\n$(tput smso)d$(tput sgr0)) Stop, exit, and do later"
 			read -p "Input the highlighted letter that corresponds the option you want. " doit
 			doit=$( echo "$doit" | tr '[:upper:]' '[:lower:]')
 			case $doit in
 				"a") echo "Changing active developer directory" && sudo xcode-select --switch /Library/Developer/CommandLineTools && echo "Current active developer directory: " && xcode-select -p && break ;;	
-				"b") echo "Accepting Xcode.app License Agreement" && sudo xcodebuild -license accept ;;
+				"b") echo "Accepting Xcode.app License Agreement" && sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer && sudo xcodebuild -license accept && break ;;
 				"c") echo "Opening Xcode.app" && open /Applications/Xcode.app && echo "Stopping script" && exit 1 ;;
 				"d") echo "Stopping script" && exit 1 ;;
-				*) echo -e "$(tput bold)$(tput setaf 1)Invalid response$(tput sgr0)\n" ;;
+				*) echo -e "$(tput bold)$(tput setaf 1)Invalid response$(tput sgr0)\nPlease input one of the highlighted letters" ;;
 			esac
 		done
 		brew update && brew upgrade
-		error_trap
+		xcode_error
 	fi
 }
 
+############################################################################################
+# STUFF IN HERE WILL BE USED FOR MAJOR FIXES IN THE FUTUTRE (work on stuff above as well)
+#ownership_error() {
+	#FUTURE FIX.... IDENTIFY WHEN USER DOES NOT HAVE PERMISSION TO HOMEBREW FILE...
+#}
 
-# code
+error_trap() {
+	#if you dont have ownership of homebrew, do this; then
+		#...
+	#else # maybe elif
+		xcode_error
+	#fi
+	xcode_error
+}
+############################################################################################
+
+
+# CODE ### (work on stuff below before working on error stuff)
 read -p "Press 'enter' to begin"
 # checks if script is in current directory
 if [ ! -e automatic\ setup.sh ]; then
@@ -30,9 +46,10 @@ if [ ! -e automatic\ setup.sh ]; then
 	exit 1
 fi
 
-# checks for then adds .bash_profile to home dir if not alread there
+# checks for, then adds .bash_profile to home dir, if not alread there
 if [ -e ~/.bash_profile ]; then
-	read -p "It seems as though you already have bash_profile in your home directory. Press 'enter' to continue.\n"
+	read -p "It seems as though you already have bash_profile in your home directory. Press 'enter' to continue.
+	"
 else
 	read -p "Press 'enter' to move bash_profile to your home directory"
 	echo "Moving bash_profile to home directory"
@@ -41,9 +58,10 @@ else
 	echo -e "Successfully moved bash_profile\n"
 fi
 
-# checks for then install xcode command-line tools if not already installed
+# checks for, then installs xcode command-line tools, if not already installed
 if [ -d /Library/Developer/CommandLineTools/ ]; then
-	read -p "It seems as though you already have the command-line tools installed. Press 'enter' to continue.\n"
+	read -p "It seems as though you already have the command-line tools installed. Press 'enter' to continue.
+	"
 else
 	echo "In order to override the current vim, you will need to do a few things"
 	read -p "Press 'enter' to install command-line tools"
@@ -57,35 +75,34 @@ else
 			n|N|no|No) echo ;;
 		esac
 	done
+	echo ""
 fi
 
-#########
-echo " "
+# checks for, then installs Hombrew, if not already installed
 if [ -d /usr/local/Homebrew/ ]; then
-	read -p "It seems as though you already have Homebrew installed. Press 'enter' to update Homebrew."
+	read -p "It seems as though you already have Homebrew installed. Press 'enter' to update Homebrew. $(tput smso)Please make sure that you have ownership of Homebrew$(tput sgr0)"
 	echo "Updating Homebrew"
 	brew update && brew upgrade
 	error_trap
 	echo "Successfully updated Homebrew"
-	read -p "Press 'enter' to continue"
+	read -p "Press 'enter' to continue"; echo ""
 	
 else
 	read -p "Press 'enter' to install Homebrew"
 	echo "Installing Homebrew"
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	echo "Successfully installed Homebrew"
+	echo -e "Successfully installed Homebrew\n"
 fi
 
 ### figure out way to tell if vim override is already installed...
-echo " "
+# install vim override
 read -p "Press 'enter' to install/override current vim"
 echo "Installing/overriding current vim"
 brew install vim --override-system-vim
 error_trap
-# sometimes, depending on how things were set up, an error occurs telling the user to accept Xcode Lisence agreement...
-echo "Successfully overwrote vim"
+echo -e "Successfully overwrote vim\n"
 
-echo " "
+# importing terminal profile
 read -p "We will now import and open the new terminal profile. When it opens, please return to this current terminal window. Press 'enter' to continue."
 echo "Importing terminal profile"
 if [ -d terminal\ profile/ ]; then
