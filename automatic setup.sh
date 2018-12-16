@@ -31,7 +31,7 @@ error_trap() {
 	#if you dont have ownership of homebrew, do this; then
 		#...
 	#else # maybe elif
-		xcode_error
+		#xcode_error
 	#fi
 	xcode_error
 }
