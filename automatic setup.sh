@@ -2,22 +2,34 @@
 
 # FUNCTIONS 
 xcode_error() {
+	echo "This error can be circumvented by changing the active developer directory from '/Applications/Xcode.app/Contents/Developer/' to '/Library/Developer/CommandLineTools/'. Otherwise, you can either open Xcode.app, accept the License Agreement, then re-run the script, or accept the License Agreement via the terminal. In order to make it easier, I have provided the options/menu below."
+	while true; do
+		echo -e "$(tput smso)a$(tput sgr0)) Change the active developer directory\n$(tput smso)b$(tput sgr0)) Accept Xcode.app License Agreement via terminal\n$(tput smso)c$(tput sgr0)) Open Xcode.app, read License Agreement, accept or deny\n$(tput smso)d$(tput sgr0)) Stop, exit, and do later"
+		read -p "Input the highlighted letter that corresponds the option you want. " doit
+		doit=$( echo "$doit" | tr '[:upper:]' '[:lower:]')
+		case $doit in
+			"a") echo "Changing active developer directory" && sudo xcode-select --switch /Library/Developer/CommandLineTools && echo "Current active developer directory: " && xcode-select -p && break ;;	
+			"b") echo "Accepting Xcode.app License Agreement" && sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer && sudo xcodebuild -license accept && break ;;
+			"c") echo "Opening Xcode.app" && open /Applications/Xcode.app && echo "Stopping script" && exit 1 ;;
+			"d") echo "Stopping script" && exit 1 ;;
+			*) echo -e "$(tput bold)$(tput setaf 1)Invalid response$(tput sgr0)\nPlease input one of the highlighted letters" ;;
+		esac
+	done
+	brew update && brew upgrade
 	if [ "$?" != "0" ]; then
-		echo "This error can be circumvented by changing the active developer directory from '/Applications/Xcode.app/Contents/Developer/' to '/Library/Developer/CommandLineTools/'. Otherwise, you can either open Xcode.app, accept the License Agreement, then re-run the script, or accept the License Agreement via the terminal. In order to make it easier, I have provided the options/menu below."
 		while true; do
-			echo -e "$(tput smso)a$(tput sgr0)) Change the active developer directory\n$(tput smso)b$(tput sgr0)) Accept Xcode.app License Agreement via terminal\n$(tput smso)c$(tput sgr0)) Open Xcode.app, read License Agreement, accept or deny\n$(tput smso)d$(tput sgr0)) Stop, exit, and do later"
-			read -p "Input the highlighted letter that corresponds the option you want. " doit
+			read -p "If the error says that you do not have ownership of the files with which homebrew is located or that it is locked, input 'brew' and press 'enter'. If the error is the same as before, input 'xcode' then press 'enter'. Otherwise, input 'other' than press 'enter'. " doit
 			doit=$( echo "$doit" | tr '[:upper:]' '[:lower:]')
-			case $doit in
-				"a") echo "Changing active developer directory" && sudo xcode-select --switch /Library/Developer/CommandLineTools && echo "Current active developer directory: " && xcode-select -p && break ;;	
-				"b") echo "Accepting Xcode.app License Agreement" && sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer && sudo xcodebuild -license accept && break ;;
-				"c") echo "Opening Xcode.app" && open /Applications/Xcode.app && echo "Stopping script" && exit 1 ;;
-				"d") echo "Stopping script" && exit 1 ;;
-				*) echo -e "$(tput bold)$(tput setaf 1)Invalid response$(tput sgr0)\nPlease input one of the highlighted letters" ;;
+			case $doit in 
+				"brew") ownership_error && break ;;
+				"xcode") echo "The error is persisting. Please report error to the creator of the script." && exit 1 ;;
+				"other") echo -e "\nPlease mention/report this error to the creator of this script on github\nExiting/Stoping" && exit 1 ;;
+				*) echo -e "$(tput bold)$(tput setaf 1)Invalid response$(tput sgr0)\n" ;;
 			esac
 		done
-		brew update && brew upgrade
-		xcode_error
+
+		echo -e "The error is persisting\nStopping script"
+		exit 1
 	fi
 }
 
@@ -27,7 +39,7 @@ ownership_error() {
 }
 
 error_trap() {
-	read -p "For the script to work porperly, this error must be fixed. If you would like to resolve it, please press 'enter'. If not, then press 'Control' + 'C' on your keyboard to stop/cancel the script."
+	read -p "For the script to work porperly, this error must be fixed. If you would like to resolve it, please press 'enter'. If not, then press 'Control' + 'C' on your keyboard to stop/cancel the script. "
 	while true; do
 		read -p "If the error says that you do not have ownership of the files with which homebrew is located or that it is locked, input 'brew' and press 'enter'. If it mentions Xcode in any way, input 'xcode' and press 'enter'. If it says anything else, such as something incorrect in the script, input 'other' then press 'enter'. " doit
 		doit=$( echo "$doit" | tr '[:upper:]' '[:lower:]')
@@ -51,8 +63,7 @@ fi
 
 # checks for, then adds .bash_profile to home dir, if not alread there
 if [ -e ~/.bash_profile ]; then
-	read -p "It seems as though you already have bash_profile in your home directory. Press 'enter' to continue.
-	"
+	read -p "It seems as though you already have bash_profile in your home directory. Press 'enter' to continue."; echo ""
 else
 	read -p "Press 'enter' to move bash_profile to your home directory"
 	echo "Moving bash_profile to home directory"
