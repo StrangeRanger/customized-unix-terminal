@@ -21,21 +21,23 @@ xcode_error() {
 	fi
 }
 
-############################################################################################
-# STUFF IN HERE WILL BE USED FOR MAJOR FIXES IN THE FUTUTRE (work on stuff above as well)
-#ownership_error() {
-	#FUTURE FIX.... IDENTIFY WHEN USER DOES NOT HAVE PERMISSION TO HOMEBREW FILE...
-#}
+ownership_error() {
+	echo "Needs editing"
+	exit 1
+}
 
 error_trap() {
-	#if you dont have ownership of homebrew, do this; then
-		#...
-	#else # maybe elif
-		#xcode_error
-	#fi
-	xcode_error
+	read -p "For the script to work porperly, this error must be fixed. If you would like to resolve it, please press 'enter'. If not, then press 'Control' + 'C' on your keyboard to stop/cancel the script."
+	while true; do
+		read -p "If the error says that you do not have ownership of the files with which homebrew is located or that it is locked, input 'brew' and press 'enter'. If it mentions Xcode in any way, input 'xcode' and press 'enter'. If it says anything else, such as something incorrect in the script, input 'other' then press 'enter'." doit
+		doit=$( echo "$doit" | tr '[:upper:]' '[:lower:]')
+		case $doit in 
+			"brew") ownership_error && break ;;
+			"xcode") xcode_error && break ;;
+			"other") echo "Please mention/report this error to the creator of this script on github" && echo "Exiting/Stoping" && exit 1 ;;
+		esac
+	done
 }
-############################################################################################
 
 
 # CODE ### (work on stuff below before working on error stuff)
@@ -80,7 +82,7 @@ fi
 
 # checks for, then installs Hombrew, if not already installed
 if [ -d /usr/local/Homebrew/ ]; then
-	read -p "It seems as though you already have Homebrew installed. Press 'enter' to update Homebrew. $(tput smso)Please make sure that you have ownership of Homebrew$(tput sgr0)"
+	read -p "It seems as though you already have Homebrew installed. Press 'enter' to update Homebrew."
 	echo "Updating Homebrew"
 	brew update && brew upgrade
 	error_trap
