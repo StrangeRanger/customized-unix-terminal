@@ -2,7 +2,7 @@
 
 # FUNCTIONS 
 xcode_error() {
-	echo "This error can be circumvented by changing the active developer directory from '/Applications/Xcode.app/Contents/Developer/' to '/Library/Developer/CommandLineTools/'. Otherwise, you can either open Xcode.app, accept the License Agreement, then re-run the script, or accept the License Agreement via the terminal. In order to make it easier, I have provided the options/menu below."
+	echo -e "\nThis error can be circumvented by changing the active developer directory from '/Applications/Xcode.app/Contents/Developer/' to '/Library/Developer/CommandLineTools/'. Otherwise, you can either open Xcode.app, accept the License Agreement, then re-run the script, or accept the License Agreement via the terminal. In order to make it easier, I have provided the options/menu below."
 	while true; do
 		echo -e "$(tput smso)a$(tput sgr0)) Change the active developer directory\n$(tput smso)b$(tput sgr0)) Accept Xcode.app License Agreement via terminal\n$(tput smso)c$(tput sgr0)) Open Xcode.app, read License Agreement, accept or deny\n$(tput smso)d$(tput sgr0)) Stop, exit, and do later"
 		read -p "Input the highlighted letter that corresponds the option you want. " doit
@@ -22,7 +22,7 @@ xcode_error() {
 			doit=$( echo "$doit" | tr '[:upper:]' '[:lower:]')
 			case $doit in 
 				"brew") ownership_error && break ;;
-				"xcode") echo "The error is persisting. Please report error to the creator of the script." && exit 1 ;;
+				"xcode") echo "The error is persisting. Please report error to the creator of the script on github." && exit 1 ;;
 				"other") echo -e "\nPlease mention/report this error to the creator of this script on github\nExiting/Stoping" && exit 1 ;;
 				*) echo -e "$(tput bold)$(tput setaf 1)Invalid response$(tput sgr0)\n" ;;
 			esac
@@ -34,6 +34,7 @@ xcode_error() {
 }
 
 ownership_error() {
+
 	echo "Needs editing"
 	exit 1
 }
@@ -97,7 +98,9 @@ if [ -d /usr/local/Homebrew/ ]; then
 	read -p "It seems as though you already have Homebrew installed. Press 'enter' to update Homebrew."
 	echo "Updating Homebrew"
 	brew update && brew upgrade
-	error_trap
+	if [ "$?" != "0" ]; then
+		error_trap
+	fi
 	echo "Successfully updated Homebrew"
 	read -p "Press 'enter' to continue"; echo ""
 	
@@ -113,7 +116,9 @@ fi
 read -p "Press 'enter' to install/override current vim"
 echo "Installing/overriding current vim"
 brew install vim --override-system-vim
-error_trap
+if [ "$?" != "0" ]; then
+	error_trap
+fi
 echo -e "Successfully overwrote vim\n"
 
 # importing terminal profile
