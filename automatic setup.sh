@@ -34,7 +34,7 @@ error_trap() {
 		case $doit in 
 			"brew") ownership_error && break ;;
 			"xcode") xcode_error && break ;;
-			"other") echo "Please mention/report this error to the creator of this script on github" && echo "Exiting/Stoping" && exit 1 ;;
+			"other") echo -e "\nPlease mention/report this error to the creator of this script on github\nExiting/Stoping" && exit 1 ;;
 			*) echo -e "$(tput bold)$(tput setaf 1)Invalid response$(tput sgr0)\n" ;;
 		esac
 	done
