@@ -34,8 +34,7 @@ xcode_error() {
 }
 
 ownership_error() {
-
-	echo "Needs editing"
+	echo -e "$(tput bold)$(tput setaf 1)Option not ready for use. Please either manually change ownership of brew or change to the user who has ownership of brew's files, then re-run the script.$(tput sgr0)\n"
 	exit 1
 }
 
