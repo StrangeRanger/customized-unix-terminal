@@ -7,4 +7,4 @@ If you wish to have everything set up automatically, execute `automatic setup.sh
 
 # Notes
 ## Automatic Setup Notes
-The automatic setup script is somewhat of a work in progress. The main part that needs to be worked on is the functions that are used to catch an error that can occure due to xcode being install first and the terms and conditions not being accepted...
+The automatic setup script is somewhat of a work in progress. The main part that needs to be worked on is the functions that are used to catch an error that can occure due to xcode being install first and the terms and conditions not being accepted, before the command line tools are installed. Considering this, the script should run perfectly as long as you don't do what was mentioned in the previous sentence.
