@@ -5,7 +5,7 @@ Place
 ```
 export PS1="\[\033[32m\]\u@\h:\[\033[34m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
-export LSCOLORS=exgxfxDxcxegDhabagacaD
+export LSCOLORS="exgxfxDxcxegDhabagacaD"
 ```
 at the top of `~/.bash_profile`.
 
@@ -24,6 +24,8 @@ alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 at or close to the bottom of `~/.bash_profile`.
 
 ## Using the zsh shell 
+In `~/.oh-my-zsh/lib/theme-and-appearance.zsh`, comment out the line that begins with `export LSCOLORS=`, then place `export LSCOLORS="exgxfxDxcxegDhabagacaD"` under the line you just commented.
+
 Place
 ```
 # Custom aliases
