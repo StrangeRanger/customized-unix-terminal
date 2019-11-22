@@ -1,9 +1,16 @@
 # Mac Terminal Style Config
 [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 
-This repository contains files that are used to configure the style and look of the mac terminal: vim syntax highlighting, terminal syntax highlighting, terminal profile, etc.
-These are configurations/styles that I use on my own Mac.
-If you wish to have everything set up automatically, execute `automatic setup.sh`. 
+This repository contains files that are used to configure the style, look, and functionality of the mac terminal: 
+- vim syntax highlighting; through better vim
+- terminal syntax highlighting
+- terminal profile
+- etc.
+
+These are configurations/styles that I use on my own mac, so don't expect to be too much options when it comes to styles and looks. Each sction has a README.md that contains the instructures on how to set everything up manually.
+
+## Automatic Setup
+I have added an automatic setup script that you can use to easily set everything up. It will provide you options in what you want to install. You can see what it looks like below:
 
 # Notes
 ## Automatic Setup Notes
