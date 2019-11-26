@@ -32,12 +32,14 @@ cd "$(dirname $0)"
 # been setup, such as .zshrc and the terminal profile
 if [[ ! -f .setup-status.txt ]]; then
     echo "_ZSH_ALIASES=false
+_VIM_RESOURCE=false
 _TERM_PROFILE=false" > .setup-status.txt
 fi
 
 # Makes the variables in '.setup-status.txt' available to this script
 . .setup-status.txt
 zsh_aliases=$_ZSH_ALIASES
+vim_resource=$_VIM_RESOURCE
 term_profile=$_TERM_PROFILE
 
 # Since it takes a little to check if something is installed with brew, checking once
@@ -110,7 +112,7 @@ while true; do
             "first) ${red}(Not installed)${nc}"
     fi
 
-    # Uses data saved in '.setup-status.txt' to tell if my custome aliases were
+    # Uses data saved in '.setup-status.txt' to tell if my custom aliases were
     # added to '.zshrc' 
     if [[ $zsh_aliases = "true" ]]; then
         echo "6. Add custom alias to '.zshrc' ${green}(Already added)${nc}"
@@ -118,15 +120,23 @@ while true; do
         echo "6. Add custom alias to '.zshrc' ${red}(Not added)${nc}"
     fi
     
+    # Uses data saved in '.setup-status.txt' to tell if my custom vimrc was
+    # added to the home directory
+    if [[ $vim_resource = "true" ]]; then
+        echo "7. Add custom vim resource ${green}(Already added)${nc}"
+    else
+        echo "7. Add custom vim resource ${red}(Not added)${nc}"
+    fi
+    
     # Uses data saved in '.setup-status.txt' to tell if the terminal profile
     # has been added
     if [[ $term_profile = "true" ]]; then
-        echo "7. Add the Terminal Profile ${green}(Already added)${nc}"
+        echo "8. Add the Terminal Profile ${green}(Already added)${nc}"
     else
-        echo "7. Add the Terminal Profile ${red}(Not added)${nc}"
+        echo "8. Add the Terminal Profile ${red}(Not added)${nc}"
     fi
 
-    echo "8. Stop and exit script"
+    echo "9. Stop and exit script"
     read option
     case $option in
         1)
@@ -165,6 +175,11 @@ while true; do
             clear
             ;;
         8)
+            clear
+            echo "8"
+            clear
+            ;;
+        9)
             echo -e "\nExiting..."
             exit 0
             ;;
