@@ -72,8 +72,9 @@ fi
 echo -e "\rWelcome to the 'Mac Terminal Style & Config Setup'\r\n"
 
 while true; do
+    # TODO: Find a better way of detecting if the command line tools are installed
     # Detects if Command Line Tools are installed
-    if [[ $(xcode-select -p &>/dev/null; echo $?) = 0 ]]; then
+    if [[ -d $(xcode-select -p) ]]; then
         echo "1. Install Command Line Tools (must be installed before you can install" \
             "Homebrew) ${green}(Already installed)${nc}"
     else
@@ -141,7 +142,7 @@ while true; do
     case $option in
         1)
             clear
-            if [[ $(xcode-select -p &>/dev/null; echo $?) = 0 ]]; then
+            if [[ -d $(xcode-select -p) ]]; then    
                 echo "${cyan}The command-line tools are already installed${nc}"
                 printf "We will now install updates for the command-line tools. "
                 read -p "Press [Enter] to begin."
@@ -151,7 +152,6 @@ while true; do
                     read -p "Press [Enter] to return to the automatic setup menu"
                     exit 1
                 }
-                wait
                 echo "${green}The command-line tools have finished updating${nc}"
             else
                 printf "We will now install the command-line tools. "
@@ -162,8 +162,14 @@ while true; do
                     read -p "Press [Enter] to return to the automatic setup menu"
                     exit 1
                 }
-                wait
-                echo "${green}The command-line tools have been installed${nc}"
+                printf "A window will open, prompting you to install the command-line tools. "
+                read -p "Press [Enter] to continue, when it has fully installed."
+                if [[ -d $(xcode-select -p) ]]; then
+                    echo "${green}The command-line tools have been installed${nc}"
+                else
+                    echo "${red}Either the command-line tools have not fully installed" \
+                        "or the script failed to install them${nc}"
+                fi
             fi
             read -p "Press [Enter] to return to the automatic setup menu"
             clear
