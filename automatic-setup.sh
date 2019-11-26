@@ -141,7 +141,31 @@ while true; do
     case $option in
         1)
             clear
-            echo "1"
+            if [[ $(xcode-select -p &>/dev/null; echo $?) = 0 ]]; then
+                echo "${cyan}The command-line tools are already installed${nc}"
+                printf "We will now install updates for the command-line tools. "
+                read -p "Press [Enter] to begin."
+                echo "Checking for and installing command-line tool updates..."
+                softwareupdate --install -a || {
+                    echo "${red}Failed to check for and/or install updates" >&2
+                    read -p "Press [Enter] to return to the automatic setup menu"
+                    exit 1
+                }
+                wait
+                echo "${green}The command-line tools have finished updating${nc}"
+            else
+                printf "We will now install the command-line tools. "
+                read -p "Press [Enter] to begin."
+                echo -e "\nInstalling command-line tools..."
+                xcode-select --install || {
+                    echo "${red}Failed to install the command-line tools${nc}" >&2
+                    read -p "Press [Enter] to return to the automatic setup menu"
+                    exit 1
+                }
+                wait
+                echo "${green}The command-line tools have been installed${nc}"
+            fi
+            read -p "Press [Enter] to return to the automatic setup menu"
             clear
             ;;
         2)
