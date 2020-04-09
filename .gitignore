@@ -1,2 +1,4 @@
 .DS_Store
 .setup-status.txt
+.setup-status.txt.bak
+.vscode
