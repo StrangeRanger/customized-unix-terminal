@@ -27,3 +27,9 @@ Welcome to the 'Mac Terminal Style & Config Setup'
 8. Add the Terminal Profile (Not added)
 9. Stop and exit script
 ```
+
+### Officially Supported macOS Versions
+
+At the time, the automatic setup script has only been tested and confirmed to work on the macOS versions listed below:
+
+* macOS Catalina
