@@ -1,2 +1,0 @@
-- When using vim, the syntax is not highlighted.
-+ Enter `vim ~/.vimrc`, input `syntax on` in the file, save, enter `source ~/.vimrc`, then use vim. The problem should be resolved
