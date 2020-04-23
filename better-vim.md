@@ -2,13 +2,13 @@
 
 ## Installing Vim via Homebrew
 
-Though vim comes preinstalled on mac, there are a lot of useful features that are disabled by default, such as syntax highlighting. In order to enable these features we will reinstall/override the current vim. 
+Though vim comes preinstalled on mac, there are a lot of useful features that are disabled by default. In order to enable these features we will reinstall/override the current vim.
 
-Follow the steps steps below:
+Follow the steps below:
 
 1. Install command-line tools: `xcode-select --install`
-2. Wait until the command-line tools have been installed
-3. Install Homebrew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+2. Wait until the command-line tools are completely installed
+3. Install Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 4. Install/override current vim: `brew install vim`
 
 ## Vim Resource File

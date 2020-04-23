@@ -186,14 +186,14 @@ TermProfile=false" > .setup-status.txt
         # Checks if oh my zsh was installed
         if [[ -d ~/.oh-my-zsh/ ]]; then
             oh_my_zsh_installed=true
-            echo "5. Install oh my zsh (recommended to install zsh via Homebrew" \
-                "first) ${green}(Already installed)${nc}"
+            echo "5. Install oh my zsh (command lines tools must be installed)" \
+                "(recommended to install zsh via Homebrew first) ${green}(Already installed)${nc}"
         else
             oh_my_zsh_installed=false
             sed -i .bak 's/^ZshLSCOLORS=.*/ZshLSCOLORS=false/g' .setup-status.txt
             zsh_lscolors=false
-            echo "5. Install oh my zsh (recommended to install zsh via Homebrew" \
-                "first) ${red}(Not installed)${nc}"
+            echo "5. Install oh my zsh (command lines tools must be installed)" \
+                "(recommended to install zsh via Homebrew first) ${red}(Not installed)${nc}"
         fi
 
         # Uses data saved in '.setup-status.txt' to tell if custom aliases were
@@ -250,7 +250,7 @@ TermProfile=false" > .setup-status.txt
                         continue
                     }
                     printf "%sA window will open, prompting you to install the command-line tools. " "$cyan"
-                    read -p "Press [Enter] to continue, when it has fully installed.${nc}"
+                    read -p "Press [Enter] to continue when it has fully installed.${nc}"
                     if [[ -d $(xcode-select -p 2>/dev/null) ]]; then
                         echo -e "\n${green}The command-line tools have been installed${nc}"
                     else
@@ -427,20 +427,24 @@ TermProfile=false" > .setup-status.txt
 
                 if [[ $zsh_aliases = true ]]; then
                     printf "It apears that you have already added the custom aliases to '.zshrc'. "
-                    read -p "Would you like to add them again? [y/n] " add_again
-                    case "$add_again" in
-                        y*|Y*) 
-                            echo "Adding custom aliases to '.zshrc'..."
-                            echo -e "$zshrc_content" >> ~/.zshrc
-                            sed -i .bak 's/^ZshAliases=.*/ZshAliases=true/g' .setup-status.txt
-                            ;;
-                        n*|N*)
-                            echo "Skipped adding custom aliases"
-                            ;;
-                        *)  #TODO: Fix this so that it repeats if incalid option used
-                            echo "${red}Invalid option: ...${nc}" >&2
-                            ;;
-                    esac
+                    while true; do
+                        read -p "Would you like to add them again? [y/n] " add_again
+                        case "$add_again" in
+                            y*|Y*) 
+                                echo "Adding custom aliases to '.zshrc'..."
+                                echo -e "$zshrc_content" >> ~/.zshrc
+                                sed -i .bak 's/^ZshAliases=.*/ZshAliases=true/g' .setup-status.txt
+                                break
+                                ;;
+                            n*|N*)
+                                echo "Skipped adding custom aliases"
+                                break
+                                ;;
+                            *)  #TODO: Fix this so that it repeats if incalid option used
+                                echo "${red}Invalid option: '${options}' is an invalid option${nc}" >&2
+                                ;;
+                        esac
+                    done
                 else
                     echo "Adding custom aliases to '.zshrc'..."
                     echo -e "$zshrc_content" >> ~/.zshrc
