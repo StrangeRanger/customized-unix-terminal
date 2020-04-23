@@ -135,7 +135,6 @@ TermProfile=false" > .setup-status.txt
 #
 ################################################################################
 #
-    # TODO: Continue editing from this point
     echo -e "${clrln}Welcome to the 'Mac Terminal Style & Config Setup'\n"
 
     while true; do
@@ -148,35 +147,39 @@ TermProfile=false" > .setup-status.txt
         # Detects if Command Line Tools are installed
         if [[ -d $(xcode-select -p 2>/dev/null) ]]; then
             cmd_tools_installed=true
-            echo "1. Install Command Line Tools (must be installed before you" \
-                "can install Homebrew) ${green}(Already installed)${nc}"
+            echo "1. Install Command Line Tools ${green}(Already installed)${nc}"
         else
             cmd_tools_installed=false
-            echo "1. Install Command Line Tools (must be installed before you" \
-                "can install Homebrew) ${red}(Not Installed)${nc}"
+            echo "1. Install Command Line Tools ${red}(Not Installed)${nc}"
         fi
         
         # Checks if Homebrew, zsh, and vim are installed
         if ! hash brew &>/dev/null; then
             brew_installed=false
-            echo "2. Install Homebrew (must be installed before installing zsh" \
-                "or vim) ${red}(Not installed)${nc}"
-            echo "3. Install zsh via Homebrew ${red}(Not installed)${nc}"
-            echo "4. Install vim via Homebrew ${red}(Not installed)${nc}"
+            echo "2. Install Homebrew (command lines tools must be" \
+                "installed) ${red}(Not installed)${nc}"
+            echo "3. Install zsh via Homebrew (Homebrew must be installed)${red}" \
+                "(Not installed)${nc}"
+            echo "4. Install vim via Homebrew (Homebrew must be installed)${red}" \
+                "(Not installed)${nc}"
         else
             brew_installed=true
-            echo "2. Install Homebrew (must be installed before installing zsh" \
-                "or vim) ${green}(Already installed)${nc}"
+            echo "2. Install Homebrew (command lines tools must be" \
+                "installed) ${green}(Already installed)${nc}"
             if [[ $brew_vim_installed = true ]]; then
-                echo "3. Install vim via Homebrew ${green}(Already installed)${nc}"
+                echo "3. Install vim via Homebrew (Homebrew must be installed)${green}" \
+                    "(Already installed)${nc}"
             else
-                echo "3. Install vim via Homebrew ${red}(Not installed)${nc}"
+                echo "3. Install vim via Homebrew (Homebrew must be installed)${red}" \
+                    "(Not installed)${nc}"
             fi
 
             if [[ $brew_zshell_installed = true ]]; then
-                echo "4. Install zsh via Homebrew ${green}(Already installed)${nc}"
+                echo "4. Install zsh via Homebrew (Homebrew must be installed)${green}" \
+                    "(Already installed)${nc}"
             else
-                echo "4. Install zsh via Homebrew ${red}(Not installed)${nc}"
+                echo "4. Install zsh via Homebrew (Homebrew must be installed)${red}" \
+                    "(Not installed)${nc}"
             fi
         fi
         
@@ -188,6 +191,7 @@ TermProfile=false" > .setup-status.txt
         else
             oh_my_zsh_installed=false
             sed -i .bak 's/^ZshLSCOLORS=.*/ZshLSCOLORS=false/g' .setup-status.txt
+            zsh_lscolors=false
             echo "5. Install oh my zsh (recommended to install zsh via Homebrew" \
                 "first) ${red}(Not installed)${nc}"
         fi
@@ -262,14 +266,14 @@ TermProfile=false" > .setup-status.txt
                 read -p "We will now install/upgrade Homebrew. Press [Enter] to begin."
                 
                 install_homebrew() {
-                    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install > homebrew-installer || {
-                        echo -e "\n${red}Failed to download the Homebrew installer${nc}"
+                    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh > homebrew-installer || {
+                        echo -e "\n${red}Failed to download the Homebrew installer${nc}" >&2
                         read -p "Press [Enter] to return to the automatic setup menu"
                         clear
                         continue
                     }
-                    /usr/bin/ruby homebrew-installer || {
-                        echo -e "\n${red}Failed to $1 Homebrew${nc}"
+                    /bin/bash homebrew-installer || {
+                        echo -e "\n${red}Failed to $1 Homebrew${nc}" >&2
                         read -p "Press [Enter] to return to the automatic setup menu"
                         clear
                         continue
@@ -277,11 +281,10 @@ TermProfile=false" > .setup-status.txt
                     rm homebrew-installer
                     echo "Checking for system problems..."
                     brew doctor
-                    echo -e "${cyan}\nPlease check above at the results of the system check, and make sure there are no problems, and if there are, to resolve them"
                 }
 
                 if [[ $cmd_tools_installed = false ]]; then
-                    echo "${red}The command line tools are not installed"
+                    echo "${red}The command line tools are not installed" >&2
                     echo "${cyan}The command line tools must be installed in order to install Homebrew${nc}"
                     read -p "Press [Enter] to return to the automatic setup menu"
                     clear
@@ -377,44 +380,49 @@ TermProfile=false" > .setup-status.txt
                 ;;
             5)
                 clear
-                echo "${cyan}After installing 'oh my zsh', a new session will" \
-                    "be started in the same window, requiring you to enter 'exit'" \
-                    "into the terminal to return to the setup${nc}"
+                echo "${cyan}Note: After installing 'oh my zsh', a new session" \
+                    "using 'oh my zsh' will be started in the same window. To" \
+                    "return to the setup menu, you will need to enter 'exit'" \
+                    "into the terminal.${nc}"
                 read -p "We will now install 'oh my zsh'. Press [Enter] to begin."
 
-                echo "Downloading installer and installing 'oh my zsh'..."
-                sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || {
-                    if [[ ! -d ~/.oh-my-zsh ]]; then
-                        echo -e "\n${red}Failed to download and/or install 'oh my zsh'${nc}" >&2
-                    fi
-
+                echo "Downloading the installer and installing 'oh my zsh'..."
+                curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh > oh-my-zsh-installer || {
+                    echo "${red}Failed to donwload the 'oh my zsh' installer${nc}" >&2
                     read -p "Press [Enter] to return to the automatic setup menu"
                     clear
                     continue
                 }
-
-                echo -e "${green}\n'oh my zsh' has been installed"
-                echo "${cyan}Note: To apply the changes to your current session," \
-                    "use 'source ~/.zshrc'${nc}"
+                /bin/sh oh-my-zsh-installer || {
+                    echo -e "\n${red}Failed to install 'oh my zsh'${nc}" >&2
+                    read -p "Press [Enter] to return to the automatic setup menu"
+                    clear
+                    continue
+                }
+                rm oh-my-zsh-installer
+                echo -e "${green}\n'oh my zsh' has been installed${nc}"
                 read -p "Press [Enter] to return to the automatic setup menu"
                 clear
                 ;;
             6)
                 clear
-                echo "${cyan}If you plan on installing zsh via Homebrew, please do that first before doing this, as it will overwrite any changes to '.zshrc' from before it's installed. also note that if you already have run this and have aliases in '.zshrc', duplicates will be created in the file.${nc}"
-                read -p "We will now add custom zsh. Press [Enter] to begin."
+                echo "${cyan}If you plan on installing zsh via Homebrew, please" \
+                    "do that before adding the custom zsh configurations, as it" \
+                    "will overwrite any changes to '.zshrc.${nc}"
+                read -p "We will now add the custom zsh configurations. Press [Enter] to begin."
 
                 if [[ $zsh_lscolors = true ]]; then
-                    # Should always be skipped in this situation, because it could screw something up
-                    echo "Skipping the modification of 'LSCOLORS'"
+                    # Should always be skipped in this situation, because it could
+                    # screw something up
+                    echo "Skipping the modification of 'LSCOLORS'..."
                 else
                     echo "Modifying LSCOLORS..."
-                    sed -i .bak 's/^export LSCOLORS=/#export LSCOLORS=/' ~/.oh-my-zsh/lib/theme-and-appearance.zsh
+                    sed -i .bak 's/^export LSCOLORS=/#export LSCOLORS=/' \
+                        ~/.oh-my-zsh/lib/theme-and-appearance.zsh
                     sed -i .bak '/^#export LSCOLORS/a \
                         export LSCOLORS="exgxfxDxcxegDhabagacaD" \
                         ' ~/.oh-my-zsh/lib/theme-and-appearance.zsh
                     sed -i .bak 's/^ZshLSCOLORS=.*/ZshLSCOLORS=true/g' .setup-status.txt
-                    zsh_lscolors=true
                 fi
 
                 if [[ $zsh_aliases = true ]]; then
@@ -422,25 +430,24 @@ TermProfile=false" > .setup-status.txt
                     read -p "Would you like to add them again? [y/n] " add_again
                     case "$add_again" in
                         y*|Y*) 
-                            echo "Adding custom aliases '.zshrc'..."
+                            echo "Adding custom aliases to '.zshrc'..."
                             echo -e "$zshrc_content" >> ~/.zshrc
                             sed -i .bak 's/^ZshAliases=.*/ZshAliases=true/g' .setup-status.txt
                             ;;
                         n*|N*)
-                            echo "Skipping adding custom aliases"
+                            echo "Skipped adding custom aliases"
                             ;;
                         *)  #TODO: Fix this so that it repeats if incalid option used
-                            echo "${red}Invalid option: ...${nc}"
+                            echo "${red}Invalid option: ...${nc}" >&2
                             ;;
                     esac
                 else
-                    echo "Adding custom aliases '.zshrc'..."
+                    echo "Adding custom aliases to '.zshrc'..."
                     echo -e "$zshrc_content" >> ~/.zshrc
                     sed -i .bak 's/^ZshAliases=.*/ZshAliases=true/g' .setup-status.txt
-                    zsh_aliases=true
                 fi
 
-                echo -e "\n${green}The custom zsh settings have been applied${nc}"
+                echo -e "\n${green}The custom zsh configurations have been applied${nc}"
                 read -p "Press [Enter] to return to the automatic setup menu"
                 clear
                 ;;
@@ -457,9 +464,7 @@ TermProfile=false" > .setup-status.txt
                     creating_vimrc || continue
                 fi
 
-                echo -e "\n${green}The custom vim resource file has been created"
-                echo "${cyan}Note: To apply the changes to your current session," \
-                    "use 'source ~/.vimrc'${nc}"
+                echo -e "\n${green}The custom vim resource file has been created${nc}"
                 read -p "Press [Enter] to return to the automatic setup menu"
                 clear
                 ;;
@@ -472,9 +477,8 @@ TermProfile=false" > .setup-status.txt
                     continue
                 }
                 sed -i .bak 's/^TermProfile=.*/TermProfile=true/g' .setup-status.txt
-                # TODO: Maybe reword the echo below
-                echo "${cyan}Note: If you want to use this profile by default, you will need to edit the settings and set the profile as the default one."
-                echo "Note 2: You will most likely have to allow your system to open the profile, as it will say that it can't verify the creator.${nc}"
+                echo "${cyan}Note: To use this profile by default, follow the intrusctions described in 'terminal-profile.md'"
+                echo "Note 2: You'll most likely have to give your system permission to open the profile, as your system won't be able to verifiy the developer${nc}"
                 read -p "Press [Enter] to return to the automatic setup menu"
                 clear
                 ;;

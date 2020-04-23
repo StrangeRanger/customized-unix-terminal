@@ -12,7 +12,7 @@ These are configurations/styles that I personally use on my own Mac, so don't ex
 
 ## Automatic Setup
 
-I have created an automatic setup script that can be used to easily set everything up. The script will provide you with options on what you'd like to install/setup. It will looks similar to the text below:
+I have created an automatic setup script that can be used to easily set everything up. The script will provide you with options on what you'd like to install/setup. Upon executing the script, you will see something similar to the text below:
 
 ```txt
 Welcome to the 'Mac Terminal Style & Config Setup'
