@@ -94,7 +94,7 @@ set mouse-=a" > ~/.vimrc || {
 ################################################################################
 #
     # Changes the active directory to that of where the executed script is located
-    cd "$(dirname $0)"
+    cd "$(dirname $0)" || exit
 
     # Sets up '.setup-status.txt' and the variables used to tell if particular
     # options have already been setup, such as '.zshrc' and the terminal profile
@@ -122,7 +122,6 @@ TermProfile=false" > .setup-status.txt
         else
             brew_vim_installed=false
         fi
-
     else
         brew_zshell_installed=false
         brew_vim_installed=false
@@ -166,6 +165,7 @@ TermProfile=false" > .setup-status.txt
             brew_installed=true
             echo "2. Install Homebrew (command lines tools must be" \
                 "installed) ${green}(Already installed)${nc}"
+            
             if [[ $brew_vim_installed = true ]]; then
                 echo "3. Install vim via Homebrew (Homebrew must be installed)${green}" \
                     "(Already installed)${nc}"
@@ -187,13 +187,15 @@ TermProfile=false" > .setup-status.txt
         if [[ -d ~/.oh-my-zsh/ ]]; then
             oh_my_zsh_installed=true
             echo "5. Install oh my zsh (command lines tools must be installed)" \
-                "(recommended to install zsh via Homebrew first) ${green}(Already installed)${nc}"
+                "(recommended to install zsh via Homebrew first)" \
+                "${green}(Already installed)${nc}"
         else
             oh_my_zsh_installed=false
             sed -i .bak 's/^ZshLSCOLORS=.*/ZshLSCOLORS=false/g' .setup-status.txt
             zsh_lscolors=false
             echo "5. Install oh my zsh (command lines tools must be installed)" \
-                "(recommended to install zsh via Homebrew first) ${red}(Not installed)${nc}"
+                "(recommended to install zsh via Homebrew first)" \
+                "${red}(Not installed)${nc}"
         fi
 
         # Uses data saved in '.setup-status.txt' to tell if custom aliases were
@@ -232,6 +234,7 @@ TermProfile=false" > .setup-status.txt
                     echo "${cyan}The command-line tools are already installed${nc}"
                     printf "We will now install updates for the command-line tools. "
                     read -p "Press [Enter] to begin."
+
                     echo "Checking for and installing command-line tool updates..."
                     softwareupdate --install -a || {
                         echo "${red}Failed to check for and/or install updates" >&2
@@ -243,21 +246,25 @@ TermProfile=false" > .setup-status.txt
                 else
                     printf "We will now install the command-line tools. "
                     read -p "Press [Enter] to begin."
+
                     echo "Installing command-line tools..."
                     xcode-select --install || {
                         echo "${red}Failed to install the command-line tools${nc}" >&2
                         read -p "Press [Enter] to return to the automatic setup menu"
                         continue
                     }
-                    printf "%sA window will open, prompting you to install the command-line tools. " "$cyan"
+                    echo -n "${cyan}A window will open, prompting you to install" \
+                        "the command-line tools. "
                     read -p "Press [Enter] to continue when it has fully installed.${nc}"
+                    
                     if [[ -d $(xcode-select -p 2>/dev/null) ]]; then
                         echo -e "\n${green}The command-line tools have been installed${nc}"
                     else
-                        echo -e "\n${red}Either the command-line tools have not fully installed" \
-                            "or the script failed to install them${nc}" >&2
+                        echo -e "\n${red}Either the command-line tools have not fully" \
+                            "installed or the script failed to install them${nc}" >&2
                     fi
                 fi
+
                 read -p "Press [Enter] to return to the automatic setup menu"
                 clear
                 ;;
@@ -285,7 +292,8 @@ TermProfile=false" > .setup-status.txt
 
                 if [[ $cmd_tools_installed = false ]]; then
                     echo "${red}The command line tools are not installed" >&2
-                    echo "${cyan}The command line tools must be installed in order to install Homebrew${nc}"
+                    echo "${cyan}The command line tools must be installed in" \
+                        "order to install Homebrew${nc}"
                     read -p "Press [Enter] to return to the automatic setup menu"
                     clear
                     continue
@@ -306,7 +314,8 @@ TermProfile=false" > .setup-status.txt
                 ;;
             3)
                 clear
-                read -p "We will now install/upgrade vim via Homebrew. Press [Enter] to begin."
+                printf "We will now install/upgrade vim via Homebrew. "
+                read -p "Press [Enter] to begin."
                 
                 software_check "vim" || continue
                 
@@ -343,7 +352,8 @@ TermProfile=false" > .setup-status.txt
                 ;;
             4)
                 clear
-                read -p "We will now install/upgrade zsh via Homebrew. Press [Enter] to begin."
+                printf "We will now install/upgrade zsh via Homebrew. "
+                read -p "Press [Enter] to begin."
                 
                 software_check "zsh" || continue
 
@@ -409,7 +419,8 @@ TermProfile=false" > .setup-status.txt
                 echo "${cyan}If you plan on installing zsh via Homebrew, please" \
                     "do that before adding the custom zsh configurations, as it" \
                     "will overwrite any changes to '.zshrc.${nc}"
-                read -p "We will now add the custom zsh configurations. Press [Enter] to begin."
+                printf "We will now add the custom zsh configurations. "
+                read -p "Press [Enter] to begin."
 
                 if [[ $zsh_lscolors = true ]]; then
                     # Should always be skipped in this situation, because it could
@@ -440,8 +451,8 @@ TermProfile=false" > .setup-status.txt
                                 echo "Skipped adding custom aliases"
                                 break
                                 ;;
-                            *)  #TODO: Fix this so that it repeats if incalid option used
-                                echo "${red}Invalid option: '${options}' is an invalid option${nc}" >&2
+                            *)
+                                echo "${red}Invalid option: '${option}' is an invalid option${nc}" >&2
                                 ;;
                         esac
                     done
@@ -457,7 +468,9 @@ TermProfile=false" > .setup-status.txt
                 ;;
             7)
                 clear
-                read -p "We will now add a custom vim resource file. Press [Enter] to begin."
+                printf "We will now add a custom vim resource file. "
+                read -p "Press [Enter] to begin."
+
                 if [[ $vim_resource = true ]]; then
                     echo "Backing up current '.vimrc'..."
                     cp ~/.vimrc ~/.vimrc.bak
@@ -481,8 +494,11 @@ TermProfile=false" > .setup-status.txt
                     continue
                 }
                 sed -i .bak 's/^TermProfile=.*/TermProfile=true/g' .setup-status.txt
-                echo "${cyan}Note: To use this profile by default, follow the intrusctions described in 'terminal-profile.md'"
-                echo "Note 2: You'll most likely have to give your system permission to open the profile, as your system won't be able to verifiy the developer${nc}"
+                echo "${cyan}Note: To use this profile by default, follow the" \
+                    "intrusctions described in 'terminal-profile.md'"
+                echo "Note 2: You'll most likely have to give your system" \
+                    "permission to open the profile, as your system won't be" \
+                    "able to verifiy the developer${nc}"
                 read -p "Press [Enter] to return to the automatic setup menu"
                 clear
                 ;;
