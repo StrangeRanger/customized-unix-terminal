@@ -4,7 +4,6 @@
 #
 # Automatic Setup
 # ---------------
-#
 # Helps automactically set up better vim, terminal syntax highlighting, terminal
 # profile, etc.
 #
