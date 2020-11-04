@@ -42,16 +42,16 @@
 #
     # Creates '.vimrc'
     creating_vimrc() {
-        echo "source \$VIMRUNTIME/defaults.vim 
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set mouse-=a" > ~/.vimrc || {
-            echo "${red}Failed to add custom vim resource file${nc}" >&2
-            read -p "Press [Enter] to return to the automatic setup menu"
-            clear
-            return 1
-        }
+        echo -e "source \$VIMRUNTIME/defaults.vim \
+            \nset tabstop=4 \
+            \nset shiftwidth=4 \
+            \nset expandtab \
+            \nset mouse-=a" > ~/.vimrc || {
+                echo "${red}Failed to add custom vim resource file${nc}" >&2
+                read -p "Press [Enter] to return to the automatic setup menu"
+                clear
+                return 1
+            }
         sed -i .bak 's/^VimResource=.*/VimResource=true/g' .setup-status.txt
     }
 
@@ -96,7 +96,7 @@ set mouse-=a" > ~/.vimrc || {
     cd "$(dirname $0)" || exit
 
     # Sets up '.setup-status.txt' and the variables used to tell if particular
-    # options have already been setup, such as '.zshrc' and the terminal profile
+    #  options have already been setup, such as '.zshrc' and the terminal profile
     if [[ ! -f .setup-status.txt ]]; then
         echo "ZshLSCOLORS=false
 ZshAliases=false
@@ -105,8 +105,8 @@ TermProfile=false" > .setup-status.txt
     fi
 
     # Since it takes a few seconds to check if something is installed via brew,
-    # checking once and storing the results in variables reduces the amount and
-    # number of times it has to check  
+    #  checking once and storing the results in variables reduces the amount and
+    #  number of times it has to check  
     if hash brew &>/dev/null; then
         printf "Checking if 'zsh' and 'vim' have been installed..."
         
@@ -198,7 +198,7 @@ TermProfile=false" > .setup-status.txt
         fi
 
         # Uses data saved in '.setup-status.txt' to tell if custom aliases were
-        # added to '.zshrc' 
+        #  added to '.zshrc' 
         if [[ $zsh_aliases = true && $zsh_lscolors = true ]]; then
             echo "6. Add custom zsh configurations ${green}(Already added)${nc}"
         elif [[ $zsh_aliases = false && $zsh_lscolors = false ]]; then
@@ -208,7 +208,7 @@ TermProfile=false" > .setup-status.txt
         fi
         
         # Uses data saved in '.setup-status.txt' to tell if custom vimrc was
-        # added to the home directory
+        #  added to the home directory
         if [[ $vim_resource = true ]]; then
             echo "7. Add custom vim resource ${green}(Already added)${nc}"
         else
@@ -216,7 +216,7 @@ TermProfile=false" > .setup-status.txt
         fi
         
         # Uses data saved in '.setup-status.txt' to tell if the terminal profile
-        # has been added
+        #  has been added
         if [[ $term_profile = true ]]; then
             echo "8. Add the Terminal Profile ${green}(Already added)${nc}"
         else
@@ -423,7 +423,7 @@ TermProfile=false" > .setup-status.txt
 
                 if [[ $zsh_lscolors = true ]]; then
                     # Should always be skipped in this situation, because it could
-                    # screw something up
+                    #  screw something up
                     echo "Skipping the modification of 'LSCOLORS'..."
                 else
                     echo "Modifying LSCOLORS..."
