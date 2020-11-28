@@ -1,24 +1,26 @@
 # Mac Terminal Style Config
 
-This repository contains all the configurations that I personally use for my terminal style and behavior, on the macOS. Previously in v1.x.x, There was an automatic setup script but I decided I didn't really want to maintain it, so I just scrapped it. So in v2.x.x, I've just compiled all of the configurations here in this README.md.
+This repository contains all the configurations that I personally use for the style and behavior of the terminal on macOS. In addition, I've listed all of the programs that can be installed via homebrew, that I find useful or good to have at a times notice.
 
 | Table of Contents |
 | ----------------- |
-| Prerequisites     |
-| Homebrew Installed Programs |
-|
+| [Prerequisites](#prerequisite) |
+| [Homebrew Installed Programs](#homebrew-installed-programs) |
+| [Customizing ZSH Shell](#customizing-zsh-shell) |
+| [Vim Resource File](#vim-resource-file) |
+| [Terminal Profile](#terminal-profile) |
 
 ## Prerequisite
 
-The majority of the things in this guide require the use of Homebrew, so I'll provide a quick little guide to install it. It's as simple as executing this command in the Terminal app: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+The majority of this README requires the use of Homebrew. So if you don't currently have it installed and would like it installed, execute the following command: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 ## Homebrew Installed Programs
 
-The programs below are ones that I personally have installed on my Mac and find useful or think is handy to have when neccessary.
+The programs below are ones that I personally have installed on my Mac and find useful or think is handy to have when necessary.
 
 | Programs      | Description |
 |---------------|--------------------------------------------------|
-| blackbox      | Safely store secrets in Git/Mercurial/Subversion |
+| blackbox<br>(contains a set of commands)      | Safely store secrets in Git/Mercurial/Subversion |
 | curl          | Get a file from an HTTP, HTTPS or FTP server |
 | dos2unix      | Convert text between DOS, UNIX, and Mac formats |
 | duti          | Set default document and URL handlers |
@@ -55,63 +57,64 @@ If you'd like to install all the programs listed above, execute the following co
 
 hsfjshfjkshdkfjhsdf
 
-### Oh-my-zsh
+### Framework
 
-ksjdflksjfd
+The framework that I use and find is the best, is [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh). It's one of the most popular zsh frameworks available and made it's first commit on August 23, 2009.
 
-### Powerlevel10K
+### Shell Theme
 
-lskdjflksjdfklsjdf
+The theme that I use in combination with oh-my-zsh, is [Powerlevel10k](https://github.com/romkatv/powerlevel10k). It's highly configurable and it's a theme that I very much recommend.
 
 ### Modifying ZSH Resource File
 
+#### Custom Aliases
+
+Below is a list of "General Custom Aliases" that I use. You will want to place the code below at the bottom of your zshrc file, located:  `~/.zshrc`
+
+```bash
+################################################################################
+#
+# [ General Custom Aliases ]
+#
+####
+    
+####
+#
+# End of General Custom Aliases
+################################################################################
+```
+
+#### Oh-my-zsh Plugins
+
+These are a list of all the plugins that I find useful and such: sjlafkjsdlkfjalksjdflkajsdfljsdlkfjsadklfj
+
+### Modifying LSCOLOR
+
 In `~/.oh-my-zsh/lib/theme-and-appearance.zsh`, comment out the line that begins with `export LSCOLORS=`, then place `export LSCOLORS="exgxfxDxcxegDhabagacaD"` on the line below it.
 
-Place the text below at or close to the bottom of `~/.zshrc`.
+This is the LSCOLROS value, but separated every two letters with a dash: `ex-gx-fx-Dx-cx-eg-Dh-ab-ag-ac-aD`
 
-```bash
-################################################################################
-#
-# [ General Custom Aliases ]
-#
-####
-    
-####
-#
-# End of General Custom Aliases
-################################################################################
-```
+Below is a key to help you understand what the value of LSCOLORS mean:
 
-## Customizing Bash Shell
-
-Place the text below at the top of `~/.bash_profile`.
-
-```bash
-export PS1="\[\033[32m\]\u@\h:\[\033[34m\]\w\[\033[m\]\$ "
-export CLICOLOR=1
-export LSCOLORS="exgxfxDxcxegDhabagacaD"
-```
-
-Then place the text below at or close to the bottom of `~/.bash_profile`.
-
-```bash
-################################################################################
-#
-# [ General Custom Aliases ]
-#
-####
-    
-####
-#
-# End of General Custom Aliases
-################################################################################
-```
+| Letter Code | Type | Text Color | Foreground/Background Color|
+| -- | -- | -- | -- |
+| ex | Directories | blue | *default* |
+| gx | Symbolic link | cyan | *default* |
+| fx | Socket | magenta | *default* |
+| Dx | Pipe | yellow | *default* |
+| cx | Executable | green | *default* |
+| eg | Block special | green | cyan
+| Dh | Character special | yellow | grey |
+| ab | Executable with setuid bit set | black | red |
+| ag | Executable with setgid bit set | black | cyan |
+| ac | Directory writeable to others (with sticky bit) | black | green |
+| aD | Directory writeable to others (without sticky bit) | black | yellow |
 
 ## Vim Resource File
 
-Next you will want to then create `.vimrc` in your home directory and add the following to the file:
+Create `.vimrc` in your home directory and add the following to the file:
 
-```vimrc
+```vim
 source $VIMRUNTIME/defaults.vim
 set tabstop=4
 set shiftwidth=4
