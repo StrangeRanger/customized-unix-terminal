@@ -12,11 +12,11 @@ This repository contains all the configurations that I personally use for the st
 
 ## Prerequisite
 
-The majority of this README requires the use of Homebrew. So if you don't currently have it installed and would like it installed, execute the following command: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+The majority of this README requires the use of Homebrew. So if you don't currently have it installed, you can install it via this command: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 ## Homebrew Installed Programs
 
-The programs below are ones that I have installed on my Mac and find useful or are great to have at a seconds notice.
+The programs below are ones that I have installed on my Mac via Homebrew. They are either programs that I actively use, or find useful to have whenever I need them.
 
 | Programs      | Description | Other Info |
 |---------------|-------------| -----------|
@@ -49,7 +49,7 @@ The programs below are ones that I have installed on my Mac and find useful or a
 | [wifi-password](https://formulae.brew.sh/formula/wifi-password) | Show the current WiFi network password |
 | [wget](https://formulae.brew.sh/formula/wget) | Internet file retriever |
 | [zip](https://formulae.brew.sh/formula/zip) | Compression and file packaging/archive utility |
-| [zsh](https://formulae.brew.sh/formula/zsh) | UNIX shell (command interpreter) | zsh is a shell, therefor not a command |
+| [zsh](https://formulae.brew.sh/formula/zsh) | UNIX shell (command interpreter) | Not a command |
 
 If you'd like to install all the programs listed above, execute the following command in the Terminal: `brew install autopep8 blackbox curl dos2unix duti fd git gitleaks gnupg hstr htop jq mkdocs nmap ncdu pstree pyenv shellcheck shfmt speedtest-cli terminal-notifier thefuck tmux trash tree vim wifi-password wget zip zsh`
 
@@ -57,13 +57,13 @@ If you'd like to install all the programs listed above, execute the following co
 
 ### Framework
 
-The framework that I use and find is the best, is [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh). It's one of the most popular zsh frameworks available and was first started on August 23, 2009.
+The framework that I use and find is the best, is [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh). It's one of the most popular zsh frameworks available and had it's first commit on August 23, 2009.
 
 ### Shell Theme
 
 The theme that I use in combination with oh-my-zsh, is [Powerlevel10k](https://github.com/romkatv/powerlevel10k). It's highly configurable and it's a theme that I very much recommend.
 
-### Modifying ZSH Resource File
+### ZSH Resource File
 
 #### Custom Aliases
 
@@ -77,7 +77,6 @@ Below is a list of "General Custom Aliases" that I use. You will want to place t
 ####
     alias edisk="cd /Volumes && ll"
     alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
-    alias gitkeyd="cd ~/.gitkey && sudo gpg -d .gitkey.gpg && cd - > /dev/null"
     alias batterylife="pmset -g batt"
     alias batterycycles="system_profiler SPPowerDataType | grep 'Cycle Count' | awk '{print $3}'"
     # Prints out a bunch of useful commands that I might easily forget about
@@ -85,7 +84,8 @@ Below is a list of "General Custom Aliases" that I use. You will want to place t
         \"\n########################################\" \
         \"\n# Homebrew installed commands\" \
         \"\n###\" \
-        \"\n    autopep8      - Automatically formats Python code to conform to the PEP 8 style guide\" \
+        \"\n    autopep8      - Automatically formats Python code to conform to the PEP 8\" \
+        \"\n                    style guide\" \
         \"\n    curl          - Get a file from an HTTP, HTTPS or FTP server\" \
         \"\n    dos2unix      - Convert text between DOS, UNIX, and Mac formats\" \
         \"\n    duti          - Set default document and URL handlers\" \
@@ -93,7 +93,8 @@ Below is a list of "General Custom Aliases" that I use. You will want to place t
         \"\n    git           - Distributed revision control system\" \
         \"\n    gitleaks      - Audit git repos for secrets\" \
         \"\n    gpg           - GNU Pretty Good Privacy (PGP) package\" \
-        \"\n    hstr          - Easily view, navigate, sort and use your command history with shell history suggest box\" \
+        \"\n    hstr          - Easily view, navigate, sort and use your command history with\" \
+        \"\n                    shell history suggest box\" \
         \"\n    htop          - Improved top (interactive process viewer)\" \
         \"\n    jq            - Command-line JSON processor\" \
         \"\n    mkdocs        - Project documentation with Markdown\" \
@@ -103,7 +104,8 @@ Below is a list of "General Custom Aliases" that I use. You will want to place t
         \"\n    pyenv         - Python version management\" \
         \"\n    shellcheck    - Shell script analysis tool\" \
         \"\n    shfmt         - Format shell programs\" \
-        \"\n    speedtest-cli - Command line interface for testing internet bandwidth using speedtest.net\" \
+        \"\n    speedtest-cli - Command line interface for testing internet bandwidth using\" \
+        \"\n                    speedtest.net\" \
         \"\n    thefuck       - Programatically correct mistyped console commands\" \
         \"\n    tmux          - Terminal multiplexer\" \
         \"\n    trash         - Move files/folders to the trash\" \
@@ -115,32 +117,77 @@ Below is a list of "General Custom Aliases" that I use. You will want to place t
         \"\n\" \
         \"\n\" \
         \"\n########################################\" \
-        \"\n# oh-my-zsh plugin commands\" \
+        \"\n# Oh-my-zsh plugin commands\" \
         \"\n###\" \
-        \"\n    copydir  - Copies the path of your current folder to the system clipboard\" \
-        \"\n    copyfile - Puts the contents of a file in your system clipboard so you can paste it anywhere\" \
-        \"\n    h        - Prints your command histor\" \
-        \"\n    hs       - Use grep to search your command history\" \
-        \"\n    hsi      - Use grep to do a case-insensitive search of your command history\" \
+        \"\n    copydir   - Copies the path of your current folder to the system clipboard\" \
+        \"\n    copyfile  - Puts the contents of a file in your system clipboard so you can\" \
+        \"\n                paste it anywhere\" \
+        \"\n    h         - Prints your command histor\" \
+        \"\n    hs        - Use grep to search your command history\" \
+        \"\n    hsi       - Use grep to do a case-insensitive search of your command history\" \
+        \"\n    urlencode - URL-encodes the given string\" \
+        \"\n    urldecode - URL-decodes the given string\" \
         \"\n\" \
         \"\n    ###################################\" \
-        \"\n    # Nmap aliases\" \
+        \"\n    # Keyboard combinations\" \
         \"\n    ###################################\" \
-        \"\n    nmap_open_ports            - scan for open ports on target.\" \
-        \"\n    nmap_list_interfaces       - list all network interfaces on host where the command runs.\" \
-        \"\n    nmap_slow                  - slow scan that avoids to spam the targets logs.\" \
-        \"\n    nmap_fin                   - scan to see if hosts are up with TCP FIN scan.\" \
-        \"\n    nmap_full                  - aggressive full scan that scans all ports, tries to determine OS and service versions.\" \
-        \"\n    nmap_check_for_firewall    - TCP ACK scan to check for firewall existence.\" \
-        \"\n    nmap_ping_through_firewall - host discovery with SYN and ACK probes instead of just pings to avoid firewall restrictions.\" \
-        \"\n    nmap_fast                  - fast scan of the top 300 popular ports.\" \
-        \"\n    nmap_detect_versions       - detects versions of services and OS, runs on all ports.\" \
-        \"\n    nmap_check_for_vulns       - uses vulscan script to check target services for vulnerabilities.\" \
-        \"\n    nmap_full_udp              - same as full but via UDP.\" \
-        \"\n    nmap_traceroute            - try to traceroute using the most common ports.\" \
-        \"\n    nmap_full_with_scripts     - same as nmap_full but also runs all the scripts.\" \
-        \"\n    nmap_web_safe_osscan       - little \"safer\" scan for OS version as connecting to only HTTP and HTTPS ports doesn't look so attacking.\" \
-        \"\n    nmap_ping_scan             - ICMP scan for active hosts.\" \
+        \"\n    Ctrl + O - Allows you to copy what you are currently typing, via Ctrl + O\" \
+        \"\n\" \
+        \"\n    ###################################\" \
+        \"\n    # Command aliases\" \
+        \"\n    ###################################\" \
+        \"\n    listtools_git  - Lists a link to all of the git aliases (will change in future)\" \
+        \"\n    listtools_nmap - Lists nmap aliases\" \
+        \"\n    listtools_osx  - Lists osx aliases\" \
+        \"\n\""
+    alias listtools_git="echo \"https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases\""
+    alias listtools_nmap="echo -e \
+        \"\n########################################\" \
+        \"\n# Nmap aliases\" \
+        \"\n###\" \
+        \"\n    nmap_open_ports            - Scan for open ports on target\" \
+        \"\n    nmap_list_interfaces       - List all network interfaces on host where the\" \
+        \"\n                                 command runs\" \
+        \"\n    nmap_slow                  - Slow scan that avoids to spam the targets logs\" \
+        \"\n    nmap_fin                   - Scan to see if hosts are up with TCP FIN scan\" \
+        \"\n    nmap_full                  - Aggressive full scan that scans all ports, tries\" \
+        \"\n                                 to determine OS and service versions\" \
+        \"\n    nmap_check_for_firewall    - TCP ACK scan to check for firewall existence\" \
+        \"\n    nmap_ping_through_firewall - Host discovery with SYN and ACK probes instead\" \
+        \"\n                                 of just pings to avoid firewall restrictions\" \
+        \"\n    nmap_fast                  - Fast scan of the top 300 popular ports\" \
+        \"\n    nmap_detect_versions       - Detects versions of services and OS, runs on all ports\" \
+        \"\n    nmap_check_for_vulns       - Uses vulscan script to check target services for\" \
+        \"\n                                 vulnerabilities\" \
+        \"\n    nmap_full_udp              - Same as full but via UDP\" \
+        \"\n    nmap_traceroute            - Try to traceroute using the most common ports\" \
+        \"\n    nmap_full_with_scripts     - Same as nmap_full but also runs all the scripts\" \
+        \"\n    nmap_web_safe_osscan       - Little \"safer\" scan for OS version as connecting\" \
+        \"\n                                 to only HTTP and HTTPS ports doesn't look so attacking\" \
+        \"\n    nmap_ping_scan             - ICMP scan for active hosts\" \
+        \"\n\""
+    alias listtools_osx="echo -e \
+        \"\n########################################\" \
+        \"\n# OSX commands\" \
+        \"\n###\" \
+        \"\n    tab         - Open the current directory in a new tab\" \
+        \"\n    split_tab   - Split the current terminal tab horizontally\" \
+        \"\n    vsplit_tab  - Split the current terminal tab vertically\" \
+        \"\n    ofd         - Open the current directory in a Finder window\" \
+        \"\n    pfd         - Return the path of the frontmost Finder window\" \
+        \"\n    pfs         - Return the current Finder selection\" \
+        \"\n    cdf         - cd to the current Finder directory\" \
+        \"\n    pushdf      - pushd to the current Finder directory\" \
+        \"\n    pxd         - Return the current Xcode project directory\" \
+        \"\n    cdx         - cd to the current Xcode project directory\" \
+        \"\n    quick-look  - Quick-Look a specified file\" \
+        \"\n    man-preview - Open a specified man page in Preview app\" \
+        \"\n    showfiles   - Show hidden files in Finder\" \
+        \"\n    hidefiles   - Hide the hidden files in Finder\" \
+        \"\n    music       - Control Apple Music. Use music -h for usage details\" \
+        \"\n    spotify     - Control Spotify and search by artist, album, track…\" \
+        \"\n    rmdsstore   - Remove .DS_Store files recursively in a directory\" \
+        \"\n    btrestart   - Restart the Bluetooth daemon\" \
         \"\n\""
 ####
 #
@@ -150,34 +197,29 @@ Below is a list of "General Custom Aliases" that I use. You will want to place t
 
 #### Oh-my-zsh Plugins
 
-This is a list of all the oh-my-zsh plugins that I use and find useful:
+This is a list of all the oh-my-zsh plugins that I use and find useful. Note that all of the commands provided by these plugins, are also in the `listtools` alias provided above.
 
 | Plugins | Description | Other Info |
 |---------|-------------|------------|
-| colored-man-pages | Adds colors to man pages |
-| colorize | Cat with syntax highlight support for over 300 supported languages |
-| copydir | Copies the path of your working directory |
-| copybuffer | Allows you to copy what you are currently typing, via Ctrl + O |
-| copyfile | Copies the contents of a file |
-| extract | Swiss knife for archive extracting | Alias: `x` |
-| git | Git aliases |
-| gpg-agent | Enables GPG's gpg-agent if it is not running |
-| history | History aliases |
-| nmap | Nmap aliases |
-| osx | Provides a few utilities to make it more enjoyable on macOS |
-| python | Python aliases |
-| themes | Allows you to change ZSH theme on the go |
-| tmux | Tmux aliases |
-| bgnotify | Cross-platform background notifications for long running commands |
+| [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) | Adds colors to man pages | Not a command |
+| [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize) | Cat with syntax highlight support for over 300 supported languages |
+| [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) | Allows you to copy what you are currently typing, via Ctrl + O | Not a command<br>Key Combination: `Ctrl` + `O` |
+| [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir) | Copies the path of your working directory |
+| [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile) | Copies the contents of a file |
+| [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) | Git aliases |
+| [gpg-agents](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gpg-agent) | Enables GPG's gpg-agent if it is not running | Not a command |
+| [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history) | History aliases |
+| [nmap](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nmap) | Nmap aliases |
+| [osx](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/osx) | Provides a few utilities to make it more enjoyable on macOS |
+| [urltools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/urltools) | provides two aliases to URL-encode and URL-decode strings |
 
-Note: Keep in mind that some of the plugins have dependencies, so make sure to check for that.
+Note: Keep in mind that some of these plugins have dependencies, so make sure to check for that.
+
 ### Modifying LSCOLOR
 
 In `~/.oh-my-zsh/lib/theme-and-appearance.zsh`, comment out the line that begins with `export LSCOLORS=`, then place `export LSCOLORS="exgxfxDxcxegDhabagacaD"` on the line below it.
 
-This is the LSCOLROS value, but separated every two letters with a dash: `ex-gx-fx-Dx-cx-eg-Dh-ab-ag-ac-aD`
-
-Below is a key to help you understand what the value of LSCOLORS mean:
+Below is a key to help you understand what the values of the LSCOLORS variable mean:
 
 | Letter Code | Type | Text Color | Foreground/Background Color|
 | -- | -- | -- | -- |
@@ -193,7 +235,7 @@ Below is a key to help you understand what the value of LSCOLORS mean:
 | ac | Directory writeable to others (with sticky bit) | black | green |
 | aD | Directory writeable to others (without sticky bit) | black | yellow |
 
-After setting up the new LSCOLORS, you will either need to modify the terminal profile ansi color to your liking, or import my personal terminal profile (instructions below).
+After setting up the new LSCOLORS, you will either need to modify the terminal profile ansi-colors to your liking, or import my personal terminal profile (instructions below).
 
 ## Terminal Profile
 
@@ -208,7 +250,7 @@ This is a customized terminal profile that is based off of the Basic profile in 
 These configurations modify some of the default vim settings. To set them, create `.vimrc` in your home directory and add them to it:
 
 ```vim
-" Set's the default vim settings
+" Sets the default vim settings
 source $VIMRUNTIME/defaults.vim
 
 " Overwrites specified default setting
