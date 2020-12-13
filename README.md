@@ -1,14 +1,14 @@
 # Mac Terminal Style Config
 
-This repository contains all the configurations that I personally use for the style and behavior of the terminal on macOS. In addition, I've listed all of the programs that I find useful or good to have at a seconds notice, that can be installed via homebrew.
+This repository contains all the configurations that I personally use for the style and behavior of the macOS terminal. In addition, I've listed all of the programs that I find useful or good to have at a second's notice that can be installed via Homebrew.
 
 | Table of Contents |
 | ----------------- |
 | [Prerequisites](#prerequisite) |
 | [Homebrew Installed Programs](#homebrew-installed-programs) |
 | [Customizing ZSH Shell](#customizing-zsh-shell) |
-| [Vim Resource File](#vim-resource-file) |
 | [Terminal Profile](#terminal-profile) |
+| [Vim Resource File](#vim-resource-file) |
 
 ## Prerequisite
 
@@ -16,7 +16,7 @@ The majority of this README requires the use of Homebrew. So if you don't curren
 
 ## Homebrew Installed Programs
 
-The programs below are ones that I have installed on my Mac via Homebrew. They are either programs that I actively use, or find useful to have whenever I need them.
+The programs below are ones that I have installed on my Mac via Homebrew. They are either programs that I actively use or find useful to have whenever I need them.
 
 | Programs      | Description | Other Info |
 |---------------|-------------| -----------|
@@ -57,11 +57,11 @@ If you'd like to install all the programs listed above, execute the following co
 
 ### Framework
 
-The framework that I use and find is the best, is [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh). It's one of the most popular zsh frameworks available and had it's first commit on August 23, 2009.
+The framework that I use and find is the best is [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh). It's one of the most popular zsh frameworks available and made it's first commit on August 23, 2009.
 
 ### Shell Theme
 
-The theme that I use in combination with oh-my-zsh, is [Powerlevel10k](https://github.com/romkatv/powerlevel10k). It's highly configurable and it's a theme that I very much recommend.
+The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://github.com/romkatv/powerlevel10k). It's highly configurable, and it's a theme that I very much recommend.
 
 ### ZSH Resource File
 
@@ -197,7 +197,7 @@ Below is a list of "General Custom Aliases" that I use. You will want to place t
 
 #### Oh-my-zsh Plugins
 
-This is a list of all the oh-my-zsh plugins that I use and find useful. Note that all of the commands provided by these plugins, are also in the `listtools` alias provided above.
+This is a list of all the oh-my-zsh plugins that I use and find useful. Note that all of the commands provided by these plugins are also in the `listtools` alias provided above.
 
 | Plugins | Description | Other Info |
 |---------|-------------|------------|
@@ -232,22 +232,22 @@ Below is a key to help you understand what the values of the LSCOLORS variable m
 | Dh | Character special | yellow | grey |
 | ab | Executable with setuid bit set | black | red |
 | ag | Executable with setgid bit set | black | cyan |
-| ac | Directory writeable to others (with sticky bit) | black | green |
+| ac | Directory writeable to others (with a sticky bit) | black | green |
 | aD | Directory writeable to others (without sticky bit) | black | yellow |
 
-After setting up the new LSCOLORS, you will either need to modify the terminal profile ansi-colors to your liking, or import my personal terminal profile (instructions below).
+After setting up the new LSCOLORS, you will need to modify the terminal profile ANSI-colors to your liking or import my personal terminal profile (instructions below).
 
 ## Terminal Profile
 
-This is a customized terminal profile that is based off of the Basic profile in macOS Catalina. To add this to your list of profiles and make it your default, follow the instructions below:
+My custom terminal profile is a modified version of the Basic Terminal profile in Catalina. To add it to your list of profiles and make it your default, follow the instructions below:
 
 1. Open the Terminal application.
 2. Click on Preferences... > Profiles > *the gear at the bottom left of the window* > Import... > *locate and click on 'Basic (Modified).terminal'*
-3. Click on the new terminal profile, then press the "Default" button at the bottom of the window.
+3. Click on the new terminal profile, then press the "Default" button at the window's bottom.
 
 ## Vim Resource File
 
-These configurations modify some of the default vim settings. To set them, create `.vimrc` in your home directory and add them to it:
+These configurations modify some of the default vim settings to provide a better vim experience (at least that what I think). To set them, create `.vimrc` in your home directory and add the code below to it:
 
 ```vim
 " Sets the default vim settings
@@ -256,6 +256,6 @@ source $VIMRUNTIME/defaults.vim
 " Overwrites specified default setting
 set tabstop=4     " Tells vim how many columns a tab counts for
 set shiftwidth=4  " 'Levels of indentation', where a level of indentation is shiftwidth columns of whitespace
-set expandtab     " Ensure that when you hit tab it will actually use spaces
+set expandtab     " Ensure that when you hit tab, it will actually use spaces
 set mouse-=a      " Exchanges the ability to move the cursor with your mouse, with the ability to highlight and copy text
 ```
