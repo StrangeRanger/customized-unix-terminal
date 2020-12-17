@@ -22,7 +22,7 @@ The programs below are ones that I have installed on my Mac via Homebrew. They a
 |---------------|-------------| -----------|
 | [autopep8](https://formulae.brew.sh/formula/autopep8) | Automatically formats Python code to conform to the PEP 8 style guide | This can also be installed via pip |
 | [blackbox](https://formulae.brew.sh/formula/blackbox) | Safely store secrets in Git/Mercurial/Subversion | Commands are prefixed with `blackbox_` |
-| [cloc](https://github.com/AlDanial/cloc) |  cloc counts blank lines, comment lines, and physical lines of source code in many programming languages |
+| [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages |
 | [curl](https://formulae.brew.sh/formula/curl) | Get a file from an HTTP, HTTPS or FTP server |
 | [dos2unix](https://formulae.brew.sh/formula/dos2unix) | Convert text between DOS, UNIX, and Mac formats |
 | [duti](https://formulae.brew.sh/formula/duti) | Set default document and URL handlers |
@@ -88,6 +88,8 @@ Below is a list of "General Custom Aliases" that I use. You will want to place t
         \"\n###\" \
         \"\n    autopep8      - Automatically formats Python code to conform to the PEP 8\" \
         \"\n                    style guide\" \
+        \"\n    cloc          - Counts blank lines, comment lines, and physical lines of\" \
+        \"\n                    source code in many programming languages\" \
         \"\n    curl          - Get a file from an HTTP, HTTPS or FTP server\" \
         \"\n    dos2unix      - Convert text between DOS, UNIX, and Mac formats\" \
         \"\n    duti          - Set default document and URL handlers\" \
