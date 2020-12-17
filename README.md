@@ -22,6 +22,7 @@ The programs below are ones that I have installed on my Mac via Homebrew. They a
 |---------------|-------------| -----------|
 | [autopep8](https://formulae.brew.sh/formula/autopep8) | Automatically formats Python code to conform to the PEP 8 style guide | This can also be installed via pip |
 | [blackbox](https://formulae.brew.sh/formula/blackbox) | Safely store secrets in Git/Mercurial/Subversion | Commands are prefixed with `blackbox_` |
+| [cloc](https://github.com/AlDanial/cloc) |  cloc counts blank lines, comment lines, and physical lines of source code in many programming languages |
 | [curl](https://formulae.brew.sh/formula/curl) | Get a file from an HTTP, HTTPS or FTP server |
 | [dos2unix](https://formulae.brew.sh/formula/dos2unix) | Convert text between DOS, UNIX, and Mac formats |
 | [duti](https://formulae.brew.sh/formula/duti) | Set default document and URL handlers |
@@ -40,6 +41,7 @@ The programs below are ones that I have installed on my Mac via Homebrew. They a
 | [shellcheck](https://formulae.brew.sh/formula/shellcheck) | Shell script analysis tool |
 | [shfmt](https://formulae.brew.sh/formula/shfmt) | Format shell programs |
 | [speedtest-cli](https://formulae.brew.sh/formula/speedtest-cli) | Command line interface for testing internet bandwidth using speedtest.net |
+| [symboliclinker](https://github.com/nickzman/symboliclinker) | A contextual menu plugin & service for Mac OS X that allows users to make symbolic links in the Finder | Not a command |
 | [terminal-notifier](https://formulae.brew.sh/formula/terminal-notifier) | Send macOS User Notifications from the command-line | Not a command |
 | [thefuck](https://formulae.brew.sh/formula/thefuck) | Programatically correct mistyped console commands |
 | [tmux](https://formulae.brew.sh/formula/tmux) | Terminal multiplexer |
@@ -51,7 +53,7 @@ The programs below are ones that I have installed on my Mac via Homebrew. They a
 | [zip](https://formulae.brew.sh/formula/zip) | Compression and file packaging/archive utility |
 | [zsh](https://formulae.brew.sh/formula/zsh) | UNIX shell (command interpreter) | Not a command |
 
-If you'd like to install all the programs listed above, execute the following command in the Terminal: `brew install autopep8 blackbox curl dos2unix duti fd git gitleaks gnupg hstr htop jq mkdocs nmap ncdu pstree pyenv shellcheck shfmt speedtest-cli terminal-notifier thefuck tmux trash tree vim wifi-password wget zip zsh`
+If you'd like to install all the programs listed above, execute the following command in the Terminal: `brew install autopep8 blackbox cloc curl dos2unix duti fd git gitleaks gnupg hstr htop jq mkdocs nmap ncdu pstree pyenv shellcheck shfmt speedtest-cli terminal-notifier thefuck tmux trash tree vim wifi-password wget zip zsh && brew install --cask symboliclinker`
 
 ## Customizing ZSH Shell
 
