@@ -205,6 +205,7 @@ This is a list of all the oh-my-zsh plugins that I use and find useful. Note tha
 
 | Plugins | Description | Other Info |
 |---------|-------------|------------|
+| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command |
 | [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) | Adds colors to man pages | Not a command |
 | [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize) | Cat with syntax highlight support for over 300 supported languages |
 | [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) | Allows you to copy what you are currently typing, via Ctrl + O | Not a command<br>Key Combination: `Ctrl` + `O` |
