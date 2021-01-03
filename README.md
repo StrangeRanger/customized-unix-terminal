@@ -110,7 +110,7 @@ Below is a list of "General Custom Aliases" that I use. You will want to place t
         \"\n    shfmt         - Format shell programs\" \
         \"\n    speedtest-cli - Command line interface for testing internet bandwidth using\" \
         \"\n                    speedtest.net\" \
-        \"\n    thefuck       - Programatically correct mistyped console commands\" \
+        \"\n    fuck          - Programatically correct mistyped console commands\" \
         \"\n    tmux          - Terminal multiplexer\" \
         \"\n    trash         - Move files/folders to the trash\" \
         \"\n    tree          - Display directories as trees (with optional color/HTML output)\" \
