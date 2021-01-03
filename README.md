@@ -197,6 +197,10 @@ Below is a list of "General Custom Aliases" that I use. You will want to place t
 #
 # End of General Custom Aliases
 ################################################################################
+
+# Makes alias 'fuck' available
+# It belongs at the bottom of your '.zshrc'
+eval $(thefuck --alias)
 ```
 
 #### Oh-my-zsh Plugins
