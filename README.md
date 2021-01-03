@@ -209,9 +209,8 @@ This is a list of all the oh-my-zsh plugins that I use and find useful. Note tha
 
 | Plugins | Description | Other Info |
 |---------|-------------|------------|
-| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command |
 | [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) | Adds colors to man pages | Not a command |
-| [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize) | Cat with syntax highlight support for over 300 supported languages |
+| [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize) | Cat with syntax highlight support for over 300 supported languages | Usage:<br>`ccat <file> [files]`<br>`cless [less-options] <file> [files]` |
 | [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) | Allows you to copy what you are currently typing, via Ctrl + O | Not a command<br>Key Combination: `Ctrl` + `O` |
 | [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir) | Copies the path of your working directory |
 | [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile) | Copies the contents of a file |
@@ -220,7 +219,9 @@ This is a list of all the oh-my-zsh plugins that I use and find useful. Note tha
 | [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history) | History aliases |
 | [nmap](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nmap) | Nmap aliases |
 | [osx](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/osx) | Provides a few utilities to make it more enjoyable on macOS |
+| [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify) | cross-platform background notifications for long running commands | Not a command |
 | [urltools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/urltools) | provides two aliases to URL-encode and URL-decode strings |
+| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command |
 
 Note: Keep in mind that some of these plugins have dependencies, so make sure to check for that.
 
