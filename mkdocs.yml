@@ -1,0 +1,43 @@
+site_name: Inspector
+site_description: Not sure, what thought I know it does something
+repo_url: https://github.com/StrangeRanger/inspector
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: blue
+    accent: blue
+  features:
+    - tabs
+    - instant
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      type: date
+  - search
+
+markdown_extensions:
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - admonition
+  - meta
+  - footnotes
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed
+
+nav:
+  - Home: index.md
+  - License: license.md
