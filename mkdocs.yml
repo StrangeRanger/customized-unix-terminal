@@ -1,6 +1,5 @@
-site_name: Inspector
-site_description: Not sure, what thought I know it does something
-repo_url: https://github.com/StrangeRanger/inspector
+site_name: Customized Unix Terminal
+repo_url: https://github.com/StrangeRanger/customized-unix-terminal/tree/master
 
 theme:
   name: material
