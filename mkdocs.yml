@@ -3,6 +3,7 @@ repo_url: https://github.com/StrangeRanger/customized-unix-terminal/tree/master
 
 theme:
   name: material
+  custom_dir: docs/overrides
   palette:
     scheme: slate
     primary: blue
