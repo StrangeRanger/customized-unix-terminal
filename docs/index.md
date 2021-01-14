@@ -1,10 +1,12 @@
 # Customized Unix Terminal
 
+!!! Note
+    Note that this is currently a rough draft version
+
 This repository contains all the configurations that I personally use for the style and behavior of the terminal on my Mac and Linux machines. In addition, I've listed all of the programs that I find useful or good to have at a second's notice that can be installed via the OS's package manager.
 
 | Table of Contents |
 | ----------------- |
-| [Prerequisites](#prerequisite) |
 | [Useful Programs](#useful-programs) |
 | [Customizing ZSH Shell](#customizing-zsh-shell) |
 | [Terminal Profile](#terminal-profile) |
@@ -19,6 +21,7 @@ This repository contains all the configurations that I personally use for the st
     |---------------|-------------| -----------|
     | [autopep8](https://formulae.brew.sh/formula/autopep8) | Automatically formats Python code to conform to the PEP 8 style guide | This can also be installed via pip |
     | [blackbox](https://formulae.brew.sh/formula/blackbox) | Safely store secrets in Git/Mercurial/Subversion | Commands are prefixed with `blackbox_` |
+    | [bat](https://formulae.brew.sh/formula/bat) | Clone of cat(1) with syntax highlighting and Git integration |
     | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages |
     | [curl](https://formulae.brew.sh/formula/curl) | Get a file from an HTTP, HTTPS or FTP server |
     | [dos2unix](https://formulae.brew.sh/formula/dos2unix) | Convert text between DOS, UNIX, and Mac formats |
@@ -27,6 +30,7 @@ This repository contains all the configurations that I personally use for the st
     | [git](https://formulae.brew.sh/formula/git) | Distributed revision control system |
     | [gitleaks](https://formulae.brew.sh/formula/gitleaks) | Audit git repos for secrets |
     | [gnupg](https://formulae.brew.sh/formula/gnupg) | GNU Pretty Good Privacy (PGP) package | Command: `gpg` |
+    | [hub](https://formulae.brew.sh/formula/hub) | A command-line tool that makes git easier to use with GitHub |
     | [hstr](https://formulae.brew.sh/formula/hstr) | Easily view, navigate, sort and use your command history with shell history suggest box |
     | [htop](https://formulae.brew.sh/formula/htop) | Improved top (interactive process viewer) |
     | [jq](https://formulae.brew.sh/formula/jq) | Command-line JSON processor |
@@ -40,30 +44,32 @@ This repository contains all the configurations that I personally use for the st
     | [speedtest-cli](https://formulae.brew.sh/formula/speedtest-cli) | Command line interface for testing internet bandwidth using speedtest.net |
     | [symboliclinker](https://github.com/nickzman/symboliclinker) | A contextual menu plugin & service for Mac OS X that allows users to make symbolic links in the Finder | Not a command |
     | [terminal-notifier](https://formulae.brew.sh/formula/terminal-notifier) | Send macOS User Notifications from the command-line | Not a command |
-    | [thefuck](https://formulae.brew.sh/formula/thefuck) | Programatically correct mistyped console commands |
+    | [thefuck](https://formulae.brew.sh/formula/thefuck) | Programmatically correct mistyped console commands |
+    | [tldr](https://formulae.brew.sh/formula/tldr) | Simplified and community-driven man pages |
     | [tmux](https://formulae.brew.sh/formula/tmux) | Terminal multiplexer |
     | [trash](https://formulae.brew.sh/formula/trash) | Move files/folders to the trash |
     | [tree](https://formulae.brew.sh/formula/tree) | Display directories as trees (with optional color/HTML output) |
     | [vim](https://formulae.brew.sh/formula/vim) | Vi 'workalike' with many additional features |
-    | [wifi-password](https://formulae.brew.sh/formula/wifi-password) | Show the current WiFi network password |
     | [wget](https://formulae.brew.sh/formula/wget) | Internet file retriever |
+    | [wifi-password](https://formulae.brew.sh/formula/wifi-password) | Show the current WiFi network password |
+    | [wtfutil](https://formulae.brew.sh/formula/wtfutil) | Personal information dashboard for your terminal | Requires tap: `brew tap wtfutil/wtfutil` |
     | [zip](https://formulae.brew.sh/formula/zip) | Compression and file packaging/archive utility |
     | [zsh](https://formulae.brew.sh/formula/zsh) | UNIX shell (command interpreter) | Not a command |
 
-    If you'd like to install all the programs listed above, execute the following command in the Terminal: `brew install autopep8 blackbox cloc curl dos2unix duti fd git gitleaks gnupg hstr htop jq mkdocs nmap ncdu pstree pyenv shellcheck shfmt speedtest-cli terminal-notifier thefuck tmux trash tree vim wifi-password wget zip zsh && brew install --cask symboliclinker`
 
 === "Linux (Aptitude)"
-    The programs below are ones that I have installed on my system via the apt package manager (with the exception of autopep8). They are either programs that I actively use or find useful to have whenever I need them.
+    The programs below are ones that I have installed on my Linux machine via the apt package manager. They are either programs that I actively use or find useful to have whenever I need them.
 
     | Programs      | Description | Other Info |
     |---------------|-------------| -----------|
-    | [autopep8](https://pypi.org/project/autopep8/) | Automatically formats Python code to conform to the PEP 8 style guide | Installed via pip |
+    | [bat](https://github.com/sharkdp/bat) | Clone of cat(1) with syntax highlighting and Git integration | Command: `batcat` OR `bat` |
     | [blackbox](https://sourceforge.net/projects/blackboxwm/) | Safely store secrets in Git/Mercurial/Subversion | Commands are prefixed with `blackbox_` |
     | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages |
     | [curl](http://curl.haxx.se) | Get a file from an HTTP, HTTPS or FTP server |
     | [dos2unix](https://waterlan.home.xs4all.nl/dos2unix.html) | Convert text between DOS, UNIX, and Mac formats |
     | [git](https://git-scm.com/) | Distributed revision control system |
     | [gnupg](https://www.gnupg.org/) | GNU Pretty Good Privacy (PGP) package | Command: `gpg` |
+    | [hub](https://github.com/github/hub) | A command-line tool that makes git easier to use with GitHub |
     | [htop](https://hisham.hm/htop/) | A cross-platform interactive process viewer |
     | [jq](https://github.com/stedolan/jq) | Command-line JSON processor |
     | [mkdocs](https://www.mkdocs.org/) | Project documentation with Markdown |
@@ -72,6 +78,7 @@ This repository contains all the configurations that I personally use for the st
     | [shellcheck](https://www.shellcheck.net/) | Shell script analysis tool |
     | [speedtest-cli](https://github.com/sivel/speedtest-cli/) | Command line interface for testing internet bandwidth using speedtest.net |
     | [thefuck](https://github.com/nvbn/thefuck) | Programmatically correct mistyped console commands |
+    | [tldr](https://github.com/tldr-pages/tldr) | Simplified and community-driven man pages |
     | [tmux](https://tmux.github.io/) | Terminal multiplexer |
     | [trash-cli](https://github.com/andreafrancia/trash-cli) | Move files/folders to the trash | Command: `trash` |
     | [tree](http://mama.indstate.edu/users/ice/tree/) | Display directories as trees (with optional color/HTML output) |
@@ -80,7 +87,16 @@ This repository contains all the configurations that I personally use for the st
     | [zip](http://www.info-zip.org/Zip.html) | Compression and file packaging/archive utility |
     | [zsh](https://www.zsh.org/) | UNIX shell (command interpreter) | Not a command |
 
-    If you'd like to install all the programs listed above, execute the following command in the Terminal: `sudo apt update && sudo apt install blackbox cloc curl dos2unix git gnupg htop jq mkdocs nmap ncdu shellcheck speedtest-cli thefuck tmux trash-cli tree vim wget zip python3 python3-pip && pip3 install autopep8`
+=== "Any (Pip)"
+    | Programs      | Description | Other Info |
+    |---------------|-------------| -----------|
+    | [autopep8](https://pypi.org/project/autopep8/) | Automatically formats Python code to conform to the PEP 8 style guide |
+    | [black](https://pypi.org/project/black/) | The uncompromising Python code formatter |
+
+=== "Any (Git)"
+    | Programs      | Description | Other Info |
+    |---------------|-------------| -----------|
+    | [.tmux](https://github.com/gpakosz/.tmux) | 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️ |
 
 ## Customizing ZSH Shell
 
@@ -340,7 +356,6 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | Plugins | Description | Other Info |
     |---------|-------------|------------|
     | [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) | Adds colors to man pages | Not a command |
-    | [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize) | Cat with syntax highlight support for over 300 supported languages | Usage:<br>`ccat <file> [files]`<br>`cless [less-options] <file> [files]` |
     | [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) | Allows you to copy what you are currently typing, via Ctrl + O | Not a command<br>Key Combination: `Ctrl` + `O` |
     | [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir) | Copies the path of your working directory |
     | [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile) | Copies the contents of a file |
@@ -352,6 +367,7 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify) | cross-platform background notifications for long running commands | Not a command |
     | [urltools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/urltools) | provides two aliases to URL-encode and URL-decode strings |
     | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command |
+    | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Fish shell like syntax highlighting for Zsh | Not a command<br>To use this, you need to clone the repo: follow the instructions [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)|
 
     Note: Keep in mind that some of these plugins have dependencies, so make sure to check for that.
 
@@ -361,7 +377,6 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | Plugins | Description | Other Info |
     |---------|-------------|------------|
     | [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) | Adds colors to man pages | Not a command |
-    | [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize) | Cat with syntax highlight support for over 300 supported languages | Usage:<br>`ccat <file> [files]`<br>`cless [less-options] <file> [files]` |
     | [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) | Allows you to copy what you are currently typing, via Ctrl + O | Not a command<br>Key Combination: `Ctrl` + `O` |
     | [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir) | Copies the path of your working directory |
     | [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile) | Copies the contents of a file |
@@ -372,6 +387,7 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify) | cross-platform background notifications for long running commands | Not a command |
     | [urltools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/urltools) | provides two aliases to URL-encode and URL-decode strings |
     | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command |
+    | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Fish shell like syntax highlighting for Zsh | Not a command<br>To use this, you need to clone the repo: follow the instructions [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)|
 
     Note: Keep in mind that some of these plugins have dependencies, so make sure to check for that.
 
@@ -411,15 +427,97 @@ After setting up the new LSCOLORS, you will need to modify the terminal profile 
 
 ## Vim Resource File
 
-These configurations modify some of the default vim settings to provide a better vim experience (at least that what I think). To set them, create `.vimrc` in your home directory and add the code below to it:
+### With Vundle
+
+These configurations modify the behavior and look of vim. To use all of the configurations listed below, you will need to first [install Vundle](https://github.com/VundleVim/Vundle.vim). Once Vundle is installed, place the code below into your `.vimrc` located at your home directory. Then to install the plugins, open `.vimrc` with vim, then enter `:source %` and `:PluginInstall` (separately). When using `:source %`, you can ignore any errors that might occur, as these will be cause by the fact that the plugins aren't installed yet.
 
 ```vim
-" Sets the default vim settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" [ Vundle configurations ]
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'luochen1990/rainbow'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'morhetz/gruvbox'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" [ Non-Vundle related configurations ]
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set's the default vim settings
 source $VIMRUNTIME/defaults.vim
 
 " Overwrites specified default setting
 set tabstop=4     " Tells vim how many columns a tab counts for
-set shiftwidth=4  " 'Levels of indentation', where a level of indentation is shiftwidth columns of whitespace
-set expandtab     " Ensure that when you hit tab, it will actually use spaces
-set mouse-=a      " Exchanges the ability to move the cursor with your mouse, with the ability to highlight and copy text
+set shiftwidth=4  " 'Levels of indentation', where a level of indentation is
+                  " shiftwidth columns of whitespace
+set expandtab     " Ensure that when you hit tab it will actually use spaces
+set mouse-=a      " Exchanges the ability to move the cursor with your mouse,
+                  " with the ability to highlight and copy text
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" [ Vundle plugin configurations ]
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Plugin: rainbow
+let g:rainbow_active = 1
+" Plugin: lightline
+set laststatus=2
+set noshowmode
+" Plugin: gruvbox
+colorscheme gruvbox
+set bg=dark
+```
+
+### Without Vundle
+
+These configurations modify some of the default vim settings to provide a better vim experience (at least that what I think). To set them, create `.vimrc` in your home directory and add the code below to it.
+
+```vim
+" Set's the default vim settings
+source $VIMRUNTIME/defaults.vim
+
+" Overwrites specified default setting
+set tabstop=4     " Tells vim how many columns a tab counts for
+set shiftwidth=4  " 'Levels of indentation', where a level of indentation is
+                  " shiftwidth columns of whitespace
+set expandtab     " Ensure that when you hit tab it will actually use spaces
+set mouse-=a      " Exchanges the ability to move the cursor with your mouse,
+                  " with the ability to highlight and copy text
 ```
