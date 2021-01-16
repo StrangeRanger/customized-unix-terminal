@@ -1,131 +1,176 @@
 # Customized Unix Terminal
 
-!!! Note
-    Note that this is currently a rough draft version
-
-This repository contains all the configurations that I personally use for the style and behavior of the terminal on my Mac and Linux machines. In addition, I've listed all of the programs that I find useful or good to have at a second's notice that can be installed via the OS's package manager.
+This repository contains configurations that I use for the terminal's style and behavior, both on my Mac and Linux devices. I've also listed all of the programs that I find useful or good to have at a second's notice, installable via a package manager.
 
 | Table of Contents |
-| ----------------- |
+|--------------------|
 | [Useful Programs](#useful-programs) |
 | [Customizing ZSH Shell](#customizing-zsh-shell) |
-| [Terminal Profile](#terminal-profile) |
 | [Vim Resource File](#vim-resource-file) |
+| [Terminal Profile](#terminal-profile) |
 
 ## Useful Programs
 
-=== "macOS (Homebrew)"
-    The programs below are ones that I have installed on my Mac via Homebrew. They are either programs that I actively use or find useful to have whenever I need them.
+Below is a list of programs I either have installed on my system or find very useful to know about. All the programs are broken up by what operating system they can be installed on via 4 main methods: the OS's native package manager (or Homebrew in the case of mac), pip, gem, or git. The git method is specific to when the documentation doesn't specify a particular package manager but instead mentions cloning the repo. I do not list any programs that are required to be installed via binary files. This means that if a program can be installed on macOS via Homebrew but can only be installed on Linux via the binary files, I will not list that program for Linux.
 
-    | Programs      | Description | Other Info |
-    |---------------|-------------| -----------|
-    | [autopep8](https://formulae.brew.sh/formula/autopep8) | Automatically formats Python code to conform to the PEP 8 style guide | This can also be installed via pip |
-    | [blackbox](https://formulae.brew.sh/formula/blackbox) | Safely store secrets in Git/Mercurial/Subversion | Commands are prefixed with `blackbox_` |
-    | [bat](https://formulae.brew.sh/formula/bat) | Clone of cat(1) with syntax highlighting and Git integration |
-    | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages |
-    | [curl](https://formulae.brew.sh/formula/curl) | Get a file from an HTTP, HTTPS or FTP server |
-    | [dos2unix](https://formulae.brew.sh/formula/dos2unix) | Convert text between DOS, UNIX, and Mac formats |
-    | [duti](https://formulae.brew.sh/formula/duti) | Set default document and URL handlers |
-    | [fd](https://formulae.brew.sh/formula/fd) | A simple, fast and user-friendly alternative to find |
-    | [git](https://formulae.brew.sh/formula/git) | Distributed revision control system |
-    | [gitleaks](https://formulae.brew.sh/formula/gitleaks) | Audit git repos for secrets |
-    | [gnupg](https://formulae.brew.sh/formula/gnupg) | GNU Pretty Good Privacy (PGP) package | Command: `gpg` |
-    | [hub](https://formulae.brew.sh/formula/hub) | A command-line tool that makes git easier to use with GitHub |
-    | [hstr](https://formulae.brew.sh/formula/hstr) | Easily view, navigate, sort and use your command history with shell history suggest box |
-    | [htop](https://formulae.brew.sh/formula/htop) | Improved top (interactive process viewer) |
-    | [jq](https://formulae.brew.sh/formula/jq) | Command-line JSON processor |
-    | [mkdocs](https://formulae.brew.sh/formula/mkdocs) | Project documentation with Markdown |
-    | [nmap](https://formulae.brew.sh/formula/nmap) | Network exploration tool and security / port scanner |
-    | [ncdu](https://formulae.brew.sh/formula/ncdu) | NCurses Disk Usage |
-    | [pstree](https://formulae.brew.sh/formula/pstree) | List processes as a tree |
-    | [pyenv](https://formulae.brew.sh/formula/pyenv) | Python version management |
-    | [shellcheck](https://formulae.brew.sh/formula/shellcheck) | Shell script analysis tool |
-    | [shfmt](https://formulae.brew.sh/formula/shfmt) | Format shell programs |
-    | [speedtest-cli](https://formulae.brew.sh/formula/speedtest-cli) | Command line interface for testing internet bandwidth using speedtest.net |
-    | [symboliclinker](https://github.com/nickzman/symboliclinker) | A contextual menu plugin & service for Mac OS X that allows users to make symbolic links in the Finder | Not a command |
-    | [terminal-notifier](https://formulae.brew.sh/formula/terminal-notifier) | Send macOS User Notifications from the command-line | Not a command |
-    | [thefuck](https://formulae.brew.sh/formula/thefuck) | Programmatically correct mistyped console commands |
-    | [tldr](https://formulae.brew.sh/formula/tldr) | Simplified and community-driven man pages |
-    | [tmux](https://formulae.brew.sh/formula/tmux) | Terminal multiplexer |
-    | [trash](https://formulae.brew.sh/formula/trash) | Move files/folders to the trash |
-    | [tree](https://formulae.brew.sh/formula/tree) | Display directories as trees (with optional color/HTML output) |
-    | [vim](https://formulae.brew.sh/formula/vim) | Vi 'workalike' with many additional features |
-    | [wget](https://formulae.brew.sh/formula/wget) | Internet file retriever |
-    | [wifi-password](https://formulae.brew.sh/formula/wifi-password) | Show the current WiFi network password |
-    | [wtfutil](https://formulae.brew.sh/formula/wtfutil) | Personal information dashboard for your terminal | Requires tap: `brew tap wtfutil/wtfutil` |
-    | [zip](https://formulae.brew.sh/formula/zip) | Compression and file packaging/archive utility |
-    | [zsh](https://formulae.brew.sh/formula/zsh) | UNIX shell (command interpreter) | Not a command |
+=== "macOS"
+
+    === "Homebrew"
+        | Programs      | Description | Program Category | Other |
+        |---------------|-------------|------------------|-------|
+        | [autopep8](https://formulae.brew.sh/formula/autopep8) | Automatically formats Python code to conform to the PEP 8 style guide | Language formatter |
+        | [blackbox](https://formulae.brew.sh/formula/blackbox) | Safely store secrets in Git/Mercurial/Subversion | ... | Commands are prefixed with `blackbox_` |
+        | [bat](https://formulae.brew.sh/formula/bat) | Clone of cat(1) with syntax highlighting and Git integration | ... | ... |
+        | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages | ... | ... |
+        | [curl](https://formulae.brew.sh/formula/curl) | Get a file from an HTTP, HTTPS or FTP server | ... | ... |
+        | [dos2unix](https://formulae.brew.sh/formula/dos2unix) | Convert text between DOS, UNIX, and Mac formats | ... | ... |
+        | [duti](https://formulae.brew.sh/formula/duti) | Set default document and URL handlers | ... | ... |
+        | [fd](https://formulae.brew.sh/formula/fd) | A simple, fast and user-friendly alternative to find | ... | ... |
+        | [git](https://formulae.brew.sh/formula/git) | Distributed revision control system | ... | ... |
+        | [gitleaks](https://formulae.brew.sh/formula/gitleaks) | Audit git repos for secrets | ... | ... |
+        | [git-extra](https://formulae.brew.sh/formula/git-extras) | GIT utilities | ... | ... |
+        | [gnupg](https://formulae.brew.sh/formula/gnupg) | GNU Pretty Good Privacy (PGP) package | ... | Command: `gpg` |
+        | [hub](https://formulae.brew.sh/formula/hub) | A command-line tool that makes git easier to use with GitHub | ... | ... |
+        | [Homebrew Command Not Found](https://github.com/Homebrew/homebrew-command-not-found) | Ubuntu’s command-not-found equivalent for Homebrew on macOS | ... | Not a command |
+        | [hstr](https://formulae.brew.sh/formula/hstr) | Easily view, navigate, sort and use your command history with shell history suggest box | ... | ... |
+        | [htop](https://formulae.brew.sh/formula/htop) | Improved top (interactive process viewer) | ... | ... |
+        | [httpie](https://formulae.brew.sh/formula/httpie) | User-friendly cURL replacement (command-line HTTP client) | ... | Command: `http` |
+        | [jq](https://formulae.brew.sh/formula/jq) | Command-line JSON processor | ... | ... |
+        | [lynis](https://formulae.brew.sh/formula/lynis) | Security and system auditing tool to harden systems | Security | ... |
+        | [mkdocs](https://formulae.brew.sh/formula/mkdocs) | Project documentation with Markdown | ... | ... |
+        | [nmap](https://formulae.brew.sh/formula/nmap) | Network exploration tool and security / port scanner | ... | ... |
+        | [ncdu](https://formulae.brew.sh/formula/ncdu) | NCurses Disk Usage | ... | ... |
+        | [pstree](https://formulae.brew.sh/formula/pstree) | List processes as a tree | ... | ... |
+        | [pyenv](https://formulae.brew.sh/formula/pyenv) | Python version management | ... | ... |
+        | [shellcheck](https://formulae.brew.sh/formula/shellcheck) | Shell script analysis tool | ... | ... |
+        | [shfmt](https://formulae.brew.sh/formula/shfmt) | Format shell programs | ... | ... |
+        | [speedtest-cli](https://formulae.brew.sh/formula/speedtest-cli) | Command line interface for testing internet bandwidth using speedtest.net | ... | ... |
+        | [symboliclinker](https://github.com/nickzman/symboliclinker) | A contextual menu plugin & service for Mac OS X that allows users to make symbolic links in the Finder | ... | Not a command |
+        | [terminal-notifier](https://formulae.brew.sh/formula/terminal-notifier) | Send macOS User Notifications from the command-line | ... | Not a command |
+        | [thefuck](https://formulae.brew.sh/formula/thefuck) | Programmatically correct mistyped console commands | ... | ... |
+        | [tldr](https://formulae.brew.sh/formula/tldr) | Simplified and community-driven man pages | ... | ... |
+        | [tmux](https://formulae.brew.sh/formula/tmux) | Terminal multiplexer | ... | ... |
+        | [trash](https://formulae.brew.sh/formula/trash) | Move files/folders to the trash | ... | ... |
+        | [tree](https://formulae.brew.sh/formula/tree) | Display directories as trees (with optional color/HTML output) | ... | ... |
+        | [vim](https://formulae.brew.sh/formula/vim) | Vi 'workalike' with many additional features | ... | ... |
+        | [wget](https://formulae.brew.sh/formula/wget) | Internet file retriever | ... | ... |
+        | [wifi-password](https://formulae.brew.sh/formula/wifi-password) | Show the current WiFi network password | ... | ... |
+        | [wtfutil](https://formulae.brew.sh/formula/wtfutil) | Personal information dashboard for your terminal | ... | Requires tap: `brew tap wtfutil/wtfutil` |
+        | [zip](https://formulae.brew.sh/formula/zip) | Compression and file packaging/archive utility | ... | ... |
+        | [zsh](https://formulae.brew.sh/formula/zsh) | UNIX shell (command interpreter) | ... | Not a command |
+
+    === "Pip"
+        | Programs      | Description | Program Category | Other Info |
+        |---------------|-------------|------------------|------------|
+        | [autopep8](https://pypi.org/project/autopep8/) | Automatically formats Python code to conform to the PEP 8 style guide | ... | ... |
+        | [black](https://pypi.org/project/black/) | The uncompromising Python code formatter | ... | ... |
+        | [gitsome](https://pypi.org/project/gitsome/) | A Supercharged Git/Shell Autocompleter with GitHub Integration | ... | ... |
+
+    === "Gem"
+        | Programs      | Description | Program Category | Other Info |
+        |---------------|-------------|------------------|------------|
+        | [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator) | Automatically generate changelog from your tags, issues, labels, and pull requests on GitHub | ... | ... |
 
 
-=== "Linux (Aptitude)"
-    The programs below are ones that I have installed on my Linux machine via the apt package manager. They are either programs that I actively use or find useful to have whenever I need them.
+    === "Git"
+        | Programs      | Description | Program Category | Other Info |
+        |---------------|-------------|------------------|------------|
+        | [.tmux](https://github.com/gpakosz/.tmux) | 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️ | ... | ... |
 
-    | Programs      | Description | Other Info |
-    |---------------|-------------| -----------|
-    | [bat](https://github.com/sharkdp/bat) | Clone of cat(1) with syntax highlighting and Git integration | Command: `batcat` OR `bat` |
-    | [blackbox](https://sourceforge.net/projects/blackboxwm/) | Safely store secrets in Git/Mercurial/Subversion | Commands are prefixed with `blackbox_` |
-    | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages |
-    | [curl](http://curl.haxx.se) | Get a file from an HTTP, HTTPS or FTP server |
-    | [dos2unix](https://waterlan.home.xs4all.nl/dos2unix.html) | Convert text between DOS, UNIX, and Mac formats |
-    | [git](https://git-scm.com/) | Distributed revision control system |
-    | [gnupg](https://www.gnupg.org/) | GNU Pretty Good Privacy (PGP) package | Command: `gpg` |
-    | [hub](https://github.com/github/hub) | A command-line tool that makes git easier to use with GitHub |
-    | [htop](https://hisham.hm/htop/) | A cross-platform interactive process viewer |
-    | [jq](https://github.com/stedolan/jq) | Command-line JSON processor |
-    | [mkdocs](https://www.mkdocs.org/) | Project documentation with Markdown |
-    | [nmap](https://nmap.org/) | Network exploration tool and security / port scanner |
-    | [ncdu](http://dev.yorhel.nl/ncdu/) | NCurses Disk Usage |
-    | [shellcheck](https://www.shellcheck.net/) | Shell script analysis tool |
-    | [speedtest-cli](https://github.com/sivel/speedtest-cli/) | Command line interface for testing internet bandwidth using speedtest.net |
-    | [thefuck](https://github.com/nvbn/thefuck) | Programmatically correct mistyped console commands |
-    | [tldr](https://github.com/tldr-pages/tldr) | Simplified and community-driven man pages |
-    | [tmux](https://tmux.github.io/) | Terminal multiplexer |
-    | [trash-cli](https://github.com/andreafrancia/trash-cli) | Move files/folders to the trash | Command: `trash` |
-    | [tree](http://mama.indstate.edu/users/ice/tree/) | Display directories as trees (with optional color/HTML output) |
-    | [vim](https://www.vim.org/) | Vi 'workalike' with many additional features |
-    | [wget](https://www.gnu.org/software/wget/) | Internet file retriever |
-    | [zip](http://www.info-zip.org/Zip.html) | Compression and file packaging/archive utility |
-    | [zsh](https://www.zsh.org/) | UNIX shell (command interpreter) | Not a command |
 
-=== "Any (Pip)"
-    | Programs      | Description | Other Info |
-    |---------------|-------------| -----------|
-    | [autopep8](https://pypi.org/project/autopep8/) | Automatically formats Python code to conform to the PEP 8 style guide |
-    | [black](https://pypi.org/project/black/) | The uncompromising Python code formatter |
 
-=== "Any (Git)"
-    | Programs      | Description | Other Info |
-    |---------------|-------------| -----------|
-    | [.tmux](https://github.com/gpakosz/.tmux) | 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️ |
+=== "Linux"
+
+    === "Native Package Manager"
+        | Programs      | Description | Program Category | Install Method | Other |
+        |---------------|-------------|------------------|----------------|-------|
+        | [bat](https://github.com/sharkdp/bat) | Clone of cat(1) with syntax highlighting and Git integration | ... | Command: `batcat` OR `bat` |
+        | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages | ... | ... |
+        | [curl](http://curl.haxx.se) | Get a file from an HTTP, HTTPS or FTP server | ... | ... |
+        | [dos2unix](https://waterlan.home.xs4all.nl/dos2unix.html) | Convert text between DOS, UNIX, and Mac formats | ... | ... |
+        | [git](https://git-scm.com/) | Distributed revision control system | ... | ... |
+        | [git-extra](https://github.com/tj/git-extras) | GIT utilities | ... | ... |
+        | [gnupg](https://www.gnupg.org/) | GNU Pretty Good Privacy (PGP) package | ... | Command: `gpg` |
+        | [hub](https://github.com/github/hub) | A command-line tool that makes git easier to use with GitHub | ... | ... |
+        | [htop](https://hisham.hm/htop/) | A cross-platform interactive process viewer | ... | ... |
+        | [jq](https://github.com/stedolan/jq) | Command-line JSON processor | ... | ... |
+        | [lynis](https://github.com/CISOfy/lynis) | Security and system auditing tool to harden systems | Security | Git (recommended) |
+        | [mkdocs](https://www.mkdocs.org/) | Project documentation with Markdown | ... | ... |
+        | [nmap](https://nmap.org/) | Network exploration tool and security / port scanner | ... | ... |
+        | [ncdu](http://dev.yorhel.nl/ncdu/) | NCurses Disk Usage | ... | ... |
+        | [shellcheck](https://www.shellcheck.net/) | Shell script analysis tool | ... | ... |
+        | [speedtest-cli](https://github.com/sivel/speedtest-cli/) | Command line interface for testing internet bandwidth using speedtest.net | ... | ... |
+        | [thefuck](https://github.com/nvbn/thefuck) | Programmatically correct mistyped console commands | ... | ... |
+        | [tldr](https://github.com/tldr-pages/tldr) | Simplified and community-driven man pages | ... | ... |
+        | [tmux](https://tmux.github.io/) | Terminal multiplexer | ... | ... |
+        | [trash-cli](https://github.com/andreafrancia/trash-cli) | Move files/folders to the trash | ... | Command: `trash` |
+        | [tree](http://mama.indstate.edu/users/ice/tree/) | Display directories as trees (with optional color/HTML output) | ... | ... |
+        | [vim](https://www.vim.org/) | Vi 'workalike' with many additional features | ... | ... |
+        | [wget](https://www.gnu.org/software/wget/) | Internet file retriever |
+        | [zip](http://www.info-zip.org/Zip.html) | Compression and file packaging/archive utility | ... | ... |
+        | [zsh](https://www.zsh.org/) | UNIX shell (command interpreter) | Not a command | ... | ... |
+
+    === "Pip"
+        | Programs      | Description | Program Category | Other Info |
+        |---------------|-------------|------------------|------------|
+        | [autopep8](https://pypi.org/project/autopep8/) | Automatically formats Python code to conform to the PEP 8 style guide | ... | ... |
+        | [black](https://pypi.org/project/black/) | The uncompromising Python code formatter | ... | ... |
+        | [gitsome](https://pypi.org/project/gitsome/) | A Supercharged Git/Shell Autocompleter with GitHub Integration | ... | ... |
+        | [blackbox](https://github.com/StackExchange/blackbox) | Safely store secrets in Git/Mercurial/Subversion | ... | Commands are prefixed with `blackbox_` |
+
+    === "Gem"
+        | Programs      | Description | Program Category | Other Info |
+        |---------------|-------------|------------------|------------|
+        | [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator) | Automatically generate changelog from your tags, issues, labels, and pull requests on GitHub | ... | ... |
+
+    === "Git"
+        | Programs      | Description | Program Category | Other Info |
+        |---------------|-------------|------------------|------------|
+        | [.tmux](https://github.com/gpakosz/.tmux) | 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️ | ... | ... |
 
 ## Customizing ZSH Shell
 
 ### Framework
 
-The framework that I use and find is the best is [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh). It's one of the most popular zsh frameworks available and made it's first commit on August 23, 2009.
+The framework that I use and find to be the best is [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh). It's one of the most popular zsh frameworks available and made it's first commit on August 23, 2009. So it's had many years to evolve and perfect itself.
 
 ### Shell Theme
 
-The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://github.com/romkatv/powerlevel10k). It's highly configurable, and it's a theme that I very much recommend.
+The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://github.com/romkatv/powerlevel10k). It's highly configurable and very appealing to the eyes.
 
 ### ZSH Resource File
 
 #### Custom Aliases
 
 === "macOS"
-    Below is a list of "General Custom Aliases" that I use. You will want to place the code below at the bottom of your zshrc file, located:  `~/.zshrc`
+    Below is a list of "General Aliases". They are broken up into two groups. The first group is the regular command alias. The second group contains aliases that are meant to provide a list of useful commands, which can be hard to remember due to the sheer number of commands. All of the commands presented in the [Useful Programs](#useful-programs) section are in the second group of the aliases. To use them, you will want to add the code below to the bottom of your `.zshrc` file located in your home directory.
 
     ```bash
     ################################################################################
     #
-    # [ General Custom Aliases ]
+    # [ General Aliases ]
     #
-    ####
+    ###
+        ########################################################################
+        #
+        # [ Group 1 ]
+
         alias edisk="cd /Volumes && ll"
         alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
         alias batterylife="pmset -g batt"
         alias batterycycles="system_profiler SPPowerDataType | grep 'Cycle Count' | awk '{print $3}'"
-        # Prints out a bunch of useful commands that I might easily forget about
+
+        #
+        # End of [ Group 1 ]
+        ########################################################################
+
+        ########################################################################
+        # Due to the sheer number of commands, it's impossible to remember them
+        # all. So the aliases below are supposed to make it easier to remember
+        # by allowing you to print out a list of useful commands.
+        #
+        # [ Group 2 ]
+
         alias listtools="echo -e \
             \"\n########################################\" \
             \"\n# Homebrew installed commands\" \
@@ -188,7 +233,6 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
             \"\n    listtools_nmap - Lists nmap aliases\" \
             \"\n    listtools_osx  - Lists osx aliases\" \
             \"\n\""
-        alias listtools_git="echo \"https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases\""
         alias listtools_nmap="echo -e \
             \"\n########################################\" \
             \"\n# Nmap aliases\" \
@@ -237,13 +281,17 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
             \"\n    rmdsstore   - Remove .DS_Store files recursively in a directory\" \
             \"\n    btrestart   - Restart the Bluetooth daemon\" \
             \"\n\""
-    ####
+
+        #
+        # End of [ Group  2]
+        ########################################################################
+    ###
     #
-    # End of General Custom Aliases
+    # End of [ General Aliases ]
     ################################################################################
 
     # Makes alias 'fuck' available
-    # It belongs at the bottom of your '.zshrc'
+    # It SHOULD be placed at the bottom of your '.zshrc'
     eval $(thefuck --alias)
     ```
 
@@ -255,11 +303,25 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     #
     # [ General Custom Aliases ]
     #
-    ####
+    ###
+        ########################################################################
+        #
+        # [ Group 1 ]
+
         alias updateall="sudo apt update && sudo apt upgrade -y"
         alias trm="trash"
-        # Prints out a bunch of useful commands that I might easily forget about
-        # TODO: add blackbox commands
+
+        #
+        # End of [ Group 1 ]
+        ########################################################################
+
+        ########################################################################
+        # Due to the sheer number of commands, it's impossible to remember them
+        # all. So the aliases below are supposed to make it easier to remember
+        # by allowing you to print out a list of useful commands.
+        #
+        # [ Group 2 ]
+
         alias listtools="echo -e \
             \"\n########################################\" \
             \"\n# Homebrew installed commands\" \
@@ -312,7 +374,6 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
             \"\n    listtools_git  - Lists a link to all of the git aliases (will change in future)\" \
             \"\n    listtools_nmap - Lists nmap aliases\" \
             \"\n\""
-        alias listtools_git="echo \"https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases\""
         alias listtools_nmap="echo -e \
             \"\n########################################\" \
             \"\n# Nmap aliases\" \
@@ -338,20 +399,24 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
             \"\n                                 to only HTTP and HTTPS ports doesn't look so attacking\" \
             \"\n    nmap_ping_scan             - ICMP scan for active hosts\" \
             \"\n\""
-    ####
+
+        #
+        # End of [ Group  2]
+        ########################################################################
+    ###
     #
-    # End of General Custom Aliases
+    # End of [ General Aliases ]
     ################################################################################
 
     # Makes alias 'fuck' available
-    # It belongs at the bottom of your '.zshrc'
+    # It SHOULD be placed at the bottom of your '.zshrc'
     eval $(thefuck --alias)
     ```
 
 #### Oh-my-zsh Plugins
 
 === "macOS"
-    This is a list of all the oh-my-zsh plugins that I use and find useful. Note that all of the commands provided by these plugins are also in the `listtools` alias provided above.
+    This is a list of all the oh-my-zsh plugins that I use and find to provide useful functionality. Note that all of the commands provided by these plugins are also in the `listtools` alias provided above.
 
     | Plugins | Description | Other Info |
     |---------|-------------|------------|
@@ -359,7 +424,6 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) | Allows you to copy what you are currently typing, via Ctrl + O | Not a command<br>Key Combination: `Ctrl` + `O` |
     | [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir) | Copies the path of your working directory |
     | [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile) | Copies the contents of a file |
-    | [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) | Git aliases |
     | [gpg-agents](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gpg-agent) | Enables GPG's gpg-agent if it is not running | Not a command |
     | [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history) | History aliases |
     | [nmap](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nmap) | Nmap aliases |
@@ -372,7 +436,7 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     Note: Keep in mind that some of these plugins have dependencies, so make sure to check for that.
 
 === "Linux"
-    This is a list of all the oh-my-zsh plugins that I use and find useful. Note that all of the commands provided by these plugins are also in the `listtools` alias provided above.
+    This is a list of all the oh-my-zsh plugins that I use and find to provide useful functionality. Note that all of the commands provided by these plugins are also in the `listtools` alias provided above.
 
     | Plugins | Description | Other Info |
     |---------|-------------|------------|
@@ -380,7 +444,6 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) | Allows you to copy what you are currently typing, via Ctrl + O | Not a command<br>Key Combination: `Ctrl` + `O` |
     | [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir) | Copies the path of your working directory |
     | [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile) | Copies the contents of a file |
-    | [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) | Git aliases |
     | [gpg-agents](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gpg-agent) | Enables GPG's gpg-agent if it is not running | Not a command |
     | [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history) | History aliases |
     | [nmap](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nmap) | Nmap aliases |
@@ -391,45 +454,36 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
 
     Note: Keep in mind that some of these plugins have dependencies, so make sure to check for that.
 
-### Modifying LSCOLOR
+### Modifying LSCOLORS
 
-In `~/.oh-my-zsh/lib/theme-and-appearance.zsh`, comment out the line that begins with `export LSCOLORS=`, then place `export LSCOLORS="exgxfxDxcxegDhabagacaD"` on the line below it.
+LSCOLORS is what determines the color of the files and directories in the terminal. To apply my custom LSCOLORS, you'll first need to open `~/.oh-my-zsh/lib/theme-and-appearance.zsh`. With the file open, find and comment out the line beginning with `export LSCOLORS=`, then place `export LSCOLORS="exgxfxDxcxegDhabagacaD"` on the line below it.
+
+You can optionally modify the terminal profile ANSI-colors to change the shading of the colors to your liking. If you are using macOS, you can alternatively import my personal terminal profile.
 
 Below is a key to help you understand what the values of the LSCOLORS variable mean:
 
-| Letter Code | Type | Text Color | Foreground/Background Color|
+| Letter Code | Type | Text Color | Foreground/Background Color |
 | -- | -- | -- | -- |
 | ex | Directories | blue | *default* |
 | gx | Symbolic link | cyan | *default* |
 | fx | Socket | magenta | *default* |
 | Dx | Pipe | yellow | *default* |
 | cx | Executable | green | *default* |
-| eg | Block special | green | cyan
+| eg | Block special | green | cyan |
 | Dh | Character special | yellow | grey |
 | ab | Executable with setuid bit set | black | red |
 | ag | Executable with setgid bit set | black | cyan |
 | ac | Directory writeable to others (with a sticky bit) | black | green |
 | aD | Directory writeable to others (without sticky bit) | black | yellow |
 
-After setting up the new LSCOLORS, you will need to modify the terminal profile ANSI-colors to your liking or import my personal terminal profile (instructions below).
-
-## Terminal Profile
-
-=== "macOS"
-    My custom terminal profile is a modified version of the Basic Terminal profile in Catalina. To add it to your list of profiles and make it your default, follow the instructions below:
-
-    1. Open the Terminal application.
-    2. Click on Preferences... > Profiles > *the gear at the bottom left of the window* > Import... > *locate and click on 'Basic (Modified).terminal'*
-    3. Click on the new terminal profile, then press the "Default" button at the window's bottom.
-
-=== "Linux"
-    N/A
-
 ## Vim Resource File
 
-### With Vundle
+### With Vundle Plugins
 
-These configurations modify the behavior and look of vim. To use all of the configurations listed below, you will need to first [install Vundle](https://github.com/VundleVim/Vundle.vim). Once Vundle is installed, place the code below into your `.vimrc` located at your home directory. Then to install the plugins, open `.vimrc` with vim, then enter `:source %` and `:PluginInstall` (separately). When using `:source %`, you can ignore any errors that might occur, as these will be cause by the fact that the plugins aren't installed yet.
+These configurations modify the behavior and look of vim. To make use of all the configurations listed below, you will need to first [install Vundle](https://github.com/VundleVim/Vundle.vim). Once installed, place the code below into your `.vimrc` located at your home directory. Then to install the plugins, open `.vimrc` with vim, then enter `:source %` and `:PluginInstall` (separately). This should trigger Vundle to start installing the plugins specified in the configurations below.
+
+!!! Note
+	When using `:source %`, you can ignore any errors that might occur, as these will because the plugins aren't installed yet.
 
 ```vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -484,8 +538,8 @@ source $VIMRUNTIME/defaults.vim
 " Overwrites specified default setting
 set tabstop=4     " Tells vim how many columns a tab counts for
 set shiftwidth=4  " 'Levels of indentation', where a level of indentation is
-                  " shiftwidth columns of whitespace
-set expandtab     " Ensure that when you hit tab it will actually use spaces
+                  " shift width columns of whitespace
+set expandtab     " Ensure that when you hit tab, it will actually use spaces
 set mouse-=a      " Exchanges the ability to move the cursor with your mouse,
                   " with the ability to highlight and copy text
 
@@ -505,9 +559,9 @@ colorscheme gruvbox
 set bg=dark
 ```
 
-### Without Vundle
+### Without Vundle Plugins
 
-These configurations modify some of the default vim settings to provide a better vim experience (at least that what I think). To set them, create `.vimrc` in your home directory and add the code below to it.
+Suppose you rather not use all the configurations provided by Vundle. In that case, you can just place the below configurations modify into your`.vimrc`, located at your home directory. These configurations simply change some of the default vim settings while leaving the rest as is.
 
 ```vim
 " Set's the default vim settings
@@ -516,8 +570,20 @@ source $VIMRUNTIME/defaults.vim
 " Overwrites specified default setting
 set tabstop=4     " Tells vim how many columns a tab counts for
 set shiftwidth=4  " 'Levels of indentation', where a level of indentation is
-                  " shiftwidth columns of whitespace
-set expandtab     " Ensure that when you hit tab it will actually use spaces
+                  " shift width columns of whitespace
+set expandtab     " Ensure that when you hit tab, it will actually use spaces
 set mouse-=a      " Exchanges the ability to move the cursor with your mouse,
                   " with the ability to highlight and copy text
 ```
+
+## Terminal Profile
+
+=== "macOS"
+    My custom terminal profile is a modified version of the Basic Terminal profile in macOS Catalina. To add it to your list of profiles and make it your default, follow the instructions below:
+
+    1. Open the Terminal application.
+    2. Click on Preferences... > Profiles > *the gear button at the bottom left of the window* > Import... > *locate and click on 'Basic (Modified).terminal' tab*
+    3. Click on the new terminal profile, then press the "Default" button located at the window's bottom.
+
+=== "Linux"
+    N/A
