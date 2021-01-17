@@ -11,122 +11,117 @@ This repository contains configurations that I use for the terminal's style and 
 
 ## Useful Programs
 
-Below is a list of programs I either have installed on my system or find very useful to know about. All the programs are broken up by what operating system they can be installed on via 4 main methods: the OS's native package manager (or Homebrew in the case of mac), pip, gem, or git. The git method is specific to when the documentation doesn't specify a particular package manager but instead mentions cloning the repo. I do not list any programs that are required to be installed via binary files. This means that if a program can be installed on macOS via Homebrew but can only be installed on Linux via the binary files, I will not list that program for Linux.
+Below is a list of programs I either have installed on my system or find very useful to know about. All the programs are broken up into 5 main installation methods: Homebrew, the OS's native package manager, pip, gem, and git. There are some programs located in the Homebrew and Native Package Manager section that can also be installed via pip or gem. Despite this, those programs will only be listed in the pip and gem section if the program isn't installable by both Homebrew or the NPM. That also applies to applications installable via git. The git method is mostly specific to when the documentation doesn't specify a particular package manager but instead mentions cloning the repo. I do not list any programs that are required to be installed via binary files. This means that if a program can be installed on macOS via Homebrew but can only be installed on Linux via the binary files, I will not list that program for Linux.
 
-=== "macOS"
+!!! Note
+    Keep in mind that the "Native Package Manager" section mainly applies to the Apt package mananger. Though I've not confirmed that any of the listed programs can be installed via a package manager other than aptitude, it's safe to assume they most of them can.
 
-    === "Homebrew"
-        | Programs      | Description | Program Category | Other |
-        |---------------|-------------|------------------|-------|
-        | [autopep8](https://formulae.brew.sh/formula/autopep8) | Automatically formats Python code to conform to the PEP 8 style guide | Language formatter |
-        | [blackbox](https://formulae.brew.sh/formula/blackbox) | Safely store secrets in Git/Mercurial/Subversion | ... | Commands are prefixed with `blackbox_` |
-        | [bat](https://formulae.brew.sh/formula/bat) | Clone of cat(1) with syntax highlighting and Git integration | ... | ... |
-        | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages | ... | ... |
-        | [curl](https://formulae.brew.sh/formula/curl) | Get a file from an HTTP, HTTPS or FTP server | ... | ... |
-        | [dos2unix](https://formulae.brew.sh/formula/dos2unix) | Convert text between DOS, UNIX, and Mac formats | ... | ... |
-        | [duti](https://formulae.brew.sh/formula/duti) | Set default document and URL handlers | ... | ... |
-        | [fd](https://formulae.brew.sh/formula/fd) | A simple, fast and user-friendly alternative to find | ... | ... |
-        | [git](https://formulae.brew.sh/formula/git) | Distributed revision control system | ... | ... |
-        | [gitleaks](https://formulae.brew.sh/formula/gitleaks) | Audit git repos for secrets | ... | ... |
-        | [git-extra](https://formulae.brew.sh/formula/git-extras) | GIT utilities | ... | ... |
-        | [gnupg](https://formulae.brew.sh/formula/gnupg) | GNU Pretty Good Privacy (PGP) package | ... | Command: `gpg` |
-        | [hub](https://formulae.brew.sh/formula/hub) | A command-line tool that makes git easier to use with GitHub | ... | ... |
-        | [Homebrew Command Not Found](https://github.com/Homebrew/homebrew-command-not-found) | Ubuntu’s command-not-found equivalent for Homebrew on macOS | ... | Not a command |
-        | [hstr](https://formulae.brew.sh/formula/hstr) | Easily view, navigate, sort and use your command history with shell history suggest box | ... | ... |
-        | [htop](https://formulae.brew.sh/formula/htop) | Improved top (interactive process viewer) | ... | ... |
-        | [httpie](https://formulae.brew.sh/formula/httpie) | User-friendly cURL replacement (command-line HTTP client) | ... | Command: `http` |
-        | [jq](https://formulae.brew.sh/formula/jq) | Command-line JSON processor | ... | ... |
-        | [lynis](https://formulae.brew.sh/formula/lynis) | Security and system auditing tool to harden systems | Security | ... |
-        | [mkdocs](https://formulae.brew.sh/formula/mkdocs) | Project documentation with Markdown | ... | ... |
-        | [nmap](https://formulae.brew.sh/formula/nmap) | Network exploration tool and security / port scanner | ... | ... |
-        | [ncdu](https://formulae.brew.sh/formula/ncdu) | NCurses Disk Usage | ... | ... |
-        | [pstree](https://formulae.brew.sh/formula/pstree) | List processes as a tree | ... | ... |
-        | [pyenv](https://formulae.brew.sh/formula/pyenv) | Python version management | ... | ... |
-        | [shellcheck](https://formulae.brew.sh/formula/shellcheck) | Shell script analysis tool | ... | ... |
-        | [shfmt](https://formulae.brew.sh/formula/shfmt) | Format shell programs | ... | ... |
-        | [speedtest-cli](https://formulae.brew.sh/formula/speedtest-cli) | Command line interface for testing internet bandwidth using speedtest.net | ... | ... |
-        | [symboliclinker](https://github.com/nickzman/symboliclinker) | A contextual menu plugin & service for Mac OS X that allows users to make symbolic links in the Finder | ... | Not a command |
-        | [terminal-notifier](https://formulae.brew.sh/formula/terminal-notifier) | Send macOS User Notifications from the command-line | ... | Not a command |
-        | [thefuck](https://formulae.brew.sh/formula/thefuck) | Programmatically correct mistyped console commands | ... | ... |
-        | [tldr](https://formulae.brew.sh/formula/tldr) | Simplified and community-driven man pages | ... | ... |
-        | [tmux](https://formulae.brew.sh/formula/tmux) | Terminal multiplexer | ... | ... |
-        | [trash](https://formulae.brew.sh/formula/trash) | Move files/folders to the trash | ... | ... |
-        | [tree](https://formulae.brew.sh/formula/tree) | Display directories as trees (with optional color/HTML output) | ... | ... |
-        | [vim](https://formulae.brew.sh/formula/vim) | Vi 'workalike' with many additional features | ... | ... |
-        | [wget](https://formulae.brew.sh/formula/wget) | Internet file retriever | ... | ... |
-        | [wifi-password](https://formulae.brew.sh/formula/wifi-password) | Show the current WiFi network password | ... | ... |
-        | [wtfutil](https://formulae.brew.sh/formula/wtfutil) | Personal information dashboard for your terminal | ... | Requires tap: `brew tap wtfutil/wtfutil` |
-        | [zip](https://formulae.brew.sh/formula/zip) | Compression and file packaging/archive utility | ... | ... |
-        | [zsh](https://formulae.brew.sh/formula/zsh) | UNIX shell (command interpreter) | ... | Not a command |
+=== "Homebrew"
 
-    === "Pip"
-        | Programs      | Description | Program Category | Other Info |
-        |---------------|-------------|------------------|------------|
-        | [autopep8](https://pypi.org/project/autopep8/) | Automatically formats Python code to conform to the PEP 8 style guide | ... | ... |
-        | [black](https://pypi.org/project/black/) | The uncompromising Python code formatter | ... | ... |
-        | [gitsome](https://pypi.org/project/gitsome/) | A Supercharged Git/Shell Autocompleter with GitHub Integration | ... | ... |
+    | Programs | Description | Applicable OS's | Other |
+    | -- | -- | -- | -- |
+    | [autopep8](https://formulae.brew.sh/formula/autopep8) | Automatically formats Python code to conform to the PEP 8 style guide | macOS<br>Linux |
+    | [blackbox](https://formulae.brew.sh/formula/blackbox) | Safely store secrets in Git/Mercurial/Subversion |macOS<br>Linux | Commands are prefixed with `blackbox_` |
+    | [bat](https://formulae.brew.sh/formula/bat) | Clone of cat(1) with syntax highlighting and Git integration | macOS<br>Linux |
+    | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages | macOS<br>Linux |
+    | [curl](https://formulae.brew.sh/formula/curl) | Get a file from an HTTP, HTTPS or FTP server | macOS<br>Linux |
+    | [dos2unix](https://formulae.brew.sh/formula/dos2unix) | Convert text between DOS, UNIX, and Mac formats | macOS<br>Linux |
+    | [duti](https://formulae.brew.sh/formula/duti) | Set default document and URL handlers | macOS<br>Linux |
+    | [fd](https://formulae.brew.sh/formula/fd) | A simple, fast and user-friendly alternative to find | macOS<br>Linux |
+    | [git](https://formulae.brew.sh/formula/git) | Distributed revision control system | macOS<br>Linux |
+    | [gitleaks](https://formulae.brew.sh/formula/gitleaks) | Audit git repos for secrets | macOS<br>Linux |
+    | [git-extra](https://formulae.brew.sh/formula/git-extras) | GIT utilities | macOS<br>Linux |
+    | [gnupg](https://formulae.brew.sh/formula/gnupg) | GNU Pretty Good Privacy (PGP) package | Command: `gpg` | macOS<br>Linux |
+    | [hub](https://formulae.brew.sh/formula/hub) | A command-line tool that makes git easier to use with GitHub | macOS<br>Linux |
+    | [Homebrew Command Not Found](https://github.com/Homebrew/homebrew-command-not-found) | Ubuntu’s command-not-found equivalent for Homebrew on macOS | macOS<br>Linux | Not a command |
+    | [hstr](https://formulae.brew.sh/formula/hstr) | Easily view, navigate, sort and use your command history with shell history suggest box | macOS<br>Linux |
+    | [htop](https://formulae.brew.sh/formula/htop) | Improved top (interactive process viewer) | macOS<br>Linux |
+    | [httpie](https://formulae.brew.sh/formula/httpie) | User-friendly cURL replacement (command-line HTTP client) | macOS<br>Linux | Command: `http` |
+    | [jq](https://formulae.brew.sh/formula/jq) | Command-line JSON processor | macOS<br>Linux |
+    | [lynis](https://formulae.brew.sh/formula/lynis) | Security and system auditing tool to harden systems | macOS<br>Linux |
+    | [mkdocs](https://formulae.brew.sh/formula/mkdocs) | Project documentation with Markdown | macOS<br>Linux |
+    | [nmap](https://formulae.brew.sh/formula/nmap) | Network exploration tool and security / port scanner | macOS<br>Linux |
+    | [ncdu](https://formulae.brew.sh/formula/ncdu) | NCurses Disk Usage | macOS<br>Linux |
+    | [pstree](https://formulae.brew.sh/formula/pstree) | List processes as a tree | macOS<br>Linux |
+    | [pyenv](https://formulae.brew.sh/formula/pyenv) | Python version management | macOS<br>Linux |
+    | [shellcheck](https://formulae.brew.sh/formula/shellcheck) | Shell script analysis tool | macOS<br>Linux |
+    | [shfmt](https://formulae.brew.sh/formula/shfmt) | Format shell programs | macOS<br>Linux |
+    | [speedtest-cli](https://formulae.brew.sh/formula/speedtest-cli) | Command line interface for testing internet bandwidth using speedtest.net | macOS<br>Linux |
+    | [symboliclinker](https://github.com/nickzman/symboliclinker) | A contextual menu plugin & service for Mac OS X that allows users to make symbolic links in the Finder | macOS<br>Linux | Not a command |
+    | [terminal-notifier](https://formulae.brew.sh/formula/terminal-notifier) | Send macOS User Notifications from the command-line | macOS<br>Linux | Not a command |
+    | [thefuck](https://formulae.brew.sh/formula/thefuck) | Programmatically correct mistyped console commands | macOS<br>Linux |
+    | [tldr](https://formulae.brew.sh/formula/tldr) | Simplified and community-driven man pages | macOS<br>Linux |
+    | [tmux](https://formulae.brew.sh/formula/tmux) | Terminal multiplexer | macOS<br>Linux |
+    | [trash](https://formulae.brew.sh/formula/trash) | Move files/folders to the trash | macOS<br>Linux |
+    | [tree](https://formulae.brew.sh/formula/tree) | Display directories as trees (with optional color/HTML output) | macOS<br>Linux |
+    | [vim](https://formulae.brew.sh/formula/vim) | Vi 'workalike' with many additional features | macOS<br>Linux |
+    | [wget](https://formulae.brew.sh/formula/wget) | Internet file retriever | macOS<br>Linux |
+    | [wifi-password](https://formulae.brew.sh/formula/wifi-password) | Show the current WiFi network password | macOS<br>Linux |
+    | [wtfutil](https://formulae.brew.sh/formula/wtfutil) | Personal information dashboard for your terminal | macOS<br>Linux | Requires tap: `brew tap wtfutil/wtfutil` |
+    | [zip](https://formulae.brew.sh/formula/zip) | Compression and file packaging/archive utility | macOS<br>Linux |
+    | [zsh](https://formulae.brew.sh/formula/zsh) | UNIX shell (command interpreter) | Not a command | macOS<br>Linux |
 
-    === "Gem"
-        | Programs      | Description | Program Category | Other Info |
-        |---------------|-------------|------------------|------------|
-        | [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator) | Automatically generate changelog from your tags, issues, labels, and pull requests on GitHub | ... | ... |
+=== "Native Package Manager"
+
+    Applicable Operating Systems:
+    - Linux
+
+    | Programs | Description | Other Info |
+    | -- | -- | -- |
+    | [bat](https://github.com/sharkdp/bat) | Clone of cat(1) with syntax highlighting and Git integration | Command: `batcat` OR `bat` |
+    | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages |
+    | [curl](http://curl.haxx.se) | Get a file from an HTTP, HTTPS or FTP server |
+    | [dos2unix](https://waterlan.home.xs4all.nl/dos2unix.html) | Convert text between DOS, UNIX, and Mac formats |
+    | [git](https://git-scm.com/) | Distributed revision control system |
+    | [git-extra](https://github.com/tj/git-extras) | GIT utilities |
+    | [gnupg](https://www.gnupg.org/) | GNU Pretty Good Privacy (PGP) package | Command: `gpg` |
+    | [hub](https://github.com/github/hub) | A command-line tool that makes git easier to use with GitHub |
+    | [htop](https://hisham.hm/htop/) | A cross-platform interactive process viewer |
+    | [jq](https://github.com/stedolan/jq) | Command-line JSON processor |
+    | [lynis](https://github.com/CISOfy/lynis) | Security and system auditing tool to harden systems | Git (recommended) |
+    | [mkdocs](https://www.mkdocs.org/) | Project documentation with Markdown |
+    | [nmap](https://nmap.org/) | Network exploration tool and security / port scanner |
+    | [ncdu](http://dev.yorhel.nl/ncdu/) | NCurses Disk Usage |
+    | [shellcheck](https://www.shellcheck.net/) | Shell script analysis tool |
+    | [speedtest-cli](https://github.com/sivel/speedtest-cli/) | Command line interface for testing internet bandwidth using speedtest.net |
+    | [thefuck](https://github.com/nvbn/thefuck) | Programmatically correct mistyped console commands |
+    | [tldr](https://github.com/tldr-pages/tldr) | Simplified and community-driven man pages |
+    | [tmux](https://tmux.github.io/) | Terminal multiplexer |
+    | [trash-cli](https://github.com/andreafrancia/trash-cli) | Move files/folders to the trash | Command: `trash` |
+    | [tree](http://mama.indstate.edu/users/ice/tree/) | Display directories as trees (with optional color/HTML output) |
+    | [vim](https://www.vim.org/) | Vi 'workalike' with many additional features |
+    | [wget](https://www.gnu.org/software/wget/) | Internet file retriever |
+    | [zip](http://www.info-zip.org/Zip.html) | Compression and file packaging/archive utility |
+    | [zsh](https://www.zsh.org/) | UNIX shell (command interpreter) | Not a command |
+
+=== "Pip"
+
+    Applicable Operating Systems: macOS & Linux
+
+    | Programs | Description | Other Info |
+    | -- | -- | -- |
+    | [autopep8](https://pypi.org/project/autopep8/) | Automatically formats Python code to conform to the PEP 8 style guide |
+    | [black](https://pypi.org/project/black/) | The uncompromising Python code formatter |
+    | [gitsome](https://pypi.org/project/gitsome/) | A Supercharged Git/Shell Autocompleter with GitHub Integration |
+    | [blackbox](https://github.com/StackExchange/blackbox) | Safely store secrets in Git/Mercurial/Subversion | Commands are prefixed with `blackbox_` |
+
+=== "Gem"
+
+    Applicable Operating Systems: macOS & Linux
+
+    | Programs | Description | Other |
+    | -- | -- | -- |
+    | [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator) | Automatically generate changelog from your tags, issues, labels, and pull requests on GitHub |
 
 
-    === "Git"
-        | Programs      | Description | Program Category | Other Info |
-        |---------------|-------------|------------------|------------|
-        | [.tmux](https://github.com/gpakosz/.tmux) | 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️ | ... | ... |
+=== "Git"
 
+    Applicable Operating Systems: macOS & Linux
 
+    | Programs | Description | Other |
+    | -- | -- | -- |
+    | [.tmux](https://github.com/gpakosz/.tmux) | 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️ |
 
-=== "Linux"
-
-    === "Native Package Manager"
-        | Programs      | Description | Program Category | Install Method | Other |
-        |---------------|-------------|------------------|----------------|-------|
-        | [bat](https://github.com/sharkdp/bat) | Clone of cat(1) with syntax highlighting and Git integration | ... | Command: `batcat` OR `bat` |
-        | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages | ... | ... |
-        | [curl](http://curl.haxx.se) | Get a file from an HTTP, HTTPS or FTP server | ... | ... |
-        | [dos2unix](https://waterlan.home.xs4all.nl/dos2unix.html) | Convert text between DOS, UNIX, and Mac formats | ... | ... |
-        | [git](https://git-scm.com/) | Distributed revision control system | ... | ... |
-        | [git-extra](https://github.com/tj/git-extras) | GIT utilities | ... | ... |
-        | [gnupg](https://www.gnupg.org/) | GNU Pretty Good Privacy (PGP) package | ... | Command: `gpg` |
-        | [hub](https://github.com/github/hub) | A command-line tool that makes git easier to use with GitHub | ... | ... |
-        | [htop](https://hisham.hm/htop/) | A cross-platform interactive process viewer | ... | ... |
-        | [jq](https://github.com/stedolan/jq) | Command-line JSON processor | ... | ... |
-        | [lynis](https://github.com/CISOfy/lynis) | Security and system auditing tool to harden systems | Security | Git (recommended) |
-        | [mkdocs](https://www.mkdocs.org/) | Project documentation with Markdown | ... | ... |
-        | [nmap](https://nmap.org/) | Network exploration tool and security / port scanner | ... | ... |
-        | [ncdu](http://dev.yorhel.nl/ncdu/) | NCurses Disk Usage | ... | ... |
-        | [shellcheck](https://www.shellcheck.net/) | Shell script analysis tool | ... | ... |
-        | [speedtest-cli](https://github.com/sivel/speedtest-cli/) | Command line interface for testing internet bandwidth using speedtest.net | ... | ... |
-        | [thefuck](https://github.com/nvbn/thefuck) | Programmatically correct mistyped console commands | ... | ... |
-        | [tldr](https://github.com/tldr-pages/tldr) | Simplified and community-driven man pages | ... | ... |
-        | [tmux](https://tmux.github.io/) | Terminal multiplexer | ... | ... |
-        | [trash-cli](https://github.com/andreafrancia/trash-cli) | Move files/folders to the trash | ... | Command: `trash` |
-        | [tree](http://mama.indstate.edu/users/ice/tree/) | Display directories as trees (with optional color/HTML output) | ... | ... |
-        | [vim](https://www.vim.org/) | Vi 'workalike' with many additional features | ... | ... |
-        | [wget](https://www.gnu.org/software/wget/) | Internet file retriever |
-        | [zip](http://www.info-zip.org/Zip.html) | Compression and file packaging/archive utility | ... | ... |
-        | [zsh](https://www.zsh.org/) | UNIX shell (command interpreter) | Not a command | ... | ... |
-
-    === "Pip"
-        | Programs      | Description | Program Category | Other Info |
-        |---------------|-------------|------------------|------------|
-        | [autopep8](https://pypi.org/project/autopep8/) | Automatically formats Python code to conform to the PEP 8 style guide | ... | ... |
-        | [black](https://pypi.org/project/black/) | The uncompromising Python code formatter | ... | ... |
-        | [gitsome](https://pypi.org/project/gitsome/) | A Supercharged Git/Shell Autocompleter with GitHub Integration | ... | ... |
-        | [blackbox](https://github.com/StackExchange/blackbox) | Safely store secrets in Git/Mercurial/Subversion | ... | Commands are prefixed with `blackbox_` |
-
-    === "Gem"
-        | Programs      | Description | Program Category | Other Info |
-        |---------------|-------------|------------------|------------|
-        | [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator) | Automatically generate changelog from your tags, issues, labels, and pull requests on GitHub | ... | ... |
-
-    === "Git"
-        | Programs      | Description | Program Category | Other Info |
-        |---------------|-------------|------------------|------------|
-        | [.tmux](https://github.com/gpakosz/.tmux) | 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️ | ... | ... |
 
 ## Customizing ZSH Shell
 
