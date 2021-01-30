@@ -302,7 +302,7 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     ```
 
 === "Linux"
-    Below is a list of "General Custom Aliases" that I use. You will want to place the code below at the bottom of your zshrc file, located:  `~/.zshrc`
+    Below is a list of "General Aliases". They are broken up into two groups. The first group is the regular command alias. The second group contains aliases that are meant to provide a list of useful commands, which can be hard to remember due to the sheer number of commands. All of the commands presented in the [Useful Programs](#useful-programs) section are in the second group of the aliases. To use them, you will want to add the code below to the bottom of your `.zshrc` file located in your home directory.
 
     ```bash
     ################################################################################
