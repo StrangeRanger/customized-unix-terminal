@@ -11,35 +11,36 @@ This repository contains configurations that I use for the terminal's style and 
 
 ## Useful Programs
 
-Below is a list of programs I either have installed on my system or find very useful to know about. All the programs are broken up into 5 main installation methods: Homebrew, the OS's native package manager, pip, gem, and git. There are some programs located in the Homebrew and Native Package Manager section that can also be installed via pip or gem. Despite this, those programs will only be listed in the pip and gem section if the program isn't installable by both Homebrew or the NPM. That also applies to applications installable via git. The git method is mostly specific to when the documentation doesn't specify a particular package manager but instead mentions cloning the repo. I do not list any programs that are required to be installed via binary files. This means that if a program can be installed on macOS via Homebrew but can only be installed on Linux via the binary files, I will not list that program for Linux.
+Below is a list of programs I either have installed on my system or find very useful to know about. All the programs are broken up into 5 main installation methods: Homebrew, the OS's Native Package Manager (to which I'll refer to as NPM from now on), pip, gem, and git. There are some programs located in the Homebrew and NPM section that can also be installed via pip or gem. Despite this, those programs will only be listed in the pip and gem section if the program isn't installable by both Homebrew and NPM. That also applies to applications installable via git. The git method is mostly specific to when the documentation doesn't specify a particular package manager but instead mentions cloning the repo. I do not list any programs that are required to be installed via binary files. This means that if a program can be installed on macOS via Homebrew but can only be installed on Linux via the binary files, I will not list that program in the NPM section.
 
 !!! Note
-    Keep in mind that the "Native Package Manager" section mainly applies to the Apt package mananger. Though I've not confirmed that any of the listed programs can be installed via a package manager other than aptitude, it's safe to assume they most of them can.
+    Keep in mind that the "Native Package Manager" section mainly applies to the apt package mananger. I've not confirmed any of the listed programs to be installable via a package manager other than apt, thought it's safe to assume that most can be.
 
 === "Homebrew"
 
     | Programs | Description | Applicable OS's | Other |
     | -- | -- | -- | -- |
     | [autopep8](https://formulae.brew.sh/formula/autopep8) | Automatically formats Python code to conform to the PEP 8 style guide | macOS<br>Linux |
+    | [black](https://formulae.brew.sh/formula/black) | The uncompromising Python code formatter | macOS<br>Linux |
     | [blackbox](https://formulae.brew.sh/formula/blackbox) | Safely store secrets in Git/Mercurial/Subversion |macOS<br>Linux | Commands are prefixed with `blackbox_` |
     | [bat](https://formulae.brew.sh/formula/bat) | Clone of cat(1) with syntax highlighting and Git integration | macOS<br>Linux |
     | [cloc](https://github.com/AlDanial/cloc) | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages | macOS<br>Linux |
     | [curl](https://formulae.brew.sh/formula/curl) | Get a file from an HTTP, HTTPS or FTP server | macOS<br>Linux |
     | [dos2unix](https://formulae.brew.sh/formula/dos2unix) | Convert text between DOS, UNIX, and Mac formats | macOS<br>Linux |
-    | [duti](https://formulae.brew.sh/formula/duti) | Set default document and URL handlers | macOS<br>Linux |
+    | [duti](https://formulae.brew.sh/formula/duti) | Set default document and URL handlers | macOS |
     | [fd](https://formulae.brew.sh/formula/fd) | A simple, fast and user-friendly alternative to find | macOS<br>Linux |
     | [git](https://formulae.brew.sh/formula/git) | Distributed revision control system | macOS<br>Linux |
     | [gitleaks](https://formulae.brew.sh/formula/gitleaks) | Audit git repos for secrets | macOS<br>Linux |
-    | [git-extra](https://formulae.brew.sh/formula/git-extras) | GIT utilities | macOS<br>Linux |
-    | [gnupg](https://formulae.brew.sh/formula/gnupg) | GNU Pretty Good Privacy (PGP) package | Command: `gpg` | macOS<br>Linux |
+    | [git-extras](https://formulae.brew.sh/formula/git-extras) | GIT utilities | macOS<br>Linux | Commands:<br>- `git-extras` displays man page<br>- *for commands see man page* |
+    | [gnupg](https://formulae.brew.sh/formula/gnupg) | GNU Pretty Good Privacy (PGP) package | macOS<br>Linux | Command: `gpg` |
     | [hub](https://formulae.brew.sh/formula/hub) | A command-line tool that makes git easier to use with GitHub | macOS<br>Linux |
     | [Homebrew Command Not Found](https://github.com/Homebrew/homebrew-command-not-found) | Ubuntu’s command-not-found equivalent for Homebrew on macOS | macOS<br>Linux | Not a command |
     | [hstr](https://formulae.brew.sh/formula/hstr) | Easily view, navigate, sort and use your command history with shell history suggest box | macOS<br>Linux |
     | [htop](https://formulae.brew.sh/formula/htop) | Improved top (interactive process viewer) | macOS<br>Linux |
     | [httpie](https://formulae.brew.sh/formula/httpie) | User-friendly cURL replacement (command-line HTTP client) | macOS<br>Linux | Command: `http` |
     | [jq](https://formulae.brew.sh/formula/jq) | Command-line JSON processor | macOS<br>Linux |
-    | [lynis](https://formulae.brew.sh/formula/lynis) | Security and system auditing tool to harden systems | macOS<br>Linux |
-    | [mkdocs](https://formulae.brew.sh/formula/mkdocs) | Project documentation with Markdown | macOS<br>Linux |
+    | [lynis](https://formulae.brew.sh/formula/lynis) | Security and system auditing tool to harden systems | macOS<br>Linux | Recommended install method: [Git](https://github.com/CISOfy/Lynis) |
+    | [mkdocs](https://formulae.brew.sh/formula/mkdocs) | Project documentation with Markdown | macOS<br>Linux | Recommended install method: [Pip](https://pypi.org/project/mkdocs/) |
     | [nmap](https://formulae.brew.sh/formula/nmap) | Network exploration tool and security / port scanner | macOS<br>Linux |
     | [ncdu](https://formulae.brew.sh/formula/ncdu) | NCurses Disk Usage | macOS<br>Linux |
     | [pstree](https://formulae.brew.sh/formula/pstree) | List processes as a tree | macOS<br>Linux |
@@ -47,7 +48,7 @@ Below is a list of programs I either have installed on my system or find very us
     | [shellcheck](https://formulae.brew.sh/formula/shellcheck) | Shell script analysis tool | macOS<br>Linux |
     | [shfmt](https://formulae.brew.sh/formula/shfmt) | Format shell programs | macOS<br>Linux |
     | [speedtest-cli](https://formulae.brew.sh/formula/speedtest-cli) | Command line interface for testing internet bandwidth using speedtest.net | macOS<br>Linux |
-    | [symboliclinker](https://github.com/nickzman/symboliclinker) | A contextual menu plugin & service for Mac OS X that allows users to make symbolic links in the Finder | macOS<br>Linux | Not a command |
+    | [symboliclinker](https://github.com/nickzman/symboliclinker) | A contextual menu plugin & service for Mac OS X that allows users to make symbolic links in the Finder | macOS | Not a command |
     | [terminal-notifier](https://formulae.brew.sh/formula/terminal-notifier) | Send macOS User Notifications from the command-line | macOS<br>Linux | Not a command |
     | [thefuck](https://formulae.brew.sh/formula/thefuck) | Programmatically correct mistyped console commands | macOS<br>Linux |
     | [tldr](https://formulae.brew.sh/formula/tldr) | Simplified and community-driven man pages | macOS<br>Linux |
@@ -56,15 +57,14 @@ Below is a list of programs I either have installed on my system or find very us
     | [tree](https://formulae.brew.sh/formula/tree) | Display directories as trees (with optional color/HTML output) | macOS<br>Linux |
     | [vim](https://formulae.brew.sh/formula/vim) | Vi 'workalike' with many additional features | macOS<br>Linux |
     | [wget](https://formulae.brew.sh/formula/wget) | Internet file retriever | macOS<br>Linux |
-    | [wifi-password](https://formulae.brew.sh/formula/wifi-password) | Show the current WiFi network password | macOS<br>Linux |
-    | [wtfutil](https://formulae.brew.sh/formula/wtfutil) | Personal information dashboard for your terminal | macOS<br>Linux | Requires tap: `brew tap wtfutil/wtfutil` |
+    | [wifi-password](https://formulae.brew.sh/formula/wifi-password) | Show the current WiFi network password | macOS |
+    | [wtfutil](https://formulae.brew.sh/formula/wtfutil) | Personal information dashboard for your terminal | macOS<br>Linux | (?) Requires tap: `brew tap wtfutil/wtfutil` |
     | [zip](https://formulae.brew.sh/formula/zip) | Compression and file packaging/archive utility | macOS<br>Linux |
-    | [zsh](https://formulae.brew.sh/formula/zsh) | UNIX shell (command interpreter) | Not a command | macOS<br>Linux |
+    | [zsh](https://formulae.brew.sh/formula/zsh) | UNIX shell (command interpreter) | macOS<br>Linux | Not a command |
 
 === "Native Package Manager"
 
-    Applicable Operating Systems:
-    - Linux
+    Applicable Operating Systems: Linux
 
     | Programs | Description | Other Info |
     | -- | -- | -- |
@@ -73,19 +73,19 @@ Below is a list of programs I either have installed on my system or find very us
     | [curl](http://curl.haxx.se) | Get a file from an HTTP, HTTPS or FTP server |
     | [dos2unix](https://waterlan.home.xs4all.nl/dos2unix.html) | Convert text between DOS, UNIX, and Mac formats |
     | [git](https://git-scm.com/) | Distributed revision control system |
-    | [git-extra](https://github.com/tj/git-extras) | GIT utilities |
+    | [git-extras](https://github.com/tj/git-extras) | GIT utilities | Commands:<br>- `git-extras` displays man page<br>- *for others see man page* |
     | [gnupg](https://www.gnupg.org/) | GNU Pretty Good Privacy (PGP) package | Command: `gpg` |
     | [hub](https://github.com/github/hub) | A command-line tool that makes git easier to use with GitHub |
     | [htop](https://hisham.hm/htop/) | A cross-platform interactive process viewer |
     | [jq](https://github.com/stedolan/jq) | Command-line JSON processor |
-    | [lynis](https://github.com/CISOfy/lynis) | Security and system auditing tool to harden systems | Git (recommended) |
-    | [mkdocs](https://www.mkdocs.org/) | Project documentation with Markdown |
+    | [lynis](https://github.com/CISOfy/lynis) | Security and system auditing tool to harden systems | Recommended install method: [Git](https://github.com/CISOfy/Lynis) |
+    | [mkdocs](https://www.mkdocs.org/) | Project documentation with Markdown | Recommended install method: [Pip](https://pypi.org/project/mkdocs/) |
     | [nmap](https://nmap.org/) | Network exploration tool and security / port scanner |
     | [ncdu](http://dev.yorhel.nl/ncdu/) | NCurses Disk Usage |
     | [shellcheck](https://www.shellcheck.net/) | Shell script analysis tool |
     | [speedtest-cli](https://github.com/sivel/speedtest-cli/) | Command line interface for testing internet bandwidth using speedtest.net |
     | [thefuck](https://github.com/nvbn/thefuck) | Programmatically correct mistyped console commands |
-    | [tldr](https://github.com/tldr-pages/tldr) | Simplified and community-driven man pages |
+    | [tldr](https://github.com/tldr-pages/tldr) | Simplified and community-driven man pages | Recommended install method: [Homebrew](https://formulae.brew.sh/formula/tldr) |
     | [tmux](https://tmux.github.io/) | Terminal multiplexer |
     | [trash-cli](https://github.com/andreafrancia/trash-cli) | Move files/folders to the trash | Command: `trash` |
     | [tree](http://mama.indstate.edu/users/ice/tree/) | Display directories as trees (with optional color/HTML output) |
@@ -102,8 +102,9 @@ Below is a list of programs I either have installed on my system or find very us
     | -- | -- | -- |
     | [autopep8](https://pypi.org/project/autopep8/) | Automatically formats Python code to conform to the PEP 8 style guide |
     | [black](https://pypi.org/project/black/) | The uncompromising Python code formatter |
-    | [gitsome](https://pypi.org/project/gitsome/) | A Supercharged Git/Shell Autocompleter with GitHub Integration |
     | [blackbox](https://github.com/StackExchange/blackbox) | Safely store secrets in Git/Mercurial/Subversion | Commands are prefixed with `blackbox_` |
+    | [gitsome](https://pypi.org/project/gitsome/) | A Supercharged Git/Shell Autocompleter with GitHub Integration |
+    | [mkdocs](https://pypi.org/project/mkdocs/) | Project documentation with Markdown |
 
 === "Gem"
 
@@ -120,7 +121,7 @@ Below is a list of programs I either have installed on my system or find very us
 
     | Programs | Description | Other |
     | -- | -- | -- |
-    | [.tmux](https://github.com/gpakosz/.tmux) | 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️ |
+    | [.tmux](https://github.com/gpakosz/.tmux) | 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️ | Not a command (though tmux must be installed) |
 
 
 ## Customizing ZSH Shell
@@ -154,6 +155,8 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
         alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
         alias batterylife="pmset -g batt"
         alias batterycycles="system_profiler SPPowerDataType | grep 'Cycle Count' | awk '{print $3}'"
+        # Restart coreaudio on macOS
+        alias rscoreaudio="sudo kill -9 \"$(ps ax|grep 'coreaudio[a-z]' | awk '{print $1}')\""
 
         #
         # End of [ Group 1 ]
@@ -168,10 +171,13 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
 
         alias listtools="echo -e \
             \"\n########################################\" \
-            \"\n# Homebrew installed commands\" \
+            \"\n# Package Manager installed commands\" \
             \"\n###\" \
             \"\n    autopep8      - Automatically formats Python code to conform to the PEP 8\" \
             \"\n                    style guide\" \
+            \"\n    black         - The uncompromising Python code formatter\" \
+            \"\n    blackbox_*    - Safely store secrets in Git/Mercurial/Subversion\" \
+            \"\n    bat           - Clone of cat(1) with syntax highlighting and Git integration\" \
             \"\n    cloc          - Counts blank lines, comment lines, and physical lines of\" \
             \"\n                    source code in many programming languages\" \
             \"\n    curl          - Get a file from an HTTP, HTTPS or FTP server\" \
@@ -180,10 +186,13 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
             \"\n    fd            - A simple, fast and user-friendly alternative to find\" \
             \"\n    git           - Distributed revision control system\" \
             \"\n    gitleaks      - Audit git repos for secrets\" \
+            \"\n    git-extras    - Opens GIT utilities man page\" \
             \"\n    gpg           - GNU Pretty Good Privacy (PGP) package\" \
+            \"\n    hub           - A command-line tool that makes git easier to use with GitHub\" \
             \"\n    hstr          - Easily view, navigate, sort and use your command history with\" \
             \"\n                    shell history suggest box\" \
             \"\n    htop          - Improved top (interactive process viewer)\" \
+            \"\n    http          - User-friendly cURL replacement (command-line HTTP client)\" \
             \"\n    jq            - Command-line JSON processor\" \
             \"\n    mkdocs        - Project documentation with Markdown\" \
             \"\n    nmap          - Network exploration tool and security / port scanner\" \
@@ -195,12 +204,14 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
             \"\n    speedtest-cli - Command line interface for testing internet bandwidth using\" \
             \"\n                    speedtest.net\" \
             \"\n    fuck          - Programatically correct mistyped console commands\" \
+            \"\n    tldr          - Simplified and community-driven man pages\" \
             \"\n    tmux          - Terminal multiplexer\" \
             \"\n    trash         - Move files/folders to the trash\" \
             \"\n    tree          - Display directories as trees (with optional color/HTML output)\" \
             \"\n    vim           - Vi 'workalike' with many additional features\" \
-            \"\n    wifi-password - Show the current WiFi network password\" \
             \"\n    wget          - Internet file retriever\" \
+            \"\n    wifi-password - Show the current WiFi network password\" \
+            \"\n    wtfutil       - Personal information dashboard for your terminal\" \
             \"\n    zip           - Compression and file packaging/archive utility\" \
             \"\n\" \
             \"\n\" \
@@ -319,30 +330,45 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
 
         alias listtools="echo -e \
             \"\n########################################\" \
-            \"\n# Homebrew installed commands\" \
+            \"\n# Package Manager installed commands\" \
             \"\n###\" \
             \"\n    autopep8      - Automatically formats Python code to conform to the PEP 8\" \
             \"\n                    style guide\" \
+            \"\n    black         - The uncompromising Python code formatter\" \
+            \"\n    blackbox_*    - Safely store secrets in Git/Mercurial/Subversion\" \
+            \"\n    bat           - Clone of cat(1) with syntax highlighting and Git integration\" \
             \"\n    cloc          - Counts blank lines, comment lines, and physical lines of\" \
             \"\n                    source code in many programming languages\" \
             \"\n    curl          - Get a file from an HTTP, HTTPS or FTP server\" \
             \"\n    dos2unix      - Convert text between DOS, UNIX, and Mac formats\" \
+            \"\n    fd            - A simple, fast and user-friendly alternative to find\" \
             \"\n    git           - Distributed revision control system\" \
+            \"\n    gitleaks      - Audit git repos for secrets\" \
+            \"\n    git-extras    - Opens GIT utilities man page\" \
             \"\n    gpg           - GNU Pretty Good Privacy (PGP) package\" \
+            \"\n    hub           - A command-line tool that makes git easier to use with GitHub\" \
+            \"\n    hstr          - Easily view, navigate, sort and use your command history with\" \
             \"\n                    shell history suggest box\" \
             \"\n    htop          - Improved top (interactive process viewer)\" \
+            \"\n    http          - User-friendly cURL replacement (command-line HTTP client)\" \
             \"\n    jq            - Command-line JSON processor\" \
+            \"\n    mkdocs        - Project documentation with Markdown\" \
             \"\n    nmap          - Network exploration tool and security / port scanner\" \
             \"\n    ncdu          - NCurses Disk Usage\" \
+            \"\n    pstree        - List processes as a tree\" \
+            \"\n    pyenv         - Python version management\" \
             \"\n    shellcheck    - Shell script analysis tool\" \
+            \"\n    shfmt         - Format shell programs\" \
             \"\n    speedtest-cli - Command line interface for testing internet bandwidth using\" \
             \"\n                    speedtest.net\" \
             \"\n    fuck          - Programatically correct mistyped console commands\" \
+            \"\n    tldr          - Simplified and community-driven man pages\" \
             \"\n    tmux          - Terminal multiplexer\" \
             \"\n    trash         - Move files/folders to the trash\" \
             \"\n    tree          - Display directories as trees (with optional color/HTML output)\" \
             \"\n    vim           - Vi 'workalike' with many additional features\" \
             \"\n    wget          - Internet file retriever\" \
+            \"\n    wtfutil       - Personal information dashboard for your terminal\" \
             \"\n    zip           - Compression and file packaging/archive utility\" \
             \"\n\" \
             \"\n\" \
@@ -419,16 +445,13 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) | Allows you to copy what you are currently typing, via Ctrl + O | Not a command<br>Key Combination: `Ctrl` + `O` |
     | [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir) | Copies the path of your working directory |
     | [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile) | Copies the contents of a file |
-    | [gpg-agents](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gpg-agent) | Enables GPG's gpg-agent if it is not running | Not a command |
     | [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history) | History aliases |
     | [nmap](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nmap) | Nmap aliases |
     | [osx](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/osx) | Provides a few utilities to make it more enjoyable on macOS |
     | [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify) | cross-platform background notifications for long running commands | Not a command |
     | [urltools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/urltools) | provides two aliases to URL-encode and URL-decode strings |
     | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command |
-    | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Fish shell like syntax highlighting for Zsh | Not a command<br>To use this, you need to clone the repo: follow the instructions [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)|
-
-    Note: Keep in mind that some of these plugins have dependencies, so make sure to check for that.
+    | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Fish shell like syntax highlighting for Zsh | Not a command<br>To use this, you need to clone the repo: follow the instructions [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh) |
 
 === "Linux"
     This is a list of all the oh-my-zsh plugins that I use and find to provide useful functionality. Note that all of the commands provided by these plugins are also in the `listtools` alias provided above.
@@ -439,7 +462,6 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) | Allows you to copy what you are currently typing, via Ctrl + O | Not a command<br>Key Combination: `Ctrl` + `O` |
     | [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir) | Copies the path of your working directory |
     | [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile) | Copies the contents of a file |
-    | [gpg-agents](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gpg-agent) | Enables GPG's gpg-agent if it is not running | Not a command |
     | [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history) | History aliases |
     | [nmap](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nmap) | Nmap aliases |
     | [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify) | cross-platform background notifications for long running commands | Not a command |
@@ -447,13 +469,11 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command |
     | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Fish shell like syntax highlighting for Zsh | Not a command<br>To use this, you need to clone the repo: follow the instructions [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)|
 
-    Note: Keep in mind that some of these plugins have dependencies, so make sure to check for that.
-
 ### Modifying LSCOLORS
 
 LSCOLORS is what determines the color of the files and directories in the terminal. To apply my custom LSCOLORS, you'll first need to open `~/.oh-my-zsh/lib/theme-and-appearance.zsh`. With the file open, find and comment out the line beginning with `export LSCOLORS=`, then place `export LSCOLORS="exgxfxDxcxegDhabagacaD"` on the line below it.
 
-You can optionally modify the terminal profile ANSI-colors to change the shading of the colors to your liking. If you are using macOS, you can alternatively import my personal terminal profile.
+You can optionally modify the terminal profile ANSI-colors to change the shading of the colors, to your liking. If you are using macOS, you can alternatively import my personal terminal profile.
 
 Below is a key to help you understand what the values of the LSCOLORS variable mean:
 
@@ -478,7 +498,7 @@ Below is a key to help you understand what the values of the LSCOLORS variable m
 These configurations modify the behavior and look of vim. To make use of all the configurations listed below, you will need to first [install Vundle](https://github.com/VundleVim/Vundle.vim). Once installed, place the code below into your `.vimrc` located at your home directory. Then to install the plugins, open `.vimrc` with vim, then enter `:source %` and `:PluginInstall` (separately). This should trigger Vundle to start installing the plugins specified in the configurations below.
 
 !!! Note
-	When using `:source %`, you can ignore any errors that might occur, as these will because the plugins aren't installed yet.
+	When using `:source %`, you can ignore any errors that might occur, as this will happen because the plugins aren't installed yet.
 
 ```vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -556,7 +576,7 @@ set bg=dark
 
 ### Without Vundle Plugins
 
-Suppose you rather not use all the configurations provided by Vundle. In that case, you can just place the below configurations modify into your`.vimrc`, located at your home directory. These configurations simply change some of the default vim settings while leaving the rest as is.
+Suppose you rather not use all the configurations provided by Vundle. In that case, you can just place the below configurations into your`.vimrc`, located at your home directory. These configurations simply change some of the default vim settings while leaving the rest as is.
 
 ```vim
 " Set's the default vim settings
