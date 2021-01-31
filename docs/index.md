@@ -450,7 +450,7 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | [osx](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/osx) | Provides a few utilities to make it more enjoyable on macOS |
     | [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify) | cross-platform background notifications for long running commands | Not a command |
     | [urltools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/urltools) | provides two aliases to URL-encode and URL-decode strings |
-    | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command |
+    | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command<br>To use this, you need to clone the repo: follow the instructions [here](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) |
     | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Fish shell like syntax highlighting for Zsh | Not a command<br>To use this, you need to clone the repo: follow the instructions [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh) |
 
 === "Linux"
@@ -466,7 +466,7 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
     | [nmap](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nmap) | Nmap aliases |
     | [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify) | cross-platform background notifications for long running commands | Not a command |
     | [urltools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/urltools) | provides two aliases to URL-encode and URL-decode strings |
-    | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command |
+    | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-like autosuggestions for zsh | Not a command<br>To use this, you need to clone the repo: follow the instructions [here](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) |
     | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Fish shell like syntax highlighting for Zsh | Not a command<br>To use this, you need to clone the repo: follow the instructions [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)|
 
 ### Modifying LSCOLORS
