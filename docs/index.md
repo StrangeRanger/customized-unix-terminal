@@ -1,5 +1,7 @@
 # Customized Unix Terminal
 
+![Updated](https://img.shields.io/static/v1?label=updated&message=February%2019%2C%202021&color=blue&style=flat-square)
+
 This repository contains configurations that I use for the terminal's style and behavior, both on my Mac and Linux devices. I've also listed all of the programs that I find useful or good to have at a second's notice, installable via a package manager.
 
 | Table of Contents |
