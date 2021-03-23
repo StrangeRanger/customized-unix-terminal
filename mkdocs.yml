@@ -1,16 +1,17 @@
 site_name: Customized Unix Terminal
-repo_url: https://github.com/StrangeRanger/customized-unix-terminal/tree/master
+repo_url: https://github.com/StrangeRanger/customized-unix-terminal
+repo_name: StrangeRanger/customized-unix-terminal
 
 theme:
   name: material
-  custom_dir: docs/overrides
   palette:
     scheme: slate
     primary: blue
     accent: blue
   features:
-    - tabs
-    - instant
+    #- navigation.tabs  # Disabled for this project
+    - navigation.instant
+    - navigation.sections
   icon:
     repo: fontawesome/brands/github
 
@@ -19,20 +20,23 @@ plugins:
       minify_html: true
   - git-revision-date-localized:
       type: date
+      fallback_to_build_date: true
   - search
 
 markdown_extensions:
+  # Built in extensions
   - codehilite:
       guess_lang: false
   - toc:
       permalink: true
+  - admonition
+  - meta
+  - footnotes
+  # Extensions provide by pymdown  
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.betterem:
       smart_enable: all
-  - admonition
-  - meta
-  - footnotes
   - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.superfences
