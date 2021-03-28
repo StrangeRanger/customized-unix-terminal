@@ -1,6 +1,7 @@
 site_name: Customized Unix Terminal
+docs_dir: .
+site_dir: ../site
 repo_url: https://github.com/StrangeRanger/customized-unix-terminal
-repo_name: StrangeRanger/customized-unix-terminal
 
 theme:
   name: material
@@ -15,6 +16,9 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
+extra_css:
+  - stylesheets/extra.css
+
 plugins:
   - minify:
       minify_html: true
@@ -22,6 +26,7 @@ plugins:
       type: date
       fallback_to_build_date: true
   - search
+  - same-dir
 
 markdown_extensions:
   # Built in extensions
@@ -32,7 +37,7 @@ markdown_extensions:
   - admonition
   - meta
   - footnotes
-  # Extensions provide by pymdown  
+  # Extensions provide by pymdown
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.betterem:
@@ -43,5 +48,6 @@ markdown_extensions:
   - pymdownx.tabbed
 
 nav:
-  - Home: index.md
-  - License: license.md
+  - Home: README.md
+  - Changelog: CHANGELOG.md
+  - License: LICENSE.md
