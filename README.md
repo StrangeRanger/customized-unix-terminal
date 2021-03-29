@@ -1,5 +1,6 @@
 # Customized Unix Terminal
 
+[![Project Tracker](https://img.shields.io/badge/repo%20status-Project%20Tracker-lightgrey)](https://randomserver.xyz/project-tracker.html)
 ![Updated](https://img.shields.io/static/v1?label=updated&message=February%2019%2C%202021&color=blue&style=flat-square)
 [![Documentation Tool](https://img.shields.io/static/v1?label=created%20with&message=material%20for%20mkdocs&color=blue)](https://github.com/squidfunk/mkdocs-material)
 
