@@ -24,49 +24,58 @@ NPM contains programs installable by the operating systems built in package mana
 
 === "Homebrew, Pip, Cargo, Npm, Gem, Git"
 
-    | Programs                                                                             | Description                                                                                             | Applicable OS's | Available Package Managers                                                                                                                                                                                                                                                           | Other Info                                                                                                                                                                                     |
-    | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | [.tmux](https://github.com/gpakosz/.tmux)                                            | Oh my tmux! My self-contained, pretty & versatile tmux configuration made with                          | macOS<br>Linux  | [![Github](https://img.shields.io/badge/git-git%20clone-lightgrey)](https://github.com/gpakosz/.tmux)                                                                                                                                                                                | Not a command (though tmux must be installed).                                                                                                                                                 |
-    | [bandwhich](https://github.com/imsnif/bandwhich)                                     | Terminal bandwidth utilization tool                                                                     | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/bandwhich?color=f9d194)](https://formulae.brew.sh/formula/bandwhich)<br>[![Crates.io](https://img.shields.io/crates/v/bandwhich?color=dea584)](https://crates.io/crates/bandwhich)                                            |                                                                                                                                                                                                |
-    | [bat](https://github.com/sharkdp/bat)                                                | Clone of cat(1) with syntax highlighting and Git integration                                            | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/bat?color=f9d194)](https://formulae.brew.sh/formula/bat)<br>[![Crates.io](https://img.shields.io/crates/v/bat?color=dea584)](https://crates.io/crates/bat)                                                                    |                                                                                                                                                                                                |
-    | [black](https://github.com/psf/black)                                                | The uncompromising Python code formatter                                                                | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/black?color=f9d194)](https://formulae.brew.sh/formula/black)<br>[![PyPI](https://img.shields.io/pypi/v/black?color=3572A5)](https://pypi.org/project/black/)                                                                  |                                                                                                                                                                                                |
-    | [blackbox](https://github.com/StackExchange/blackbox)                                | Safely store secrets in Git/Mercurial/Subversion                                                        | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/blackbox?color=f9d194)](https://formulae.brew.sh/formula/blackbox)                                                                                                                                                            | Commands are prefixed with `blackbox_`.                                                                                                                                                        |
-    | [bottom](https://github.com/ClementTsang/bottom)                                     | Yet another cross-platform graphical process/system monitor                                             | macOS<br>Linux  | [![homebrew version](https://img.shields.io/badge/homebrew-Tap-f9d194)](https://github.com/ClementTsang/bottom#homebrew)<br>[![Crates.io](https://img.shields.io/crates/v/bottom?color=dea584)](https://crates.io/crates/bottom)                                                     | Command: `btm`                                                                                                                                                                                 |                                                                                                                                                                                           |
-    | [cloc](https://github.com/AlDanial/cloc)                                             | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/cloc?color=f9d194)](https://formulae.brew.sh/formula/cloc)                                                                                                                                                                    |                                                                                                                                                                                                |
-    | [dos2unix](https://waterlan.home.xs4all.nl/dos2unix.html)                            | Convert text between DOS, UNIX, and Mac formats                                                         | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/dos2unix?color=f9d194)](https://formulae.brew.sh/formula/dos2unix)                                                                                                                                                            |                                                                                                                                                                                                |
-    | [duti](https://github.com/moretension/duti)                                          | Set default document and URL handlers                                                                   | macOS           | [![homebrew version](https://img.shields.io/homebrew/v/duti?color=f9d194)](https://formulae.brew.sh/formula/duti)                                                                                                                                                                    |                                                                                                                                                                                                |
-    | [fd](https://github.com/sharkdp/fd)                                                  | A simple, fast and user-friendly alternative to find                                                    | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/fd?color=f9d194)](https://formulae.brew.sh/formula/fd)<br>[![Crates.io](https://img.shields.io/crates/v/fd-find?color=dea584)](https://crates.io/crates/fd-find)                                                              |                                                                                                                                                                                                |
-    | [gitleaks](https://github.com/zricethezav/gitleaks)                                  | Audit git repos for secrets                                                                             | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/gitleaks?color=f9d194)](https://formulae.brew.sh/formula/gitleaks)                                                                                                                                                            |                                                                                                                                                                                                |
-    | [gitsome](https://github.com/donnemartin/gitsome)                                    | A Supercharged Git/Shell Autocompleter with GitHub Integration                                          | macOS<br>Linux  | [![PyPI](https://img.shields.io/pypi/v/gitsome?color=3572A5)](https://pypi.org/project/gitsome/)                                                                                                                                                                                     |                                                                                                                                                                                                |
-    | [git-extras](https://github.com/tj/git-extras)                                       | GIT utilities                                                                                           | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/git-extras?color=f9d194)](https://formulae.brew.sh/formula/git-extras)                                                                                                                                                        | Use `git-extras` to display all available commands.                                                                                                                                            |
-    | [grex](https://github.com/pemistahl/grex)                                            | grex generates regular expressions from user-provided test cases                                        | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/grex?color=f9d194)](https://formulae.brew.sh/formula/grex)<br>[![Crates.io](https://img.shields.io/crates/v/grex?color=dea584)](https://crates.io/crates/grex)                                                                |                                                                                                                                                                                                |
-    | [hub](https://github.com/github/hub)                                                 | A command-line tool that makes git easier to use with GitHub                                            | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/hub?color=f9d194)](https://formulae.brew.sh/formula/hub)                                                                                                                                                                      |                                                                                                                                                                                                |
-    | [Homebrew Command Not Found](https://github.com/Homebrew/homebrew-command-not-found) | Ubuntu’s command-not-found equivalent for Homebrew on macOS                                             | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/cloc?color=f9d194)](https://formulae.brew.sh/formula/cloc)                                                                                                                                                                    | Not a command.<br>[Install instructions](https://github.com/Homebrew/homebrew-command-not-found#install).                                                                                      |
-    | [hstr](https://github.com/dvorka/hstr)                                               | Easily view, navigate, sort and use your command history with shell history suggest box                 | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/hstr?color=f9d194)](https://formulae.brew.sh/formula/hstr)                                                                                                                                                                    |                                                                                                                                                                                                |
-    | [htop](https://github.com/htop-dev/htop)                                             | Improved top (interactive process viewer)                                                               | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/htop?color=f9d194)](https://formulae.brew.sh/formula/htop)                                                                                                                                                                    |                                                                                                                                                                                                |
-    | [httpie](https://github.com/httpie/httpie)                                           | User-friendly cURL replacement (command-line HTTP client)                                               | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/httpie?color=f9d194)](https://formulae.brew.sh/formula/httpie)<br>[![PyPI](https://img.shields.io/pypi/v/httpie?color=3572A5)](https://pypi.org/project/httpie/)                                                              | Command: `http`.                                                                                                                                                                               |
-    | [jq](https://github.com/stedolan/jq)                                                 | Command-line JSON processor                                                                             | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/jq?color=f9d194)](https://formulae.brew.sh/formula/jq)                                                                                                                                                                        |                                                                                                                                                                                                |
-    | [lynis](https://github.com/CISOfy/lynis)                                             | Security and system auditing tool to harden systems                                                     | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/lynis?color=f9d194)](https://formulae.brew.sh/formula/lynis)                                                                                                                                                                  | Recommended install method: [Git](https://github.com/CISOfy/Lynis).                                                                                                                            |
-    | [nmap](https://github.com/nmap/nmap)                                                 | Network exploration tool and security / port scanner                                                    | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/nmap?color=f9d194)](https://formulae.brew.sh/formula/nmap)                                                                                                                                                                    |                                                                                                                                                                                                |
-    | [ncdu](https://dev.yorhel.nl/ncdu)                                                   | NCurses Disk Usage                                                                                      | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/ncdu?color=f9d194)](https://formulae.brew.sh/formula/ncdu)                                                                                                                                                                    |                                                                                                                                                                                                |
-    | [prettier](https://github.com/prettier/prettier)                                     | Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML                                       | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/prettier?color=f9d194)](https://formulae.brew.sh/formula/prettier)<br>[![npm](https://img.shields.io/npm/v/prettier?color=f1e05a)](https://www.npmjs.com/package/prettier)                                                    | Recommended install method: [Npm](https://www.npmjs.com/package/prettier).                                                                                                                     |
-    | [pstree](http://www.thp.uni-duisburg.de/pstree/)                                     | List processes as a tree                                                                                | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/pstree?color=f9d194)](https://formulae.brew.sh/formula/pstree)                                                                                                                                                                |                                                                                                                                                                                                |
-    | [pipenv](https://github.com/pypa/pipenv)                                             | Python dependency management tool                                                                       | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/pipenv?color=f9d194)](https://formulae.brew.sh/formula/pipenv)<br>[![PyPI](https://img.shields.io/pypi/v/pipenv?color=3572A5)](https://pypi.org/project/pipenv/)                                                              |                                                                                                                                                                                                |
-    | [shellcheck](https://github.com/koalaman/shellcheck)                                 | Shell script analysis tool                                                                              | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/shellcheck?color=f9d194)](https://formulae.brew.sh/formula/shellcheck)                                                                                                                                                        |                                                                                                                                                                                                |
-    | [symboliclinker](https://github.com/nickzman/symboliclinker)                         | A contextual menu plugin & service for Mac OS X that allows users to make symbolic links in the Finder  | macOS           | [![homebrew version](https://img.shields.io/homebrew/cask/v/symboliclinker?color=f9d194)](https://formulae.brew.sh/cask/symboliclinker)                                                                                                                                              | Not a command.                                                                                                                                                                                 |
-    | [terminal-notifier](https://github.com/julienXX/terminal-notifier)                   | Send macOS User Notifications from the command-line                                                     | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/terminal-notifier?color=f9d194)](https://formulae.brew.sh/formula/terminal-notifier)<br>[![Gem](https://img.shields.io/gem/v/terminal-notifier?color=701516)](https://rubygems.org/gems/terminal-notifier)                    | Not a command.<br>Also see the [bgnotify](#oh-my-zsh-plugins) plugin.                                                                                                                          |
-    | [thefuck](https://github.com/nvbn/thefuck)                                           | Programmatically correct mistyped console commands                                                      | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/thefuck?color=f9d194)](https://formulae.brew.sh/formula/thefuck)<br>[![PyPI](https://img.shields.io/pypi/v/thefuck?color=3572A5)](https://pypi.org/project/thefuck/)                                                          | [Extra install instructions](https://github.com/nvbn/thefuck#manual-installation).                                                                                                             |
-    | [tldr](https://github.com/tldr-pages/tldr)                                           | Simplified and community-driven man pages                                                               | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/tldr?color=f9d194)](https://formulae.brew.sh/formula/tldr)<br>[![npm](https://img.shields.io/npm/v/tldr?color=f1e05a)](https://www.npmjs.com/package/tldr)                                                                    |                                                                                                                                                                                                |
-    | [tmux](https://github.com/tmux/tmux)                                                 | Terminal multiplexer                                                                                    | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/tmux?color=f9d194)](https://formulae.brew.sh/formula/tmux)                                                                                                                                                                    |                                                                                                                                                                                                |
-    | [trash](https://github.com/ali-rantakari/trash)                                      | Move files/folders to the trash                                                                         | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/trash?color=f9d194)](https://formulae.brew.sh/formula/trash)                                                                                                                                                                  |                                                                                                                                                                                                |
-    | [tree](http://mama.indstate.edu/users/ice/tree/)                                     | Display directories as trees (with optional color/HTML output)                                          | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/tree?color=f9d194)](https://formulae.brew.sh/formula/tree)                                                                                                                                                                    |                                                                                                                                                                                                |
-    | [vim](https://github.com/vim/vim)                                                    | Vi 'workalike' with many additional features                                                            | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/vim?color=f9d194)](https://formulae.brew.sh/formula/vim)                                                                                                                                                                      |                                                                                                                                                                                                |
-    | [wget](https://www.gnu.org/software/wget/)                                           | Internet file retriever                                                                                 | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/wget?color=f9d194)](https://formulae.brew.sh/formula/wget)                                                                                                                                                                    |                                                                                                                                                                                                |
-    | [wtfutil](https://github.com/wtfutil/wtf)                                            | Personal information dashboard for your terminal                                                        | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/wtfutil?color=f9d194)](https://formulae.brew.sh/formula/wtfutil)                                                                                                                                                              |                                                                                                                                                                                                |
-    | [zip](http://infozip.sourceforge.net/Zip.html)                                       | Compression and file packaging/archive utility                                                          | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/zip?color=f9d194)](https://formulae.brew.sh/formula/zip)                                                                                                                                                                      |                                                                                                                                                                                                |
-    | [zsh](https://www.zsh.org/)                                                          | UNIX shell (command interpreter)                                                                        | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/zsh?color=f9d194)](https://formulae.brew.sh/formula/zsh)                                                                                                                                                                      | Not a command.                                                                                                                                                                                 |
-    | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)              | Fish-like autosuggestions for zsh                                                                       | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/zsh-autosuggestions?color=f9d194)](https://formulae.brew.sh/formula/zsh-autosuggestions)<br>[![Github](https://img.shields.io/badge/git-git%20clone-lightgrey)](https://github.com/zsh-users/zsh-autosuggestions)             | Not a command.<br>[Zsh](https://github.com/zsh-users/zsh) must be installed.<br>[Install instructions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh).     |
-    | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)      | Fish shell like syntax highlighting for Zsh                                                             | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/zsh-syntax-highlighting?color=f9d194)](https://formulae.brew.sh/formula/zsh-syntax-highlighting)<br>[![Github](https://img.shields.io/badge/git-git%20clone-lightgrey)](https://github.com/zsh-users/zsh-syntax-highlighting) | Not a command.<br>[Zsh](https://github.com/zsh-users/zsh) must be installed.<br>[Install instructions](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh). |
+    | Programs                                                                             | Description                                                                                            | Applicable OS's | Available Package Managers                                                                                                                                                                                                                                                           | Other Info                                                                                                                                                                                     |
+    | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | [.tmux](https://github.com/gpakosz/.tmux)                                            | Oh my tmux! My self-contained, pretty & versatile tmux configuration made with                         | macOS<br>Linux  | [![Github](https://img.shields.io/badge/git-git%20clone-lightgrey)](https://github.com/gpakosz/.tmux)                                                                                                                                                                                | Not a command (though tmux must be installed).                                                                                                                                                 |
+    | [bandwhich](https://github.com/imsnif/bandwhich)                                     | Terminal bandwidth utilization tool                                                                    | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/bandwhich?color=f9d194)](https://formulae.brew.sh/formula/bandwhich)<br>[![Crates.io](https://img.shields.io/crates/v/bandwhich?color=dea584)](https://crates.io/crates/bandwhich)                                            |                                                                                                                                                                                                |
+    | [bat](https://github.com/sharkdp/bat)                                                | Clone of cat(1) with syntax highlighting and Git integration                                           | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/bat?color=f9d194)](https://formulae.brew.sh/formula/bat)<br>[![Crates.io](https://img.shields.io/crates/v/bat?color=dea584)](https://crates.io/crates/bat)                                                                    |                                                                                                                                                                                                |
+    | [black](https://github.com/psf/black)                                                | The uncompromising Python code formatter                                                               | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/black?color=f9d194)](https://formulae.brew.sh/formula/black)<br>[![PyPI](https://img.shields.io/pypi/v/black?color=3572A5)](https://pypi.org/project/black/)                                                                  |                                                                                                                                                                                                |
+    | [blackbox](https://github.com/StackExchange/blackbox)                                | Safely store secrets in Git/Mercurial/Subversion                                                       | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/blackbox?color=f9d194)](https://formulae.brew.sh/formula/blackbox)                                                                                                                                                            | Commands are prefixed with `blackbox_`.                                                                                                                                                        |
+    | [bottom](https://github.com/ClementTsang/bottom)                                     | Yet another cross-platform graphical process/system monitor                                            | macOS<br>Linux  | [![homebrew version](https://img.shields.io/badge/homebrew-Tap-f9d194)](https://github.com/ClementTsang/bottom#homebrew)<br>[![Crates.io](https://img.shields.io/crates/v/bottom?color=dea584)](https://crates.io/crates/bottom)                                                     | Command: `btm`                                                                                                                                                                                 |
+    | [cloc](https://github.com/AlDanial/cloc)                                             | Counts blank lines, comment lines, and physical lines of source code in many programming languages     | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/cloc?color=f9d194)](https://formulae.brew.sh/formula/cloc)                                                                                                                                                                    |                                                                                                                                                                                                |
+    | [codespell](https://github.com/codespell-project/codespell)                          | Check code for common misspellings                                                                     | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/codespell?color=f9d194)](https://formulae.brew.sh/formula/codespell)<br>[![PyPI](https://img.shields.io/pypi/v/codespell?color=3572A5)](https://pypi.org/project/codespell/)                                                  |                                                                                                                                                                                                |
+    | [dos2unix](https://waterlan.home.xs4all.nl/dos2unix.html)                            | Convert text between DOS, UNIX, and Mac formats                                                        | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/dos2unix?color=f9d194)](https://formulae.brew.sh/formula/dos2unix)                                                                                                                                                            |                                                                                                                                                                                                |
+    | [duf](https://github.com/muesli/duf)                                                 | Disk Usage/Free Utility - a better 'df' alternative                                                    | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/duf?color=f9d194)](https://formulae.brew.sh/formula/duf)                                                                                                                                                                      |                                                                                                                                                                                                |
+    | [duti](https://github.com/moretension/duti)                                          | Set default document and URL handlers                                                                  | macOS           | [![homebrew version](https://img.shields.io/homebrew/v/duti?color=f9d194)](https://formulae.brew.sh/formula/duti)                                                                                                                                                                    |                                                                                                                                                                                                |
+    | [fd](https://github.com/sharkdp/fd)                                                  | A simple, fast and user-friendly alternative to find                                                   | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/fd?color=f9d194)](https://formulae.brew.sh/formula/fd)<br>[![Crates.io](https://img.shields.io/crates/v/fd-find?color=dea584)](https://crates.io/crates/fd-find)                                                              |                                                                                                                                                                                                |
+    | [gitleaks](https://github.com/zricethezav/gitleaks)                                  | Audit git repos for secrets                                                                            | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/gitleaks?color=f9d194)](https://formulae.brew.sh/formula/gitleaks)                                                                                                                                                            |                                                                                                                                                                                                |
+    | [gitsome](https://github.com/donnemartin/gitsome)                                    | A Supercharged Git/Shell Autocompleter with GitHub Integration                                         | macOS<br>Linux  | [![PyPI](https://img.shields.io/pypi/v/gitsome?color=3572A5)](https://pypi.org/project/gitsome/)                                                                                                                                                                                     |                                                                                                                                                                                                |
+    | [git-extras](https://github.com/tj/git-extras)                                       | GIT utilities                                                                                          | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/git-extras?color=f9d194)](https://formulae.brew.sh/formula/git-extras)                                                                                                                                                        | Use `git-extras` to display all available commands.                                                                                                                                            |
+    | [grex](https://github.com/pemistahl/grex)                                            | Generates regular expressions from user-provided test cases                                            | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/grex?color=f9d194)](https://formulae.brew.sh/formula/grex)<br>[![Crates.io](https://img.shields.io/crates/v/grex?color=dea584)](https://crates.io/crates/grex)                                                                |                                                                                                                                                                                                |
+    | [gdu](https://github.com/dundee/gdu)                                                 | Disk usage analyzer with console interface written in Go                                               | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/gdu?color=f9d194)](https://formulae.brew.sh/formula/gdu)                                                                                                                                                                      | [ncdu](https://github.com/rofl0r/ncdu) alternative.<br>[Install instructions](https://github.com/dundee/gdu#installation).                                                                     |
+    | [hub](https://github.com/github/hub)                                                 | A command-line tool that makes git easier to use with GitHub                                           | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/hub?color=f9d194)](https://formulae.brew.sh/formula/hub)                                                                                                                                                                      |                                                                                                                                                                                                |
+    | [Homebrew Command Not Found](https://github.com/Homebrew/homebrew-command-not-found) | Ubuntu’s command-not-found equivalent for Homebrew on macOS                                            | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/cloc?color=f9d194)](https://formulae.brew.sh/formula/cloc)                                                                                                                                                                    | Not a command.<br>[Install instructions](https://github.com/Homebrew/homebrew-command-not-found#install).                                                                                      |
+    | [hstr](https://github.com/dvorka/hstr)                                               | Easily view, navigate, sort and use your command history with shell history suggest box                | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/hstr?color=f9d194)](https://formulae.brew.sh/formula/hstr)                                                                                                                                                                    |                                                                                                                                                                                                |
+    | [htop](https://github.com/htop-dev/htop)                                             | Improved top (interactive process viewer)                                                              | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/htop?color=f9d194)](https://formulae.brew.sh/formula/htop)                                                                                                                                                                    |                                                                                                                                                                                                |
+    | [httpie](https://github.com/httpie/httpie)                                           | User-friendly cURL replacement (command-line HTTP client)                                              | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/httpie?color=f9d194)](https://formulae.brew.sh/formula/httpie)<br>[![PyPI](https://img.shields.io/pypi/v/httpie?color=3572A5)](https://pypi.org/project/httpie/)                                                              | Command: `http`.                                                                                                                                                                               |
+    | [jq](https://github.com/stedolan/jq)                                                 | Command-line JSON processor                                                                            | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/jq?color=f9d194)](https://formulae.brew.sh/formula/jq)                                                                                                                                                                        |                                                                                                                                                                                                |
+    | [lsd](https://github.com/Peltoche/lsd)                                               | The next gen ls command                                                                                | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/lsd?color=f9d194)](https://formulae.brew.sh/formula/lsd)<br>[![Crates.io](https://img.shields.io/crates/v/lsd?color=dea584)](https://crates.io/crates/lsd)                                                                    |                                                                                                                                                                                                |
+    | [lynis](https://github.com/CISOfy/lynis)                                             | Security and system auditing tool to harden systems                                                    | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/lynis?color=f9d194)](https://formulae.brew.sh/formula/lynis)                                                                                                                                                                  | Recommended install method: [Git](https://github.com/CISOfy/Lynis).                                                                                                                            |
+    | [mas](https://github.com/mas-cli/mas)                                                | Mac App Store command line interface                                                                   | macOS           | [![homebrew version](https://img.shields.io/homebrew/v/mas?color=f9d194)](https://formulae.brew.sh/formula/mas)                                                                                                                                                                      |                                                                                                                                                                                                |
+    | [muffet](https://github.com/raviqqe/muffet)                                          | Fast website link checker in Go                                                                        | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/muffet?color=f9d194)](https://formulae.brew.sh/formula/muffet)                                                                                                                                                                |                                                                                                                                                                                                |
+    | [nmap](https://github.com/nmap/nmap)                                                 | Network exploration tool and security / port scanner                                                   | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/nmap?color=f9d194)](https://formulae.brew.sh/formula/nmap)                                                                                                                                                                    |                                                                                                                                                                                                |
+    | [pdfgrep](https://gitlab.com/pdfgrep/pdfgrep)                                        | A tool to search text in PDF files. It works similarly to grep.                                        | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/pdfgrep?color=f9d194)](https://formulae.brew.sh/formula/pdfgrep)                                                                                                                                                              |                                                                                                                                                                                                |
+    | [prettier](https://github.com/prettier/prettier)                                     | Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML                                      | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/prettier?color=f9d194)](https://formulae.brew.sh/formula/prettier)<br>[![npm](https://img.shields.io/npm/v/prettier?color=f1e05a)](https://www.npmjs.com/package/prettier)                                                    | Recommended install method: [Npm](https://www.npmjs.com/package/prettier).                                                                                                                     |
+    | [pstree](http://www.thp.uni-duisburg.de/pstree/)                                     | List processes as a tree                                                                               | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/pstree?color=f9d194)](https://formulae.brew.sh/formula/pstree)                                                                                                                                                                |                                                                                                                                                                                                |
+    | [pipenv](https://github.com/pypa/pipenv)                                             | Python dependency management tool                                                                      | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/pipenv?color=f9d194)](https://formulae.brew.sh/formula/pipenv)<br>[![PyPI](https://img.shields.io/pypi/v/pipenv?color=3572A5)](https://pypi.org/project/pipenv/)                                                              |                                                                                                                                                                                                |
+    | [pydocstyle](https://github.com/PyCQA/pydocstyle)                                    | Docstring style checker                                                                                | macOS<br>Linux  | [![PyPI](https://img.shields.io/pypi/v/pydocstyle?color=3572A5)](https://pypi.org/project/pydocstyle/)                                                                                                                                                                               |                                                                                                                                                                                                |
+    | [pylint](https://github.com/PyCQA/pylint)                                            | It's not just a linter that annoys you!                                                                | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/pylint?color=f9d194)](https://formulae.brew.sh/formula/pylint)<br>[![PyPI](https://img.shields.io/pypi/v/pylint?color=3572A5)](https://pypi.org/project/pylint/)                                                              |                                                                                                                                                                                                |
+    | [pyment](https://github.com/dadadel/pyment)                                          | Format and convert Python docstrings and generates patches                                             | macOS<br>Linux  | [![PyPI](https://img.shields.io/pypi/v/pyment?color=3572A5)](https://pypi.org/project/pyment/)                                                                                                                                                                                       |                                                                                                                                                                                                |
+    | [shellcheck](https://github.com/koalaman/shellcheck)                                 | Shell script analysis tool                                                                             | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/shellcheck?color=f9d194)](https://formulae.brew.sh/formula/shellcheck)                                                                                                                                                        |                                                                                                                                                                                                |
+    | [symboliclinker](https://github.com/nickzman/symboliclinker)                         | A contextual menu plugin & service for Mac OS X that allows users to make symbolic links in the Finder | macOS           | [![homebrew version](https://img.shields.io/homebrew/cask/v/symboliclinker?color=f9d194)](https://formulae.brew.sh/cask/symboliclinker)                                                                                                                                              | Not a command.                                                                                                                                                                                 |
+    | [terminal-notifier](https://github.com/julienXX/terminal-notifier)                   | Send macOS User Notifications from the command-line                                                    | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/terminal-notifier?color=f9d194)](https://formulae.brew.sh/formula/terminal-notifier)<br>[![Gem](https://img.shields.io/gem/v/terminal-notifier?color=701516)](https://rubygems.org/gems/terminal-notifier)                    | Not a command.<br>Also see the [bgnotify](#oh-my-zsh-plugins) plugin.                                                                                                                          |
+    | [thefuck](https://github.com/nvbn/thefuck)                                           | Programmatically correct mistyped console commands                                                     | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/thefuck?color=f9d194)](https://formulae.brew.sh/formula/thefuck)<br>[![PyPI](https://img.shields.io/pypi/v/thefuck?color=3572A5)](https://pypi.org/project/thefuck/)                                                          | [Extra install instructions](https://github.com/nvbn/thefuck#manual-installation).                                                                                                             |
+    | [tldr](https://github.com/tldr-pages/tldr)                                           | Simplified and community-driven man pages                                                              | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/tldr?color=f9d194)](https://formulae.brew.sh/formula/tldr)<br>[![npm](https://img.shields.io/npm/v/tldr?color=f1e05a)](https://www.npmjs.com/package/tldr)                                                                    |                                                                                                                                                                                                |
+    | [tmux](https://github.com/tmux/tmux)                                                 | Terminal multiplexer                                                                                   | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/tmux?color=f9d194)](https://formulae.brew.sh/formula/tmux)                                                                                                                                                                    |                                                                                                                                                                                                |
+    | [trash](https://github.com/ali-rantakari/trash)                                      | Move files/folders to the trash                                                                        | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/trash?color=f9d194)](https://formulae.brew.sh/formula/trash)                                                                                                                                                                  |                                                                                                                                                                                                |
+    | [tree](http://mama.indstate.edu/users/ice/tree/)                                     | Display directories as trees (with optional color/HTML output)                                         | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/tree?color=f9d194)](https://formulae.brew.sh/formula/tree)                                                                                                                                                                    |                                                                                                                                                                                                |
+    | [vim](https://github.com/vim/vim)                                                    | Vi 'workalike' with many additional features                                                           | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/vim?color=f9d194)](https://formulae.brew.sh/formula/vim)                                                                                                                                                                      |                                                                                                                                                                                                |
+    | [wget](https://www.gnu.org/software/wget/)                                           | Internet file retriever                                                                                | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/wget?color=f9d194)](https://formulae.brew.sh/formula/wget)                                                                                                                                                                    |                                                                                                                                                                                                |
+    | [youtube-dl](https://github.com/ytdl-org/youtube-dl)                                 | Command-line program to download videos from YouTube.com and other video sites                         | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/youtube-dl?color=f9d194)](https://formulae.brew.sh/formula/youtube-dl)<br>[![PyPI](https://img.shields.io/pypi/v/youtube-dl?color=3572A5)](https://pypi.org/project/youtube-dl/)                                              |                                                                                                                                                                                                |
+    | [zip](http://infozip.sourceforge.net/Zip.html)                                       | Compression and file packaging/archive utility                                                         | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/zip?color=f9d194)](https://formulae.brew.sh/formula/zip)                                                                                                                                                                      |                                                                                                                                                                                                |
+    | [zsh](https://www.zsh.org/)                                                          | UNIX shell (command interpreter)                                                                       | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/zsh?color=f9d194)](https://formulae.brew.sh/formula/zsh)                                                                                                                                                                      | Not a command.                                                                                                                                                                                 |
+    | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)              | Fish-like autosuggestions for zsh                                                                      | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/zsh-autosuggestions?color=f9d194)](https://formulae.brew.sh/formula/zsh-autosuggestions)<br>[![Github](https://img.shields.io/badge/git-git%20clone-lightgrey)](https://github.com/zsh-users/zsh-autosuggestions)             | Not a command.<br>[Zsh](https://github.com/zsh-users/zsh) must be installed.<br>[Install instructions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh).     |
+    | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)      | Fish shell like syntax highlighting for Zsh                                                            | macOS<br>Linux  | [![homebrew version](https://img.shields.io/homebrew/v/zsh-syntax-highlighting?color=f9d194)](https://formulae.brew.sh/formula/zsh-syntax-highlighting)<br>[![Github](https://img.shields.io/badge/git-git%20clone-lightgrey)](https://github.com/zsh-users/zsh-syntax-highlighting) | Not a command.<br>[Zsh](https://github.com/zsh-users/zsh) must be installed.<br>[Install instructions](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh). |
 
 === "Native Package Manager"
 
@@ -78,19 +87,22 @@ NPM contains programs installable by the operating systems built in package mana
     | [black](https://github.com/psf/black)                                           | The uncompromising Python code formatter                                                                | [![Packaging status](https://repology.org/badge/tiny-repos/black.svg)](https://repology.org/project/black/versions)                                     | Recommended install method: [Homebrew](https://formulae.brew.sh/formula/black) OR [Pip](https://pypi.org/project/black/).                                                                      |
     | [bat](https://github.com/sharkdp/bat)                                           | Clone of cat(1) with syntax highlighting and Git integration                                            | [![Packaging status](https://repology.org/badge/tiny-repos/bat-cat.svg)](https://repology.org/project/bat-cat/versions)                                 | Command: `batcat` OR `bat`.                                                                                                                                                                    |
     | [cloc](https://github.com/AlDanial/cloc)                                        | cloc counts blank lines, comment lines, and physical lines of source code in many programming languages | [![Packaging status](https://repology.org/badge/tiny-repos/cloc.svg)](https://repology.org/project/cloc/versions)                                       |                                                                                                                                                                                                |
+    | [codespell](https://github.com/codespell-project/codespell)                     | Check code for common misspellings                                                                      | [![Packaging status](https://repology.org/badge/tiny-repos/codespell.svg)](https://repology.org/project/codespell/versions)                             |                                                                                                                                                                                                |
     | [deborphan](https://tracker.debian.org/pkg/deborphan)                           | Program that can find unused packages, e.g. libraries                                                   | [![Packaging status](https://repology.org/badge/tiny-repos/deborphan.svg)](https://repology.org/project/deborphan/versions)                             | Specific the the `apt` package manager.                                                                                                                                                        |
     | [dos2unix](https://waterlan.home.xs4all.nl/dos2unix.html)                       | Convert text between DOS, UNIX, and Mac formats                                                         | [![Packaging status](https://repology.org/badge/tiny-repos/dos2unix.svg)](https://repology.org/project/dos2unix/versions)                               |                                                                                                                                                                                                |
     | [fd-find](https://github.com/sharkdp/fd)                                        | A simple, fast and user-friendly alternative to find                                                    | [![Packaging status](https://repology.org/badge/tiny-repos/fd-find.svg)](https://repology.org/project/fd-find/versions)                                 | Command: `fd`.                                                                                                                                                                                 |
     | [gitsome](https://github.com/donnemartin/gitsome)                               | A Supercharged Git/Shell Autocompleter with GitHub Integration                                          | [![Packaging status](https://repology.org/badge/tiny-repos/gitsome.svg)](https://repology.org/project/gitsome/versions)                                 |                                                                                                                                                                                                |
     | [git-extras](https://github.com/tj/git-extras)                                  | GIT utilities                                                                                           | [![Packaging status](https://repology.org/badge/tiny-repos/git-extras.svg)](https://repology.org/project/git-extras/versions)                           | Use `git-extras` to display all available commands.                                                                                                                                            |
+    | [gdu](https://github.com/dundee/gdu)                                            | Disk usage analyzer with console interface written in Go                                                | [![Packaging status](https://repology.org/badge/tiny-repos/gdu.svg)](https://repology.org/project/gdu/versions)                                         | [ncdu](https://github.com/rofl0r/ncdu) alternative.<br>[Install instructions](https://github.com/dundee/gdu#installation).                                                                     |
     | [hub](https://github.com/github/hub)                                            | A command-line tool that makes git easier to use with GitHub                                            | [![Packaging status](https://repology.org/badge/tiny-repos/hub.svg)](https://repology.org/project/hub/versions)                                         |                                                                                                                                                                                                |
     | [hstr](https://github.com/dvorka/hstr)                                          | Easily view, navigate, sort and use your command history with shell history suggest box                 | [![Packaging status](https://repology.org/badge/tiny-repos/hstr.svg)](https://repology.org/project/hstr/versions)                                       |                                                                                                                                                                                                |
     | [htop](https://hisham.hm/htop/)                                                 | A cross-platform interactive process viewer                                                             | [![Packaging status](https://repology.org/badge/tiny-repos/htop.svg)](https://repology.org/project/htop/versions)                                       |                                                                                                                                                                                                |
     | [httpie](https://github.com/httpie/httpie)                                      | User-friendly cURL replacement (command-line HTTP client)                                               | [![Packaging status](https://repology.org/badge/tiny-repos/httpie.svg)](https://repology.org/project/httpie/versions)                                   |                                                                                                                                                                                                |
     | [jq](https://github.com/stedolan/jq)                                            | Command-line JSON processor                                                                             | [![Packaging status](https://repology.org/badge/tiny-repos/jq.svg)](https://repology.org/project/jq/versions)                                           |                                                                                                                                                                                                |
+    | [lsd](https://github.com/Peltoche/lsd)                                          | The next gen ls command                                                                                 | [![Packaging status](https://repology.org/badge/tiny-repos/lsd.svg)](https://repology.org/project/lsd/versions)                                         |                                                                                                                                                                                                |
     | [lynis](https://github.com/CISOfy/lynis)                                        | Security and system auditing tool to harden systems                                                     | [![Packaging status](https://repology.org/badge/tiny-repos/lynis.svg)](https://repology.org/project/lynis/versions)                                     | Recommended install method: [Git](https://github.com/CISOfy/Lynis).                                                                                                                            |
     | [nmap](https://nmap.org/)                                                       | Network exploration tool and security / port scanner                                                    | [![Packaging status](https://repology.org/badge/tiny-repos/nmap.svg)](https://repology.org/project/nmap/versions)                                       |                                                                                                                                                                                                |
-    | [ncdu](http://dev.yorhel.nl/ncdu/)                                              | NCurses Disk Usage                                                                                      | [![Packaging status](https://repology.org/badge/tiny-repos/ncdu.svg)](https://repology.org/project/ncdu/versions)                                       |                                                                                                                                                                                                |
+    | [pdfgrep](https://gitlab.com/pdfgrep/pdfgrep)                                   | pdfgrep is a tool to search text in PDF files. It works similarly to grep.                              | [![Packaging status](https://repology.org/badge/tiny-repos/pdfgrep.svg)](https://repology.org/project/pdfgrep/versions)                                 |                                                                                                                                                                                                |
     | [shellcheck](https://www.shellcheck.net/)                                       | Shell script analysis tool                                                                              | [![Packaging status](https://repology.org/badge/tiny-repos/shellcheck.svg)](https://repology.org/project/shellcheck/versions)                           |                                                                                                                                                                                                |
     | [thefuck](https://github.com/nvbn/thefuck)                                      | Programmatically correct mistyped console commands                                                      | [![Packaging status](https://repology.org/badge/tiny-repos/thefuck.svg)](https://repology.org/project/thefuck/versions)                                 | [Extra install instructions](https://github.com/nvbn/thefuck#manual-installation).                                                                                                             |
     | [tldr](https://github.com/tldr-pages/tldr)                                      | Simplified and community-driven man pages                                                               | [![Packaging status](https://repology.org/badge/tiny-repos/tldr.svg)](https://repology.org/project/tldr/versions)                                       |                                                                                                                                                                                                |
@@ -99,6 +111,7 @@ NPM contains programs installable by the operating systems built in package mana
     | [tree](http://mama.indstate.edu/users/ice/tree/)                                | Display directories as trees (with optional color/HTML output)                                          | N/A                                                                                                                                                     |                                                                                                                                                                                                |
     | [vim](https://www.vim.org/)                                                     | Vi 'workalike' with many additional features                                                            | [![Packaging status](https://repology.org/badge/tiny-repos/vim.svg)](https://repology.org/project/vim/versions)                                         |                                                                                                                                                                                                |
     | [wget](https://www.gnu.org/software/wget/)                                      | Internet file retriever                                                                                 | [![Packaging status](https://repology.org/badge/tiny-repos/wget.svg)](https://repology.org/project/wget/versions)                                       |                                                                                                                                                                                                |
+    | [youtube-dl](https://github.com/ytdl-org/youtube-dl)                            | Command-line program to download videos from YouTube.com and other video sites                          | [![Packaging status](https://repology.org/badge/tiny-repos/youtube-dl.svg)](https://repology.org/project/youtube-dl/versions)                           |                                                                                                                                                                                                |
     | [zip](http://www.info-zip.org/Zip.html)                                         | Compression and file packaging/archive utility                                                          | [![Packaging status](https://repology.org/badge/tiny-repos/zip.svg)](https://repology.org/project/zip/versions)                                         |                                                                                                                                                                                                |
     | [zsh](https://www.zsh.org/)                                                     | UNIX shell (command interpreter)                                                                        | [![Packaging status](https://repology.org/badge/tiny-repos/zsh.svg)](https://repology.org/project/zsh/versions)                                         | Not a command.                                                                                                                                                                                 |
     | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)         | Fish-like autosuggestions for zsh                                                                       | [![Packaging status](https://repology.org/badge/tiny-repos/zsh-autosuggestions.svg)](https://repology.org/project/zsh-autosuggestions/versions)         | Not a command.<br>[Zsh](https://github.com/zsh-users/zsh) must be installed.<br>[Install instructions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh).     |
@@ -210,7 +223,7 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
         # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
         # Example format: plugins=(rails git textmate ruby lighthouse)
         # Add wisely, as too many plugins slow down shell startup.
-        plugins=(git colored-man-pages copybuffer copydir copyfile history nmap osx bgnotify urltools)
+        plugins=(colored-man-pages copybuffer copydir copyfile history bgnotify)
 
         source $ZSH/oh-my-zsh.sh
         # User configuration
@@ -256,6 +269,7 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
         ########[ Group 1 ]
 
 
+        alias brewfullupdate="brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor"
         alias edisk="cd /Volumes && ll"
         alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
         alias batterylife="pmset -g batt"
@@ -272,119 +286,89 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
         ######## print out a list of useful commands.
 
 
-        alias listtools="echo -e \
-            \"\n################################################################################\" \
-            \"\n#### [ Package Manager installed commands ]\" \
-            \"\n\" \
-            \"\nblack         - The uncompromising Python code formatter\" \
-            \"\nblackbox_*    - Safely store secrets in Git/Mercurial/Subversion\" \
-            \"\nbat           - Clone of cat(1) with syntax highlighting and Git integration\" \
-            \"\ncloc          - Counts blank lines, comment lines, and physical lines of source\" \
-            \"\n                code in many programming languages\" \
-            \"\ndos2unix      - Convert text between DOS, UNIX, and Mac formats\" \
-            \"\nduti          - Set default document and URL handlers\" \
-            \"\nfd            - A simple, fast and user-friendly alternative to find\" \
-            \"\ngitleaks      - Audit git repos for secrets\" \
-            \"\ngit-extras    - Opens GIT utilities man page\" \
-            \"\ngpg           - GNU Pretty Good Privacy (PGP) package\" \
-            \"\nhub           - A command-line tool that makes git easier to use with GitHub\" \
-            \"\nhstr          - Easily view, navigate, sort and use your command history with\" \
-            \"\n                shell history suggest box\" \
-            \"\nhtop          - Improved top (interactive process viewer)\" \
-            \"\nhttp          - User-friendly cURL replacement (command-line HTTP client)\" \
-            \"\njq            - Command-line JSON processor\" \
-            \"\nmkdocs        - Project documentation with Markdown\" \
-            \"\nnmap          - Network exploration tool and security / port scanner\" \
-            \"\nncdu          - NCurses Disk Usage\" \
-            \"\npstree        - List processes as a tree\" \
-            \"\npyenv         - Python version management\" \
-            \"\nshellcheck    - Shell script analysis tool\" \
-            \"\nspeedtest-cli - Command line interface for testing internet bandwidth using\" \
-            \"\n                speedtest.net\" \
-            \"\nfuck          - Programatically correct mistyped console commands\" \
-            \"\ntldr          - Simplified and community-driven man pages\" \
-            \"\ntmux          - Terminal multiplexer\" \
-            \"\ntrash         - Move files/folders to the trash\" \
-            \"\ntree          - Display directories as trees (with optional color/HTML output)\" \
-            \"\nvim           - Vi 'workalike' with many additional features\" \
-            \"\nwget          - Internet file retriever\" \
-            \"\nwtfutil       - Personal information dashboard for your terminal\" \
-            \"\nzip           - Compression and file packaging/archive utility\" \
-            \"\n\" \
-            \"\n\" \
-            \"\n################################################################################\" \
-            \"\n####[ Oh-my-zsh plugin commands ]\" \
-            \"\n\" \
-            \"\ncopydir   - Copies the path of your current folder to the system clipboard\" \
-            \"\ncopyfile  - Puts the contents of a file in your system clipboard so you can\" \
-            \"\n            paste it anywhere\" \
-            \"\nh         - Prints your command histor\" \
-            \"\nhs        - Use grep to search your command history\" \
-            \"\nhsi       - Use grep to do a case-insensitive search of your command history\" \
-            \"\nurlencode - URL-encodes the given string\" \
-            \"\nurldecode - URL-decodes the given string\" \
-            \"\n\" \
-            \"\n\" \
-            \"\n############################################################################\" \
-            \"\n######## [ Keyboard combinations ]\" \
-            \"\n\" \
-            \"\nCtrl + O - Allows you to copy what you are currently typing, via Ctrl + O\" \
-            \"\n\" \
-            \"\n\" \
-            \"\n############################################################################\" \
-            \"\n########[ Command aliases ]\" \
-            \"\n\" \
-            \"\nlisttools_nmap - Lists nmap aliases\" \
-            \"\nlisttools_osx  - Lists osx aliases\" \
-            \"\n\""
-        alias listtools_nmap="echo -e \
-            \"\n################################################################################\" \
-            \"\n#### [ Nmap aliases ]\" \
-            \"\n\" \
-            \"\nnmap_open_ports            - Scan for open ports on target\" \
-            \"\nnmap_list_interfaces       - List all network interfaces on host where the\" \
-            \"\n                             command runs\" \
-            \"\nnmap_slow                  - Slow scan that avoids to spam the targets logs\" \
-            \"\nnmap_fin                   - Scan to see if hosts are up with TCP FIN scan\" \
-            \"\nnmap_full                  - Aggressive full scan that scans all ports, tries\" \
-            \"\n                             to determine OS and service versions\" \
-            \"\nnmap_check_for_firewall    - TCP ACK scan to check for firewall existence\" \
-            \"\nnmap_ping_through_firewall - Host discovery with SYN and ACK probes instead\" \
-            \"\n                             of just pings to avoid firewall restrictions\" \
-            \"\nnmap_fast                  - Fast scan of the top 300 popular ports\" \
-            \"\nnmap_detect_versions       - Detects versions of services and OS, runs on all ports\" \
-            \"\nnmap_check_for_vulns       - Uses vulscan script to check target services for\" \
-            \"\n                             vulnerabilities\" \
-            \"\nnmap_full_udp              - Same as full but via UDP\" \
-            \"\nnmap_traceroute            - Try to traceroute using the most common ports\" \
-            \"\nnmap_full_with_scripts     - Same as nmap_full but also runs all the scripts\" \
-            \"\nnmap_web_safe_osscan       - Little \"safer\" scan for OS version as connecting\" \
-            \"\n                             to only HTTP and HTTPS ports doesn't look so attacking\" \
-            \"\nnmap_ping_scan             - ICMP scan for active hosts\" \
-            \"\n\""
-        alias listtools_osx="echo -e \
-            \"\n################################################################################\" \
-            \"\n#### [ OSX commands ]\" \
-            \"\n\" \
-            \"\ntab         - Open the current directory in a new tab\" \
-            \"\nsplit_tab   - Split the current terminal tab horizontally\" \
-            \"\nvsplit_tab  - Split the current terminal tab vertically\" \
-            \"\nofd         - Open the current directory in a Finder window\" \
-            \"\npfd         - Return the path of the frontmost Finder window\" \
-            \"\npfs         - Return the current Finder selection\" \
-            \"\ncdf         - cd to the current Finder directory\" \
-            \"\npushdf      - pushd to the current Finder directory\" \
-            \"\npxd         - Return the current Xcode project directory\" \
-            \"\ncdx         - cd to the current Xcode project directory\" \
-            \"\nquick-look  - Quick-Look a specified file\" \
-            \"\nman-preview - Open a specified man page in Preview app\" \
-            \"\nshowfiles   - Show hidden files in Finder\" \
-            \"\nhidefiles   - Hide the hidden files in Finder\" \
-            \"\nmusic       - Control Apple Music. Use music -h for usage details\" \
-            \"\nspotify     - Control Spotify and search by artist, album, track…\" \
-            \"\nrmdsstore   - Remove .DS_Store files recursively in a directory\" \
-            \"\nbtrestart   - Restart the Bluetooth daemon\" \
-            \"\n\""
+        alias listtools="echo -e \"
+        ################################################################################
+        #### [ Package Manager installed commands ]
+
+        bandwhich  - Terminal bandwidth utilization tool
+        bat        - Clone of cat(1) with syntax highlighting and Git integration
+        blackbox_* - Safely store secrets in Git/Mercurial/Subversion
+        btm        - Yet another cross-platform graphical process/system monitor
+        cloc       - Counts blank lines, comment lines, and physical lines of source
+                     code in many programming languages
+        codespell  - Check code for common misspellings
+        dos2unix   - Convert text between DOS, UNIX, and Mac formats
+        duf        - Disk Usage/Free Utility - a better 'df' alternative
+        duti       - Set default document and URL handlers
+        fd         - A simple, fast and user-friendly alternative to find
+        grex       - Generates regular expressions from user-provided test cases
+        gdu        - Disk usage analyzer with console interface written in Go
+        hstr       - Easily view, navigate, sort and use your command history with shell
+                     history suggest box
+        htop       - Improved top (interactive process viewer)
+        http       - User-friendly cURL replacement (command-line HTTP client)
+        jq         - Command-line JSON processor
+        lsd        - The next gen ls command
+        mas        - Mac App Store command line interface
+        muffet     - Fast website link checker in Go
+        nmap       - Network exploration tool and security / port scanner
+        pdfgrep    - A tool to search text in PDF files. It works similarly to grep
+        pipenv     - Python dependency management tool
+        pstree     - List processes as a tree
+        fuck       - Programmatically correct mistyped console commands
+        tldr       - Simplified and community-driven man pages
+        tmux       - Terminal multiplexer
+        trash      - Move files/folders to the trash
+        tree       - Display directories as trees (with optional color/HTML output)
+        wget       - Internet file retriever
+        youtube-dl - Command-line program to download videos from YouTube.com and other
+                     video sites
+        zip        - Compression and file packaging/archive utility
+
+
+        ################################################################################
+        ######## [ Grouped commands ]
+
+        listtools_formatters - Lists code formatters and linters
+        listtools_git        - List of programs oriented around git
+
+
+        ################################################################################
+        ####[ Oh-my-zsh plugin commands ]
+
+        copydir   - Copies the path of your current folder to the system clipboard
+        copyfile  - Puts the contents of a file in your system clipboard so you can
+                    paste it anywhere
+        h         - Prints your command histor
+        hs        - Use grep to search your command history
+        hsi       - Use grep to do a case-insensitive search of your command history
+
+
+        ############################################################################
+        ######## [ Keyboard combinations ]
+
+        Ctrl + O - Allows you to copy what you are currently typing, via Ctrl + O
+        \""
+        alias listtools_formatters="echo -e \"
+        ################################################################################
+        #### [ Code formatters and linters ]
+
+        black      - The uncompromising Python code formatter
+        prettier   - Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+        pydocstyle - Docstring style checker
+        pylint     - It's not just a linter that annoys you!
+        pyment     - Format and convert Python docstrings and generates patches
+        shellcheck - Shell script analysis tool
+        \""
+        alias listtools_git="echo -e \"
+        ################################################################################
+        #### [ Git related ]
+
+        gitleaks   - Audit git repos for secrets
+        gitsome    - A Supercharged Git/Shell Autocompleter with GitHub Integration
+        git-extras - GIT utilities
+        hub        - A command-line tool that makes git easier to use with GitHub
+        \""
 
 
         ######## End of [ Group  2]
@@ -460,7 +444,7 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
 
     === "Linux"
 
-      HI
+        TO BE ADDED
 
 #### Oh-my-zsh Plugins
 
@@ -470,12 +454,10 @@ This is a list of all the oh-my-zsh plugins that I use and find to provide usefu
 | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) | Adds colors to man pages                                          | Not a command                                                                                                  |
 | [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer)               | Allows you to copy what you are currently typing, via Ctrl + O    | Not a command<br>Key Combination: `Ctrl` + `O`                                                                 |
-| [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir)                     | Copies the path of your working directory                         |
-| [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile)                   | Copies the contents of a file                                     |
-| [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history)                     | History aliases                                                   |
-| [nmap](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nmap)                           | Nmap aliases                                                      | `nmap` must already be installed                                                                               |
+| [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir)                     | Copies the path of your working directory                         |                                                                                                                |
+| [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile)                   | Copies the contents of a file                                     |                                                                                                                |
+| [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history)                     | History aliases                                                   |                                                                                                                |
 | [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify)                   | cross-platform background notifications for long running commands | Not a command<br>[Extra install instructions](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify) |
-| [urltools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/urltools)                   | provides two aliases to URL-encode and URL-decode strings         |
 
 #### Custom Aliases
 
@@ -485,12 +467,13 @@ Below is a list of "General Purpose Aliases" that I have inside of my `.zshrc`. 
 
     ```bash
     ########################################################################################
-    #### [ General Purpose Aliases ]
+    #### [ General Aliases ]
 
     ####################################################################################
-    ######## [ Group 1 ]
+    ########[ Group 1 ]
 
 
+    alias brewfullupdate="brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor"
     alias edisk="cd /Volumes && ll"
     alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
     alias batterylife="pmset -g batt"
@@ -507,254 +490,102 @@ Below is a list of "General Purpose Aliases" that I have inside of my `.zshrc`. 
     ######## print out a list of useful commands.
 
 
-    alias listtools="echo -e \
-        \"\n################################################################################\" \
-        \"\n#### [ Package Manager installed commands ]\" \
-        \"\n\" \
-        \"\nbandwhich  - Terminal bandwidth utilization tool\" \
-        \"\nbat        - Clone of cat(1) with syntax highlighting and Git integration\" \
-        \"\nblackbox_* - Safely store secrets in Git/Mercurial/Subversion\" \
-        \"\btm         - Yet another cross-platform graphical process/system monitor\" \
-        \"\ncloc       - Counts blank lines, comment lines, and physical lines of source\" \
-        \"\n             code in many programming languages\" \
-        \"\ndos2unix   - Convert text between DOS, UNIX, and Mac formats\" \
-        \"\nduti       - Set default document and URL handlers\" \
-        \"\nfd         - A simple, fast and user-friendly alternative to find\" \
-        \"\ngrex       - Generates regular expressions from user-provided test cases\" \
-        \"\nhub        - A command-line tool that makes git easier to use with GitHub\" \
-        \"\nhstr       - Easily view, navigate, sort and use your command history with shell\" \
-        \"\n             history suggest box\" \
-        \"\nhtop       - Improved top (interactive process viewer)\" \
-        \"\nhttp       - User-friendly cURL replacement (command-line HTTP client)\" \
-        \"\njq         - Command-line JSON processor\" \
-        \"\nnmap       - Network exploration tool and security / port scanner\" \
-        \"\nncdu       - NCurses Disk Usage\" \
-        \"\npstree     - List processes as a tree\" \
-        \"\nshellcheck - Shell script analysis tool\" \
-        \"\nfuck       - Programatically correct mistyped console commands\" \
-        \"\ntldr       - Simplified and community-driven man pages\" \
-        \"\ntmux       - Terminal multiplexer\" \
-        \"\ntrash      - Move files/folders to the trash\" \
-        \"\ntree       - Display directories as trees (with optional color/HTML output)\" \
-        \"\nwget       - Internet file retriever\" \
-        \"\nwtfutil    - Personal information dashboard for your terminal\" \
-        \"\nzip        - Compression and file packaging/archive utility\" \
-        \"\n\" \
-        \"\n\" \
-        \"\n############################################################################\" \
-        \"\n########[ Grouped commands ]\" \
-        \"\n\" \
-        \"\nlisttools_formatters - Lists code formatters and linters\" \
-        \"\nlisttools_git        - List of programs oriented around git\" \
-        \"\n\" \
-        \"\n\" \
-        \"\n################################################################################\" \
-        \"\n####[ Oh-my-zsh plugin commands ]\" \
-        \"\n\" \
-        \"\ncopydir   - Copies the path of your current folder to the system clipboard\" \
-        \"\ncopyfile  - Puts the contents of a file in your system clipboard so you can\" \
-        \"\n            paste it anywhere\" \
-        \"\nh         - Prints your command histor\" \
-        \"\nhs        - Use grep to search your command history\" \
-        \"\nhsi       - Use grep to do a case-insensitive search of your command history\" \
-        \"\nurlencode - URL-encodes the given string\" \
-        \"\nurldecode - URL-decodes the given string\" \
-        \"\n\" \
-        \"\n\" \
-        \"\n############################################################################\" \
-        \"\n######## [ Keyboard combinations ]\" \
-        \"\n\" \
-        \"\nCtrl + O - Allows you to copy what you are currently typing, via Ctrl + O\" \
-        \"\n\" \
-        \"\n\" \
-        \"\n############################################################################\" \
-        \"\n########[ Command aliases ]\" \
-        \"\n\" \
-        \"\nlisttools_nmap - Lists nmap aliases\" \
-        \"\n\""
-    alias listtools_formatters="echo -e \
-        \"\n################################################################################\" \
-        \"\n#### [ Code formatters and linters ]\" \
-        \"\n\" \
-        \"\nblack    - The uncompromising Python code formatter\" \
-        \"\nprettier - Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML\" \
-        \"\n\""
-    alias listtools_git="echo -e \
-        \"\n################################################################################\" \
-        \"\n#### [ Git related ]\" \
-        \"\n\" \
-        \"\ngitleaks   - Audit git repos for secrets\" \
-        \"\ngitsome    - A Supercharged Git/Shell Autocompleter with GitHub Integration\" \
-        \"\ngit-extras - Opens GIT utilities man page\" \
-        \"\n\""
-    alias listtools_nmap="echo -e \
-        \"\n################################################################################\" \
-        \"\n#### [ Nmap aliases ]\" \
-        \"\n\" \
-        \"\nnmap_open_ports            - Scan for open ports on target\" \
-        \"\nnmap_list_interfaces       - List all network interfaces on host where the\" \
-        \"\n                             command runs\" \
-        \"\nnmap_slow                  - Slow scan that avoids to spam the targets logs\" \
-        \"\nnmap_fin                   - Scan to see if hosts are up with TCP FIN scan\" \
-        \"\nnmap_full                  - Aggressive full scan that scans all ports, tries\" \
-        \"\n                             to determine OS and service versions\" \
-        \"\nnmap_check_for_firewall    - TCP ACK scan to check for firewall existence\" \
-        \"\nnmap_ping_through_firewall - Host discovery with SYN and ACK probes instead\" \
-        \"\n                             of just pings to avoid firewall restrictions\" \
-        \"\nnmap_fast                  - Fast scan of the top 300 popular ports\" \
-        \"\nnmap_detect_versions       - Detects versions of services and OS, runs on all ports\" \
-        \"\nnmap_check_for_vulns       - Uses vulscan script to check target services for\" \
-        \"\n                             vulnerabilities\" \
-        \"\nnmap_full_udp              - Same as full but via UDP\" \
-        \"\nnmap_traceroute            - Try to traceroute using the most common ports\" \
-        \"\nnmap_full_with_scripts     - Same as nmap_full but also runs all the scripts\" \
-        \"\nnmap_web_safe_osscan       - Little \"safer\" scan for OS version as connecting\" \
-        \"\n                             to only HTTP and HTTPS ports doesn't look so attacking\" \
-        \"\nnmap_ping_scan             - ICMP scan for active hosts\" \
-        \"\n\""
+    alias listtools="echo -e \"
+    ################################################################################
+    #### [ Package Manager installed commands ]
+
+    bandwhich  - Terminal bandwidth utilization tool
+    bat        - Clone of cat(1) with syntax highlighting and Git integration
+    blackbox_* - Safely store secrets in Git/Mercurial/Subversion
+    btm        - Yet another cross-platform graphical process/system monitor
+    cloc       - Counts blank lines, comment lines, and physical lines of source
+                 code in many programming languages
+    codespell  - Check code for common misspellings
+    dos2unix   - Convert text between DOS, UNIX, and Mac formats
+    duf        - Disk Usage/Free Utility - a better 'df' alternative
+    duti       - Set default document and URL handlers
+    fd         - A simple, fast and user-friendly alternative to find
+    grex       - Generates regular expressions from user-provided test cases
+    gdu        - Disk usage analyzer with console interface written in Go
+    hstr       - Easily view, navigate, sort and use your command history with shell
+                 history suggest box
+    htop       - Improved top (interactive process viewer)
+    http       - User-friendly cURL replacement (command-line HTTP client)
+    jq         - Command-line JSON processor
+    lsd        - The next gen ls command
+    mas        - Mac App Store command line interface
+    muffet     - Fast website link checker in Go
+    nmap       - Network exploration tool and security / port scanner
+    pdfgrep    - A tool to search text in PDF files. It works similarly to grep
+    pipenv     - Python dependency management tool
+    pstree     - List processes as a tree
+    fuck       - Programmatically correct mistyped console commands
+    tldr       - Simplified and community-driven man pages
+    tmux       - Terminal multiplexer
+    trash      - Move files/folders to the trash
+    tree       - Display directories as trees (with optional color/HTML output)
+    wget       - Internet file retriever
+    youtube-dl - Command-line program to download videos from YouTube.com and other
+                 video sites
+    zip        - Compression and file packaging/archive utility
+
+
+    ################################################################################
+    ######## [ Grouped commands ]
+
+    listtools_formatters - Lists code formatters and linters
+    listtools_git        - List of programs oriented around git
+
+
+    ################################################################################
+    ####[ Oh-my-zsh plugin commands ]
+
+    copydir  - Copies the path of your current folder to the system clipboard
+    copyfile - Puts the contents of a file in your system clipboard so you can
+               paste it anywhere
+    h        - Prints your command histor
+    hs       - Use grep to search your command history
+    hsi      - Use grep to do a case-insensitive search of your command history
+
+
+    ############################################################################
+    ######## [ Keyboard combinations ]
+
+    Ctrl + O - Allows you to copy what you are currently typing, via Ctrl + O
+    \""
+    alias listtools_formatters="echo -e \"
+    ################################################################################
+    #### [ Code formatters and linters ]
+
+    black      - The uncompromising Python code formatter
+    prettier   - Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+    pydocstyle - Docstring style checker
+    pylint     - It's not just a linter that annoys you!
+    pyment     - Format and convert Python docstrings and generates patches
+    shellcheck - Shell script analysis tool
+    \""
+    alias listtools_git="echo -e \"
+    ################################################################################
+    #### [ Git related ]
+
+    gitleaks   - Audit git repos for secrets
+    gitsome    - A Supercharged Git/Shell Autocompleter with GitHub Integration
+    git-extras - GIT utilities
+    hub        - A command-line tool that makes git easier to use with GitHub
+    \""
 
 
     ######## End of [ Group  2]
     ####################################################################################
 
-    #### End of [ General Purpose Aliases ]
+    #### End of [ General Aliases ]
     ########################################################################################
     ```
 
 === "Linux"
 
     ```bash
-    ########################################################################################
-    #### [ General Purpose Aliases ]
-
-    ####################################################################################
-    ######## [ Group 1 ]
-
-
-    alias updateall="sudo apt update && sudo apt upgrade -y"
-    alias trm="trash"
-
-
-    ######## End of [ Group 1 ]
-    ####################################################################################
-    ######## [ Group 2 ]
-    ######## Due to the sheer number of commands, it's impossible to remember them all. So
-    ######## the aliases below are supposed to make it easier to remember by allowing you to
-    ######## print out a list of useful commands.
-
-
-    alias listtools="echo -e \
-        \"\n################################################################################\" \
-        \"\n#### [ Package Manager installed commands ]\" \
-        \"\n\" \
-        \"\nbandwhich  - Terminal bandwidth utilization tool\" \
-        \"\nbat        - Clone of cat(1) with syntax highlighting and Git integration\" \
-        \"\nblackbox_* - Safely store secrets in Git/Mercurial/Subversion\" \
-        \"\btm         - Yet another cross-platform graphical process/system monitor\" \
-        \"\ncloc       - Counts blank lines, comment lines, and physical lines of source\" \
-        \"\n             code in many programming languages\" \
-        \"\ndeborphan  - Program that can find unused packages, e.g. libraries\" \
-        \"\ndos2unix   - Convert text between DOS, UNIX, and Mac formats\" \
-        \"\nfd         - A simple, fast and user-friendly alternative to find\" \
-        \"\ngrex       - Generates regular expressions from user-provided test cases\" \
-        \"\nhub        - A command-line tool that makes git easier to use with GitHub\" \
-        \"\nhstr       - Easily view, navigate, sort and use your command history with shell\" \
-        \"\n             history suggest box\" \
-        \"\nhtop       - Improved top (interactive process viewer)\" \
-        \"\nhttp       - User-friendly cURL replacement (command-line HTTP client)\" \
-        \"\njq         - Command-line JSON processor\" \
-        \"\nnmap       - Network exploration tool and security / port scanner\" \
-        \"\nncdu       - NCurses Disk Usage\" \
-        \"\npstree     - List processes as a tree\" \
-        \"\nshellcheck - Shell script analysis tool\" \
-        \"\nfuck       - Programatically correct mistyped console commands\" \
-        \"\ntldr       - Simplified and community-driven man pages\" \
-        \"\ntmux       - Terminal multiplexer\" \
-        \"\ntrash      - Move files/folders to the trash\" \
-        \"\ntree       - Display directories as trees (with optional color/HTML output)\" \
-        \"\nwget       - Internet file retriever\" \
-        \"\nwtfutil    - Personal information dashboard for your terminal\" \
-        \"\nzip        - Compression and file packaging/archive utility\" \
-        \"\n\" \
-        \"\n\" \
-        \"\n############################################################################\" \
-        \"\n########[ Grouped commands ]\" \
-        \"\n\" \
-        \"\nlisttools_formatters - Lists code formatters and linters\" \
-        \"\nlisttools_git        - List of programs oriented around git\" \
-        \"\n\" \
-        \"\n\" \
-        \"\n################################################################################\" \
-        \"\n####[ Oh-my-zsh plugin commands ]\" \
-        \"\n\" \
-        \"\ncopydir   - Copies the path of your current folder to the system clipboard\" \
-        \"\ncopyfile  - Puts the contents of a file in your system clipboard so you can\" \
-        \"\n            paste it anywhere\" \
-        \"\nh         - Prints your command histor\" \
-        \"\nhs        - Use grep to search your command history\" \
-        \"\nhsi       - Use grep to do a case-insensitive search of your command history\" \
-        \"\nurlencode - URL-encodes the given string\" \
-        \"\nurldecode - URL-decodes the given string\" \
-        \"\n\" \
-        \"\n\" \
-        \"\n############################################################################\" \
-        \"\n######## [ Keyboard combinations ]\" \
-        \"\n\" \
-        \"\nCtrl + O - Allows you to copy what you are currently typing, via Ctrl + O\" \
-        \"\n\" \
-        \"\n\" \
-        \"\n############################################################################\" \
-        \"\n########[ Command aliases ]\" \
-        \"\n\" \
-        \"\nlisttools_nmap - Lists nmap aliases\" \
-        \"\n\""
-    alias listtools_formatters="echo -e \
-        \"\n################################################################################\" \
-        \"\n#### [ Code formatters and linters ]\" \
-        \"\n\" \
-        \"\nblack    - The uncompromising Python code formatter\" \
-        \"\nprettier - Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML\" \
-        \"\n\""
-    alias listtools_git="echo -e \
-        \"\n################################################################################\" \
-        \"\n#### [ Git related ]\" \
-        \"\n\" \
-        \"\ngitleaks   - Audit git repos for secrets\" \
-        \"\ngitsome    - A Supercharged Git/Shell Autocompleter with GitHub Integration\" \
-        \"\ngit-extras - Opens GIT utilities man page\" \
-        \"\n\""
-    alias listtools_nmap="echo -e \
-        \"\n################################################################################\" \
-        \"\n#### [ Nmap aliases ]\" \
-        \"\n\" \
-        \"\nnmap_open_ports            - Scan for open ports on target\" \
-        \"\nnmap_list_interfaces       - List all network interfaces on host where the\" \
-        \"\n                             command runs\" \
-        \"\nnmap_slow                  - Slow scan that avoids to spam the targets logs\" \
-        \"\nnmap_fin                   - Scan to see if hosts are up with TCP FIN scan\" \
-        \"\nnmap_full                  - Aggressive full scan that scans all ports, tries\" \
-        \"\n                             to determine OS and service versions\" \
-        \"\nnmap_check_for_firewall    - TCP ACK scan to check for firewall existence\" \
-        \"\nnmap_ping_through_firewall - Host discovery with SYN and ACK probes instead\" \
-        \"\n                             of just pings to avoid firewall restrictions\" \
-        \"\nnmap_fast                  - Fast scan of the top 300 popular ports\" \
-        \"\nnmap_detect_versions       - Detects versions of services and OS, runs on all ports\" \
-        \"\nnmap_check_for_vulns       - Uses vulscan script to check target services for\" \
-        \"\n                             vulnerabilities\" \
-        \"\nnmap_full_udp              - Same as full but via UDP\" \
-        \"\nnmap_traceroute            - Try to traceroute using the most common ports\" \
-        \"\nnmap_full_with_scripts     - Same as nmap_full but also runs all the scripts\" \
-        \"\nnmap_web_safe_osscan       - Little \"safer\" scan for OS version as connecting\" \
-        \"\n                             to only HTTP and HTTPS ports doesn't look so attacking\" \
-        \"\nnmap_ping_scan             - ICMP scan for active hosts\" \
-        \"\n\""
-
-
-    ######## End of [ Group  2]
-    ####################################################################################
-
-    #### End of [ General Purpose Aliases ]
-    ########################################################################################
+    TO BE ADDED
     ```
 
 ### Modifying LSCOLORS
@@ -808,8 +639,15 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'luochen1990/rainbow'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'itchyny/lightline.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'preservim/nerdtree'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -844,15 +682,27 @@ set mouse-=a      " Exchanges the ability to move the cursor with your mouse, wi
 
 """"[ Vundle plugin configurations ]""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
+" Font: Power Line Font
+set guifont=MesloLGS_NF:h12
 " Plugin: rainbow
 let g:rainbow_active = 1
-" Plugin: lightline
-set laststatus=2
-set noshowmode
-"Plugin: gruvbox
+" Plugin: vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_powerline_fonts = 1
+" Plugin: gruvbox
 colorscheme gruvbox
 set bg=dark
+" Plugin: vim-devicons
+set encoding=UTF-8
+
+
+""""[ Useful Commands ]"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" :NERDTree - Opens NERDTree file system explorer
 ```
 
 ### Without Vundle Plugins
@@ -860,16 +710,16 @@ set bg=dark
 Suppose you rather not use all the configurations provided by Vundle. In that case, you can just place the below configurations into your`.vimrc`, located at your home directory. These configurations simply change some of the default vim settings while leaving the rest as is.
 
 ```vim
-" Set's the default vim settings
+" Set's the default vim settings.
 source $VIMRUNTIME/defaults.vim
 
-" Overwrites specified default setting
-set tabstop=4     " Tells vim how many columns a tab counts for
-set shiftwidth=4  " 'Levels of indentation', where a level of indentation is
-                  " shift width columns of whitespace
-set expandtab     " Ensure that when you hit tab, it will actually use spaces
-set mouse-=a      " Exchanges the ability to move the cursor with your mouse,
-                  " with the ability to highlight and copy text
+" Overwrites specified default setting.
+set tabstop=4     " Tells vim how many columns a tab counts for.
+set shiftwidth=4  " 'Levels of indentation', where a level of indentation is shiftwidth
+                  " columns of whitespace.
+set expandtab     " Ensure that when you hit tab it will actually use spaces.
+set mouse-=a      " Exchanges the ability to move the cursor with your mouse, with the
+                  " ability to highlight and copy text.
 ```
 
 ## Terminal Profile
