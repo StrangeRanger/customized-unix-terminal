@@ -1,7 +1,7 @@
 # Customized Unix Terminal
 
 [![Project Tracker](https://img.shields.io/badge/repo%20status-Project%20Tracker-lightgrey)](https://randomserver.xyz/project-tracker.html)
-![Updated](https://img.shields.io/static/v1?label=updated&message=February%2019%2C%202021&color=blue&style=flat-square)
+![Updated](https://img.shields.io/static/v1?label=updated&message=May%2026%2C%202021&color=blue&style=flat-square)
 [![Documentation Tool](https://img.shields.io/static/v1?label=created%20with&message=material%20for%20mkdocs&color=blue)](https://github.com/squidfunk/mkdocs-material)
 
 This repository contains configurations that I use to modify my terminal's style and behavior, both on my Mac and Linux devices. I've additionally listed all of the command line based programs that I find useful or good to have at a second's notice.
@@ -12,6 +12,10 @@ This repository contains configurations that I use to modify my terminal's style
 | [Customizing ZSH Shell](#customizing-zsh-shell) |
 | [Vim Resource File](#vim-resource-file)         |
 | [Terminal Profile](#terminal-profile)           |
+
+
+!!! Note
+    I'm currently in the process of reworking this, as I've made quite a bit of changes since my last update. I'll remove this note once everything is up to where it should be.
 
 ## Useful Programs
 
