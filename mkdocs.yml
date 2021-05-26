@@ -4,6 +4,7 @@ site_dir: ../site
 repo_url: https://github.com/StrangeRanger/customized-unix-terminal
 
 theme:
+  favicon: https://randomserver.xyz/favicon.ico
   name: material
   palette:
     scheme: slate
