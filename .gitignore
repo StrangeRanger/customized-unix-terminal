@@ -1,2 +1,6 @@
 # Directory created from `mkdocs gh-deploy`m
 site/
+
+#Pipenv stuff
+Pipfile
+Pipfile.lock
