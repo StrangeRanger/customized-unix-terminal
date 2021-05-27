@@ -228,7 +228,7 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
         # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
         # Example format: plugins=(rails git textmate ruby lighthouse)
         # Add wisely, as too many plugins slow down shell startup.
-        plugins=(colored-man-pages copybuffer copydir copyfile history bgnotify)
+        plugins=(colored-man-pages copybuffer copydir copyfile bgnotify)
 
         source $ZSH/oh-my-zsh.sh
         # User configuration
@@ -344,10 +344,6 @@ The theme that I use in combination with oh-my-zsh is [Powerlevel10k](https://gi
         copydir   - Copies the path of your current folder to the system clipboard
         copyfile  - Puts the contents of a file in your system clipboard so you can
                     paste it anywhere
-        h         - Prints your command histor
-        hs        - Use grep to search your command history
-        hsi       - Use grep to do a case-insensitive search of your command history
-
 
         ############################################################################
         ######## [ Keyboard combinations ]
@@ -461,7 +457,6 @@ This is a list of all the oh-my-zsh plugins that I use and find to provide usefu
 | [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer)               | Allows you to copy what you are currently typing, via Ctrl + O    | Not a command<br>Key Combination: `Ctrl` + `O`                                                                 |
 | [copydir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copydir)                     | Copies the path of your working directory                         |                                                                                                                |
 | [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile)                   | Copies the contents of a file                                     |                                                                                                                |
-| [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history)                     | History aliases                                                   |                                                                                                                |
 | [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify)                   | cross-platform background notifications for long running commands | Not a command<br>[Extra install instructions](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify) |
 
 #### Custom Aliases
@@ -548,10 +543,6 @@ Below is a list of "General Purpose Aliases" that I have inside of my `.zshrc`. 
     copydir  - Copies the path of your current folder to the system clipboard
     copyfile - Puts the contents of a file in your system clipboard so you can
                paste it anywhere
-    h        - Prints your command histor
-    hs       - Use grep to search your command history
-    hsi      - Use grep to do a case-insensitive search of your command history
-
 
     ############################################################################
     ######## [ Keyboard combinations ]

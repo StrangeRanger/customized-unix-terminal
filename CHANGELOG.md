@@ -39,4 +39,5 @@
 - Removed `mkdocs` from **Useful Programs** and **Custom Aliases**
 - Removed `osx` plugin from **Oh-my-zsh Plugins** and **Custom Aliases**
 - Removed `vim` from **Custom Aliases**
+- Removed `history` from **Oh-my-zsh Plugins** and **Custom Aliases**
 - Removed many other things that I've forgotten to list here...
