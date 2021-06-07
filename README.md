@@ -1,6 +1,6 @@
 # Customized Unix Terminal
 
-[![Project Tracker](https://img.shields.io/badge/repo%20status-Project%20Tracker-lightgrey)](https://randomserver.xyz/project-tracker.html)
+[![Project Tracker](https://img.shields.io/badge/repo%20status-Project%20Tracker-lightgrey)](https://randomserver.xyz/project-tracker.html#customized-unix-terminal)
 [![Documentation Tool](https://img.shields.io/static/v1?label=created%20with&message=material%20for%20mkdocs&color=blue)](https://github.com/squidfunk/mkdocs-material)
 [![Page Status](https://img.shields.io/uptimerobot/status/m788335124-af78027ad4a42d714c4070a7)](https://customized-unix-terminal.randomserver.xyz/)
 
