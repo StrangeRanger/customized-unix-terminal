@@ -4,14 +4,12 @@ site_dir: ../site
 repo_url: https://github.com/StrangeRanger/customized-unix-terminal
 
 theme:
-  favicon: https://randomserver.xyz/favicon.ico
   name: material
   palette:
     scheme: slate
     primary: blue
     accent: blue
   features:
-    #- navigation.tabs  # Disabled for this project
     - navigation.instant
     - navigation.sections
   icon:
@@ -25,7 +23,9 @@ plugins:
       minify_html: true
   - git-revision-date-localized:
       type: date
-      fallback_to_build_date: true
+      timezone: America/Los_Angeles
+      enable_creation_date: true
+      enabled: true
   - search
   - same-dir
 
