@@ -24,7 +24,7 @@ plugins:
   - git-revision-date-localized:
       type: date
       timezone: America/Los_Angeles
-      enable_creation_date: true
+      fallback_to_build_date: true
       enabled: true
   - search
   - same-dir
