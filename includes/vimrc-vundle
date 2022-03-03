@@ -1,0 +1,90 @@
+""""[ Vundle configurations ]"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful
+" configuration.
+Plugin 'luochen1990/rainbow'
+" Lean & mean status/tabline for vim that's light as air.
+Plugin 'vim-airline/vim-airline'
+" A collection of themes for vim-airline.
+Plugin 'vim-airline/vim-airline-themes'
+" Retro groove color scheme for Vim.
+Plugin 'morhetz/gruvbox'
+" A solid language pack for Vim.
+Plugin 'sheerun/vim-polyglot'
+" A tree explorer plugin for vim.
+Plugin 'preservim/nerdtree'
+" Adds file type icons to Vim plugins.
+Plugin 'ryanoasis/vim-devicons'
+" A plugin of NERDTree showing git status
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP)
+" support.
+Plugin 'dense-analysis/ale'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+""""[ Non-Vundle related configurations ]"""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" Set's the default vim settings.
+source $VIMRUNTIME/defaults.vim
+
+" Overwrites specified default setting.
+set tabstop=4     " Tells vim how many columns a tab counts for.
+set shiftwidth=4  " 'Levels of indentation', where a level of indentation is shiftwidth
+                  " columns of whitespace.
+set expandtab     " Ensure that when you hit tab it will actually use spaces.
+set mouse-=a      " Exchanges the ability to move the cursor with your mouse, with the
+                  " ability to highlight and copy text.
+
+
+""""[ Vundle plugin configurations ]""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Font: Power Line Font
+set guifont=MesloLGS_NF:h12
+" Plugin: rainbow
+let g:rainbow_active = 1
+" Plugin: vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_powerline_fonts = 1
+" Plugin: gruvbox
+colorscheme gruvbox
+set bg=dark
+" Plugin: vim-devicons
+set encoding=UTF-8
+
+
+""""[ Useful Commands ]"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" :NERDTree - Opens NERDTree file system explorer
