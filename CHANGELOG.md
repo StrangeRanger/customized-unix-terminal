@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 As a note, if the changelog only says "Removed XXX", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified as such.
 
+## 2022.3.1 - 2022-03-01
+
+- Added comments to `mkdocs.yml`.
+- Updated plugins, features, and extensions used via `mkdocs.yml`.
+- Updated version number of all packages in `mkdocs-requirements.txt`.
+- Updated deprecated zsh plugin `copydir` to `copypath`.
+- The section of the document displaying my `.zshrc` and `.vimrc` files, uses the code from the files in the `insides` folder.
+
 ## 2021.12.21 - 2021-12-21
 
 - Added `git-quick-stats`.
