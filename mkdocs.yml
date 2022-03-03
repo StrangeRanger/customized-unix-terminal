@@ -6,12 +6,35 @@ repo_url: https://github.com/StrangeRanger/customized-unix-terminal
 theme:
   name: material
   palette:
-    scheme: slate
-    primary: blue
-    accent: blue
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+      primary: blue
+      accent: blue
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      primary: blue
+      accent: blue
   features:
+    # When instant loading is enabled, clicks on all internal links will be intercepted
+    # and dispatched via XHR without fully reloading the page.
     - navigation.instant
+    # When anchor tracking is enabled, the URL in the address bar is automatically
+    # updated with the active anchor as highlighted in the table of contents.
+    - navigation.tracking
+    # When sections are enabled, top-level sections are rendered as groups in the
+    # sidebar for viewports above 1220px, but remain as-is on mobile.
     - navigation.sections
+    # A back-to-top button can be shown when the user, after scrolling down, starts to
+    # scroll up again. It's rendered centered and just below the header.
+    - navigation.top
+    - search.suggest
+    - search.highlight
   icon:
     repo: fontawesome/brands/github
 
@@ -19,34 +42,59 @@ extra_css:
   - stylesheets/extra.css
 
 plugins:
-  - minify:
-      minify_html: true
+  ## Built-in plugins.
+  - search
+  ## External plugins.
+  - same-dir
   - git-revision-date-localized:
       type: date
       timezone: America/Los_Angeles
       fallback_to_build_date: true
       enabled: true
-  - search
-  - same-dir
 
 markdown_extensions:
-  # Built in extensions
-  - codehilite:
-      guess_lang: false
-  - toc:
-      permalink: true
-  - admonition
-  - meta
-  - footnotes
-  # Extensions provide by pymdown
-  - pymdownx.tasklist:
-      custom_checkbox: true
+  # The BetterEm extension improves the detection of Markup to emphasize text in
+  # Markdown using special characters, i.e. for **bold** and _italic_ formatting.
   - pymdownx.betterem:
       smart_enable: all
+  # The Highlight extension adds support for syntax highlighting of code blocks (with
+  # the help of SuperFences) and inline code blocks (with the help of InlineHilite).
+  - pymdownx.highlight:
+      use_pygments: true
+      linenums: true
+      linenums_style: pymdownx-inline
+  # The Tabbed extension allows the usage of content tabs, a simple way to group related
+  # content and code blocks under accessible tabs.
+  - pymdownx.tabbed:
+      alternate_style: true
+  # The Admonition extension adds support for admonitions, more commonly known as
+  # call-outs, which can be defined in Markdown by using a simple syntax.
+  - admonition
+  # This configuration enables Markdown table support, which should normally be enabled
+  # by default, but to be sure, it's added here.
+  - tables
+  # The Details extension supercharges the Admonition extension, making the resulting
+  # call-outs collapsible, allowing them to be opened and closed by the user.
   - pymdownx.details
+  # The InlineHilite extension add support for syntax highlighting of inline code
+  # blocks. It's built on top of the Highlight extension, from which it sources its
+  # configuration.
   - pymdownx.inlinehilite
+  # The Keys extension adds a simple syntax to allow for the rendering of keyboard keys
+  # and combinations.
+  - pymdownx.keys
+  # The SmartSymbols extension converts some sequences of characters into their
+  # corresponding symbols, e.h. copyright symbols or fractions.
+  - pymdownx.smartsymbols
+  # The Snippets extension adds the ability to embed content from arbitrary files into a
+  # document, including other documents or source files, by using a simple syntax.
+  - pymdownx.snippets
+  # The SmartSymbols extension converts some sequences of characters into their
+  # corresponding symbols, e.h. copyright symbols or fractions.
+  - pymdownx.smartsymbols
+  # The SuperFences extension allows for arbitrary nesting of code and content blocks
+  # inside each other, including admonitions, tabs, lists and all other elements.
   - pymdownx.superfences
-  - pymdownx.tabbed
 
 nav:
   - Home: README.md
