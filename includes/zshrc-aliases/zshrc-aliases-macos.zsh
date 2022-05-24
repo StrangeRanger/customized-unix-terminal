@@ -8,10 +8,8 @@
 alias updatebrew="brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor"
 alias edisk="cd /Volumes && ll"
 alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias rm="trash"
-
-# Restart coreaudio on macOS
-alias rscoreaudio="sudo kill -9 \"$(ps ax|grep 'coreaudio[a-z]' | awk '{print $1}')\""
+alias dl="lsd -lah"
+alias dll="lsd -lh"
 
 ## GNU command aliases
 alias cp="gcp"
@@ -32,21 +30,16 @@ alias listtools="echo -e \"
 asciinema  - Terminal session recorder.
 bandwhich  - Terminal bandwidth utilization tool.
 bat        - Clone of cat(1) with syntax highlighting and Git integration.
-btm        - Yet another cross-platform graphical process/system monitor.
 codespell  - Check code for common misspellings.
 duf        - Disk Usage/Free Utility - a better 'df' alternative.
 fd         - A simple, fast and user-friendly alternative to find.
 gh         - GitHub's official command line tool.
 grex       - Generates regular expressions from user-provided test cases.
-hstr       - Easily view, navigate, sort and use your command history with shell history
-             suggest box.
 http       - User-friendly cURL replacement (command-line HTTP client).
-lsd        - The next gen ls command.
-m          -  Swiss Army Knife for macOS.
+m          - Swiss Army Knife for macOS.
 mas        - Mac App Store command line interface.
 muffet     - Fast website link checker in Go.
 ncdu       - ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du'.
-nmap       - Network exploration tool and security / port scanner.
 pipenv     - Python dependency management tool.
 pipx       - Install and Run Python Applications in Isolated Environments.
 pyenv      - Simple Python version management.
@@ -58,34 +51,15 @@ youtube-dl - Command-line program to download videos from YouTube.com and other 
 ########################################################################################
 #### [[ Grouped commands ]]
 
-listtools_trash      - List of trash related commands.
 listtools_formatters - List of code formatters and linters.
 listtools_conversion - List of programs used for converting the formats of videos,
                        images, etc.
 
 
 ########################################################################################
-#### [ Oh-my-zsh plugin commands ]
-
-copydir  - Copies the path of your current folder to the system clipboard.
-copyfile - Puts the contents of a file in your system clipboard so you can paste it
-           anywhere.
-
-########################################################################################
-#### [[ Keyboard combinations ]]
+#### [ Keyboard combinations ]
 
 Ctrl + O - Allows you to copy what you are currently typing, via 'Ctrl' + 'O'.
-\""
-alias listtools_trash="echo -e \"
-########################################################################################
-#### [ Trash commands ]
-
-trash         - Alias for trash-put.
-trash-put     - Trash files and directories.
-trash-empty   - Empty the trashcan(s).
-trash-list    - List trashed files.
-trash-restore - Restore a trashed file.
-trash-rm      - Remove individual files from the trashcan.
 \""
 alias listtools_formatters="echo -e \"
 ########################################################################################

@@ -1,3 +1,6 @@
+# If PowerLevel10K's Instant Prompt is enabled, `export GPG_TTY=$(tty)` needs to be
+# placed at the top of this file. Find more information here:
+# https://unix.stackexchange.com/questions/608842/zshrc-export-gpg-tty-tty-says-not-a-tty/608921#608921
 export GPG_TTY=$(tty)
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -6,9 +9,6 @@ export GPG_TTY=$(tty)
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ranger/.oh-my-zsh"
@@ -32,35 +32,27 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+HIST_STAMPS="yyyy-mm-dd"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages)
+plugins=(colored-man-pages copybuffer copypath copyfile bgnotify zsh-autosuggestions)
+
+# https://github.com/zsh-users/zsh-completions
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# User Configurations
 
 ########################################################################################
 #### [ General Aliases ]
@@ -70,7 +62,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias updateapt="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
-alias rm="trash"
 
 
 #### End of [[ Group 1 ]]
@@ -87,19 +78,14 @@ alias listtools="echo -e \"
 asciinema  - Terminal session recorder.
 bandwhich  - Terminal bandwidth utilization tool.
 bat        - Clone of cat(1) with syntax highlighting and Git integration.
-btm        - Yet another cross-platform graphical process/system monitor.
 codespell  - Check code for common misspellings.
 duf        - Disk Usage/Free Utility - a better 'df' alternative.
 fd         - A simple, fast and user-friendly alternative to find.
 gh         - GitHub's official command line tool.
 grex       - Generates regular expressions from user-provided test cases.
-hstr       - Easily view, navigate, sort and use your command history with shell history
-             suggest box.
 http       - User-friendly cURL replacement (command-line HTTP client).
-lsd        - The next gen ls command.
 muffet     - Fast website link checker in Go.
 ncdu       - ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du'.
-nmap       - Network exploration tool and security / port scanner.
 pipenv     - Python dependency management tool.
 pipx       - Install and Run Python Applications in Isolated Environments.
 pyenv      - Simple Python version management.
@@ -111,21 +97,9 @@ youtube-dl - Command-line program to download videos from YouTube.com and other 
 ########################################################################################
 #### [[ Grouped commands ]]
 
-listtools_trash      - List of trash related commands.
 listtools_formatters - List of code formatters and linters.
 listtools_conversion - List of programs used for converting the formats of videos,
                        images, etc.
-\""
-alias listtools_trash="echo -e \"
-########################################################################################
-#### [ Trash commands ]
-
-trash         - Alias for trash-put.
-trash-put     - Trash files and directories.
-trash-empty   - Empty the trashcan(s).
-trash-list    - List trashed files.
-trash-restore - Restore a trashed file.
-trash-rm      - Remove individual files from the trashcan.
 \""
 alias listtools_formatters="echo -e \"
 ########################################################################################
@@ -151,12 +125,8 @@ magick - Convert between image formats as well as resize an image, blur, crop,
 
 #### End of [ General Aliases ]
 ########################################################################################
-#### [ Environmental variables ]
+#### [ Environmental Variables ]
 
-# If PowerLevel10K's Instant Prompt is enabled, `export GPG_TTY=$(tty)` needs to be
-# placed at the top of this file. Find more information here:
-# https://unix.stackexchange.com/questions/608842/zshrc-export-gpg-tty-tty-says-not-a-tty/608921#608921
-#export GPG_TTY=$(tty)
 
 ## NVM setup...
 export NVM_DIR="$HOME/.nvm"
@@ -166,8 +136,12 @@ export NVM_DIR="$HOME/.nvm"
 # New path...
 export PATH="/home/ranger/.local/bin:$PATH"
 
+## Modifies the colors of files and directories in the terminal.
+export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-#### End of [ Environmental variables ]
+
+#### End of [ Environmental Variables ]
 ########################################################################################
 #### [ Sourced Files ]
 
@@ -177,12 +151,8 @@ export PATH="/home/ranger/.local/bin:$PATH"
 
 # Zsh "plugin" installed via git.
 # Alternative install methods:
-# https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-source /home/ranger/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# Zsh "plugin" installed via git.
-# Alternative install methods:
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-source /home/ranger/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 #### End of [ Sourced Files ]
