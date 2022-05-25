@@ -192,7 +192,7 @@ export ---=---
 # Zsh "plugin" installed via git.
 # Alternative install methods:
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-source ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 #### End of [ Sourced Files ]
