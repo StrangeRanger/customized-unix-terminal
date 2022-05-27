@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 As a note, if the changelog only says "removed(program)", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified within the parentheses of the change.
 
+## 2022.5.26
+
+- **changed(zshrc)**: Removed some code in the linux zshrc files that I don't consider to be general configurations.
+- **changed(vimrc)**: Add specific configurations for Markdown files.
+- **changed(readme)**: Changed the website status badge.
+
 ## 2022.5.24
 
 - **added(zshrc)**: `LS_COLORS`, to match `LSCOLORS`...
