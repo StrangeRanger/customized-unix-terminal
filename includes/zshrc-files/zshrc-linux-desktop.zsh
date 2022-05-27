@@ -11,7 +11,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/ranger/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -52,7 +52,7 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
 
-# User Configurations
+# User configurations
 
 ########################################################################################
 #### [ General Aliases ]
@@ -128,14 +128,6 @@ magick - Convert between image formats as well as resize an image, blur, crop,
 #### [ Environmental Variables ]
 
 
-## NVM setup...
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# New path...
-export PATH="/home/ranger/.local/bin:$PATH"
-
 ## Modifies the colors of files and directories in the terminal.
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
@@ -152,8 +144,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # Zsh "plugin" installed via git.
 # Alternative install methods:
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-source ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #### End of [ Sourced Files ]
 ########################################################################################

@@ -59,6 +59,13 @@ set mouse-=a       " Exchanges the ability to move the cursor with your mouse, w
 set colorcolumn=89 " Set a colored line at column 89 in every row.
 
 
+""""[[ autocmd Filetype configurations ]]"""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" Markdown files.
+autocmd Filetype markdown setlocal colorcolumn=0 nowrap mouse=a
+
+
 """"[ vim-plug plugin configurations ]""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -84,3 +91,5 @@ let g:airline_powerline_fonts = 1
 
 
 " :NERDTree - Opens NERDTree file system explorer
+
+
