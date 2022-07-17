@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 As a note, if the changelog only says "removed(program)", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified within the parentheses of the change.
 
+## 2022.7.17
+
+- **added(vimrc)**: `valloric/youcompleteme`.
+- **added(zshrc)**: New aliases.
+- **added(zshrc)**: Comments on the commands to download the zsh plugins.
+- **changed(vimrc)**: Slight formatting change.
+- **changed(zshrc)**: Modify plugins.
+- **changed(zshrc)**: General refactoring.
+- **changed(zshrc)**: A bunch of other small changes.
+- **changed(readme)**: Add link to new vimrc plugin.
+
 ## 2022.5.26
 
 - **changed(zshrc)**: Removed some code in the linux zshrc files that I don't consider to be general configurations.
@@ -13,7 +24,7 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
 ## 2022.5.24
 
 - **added(zshrc)**: `LS_COLORS`, to match `LSCOLORS`...
-- **added(vimrc)**: `set colorcolumn=89`
+- **added(vimrc)**: `set colorcolumn=89`.
 - **added(profile)**: Terminal profile for the gnome terminal.
 - **added(programs)**: `fzf`.
 - **added(programs)**: `zsh-completions`.
