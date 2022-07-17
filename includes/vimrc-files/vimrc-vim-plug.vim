@@ -16,8 +16,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Retro groove color scheme for Vim.
 Plug 'morhetz/gruvbox'
-" A dark Vim/Neovim color scheme inspired by Atom's One Dark syntax theme.
-Plug 'joshdick/onedark.vim'
 " A solid language pack for Vim.
 Plug 'sheerun/vim-polyglot'
 " A tree explorer plugin for vim.
@@ -29,6 +27,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP)
 " support.
 Plug 'dense-analysis/ale'
+" IMPORTANT: Install the neccessary prerequisites before uncommenting the below plugin.
+" A code-completion engine for Vim.
+"   Prerequisites for macOS: https://github.com/ycm-core/YouCompleteMe#macos
+"   Prerequisites for Linux: https://github.com/ycm-core/YouCompleteMe#linux-64-bit
+"Plug 'valloric/youcompleteme'
 
 " Initialize plugin system
 call plug#end()
@@ -50,20 +53,18 @@ call plug#end()
 source $VIMRUNTIME/defaults.vim
 
 "" Overwrites specified default setting.
-set tabstop=4      " Tells vim how many columns a tab counts for.
-set shiftwidth=4   " 'Levels of indentation', where a level of indentation is shiftwidth
-                   " columns of whitespace.
-set expandtab      " Ensure that when you hit tab it will actually use spaces.
-set mouse-=a       " Exchanges the ability to move the cursor with your mouse, with the
-                   " ability to highlight and copy text.
-set colorcolumn=89 " Set a colored line at column 89 in every row.
+set tabstop=4       " Tells vim how many columns a tab counts for.
+set shiftwidth=4    " 'Levels of indentation', where a level of indentation is
+                    " shiftwidth columns of whitespace.
+set expandtab       " Ensure that when you hit tab it will actually use spaces.
+set mouse-=a        " Exchanges the ability to move the cursor with your mouse, with the
+                    " ability to highlight and copy text.
+set colorcolumn=89  " Set a colored line at column 89 in every row.
 
-
-""""[[ autocmd Filetype configurations ]]"""""""""""""""""""""""""""""""""""""""""""""""
-
-
-" Markdown files.
-autocmd Filetype markdown setlocal colorcolumn=0 nowrap mouse=a
+"" Markdown files
+autocmd Filetype markdown setlocal colorcolumn=0 nowrap
+"" TXT files
+autocmd Filetype text setlocal colorcolumn=0
 
 
 """"[ vim-plug plugin configurations ]""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -91,5 +92,3 @@ let g:airline_powerline_fonts = 1
 
 
 " :NERDTree - Opens NERDTree file system explorer
-
-

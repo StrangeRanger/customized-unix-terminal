@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 
 # If PowerLevel10K's Instant Prompt is enabled, `export GPG_TTY=$(tty)` needs to be
 # placed at the top of this file. Find more information here:
@@ -14,7 +14,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/hunter/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -48,9 +48,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages copybuffer copypath copyfile bgnotify zsh-autosuggestions)
+plugins=(colored-man-pages copybuffer copypath copyfile bgnotify)
 
-# https://github.com/zsh-users/zsh-completions
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
@@ -64,6 +65,7 @@ source $ZSH/oh-my-zsh.sh
 #### [[ Group 1 ]]
 
 
+alias updatezshplugins="bash ~/Programs/mass-git/mass-git.sh -p ~/.oh-my-zsh/custom/plugins/ -r -f"
 alias updatebrew="brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor"
 alias edisk="cd /Volumes && ll"
 alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
@@ -151,7 +153,6 @@ magick - Convert between image formats as well as resize an image, blur, crop,
 alias ---="---"
 alias ---="---"
 alias ---="---"
-alias ---="---"
 
 
 #### End of [ SSH and SFTP Server Aliases ]
@@ -167,7 +168,8 @@ export NVM_DIR="$HOME/.nvm"
 # Path purpose:
 #   /usr/local/opt/curl/bin:  ???
 #   /usr/local/sbin:          ???
-export PATH="/usr/local/opt/curl/bin:/usr/local/sbin:$PATH"
+#   /usr/local/opt/openjdk@17/bin
+export PATH="/usr/local/opt/curl/bin:/usr/local/sbin:/usr/local/opt/openjdk@17/bin:$PATH"
 
 # Modifies colors of files and directories when using `ls`.
 export LSCOLORS="exgxfxDxcxegDaabagacaD"
@@ -189,10 +191,13 @@ export ---=---
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Zsh "plugin" installed via git.
-# Alternative install methods:
-# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-source ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 #### End of [ Sourced Files ]
@@ -200,4 +205,4 @@ source ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-syntax-highlightin
 
 
 # Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"

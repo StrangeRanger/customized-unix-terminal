@@ -5,7 +5,9 @@
 #### [[ Group 1 ]]
 
 
+alias updatezshplugins="bash ~/Programs/mass-git/mass-git.sh -p ~/.oh-my-zsh/custom/plugins/ -r -f"
 alias updateapt="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+alias rm="trash"
 
 
 #### End of [[ Group 1 ]]

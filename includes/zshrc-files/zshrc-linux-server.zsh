@@ -45,9 +45,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages zsh-autosuggestions)
+plugins=(colored-man-pages)
 
-# https://github.com/zsh-users/zsh-completions
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
@@ -61,7 +62,9 @@ source $ZSH/oh-my-zsh.sh
 #### [[ Group 1 ]]
 
 
+alias updatezshplugins="bash ~/Programs/mass-git/mass-git.sh -p ~/.oh-my-zsh/custom/plugins/ -r -f"
 alias updateapt="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+alias rm="trash"
 
 
 #### End of [[ Group 1 ]]
@@ -98,8 +101,6 @@ youtube-dl - Command-line program to download videos from YouTube.com and other 
 #### [[ Grouped commands ]]
 
 listtools_formatters - List of code formatters and linters.
-listtools_conversion - List of programs used for converting the formats of videos,
-                       images, etc.
 \""
 alias listtools_formatters="echo -e \"
 ########################################################################################
@@ -109,14 +110,6 @@ black      - The uncompromising Python code formatter.
 prettier   - Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML.
 pylint     - It's not just a linter that annoys you!
 shellcheck - Shell script analysis tool.
-\""
-alias listtools_conversion="echo -e \"
-########################################################################################
-#### [ Image and video formatters ]
-
-ffmpeg - FFmpeg is a collection of libraries and tools to process multimedia content.
-magick - Convert between image formats as well as resize an image, blur, crop,
-         despeckle, dither, draw on, flip, join, re-sample, and much more.
 \""
 
 
@@ -132,6 +125,11 @@ magick - Convert between image formats as well as resize an image, blur, crop,
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
+## NVM setup...
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 #### End of [ Environmental Variables ]
 ########################################################################################
@@ -141,10 +139,14 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Zsh "plugin" installed via git.
-# Alternative install methods:
-# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 #### End of [ Sourced Files ]
 ########################################################################################

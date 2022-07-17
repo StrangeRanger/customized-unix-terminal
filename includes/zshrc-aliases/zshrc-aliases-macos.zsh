@@ -5,6 +5,7 @@
 #### [[ Group 1 ]]
 
 
+alias updatezshplugins="bash ~/Programs/mass-git/mass-git.sh -p ~/.oh-my-zsh/custom/plugins/ -r -f"
 alias updatebrew="brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor"
 alias edisk="cd /Volumes && ll"
 alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"

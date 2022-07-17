@@ -45,9 +45,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages copybuffer copypath copyfile bgnotify zsh-autosuggestions)
+plugins=(colored-man-pages copybuffer copypath copyfile bgnotify)
 
-# https://github.com/zsh-users/zsh-completions
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
@@ -61,7 +62,9 @@ source $ZSH/oh-my-zsh.sh
 #### [[ Group 1 ]]
 
 
+alias updatezshplugins="bash ~/Programs/mass-git/mass-git.sh -p ~/.oh-my-zsh/custom/plugins/ -r -f"
 alias updateapt="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+alias rm="trash"
 
 
 #### End of [[ Group 1 ]]
@@ -141,9 +144,12 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Zsh "plugin" installed via git.
-# Alternative install methods:
-# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #### End of [ Sourced Files ]
