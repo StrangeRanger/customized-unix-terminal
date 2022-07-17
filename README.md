@@ -160,7 +160,6 @@ This is a list of all the oh-my-zsh plugins that I use and find to provide usefu
 | [copypath](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copypath)                    | Copies the path of your working directory                          |                                                                                                                        |
 | [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile)                    | Copies the contents of a file                                      |                                                                                                                        |
 | [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify)                    | cross-platform background notifications for long running commands  | Not a command<br>[Extra install instructions](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify)         |
-| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) | Fish-like autosuggestions for zsh                                  | Not a command<br>[Extra install instructions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) |
 
 #### Custom Aliases
 
