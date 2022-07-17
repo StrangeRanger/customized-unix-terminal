@@ -247,6 +247,7 @@ These configurations modify the behavior and look of vim. To make use of all the
     | [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons)                 | Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more |
     | [Xuyuanp/nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)       | A plugin of NERDTree showing git status                                                                                         |
     | [dense-analysis/ale](https://github.com/dense-analysis/ale)                         | Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support                                   |
+    | [valloric/youcompleteme](https://github.com/ycm-core/YouCompleteMe)                 | A code-completion engine for Vim                                                                                                |
 
 ```vim title=".vimrc"
 --8<-- "includes/vimrc-files/vimrc-vim-plug.vim"
