@@ -8,12 +8,12 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
 
 - **added(vimrc)**: `valloric/youcompleteme`.
 - **added(zshrc)**: New aliases.
+- **added(readme)**: A link to the repository of the newly added vimrc plugin.
 - **added(zshrc)**: Comments on the commands to download the zsh plugins.
 - **changed(vimrc)**: Slight formatting change.
-- **changed(zshrc)**: Modify plugins.
+- **changed(zshrc)**: Modified plugins.
 - **changed(zshrc)**: General refactoring.
 - **changed(zshrc)**: A bunch of other small changes.
-- **changed(readme)**: Add link to new vimrc plugin.
 
 ## 2022.5.26
 
