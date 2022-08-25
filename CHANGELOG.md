@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 As a note, if the changelog only says "removed(program)", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified within the parentheses of the change.
 
+## 2022.8.25
+
+- **added(zshrc)**: New aliases.
+- **added(zshrc)**: `git` plugin.
+- **added(vimrc)**: Add specific configurations for markdown and txt files.
+- **changed(zshrc)**: Update existing aliases.
+- **changed(zshrc)**: The contents of `.zshrc` no longer contain the ENTIRE contents of my `.zshrc`, rather just most of the general configurations. It was becoming too much of a pain to continuously document every little change.
+- **changed(vimrc)**: Slight wording/formatting changes.
+- **removed(zshrc)**: Unnecessary code.
+- **removed(program)**: `fd`/`fd-find`
+- **removed(program)**: `git-quick-stats`
+
 ## 2022.7.17
 
 - **added(vimrc)**: `valloric/youcompleteme`.
