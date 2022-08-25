@@ -48,7 +48,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages copybuffer copypath copyfile bgnotify)
+plugins=(git colored-man-pages copybuffer copypath copyfile bgnotify)
 
 # Zsh "plugin" installed via git and the following command:
 # git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
@@ -65,12 +65,13 @@ source $ZSH/oh-my-zsh.sh
 #### [[ Group 1 ]]
 
 
-alias updatezshplugins="bash ~/Programs/mass-git/mass-git.sh -p ~/.oh-my-zsh/custom/plugins/ -r -f"
+alias dryupdatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r -d"
+alias updatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r"
 alias updatebrew="brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor"
-alias edisk="cd /Volumes && ll"
 alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias dl="lsd -lah"
+alias edisk="cd /Volumes && ll"
 alias dll="lsd -lh"
+alias dl="lsd -lah"
 
 ## GNU command aliases
 alias cp="gcp"
@@ -146,30 +147,8 @@ magick - Convert between image formats as well as resize an image, blur, crop,
 
 #### End of [ General Aliases ]
 ########################################################################################
-#### [ SSH and SFTP Server Aliases ]
-
-
-# Main server ssh
-alias ---="---"
-alias ---="---"
-alias ---="---"
-
-
-#### End of [ SSH and SFTP Server Aliases ]
-########################################################################################
 #### [ Environmental Variables ]
 
-
-## NVM setup...
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# Path purpose:
-#   /usr/local/opt/curl/bin:  ???
-#   /usr/local/sbin:          ???
-#   /usr/local/opt/openjdk@17/bin
-export PATH="/usr/local/opt/curl/bin:/usr/local/sbin:/usr/local/opt/openjdk@17/bin:$PATH"
 
 # Modifies colors of files and directories when using `ls`.
 export LSCOLORS="exgxfxDxcxegDaabagacaD"
@@ -178,9 +157,6 @@ export LSCOLORS="exgxfxDxcxegDaabagacaD"
 ## here: https://github.com/ohmyzsh/ohmyzsh/issues/6060#issuecomment-327934559
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
-# Set the ssh authentication socket to use 1Password
-export ---=---
 
 
 #### End of [ Environmental Variables ]

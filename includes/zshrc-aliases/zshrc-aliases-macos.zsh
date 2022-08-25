@@ -5,12 +5,13 @@
 #### [[ Group 1 ]]
 
 
-alias updatezshplugins="bash ~/Programs/mass-git/mass-git.sh -p ~/.oh-my-zsh/custom/plugins/ -r -f"
+alias dryupdatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r -d"
+alias updatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r"
 alias updatebrew="brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor"
-alias edisk="cd /Volumes && ll"
 alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias dl="lsd -lah"
+alias edisk="cd /Volumes && ll"
 alias dll="lsd -lh"
+alias dl="lsd -lah"
 
 ## GNU command aliases
 alias cp="gcp"

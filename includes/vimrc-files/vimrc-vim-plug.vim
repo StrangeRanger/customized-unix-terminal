@@ -1,4 +1,4 @@
-""""[ vim-plug configurations ]"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""[ vim-plug Configurations ]"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 call plug#begin('~/.vim/plugged')
@@ -40,16 +40,16 @@ call plug#end()
 "   PlugInstall  - Install plugins
 "   PlugUpdate   - Install or update plugins
 "   PlugClean    - Remove unlisted plugins (bang version will clean without prompt)
-"   PlugUpgrade	 - Upgrade vim-plug itself
-"   PlugStatus	 - Check the status of plugins
-"   PlugDiff	 - Examine changes from the previous update and the pending changes
+"   PlugUpgrade  - Upgrade vim-plug itself
+"   PlugStatus   - Check the status of plugins
+"   PlugDiff     - Examine changes from the previous update and the pending changes
 "   PlugSnapshot - Generate script for restoring the current snapshot of the plugins
 
 
-""""[ Non-vim-plug related configurations ]"""""""""""""""""""""""""""""""""""""""""""""
+""""[ Non-vim-plug Related Configurations ]"""""""""""""""""""""""""""""""""""""""""""""
 
 
-" Set's the default vim settings.
+" Sets the default vim settings.
 source $VIMRUNTIME/defaults.vim
 
 "" Overwrites specified default setting.
@@ -67,7 +67,7 @@ autocmd Filetype markdown setlocal colorcolumn=0 nowrap
 autocmd Filetype text setlocal colorcolumn=0
 
 
-""""[ vim-plug plugin configurations ]""""""""""""""""""""""""""""""""""""""""""""""""""
+""""[ vim-plug Plugin Configurations ]""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 " Font: Power Line Font
