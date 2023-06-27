@@ -48,25 +48,14 @@ You can use it however you wish, though my intent is to let you use it as a refe
 
 /// details | My ZSH Resource File
 //// tab | macOS
-    new: true
 ``` bash title=".zshrc"
 --8<-- "includes/zshrc-files/zshrc-macos.zsh"
 ```
 ////
 
-//// tab | Linux (Server)
-This version of `.zshrc` has configurations more specific to a server/headless environment.
-
+//// tab | Linux
 ``` bash title=".zshrc"
---8<-- "includes/zshrc-files/zshrc-linux-server.zsh"
-```
-////
-
-//// tab | Linux (Desktop)
-This version of `.zshrc` has configurations more specific to a desktop experience.
-
-``` bash title=".zshrc"
---8<-- "includes/zshrc-files/zshrc-linux-desktop.zsh"
+--8<-- "includes/zshrc-files/zshrc-linux.zsh"
 ```
 ////
 ///
@@ -83,13 +72,13 @@ Below is a list of "General Purpose Aliases" that I have inside of my `.zshrc`. 
 
 /// tab | macOS
 ``` bash title=".zshrc"
---8<-- "includes/zshrc-aliases/zshrc-aliases-macos.zsh"
+--8<-- "includes/zshrc-files/zshrc-macos-snippet.zsh:user_config"
 ```
 ///
 
 /// tab | Linux
 ``` bash title=".zshrc"
---8<-- "includes/zshrc-aliases/zshrc-aliases-linux.zsh"
+--8<-- "includes/zshrc-files/zshrc-linux-snippet.zsh:user_config"
 ```
 ///
 
@@ -115,13 +104,13 @@ Below are my configurations for both macOS and Linux. To use them, place the fol
 
 /// tab | macOS
 ``` bash title="CLI Color Configuration"
---8<-- "includes/cli-colors/cli-colors-macos.zsh"
+--8<-- "includes/zshrc-files/zshrc-macos-snippet.zsh:ls_colors"
 ```
 ///
 
 /// tab | Linux
 ``` bash title="CLI Color Configuration"
---8<-- "includes/cli-colors/cli-colors-linux.zsh"
+--8<-- "includes/zshrc-files/zshrc-linux-snippet.zsh:ls_colors"
 ```
 ///
 

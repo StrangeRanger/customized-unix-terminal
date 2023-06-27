@@ -45,7 +45,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages copybuffer copypath copyfile bgnotify)
+#plugins=(git colored-man-pages copybuffer copypath copyfile bgnotify)  # Desktop
+plugins=(git colored-man-pages)  # Server
 
 # Zsh "plugin" installed via git and the following command:
 # git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
@@ -53,7 +54,7 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
 
-# User configurations
+# User Configurations
 
 ########################################################################################
 #### [ General Aliases ]
@@ -155,3 +156,4 @@ source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-sy
 
 #### End of [ Sourced Files ]
 ########################################################################################
+

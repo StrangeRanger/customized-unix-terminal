@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. This does not include underlying dependency updates and changes, only changes to the actual configurations and such.
+All notable changes to this project will be documented in this file.
 
 As a note, if the changelog only says "removed(program)", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified within the parentheses of the change.
 
@@ -9,6 +9,7 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
 - **added(vimrc)**: `ntpeters/vim-better-whitespace`.
 - **added(vimrc)**: New file specific configurations.
 - **changed(readme)**: Update url link of website status badge.
+- **changed(readme/misc)**: Using new feature provided by updated dependencies/packages, I've removed many redundant files and replaced them with a single file that is used in multiple places. This should make maintaining this repository much easier.
 
 
 ## 2022.8.25

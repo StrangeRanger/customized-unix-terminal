@@ -1,3 +1,6 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
+
 # If PowerLevel10K's Instant Prompt is enabled, `export GPG_TTY=$(tty)` needs to be
 # placed at the top of this file. Find more information here:
 # https://unix.stackexchange.com/questions/608842/zshrc-export-gpg-tty-tty-says-not-a-tty/608921#608921
@@ -41,11 +44,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages)
+plugins=(git colored-man-pages copybuffer copypath copyfile bgnotify)
 
 # Zsh "plugin" installed via git and the following command:
 # git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
@@ -55,6 +58,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User Configurations
 
+# --8<-- [start:user_config]
 ########################################################################################
 #### [ General Aliases ]
 
@@ -64,7 +68,15 @@ source $ZSH/oh-my-zsh.sh
 
 alias dryupdatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r -d"
 alias updatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r"
-alias updateapt="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+alias updatebrew="brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor"
+alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias edisk="cd /Volumes && ll"
+alias dll="lsd -lh"
+alias dl="lsd -lah"
+
+## GNU command aliases
+alias cp="gcp"
+alias mv="gmv"
 
 
 #### End of [[ Group 1 ]]
@@ -87,6 +99,8 @@ fd         - A simple, fast and user-friendly alternative to find.
 gh         - GitHub's official command line tool.
 grex       - Generates regular expressions from user-provided test cases.
 http       - User-friendly cURL replacement (command-line HTTP client).
+m          - Swiss Army Knife for macOS.
+mas        - Mac App Store command line interface.
 muffet     - Fast website link checker in Go.
 ncdu       - ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du'.
 pipenv     - Python dependency management tool.
@@ -101,6 +115,14 @@ youtube-dl - Command-line program to download videos from YouTube.com and other 
 #### [[ Grouped commands ]]
 
 listtools_formatters - List of code formatters and linters.
+listtools_conversion - List of programs used for converting the formats of videos,
+                       images, etc.
+
+
+########################################################################################
+#### [ Keyboard combinations ]
+
+Ctrl + O - Allows you to copy what you are currently typing, via 'Ctrl' + 'O'.
 \""
 alias listtools_formatters="echo -e \"
 ########################################################################################
@@ -111,19 +133,34 @@ prettier   - Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML.
 pylint     - It's not just a linter that annoys you!
 shellcheck - Shell script analysis tool.
 \""
+alias listtools_conversion="echo -e \"
+########################################################################################
+#### [ Image and video formatters ]
+
+ffmpeg - FFmpeg is a collection of libraries and tools to process multimedia content.
+magick - Convert between image formats as well as resize an image, blur, crop,
+         despeckle, dither, draw on, flip, join, re-sample, and much more.
+\""
 
 
-######## End of [[ Group 2]]
+#### End of [[ Group 2]]
 ########################################################################################
 
 #### End of [ General Aliases ]
 ########################################################################################
+# --8<-- [end:user_config]
 #### [ Environmental Variables ]
 
 
-## Modifies the colors of files and directories in the terminal.
+# --8<-- [start:ls_colors]
+# Modifies colors of files and directories when using `ls`.
+export LSCOLORS="exgxfxDxcxegDaabagacaD"
+## Version of LSCOLORS compatible with zsh and GNU based commands.
+## You can find more information about LS_COLORS and why it's needed in addition to LSCOLORS,
+## here: https://github.com/ohmyzsh/ohmyzsh/issues/6060#issuecomment-327934559
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# --8<-- [end:ls_colors]
 
 
 #### End of [ Environmental Variables ]
@@ -145,3 +182,7 @@ source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-sy
 
 #### End of [ Sourced Files ]
 ########################################################################################
+
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
