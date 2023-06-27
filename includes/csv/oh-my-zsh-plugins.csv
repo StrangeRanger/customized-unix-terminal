@@ -1,0 +1,7 @@
+"Plugins","Description","Other Info"
+"[git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)","The git plugin provides many aliases and a few useful functions","Not a command, itself"
+"[colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages)","Adds colors to man pages","Not a command"
+"[copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer)","Allows you to copy what you are currently typing, via ++ctrl+'O'++","Not a command<br>Key Combination: ++ctrl+'O'++"
+"[copypath](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copypath)","Copies the path of your working directory",""
+"[copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile)","Copies the contents of a file",""
+"[bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify)","cross-platform background notifications for long running commands","Not a command<br>[Extra install instructions](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify)"

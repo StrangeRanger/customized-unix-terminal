@@ -1,6 +1,9 @@
-# Directory created from `mkdocs gh-deploy`m
+# Directory created from `mkdocs gh-deploy`
 site/
 
 # Pipenv stuff
 Pipfile
 Pipfile.lock
+
+# macOS specific
+.DS_Store
