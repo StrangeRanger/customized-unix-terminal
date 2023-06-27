@@ -1,8 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. This does not include underlying dependency updates and changes, only changes to the actual configurations and such.
 
 As a note, if the changelog only says "removed(program)", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified within the parentheses of the change.
+
+## 2023.6.27
+
+- **changed(readme)**: Update url link of website status badge.
+- 
 
 ## 2022.8.25
 
@@ -87,7 +92,7 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
 - **removed(program)**: `pdfgrep`.
 - **removed(program)**: `hub`.
 - **removed(program)**: `cloc`.
-- **fixed(README)**: Wording and grammar throughout `README.md`.
+- **fixed(readme)**: Wording and grammar throughout `README.md`.
 
 ## 2021.6.5
 

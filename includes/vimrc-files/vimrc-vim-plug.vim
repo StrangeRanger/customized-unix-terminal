@@ -27,6 +27,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP)
 " support.
 Plug 'dense-analysis/ale'
+" Better whitespace highlighting for Vim.
+Plug 'ntpeters/vim-better-whitespace'
 " IMPORTANT: Install the neccessary prerequisites before uncommenting the below plugin.
 " A code-completion engine for Vim.
 "   Prerequisites for macOS: https://github.com/ycm-core/YouCompleteMe#macos
@@ -59,12 +61,22 @@ set shiftwidth=4    " 'Levels of indentation', where a level of indentation is
 set expandtab       " Ensure that when you hit tab it will actually use spaces.
 set mouse-=a        " Exchanges the ability to move the cursor with your mouse, with the
                     " ability to highlight and copy text.
-set colorcolumn=89  " Set a colored line at column 89 in every row.
+set colorcolumn=88  " Set a colored line at column 89 in every row.
 
 "" Markdown files
-autocmd Filetype markdown setlocal colorcolumn=0 nowrap
+autocmd Filetype markdown setlocal colorcolumn=0
 "" TXT files
 autocmd Filetype text setlocal colorcolumn=0
+"" Java
+autocmd Filetype java setlocal colorcolumn=94
+"" C#
+autocmd Filetype cs setlocal colorcolumn=94
+"" HTML
+autocmd Filetype html setlocal colorcolumn=100 tabstop=2 shiftwidth=2 nowrap
+"" CSS
+autocmd Filetype css setlocal colorcolumn=100 tabstop=2 shiftwidth=2 nowrap
+"" Vue
+autocmd Filetype vue setlocal colorcolumn=100 tabstop=2 shiftwidth=2
 
 
 """"[ vim-plug Plugin Configurations ]""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -86,9 +98,14 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
+"" Plugin: better-whitespace
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
 
 
 """"[ Useful Commands ]"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-" :NERDTree - Opens NERDTree file system explorer
+" :NERDTree       - Opens NERDTree file system explorer.
+" :StripWhitespace - Clean extra whitespace.
+
