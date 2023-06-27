@@ -6,8 +6,10 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
 
 ## 2023.6.27
 
+- **added(vimrc)**: `ntpeters/vim-better-whitespace`.
+- **added(vimrc)**: New file specific configurations.
 - **changed(readme)**: Update url link of website status badge.
-- 
+
 
 ## 2022.8.25
 
