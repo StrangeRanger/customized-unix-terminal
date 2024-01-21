@@ -1,1 +1,15 @@
-.
+version = 1
+
+[[analyzers]]
+name = "javascript"
+
+  [analyzers.meta]
+  plugins = ["vue"]
+  environment = [
+    "browser",
+    "nodejs",
+    "vitest"
+  ]
+
+[[analyzers]]
+name = "shell"
