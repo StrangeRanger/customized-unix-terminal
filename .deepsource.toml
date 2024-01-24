@@ -7,8 +7,7 @@ name = "javascript"
   plugins = ["vue"]
   environment = [
     "browser",
-    "nodejs",
-    "vitest"
+    "nodejs"
   ]
 
 [[analyzers]]
