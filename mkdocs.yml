@@ -74,6 +74,9 @@ markdown_extensions:
   # Markdown using special characters, i.e. for **bold** and _italic_ formatting.
   - pymdownx.betterem:
       smart_enable: all
+  # The Admonition extension adds support for admonitions, more commonly known as
+  # call-outs, which can be defined in Markdown by using a simple syntax.
+  - pymdownx.blocks.admonition
   # The Details extension supercharges the Admonition extension, making the resulting
   # call-outs collapsible, allowing them to be opened and closed by the user.
   - pymdownx.blocks.details
