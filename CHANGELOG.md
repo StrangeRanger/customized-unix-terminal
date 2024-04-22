@@ -6,7 +6,13 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
 
 ## 2024.4.22
 
-This update is a major overhaul and rewrite of the entire repository. Because of this, I will not be listing all of the changes. Consider this a complete rewrite of the repository.
+This update is a major overhaul and rewrite of the entire repository. Because of this, I will not be listing all of the changes, as it would be too much to list. However, I will list some of the major changes:
+
+- **changed(progams)**: Added and removed many programs. The programs better reflect what I consistently use and/or like to have on hand at any given time.
+- **changed(vim => neovim)**: I've switched from using Vim to Neovim. All configurations and documentation referring to vim have been updated to reflect this change.
+- **changed(init.vim)**: The main configuration file for Neovim has been updated to reflect the changes made to the programs and plugins.
+- **changed(aliases)**: Updated and added new aliases.
+- **changed(readme)**: Rewrote 90% of the documentation to improve wording, clarity, and overall readability. I've also added new sections and removed old ones that were no longer relevant.
 
 ## 2023.6.27
 
