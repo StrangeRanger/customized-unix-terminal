@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 As a note, if the changelog only says "removed(program)", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified within the parentheses of the change.
 
-## 2024.4.21
+## 2024.4.22
 
 This update is a major overhaul and rewrite of the entire repository. Because of this, I will not be listing all of the changes. Consider this a complete rewrite of the repository.
 
