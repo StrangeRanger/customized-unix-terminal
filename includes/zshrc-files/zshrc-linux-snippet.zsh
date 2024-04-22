@@ -50,72 +50,55 @@ plugins=(git colored-man-pages)  # Server
 
 # Zsh "plugin" installed via git and the following command:
 # git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+zsh_completion="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
+[[ -d $zsh_completion ]] && fpath+=${zsh_completion}
 
 source $ZSH/oh-my-zsh.sh
 
-# User Configurations
 
+####[ Personal Configurations ]#########################################################
 # --8<-- [start:user_config]
-########################################################################################
-#### [ General Aliases ]
-
-########################################################################################
-#### [[ Group 1 ]]
+####[[ Aliases ]]#######################################################################
+####[[[ Group 1 ]]]#####################################################################
 
 
-alias dryupdatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r -d"
+## Update based aliases.
 alias updatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r"
+alias updatecopilot="bash ~/Programs/mass-git/mass-git -p ~/.config/nvim/pack/github/ -r"
 alias updateapt="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+alias updateomz="omz update"
+alias updateall="updateapt; updateomz; updatecopilot; updatezshplugins"
 
 
-#### End of [[ Group 1 ]]
-########################################################################################
-#### [[ Group 2 ]]
-#### Due to the sheer number of commands, I find it difficult to remember them all. So
-#### the aliases below are contains commands that I find difficult to remember.
+####[[[ Group 2 ]]]#####################################################################
+#### Due to the number of commands that I find to be useful, I've created aliases
+#### containing some of these commands. They are specifically commands that I don't
+#### often use, but are useful to have on hand. Having these aliases allows me to see
+#### a list of these commands, without having to commit them to memeory.
 
+alias lt="echo -e \"
+####[ Package Manager installed commands ]##############################################
 
-alias listtools="echo -e \"
-########################################################################################
-#### [ Package Manager installed commands ]
-
-asciinema  - Terminal session recorder.
 bandwhich  - Terminal bandwidth utilization tool.
-bat        - Clone of cat(1) with syntax highlighting and Git integration.
+bat        - A cat(1) clone with wings.
 codespell  - Check code for common misspellings.
 duf        - Disk Usage/Free Utility - a better 'df' alternative.
-fd         - A simple, fast and user-friendly alternative to find.
-gh         - GitHub's official command line tool.
-grex       - Generates regular expressions from user-provided test cases.
-http       - User-friendly cURL replacement (command-line HTTP client).
-muffet     - Fast website link checker in Go.
+fzf        - A command-line fuzzy finder.
 ncdu       - ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du'.
-pipenv     - Python dependency management tool.
-pipx       - Install and Run Python Applications in Isolated Environments.
-pyenv      - Simple Python version management.
 pstree     - List processes as a tree.
-tldr       - Simplified and community-driven man pages.
-youtube-dl - Command-line program to download videos from YouTube.com and other video
-             sites.
+tmux       - Terminal multiplexer.
 
-########################################################################################
-#### [[ Grouped commands ]]
+####[[ Grouped commands ]]##############################################################
 
-listtools_formatters - List of code formatters and linters.
-listtools_conversion - List of programs used for converting the formats of videos,
-                       images, etc.
+lt_conversion - List of programs used for converting the formats of videos, images, etc.
+lt_git        - List of programs used for git related commands.
+
+
+####[ Keyboard combinations ]###########################################################
+
+Ctrl + O - Allows you to copy what you are currently typing, via 'Ctrl' + 'O'.
 \""
-alias listtools_formatters="echo -e \"
-########################################################################################
-#### [ Code formatters and linters ]
-
-black      - The uncompromising Python code formatter.
-prettier   - Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML.
-pylint     - It's not just a linter that annoys you!
-shellcheck - Shell script analysis tool.
-\""
-alias listtools_conversion="echo -e \"
+alias lt_conversion="echo -e \"
 ########################################################################################
 #### [ Image and video formatters ]
 
@@ -123,15 +106,17 @@ ffmpeg - FFmpeg is a collection of libraries and tools to process multimedia con
 magick - Convert between image formats as well as resize an image, blur, crop,
          despeckle, dither, draw on, flip, join, re-sample, and much more.
 \""
+alias lt_git="echo -e \"
+####[ Git Related Commands ]###########################################################
 
-
-######## End of [[ Group 2]]
-########################################################################################
-
-#### End of [ General Aliases ]
-########################################################################################
+lazygit  - Simple terminal UI for git commands.
+git open - Opens the GitHub page for a repo/branch in your browser.
+ugit     - ugit helps you undo git commands without much effort.
+\""
 # --8<-- [end:user_config]
-#### [ Environmental Variables ]
+
+
+####[[ Environmental Variables ]]#######################################################
 
 
 # --8<-- [start:ls_colors]
@@ -140,24 +125,31 @@ export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:s
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # --8<-- [end:ls_colors]
 
+# PATH value...
+export PATH="$PATH:/home/hunter/.local/bin"
 
-#### End of [ Environmental Variables ]
-########################################################################################
-#### [ Sourced Files ]
+
+####[[ Sourced Files ]]#################################################################
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Zsh "plugin" installed via git and the following command:
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+zsh_syntax_highlighting="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[[ -f $zsh_syntax_highlighting ]] && source "$zsh_syntax_highlighting"
 
 # Zsh "plugin" installed via git and the following command:
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+zsh_autosuggestions="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[[ -f $zsh_autosuggestions ]] && source "$zsh_autosuggestions"
+
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
+fzf_tab="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
+[[ -f $fzf_tab ]] && source "$fzf_tab"
 
 
-#### End of [ Sourced Files ]
-########################################################################################
-
+####[[ Others ]]########################################################################
+#### These are generally configurations set up by setup scripts or other programs.
