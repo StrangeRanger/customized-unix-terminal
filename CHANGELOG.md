@@ -7,7 +7,6 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
 ## Unreleased
 
 - **added(programs)**: `cheat`
-- **changed(readme)**: Wording and grammar throughout `README.md`.
 
 ## 2024.4.22
 
