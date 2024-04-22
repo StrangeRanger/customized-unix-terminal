@@ -8,6 +8,10 @@ I've formatted all the tables to look uniform when not using word wrapping. -->
 
 This document serves as a guide for how I customize my macOS and Linux terminals. It includes a variety of configurations, settings, and programs that I find useful for my daily workflow. The document is divided into several sections, each focusing on a different aspect of terminal customization.
 
+### NOTICE
+
+If you are viewing this document on GitHub or as a standard markdown file, you will not be able to see the interactive elements, such as the details and tabs. To view the document in its entirety, please visit the [website](https://cut.hthompson.dev).
+
 ## Useful Programs
 
 The following table contains a list of terminal programs that I find particularly useful. These programs are separated into two categories: Third Party Package Managers (TPPM) and Native Package Managers (NPM).
