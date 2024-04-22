@@ -6,3 +6,4 @@ Plugins,Description
 [dense-analysis/ale](https://github.com/dense-analysis/ale),"Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support."
 [ntpeters/vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace),Better whitespace highlighting for Vim.
 [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter),Nvim Treesitter configurations and abstraction layer.
+[mechatroner/rainbow_csv](https://github.com/mechatroner/rainbow_csv),Highlight columns in CSV and TSV files and run queries in SQL-like language.
