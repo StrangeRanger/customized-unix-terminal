@@ -7,6 +7,7 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
 ## Unreleased
 
 - **added(programs)**: `cheat`
+- **added(init.vim)**: `mechatroner/rainbow_csv`
 
 ## 2024.4.22
 

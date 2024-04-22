@@ -22,6 +22,8 @@ Plug 'dense-analysis/ale'
 Plug 'ntpeters/vim-better-whitespace'
 " An incremental parsing system for programming tools.
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Highlight columns in CSV and TSV files and run queries in SQL-like language.
+Plug 'mechatroner/rainbow_csv'
 
 " Initialize plugin system
 call plug#end()
