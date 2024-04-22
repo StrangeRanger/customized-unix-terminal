@@ -7,3 +7,5 @@ Pipfile.lock
 
 # macOS specific
 .DS_Store
+
+.obsidian/
