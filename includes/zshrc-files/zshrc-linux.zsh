@@ -80,6 +80,7 @@ alias lt="echo -e \"
 
 bandwhich  - Terminal bandwidth utilization tool.
 bat        - A cat(1) clone with wings.
+cheat      - Allows you to create and view interactive cheatsheets on the command-line.
 codespell  - Check code for common misspellings.
 duf        - Disk Usage/Free Utility - a better 'df' alternative.
 fzf        - A command-line fuzzy finder.
