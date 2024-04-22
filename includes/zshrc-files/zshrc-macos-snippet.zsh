@@ -49,15 +49,17 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(colored-man-pages copybuffer copypath copyfile bgnotify)
 
-# ???
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+zsh_completion="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
+[[ -d $zsh_completion ]] && fpath+=${zsh_completion}
 
 source $ZSH/oh-my-zsh.sh
 
 
 ####[ Personal Configurations ]#########################################################
 # --8<-- [start:user_config]
-####[[ General Aliases ]]###############################################################
+####[[ Aliases ]]#######################################################################
 ####[[[ Group 1 ]]]#####################################################################
 
 
@@ -126,6 +128,7 @@ git open - Opens the GitHub page for a repo/branch in your browser.
 ugit     - ugit helps you undo git commands without much effort.
 \""
 # --8<-- [end:user_config]
+
 
 ####[[[ SSH related commands ]]]########################################################
 
