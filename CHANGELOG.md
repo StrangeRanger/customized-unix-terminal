@@ -13,6 +13,7 @@ This update is a major overhaul and rewrite of the entire repository. Because of
 - **changed(init.vim)**: The main configuration file for Neovim has been updated to reflect the changes made to the programs and plugins.
 - **changed(aliases)**: Updated and added new aliases.
 - **changed(readme)**: Rewrote 90% of the documentation to improve wording, clarity, and overall readability. I've also added new sections and removed old ones that were no longer relevant.
+- **changed(readme)**: Added a notice section to inform users to view the document on my website, to view it in its entirety.
 
 ## 2023.6.27
 
