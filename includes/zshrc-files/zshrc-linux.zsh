@@ -120,10 +120,11 @@ ugit     - ugit helps you undo git commands without much effort.
 
 ## Modifies the colors of files and directories in the terminal.
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# This is set in the Zsh Style Configurations section.
+#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # PATH value...
-export PATH="$PATH:/home/hunter/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 
 ####[[ Sourced Files ]]#################################################################
@@ -146,6 +147,23 @@ zsh_autosuggestions="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggesti
 # git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 fzf_tab="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
 [[ -f $fzf_tab ]] && hash fzf 2>/dev/null && source "$fzf_tab"
+
+
+####[[ Zsh Style Configurations ]]######################################################
+
+
+# Disable sort when completing `git checkout`.
+zstyle ':completion:*:git-checkout:*' sort false
+# Set descriptions format to enable group support.
+# NOTE: Don't use escape sequences here, fzf-tab will ignore them.
+zstyle ':completion:*:descriptions' format '[%d]'
+# Set list-colors to enable filename colorizing.
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# Preview directory's content with `eza` when completing `cd`.
+hash eza 2>/dev/null \
+&& zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# Wwitch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 
 ####[[ Others ]]########################################################################

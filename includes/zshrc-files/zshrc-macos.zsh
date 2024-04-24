@@ -94,7 +94,6 @@ alias lt="echo -e \"
 
 bandwhich  - Terminal bandwidth utilization tool.
 bat        - A cat(1) clone with wings.
-cheat      - Allows you to create and view interactive cheatsheets on the command-line.
 codespell  - Check code for common misspellings.
 duf        - Disk Usage/Free Utility - a better 'df' alternative.
 fzf        - A command-line fuzzy finder.
@@ -132,7 +131,7 @@ ugit     - ugit helps you undo git commands without much effort.
 ####[[[ SSH related commands ]]]########################################################
 
 
-# SSH related aliases.
+## SSH alias for connecting to a server.
 
 
 ####[[ Environmental Variables ]]#######################################################
@@ -159,7 +158,8 @@ export LSCOLORS="exgxfxDxcxegDaabagacaD"
 ## You can find more information about LS_COLORS and why it's needed in addition to LSCOLORS,
 ## here: https://github.com/ohmyzsh/ohmyzsh/issues/6060#issuecomment-327934559
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# This is set in the Zsh Style Configurations section.
+#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 ## Editor configurations.
 export EDITOR=nvim
@@ -190,9 +190,22 @@ fzf_tab="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
 # Enable the use of '1password-cli' plugins.
 source /Users/hunter/.config/op/plugins.sh
 
-## Azure Auto Completion.
-autoload bashcompinit && bashcompinit
-source $(brew --prefix)/etc/bash_completion.d/az
+
+####[[ Zsh Style Configurations ]]######################################################
+
+
+# Disable sort when completing `git checkout`.
+zstyle ':completion:*:git-checkout:*' sort false
+# Set descriptions format to enable group support.
+# NOTE: Don't use escape sequences here, fzf-tab will ignore them.
+zstyle ':completion:*:descriptions' format '[%d]'
+# Set list-colors to enable filename colorizing.
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# Preview directory's content with `eza` when completing `cd`.
+hash eza 2>/dev/null \
+&& zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# Wwitch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 
 ####[[ Others ]]########################################################################
