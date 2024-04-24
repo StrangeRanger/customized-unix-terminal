@@ -189,7 +189,7 @@ zsh_autosuggestions="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggesti
 # Zsh "plugin" installed via git and the following command:
 # git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 fzf_tab="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
-[[ -f $fzf_tab ]] && source "$fzf_tab"
+[[ -f $fzf_tab ]] && hash fzf 2>/dev/null && source "$fzf_tab"
 
 # Enable the use of '1password-cli' plugins.
 source /Users/hunter/.config/op/plugins.sh
