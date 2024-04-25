@@ -4,16 +4,27 @@ All notable changes to this project will be documented in this file.
 
 As a note, if the changelog only says "removed(program)", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified within the parentheses of the change.
 
-## Unreleased
+## 2024.4.25
 
 - **added(programs)**: `cheat`
+- **added(programs)**: `fzf-tab`
+- **added(programs)**: `eza`
 - **added(init.vim)**: `mechatroner/rainbow_csv`
+- **added(zshrc)**: Updated and added new zstyle settings. They are now located in a section called "Zsh Style Configurations".
+- **added(readme)**: Added a few new sections for future documentation.
+- **changed(zshrc)**: Checks if `fzf` is installed before sourcing `fzf-tab`.
+- **changed(zshrc)**: Removed azure `autoload` and `source`.
+- **changed(readme)**: Add recommended method of installing `fzf` on Linux.
+- **changed(aliases)**: Rename several aliases.
+- **changed(aliases)**: Add new alias for `eza`.
+- **removed(aliases)**: Removed `lsd` based aliases.
+- **removed(zshrc)**: `PATH` variable updated.
 
 ## 2024.4.22
 
 This update is a major overhaul and rewrite of the entire repository. Because of this, I will not be listing all of the changes, as it would be too much to list. However, I will list some of the major changes:
 
-- **changed(progams)**: Added and removed many programs. The programs better reflect what I consistently use and/or like to have on hand at any given time.
+- **changed(programs)**: Added and removed many programs. The programs better reflect what I consistently use and/or like to have on hand at any given time.
 - **changed(vim => neovim)**: I've switched from using Vim to Neovim. All configurations and documentation referring to vim have been updated to reflect this change.
 - **changed(init.vim)**: The main configuration file for Neovim has been updated to reflect the changes made to the programs and plugins.
 - **changed(aliases)**: Updated and added new aliases.

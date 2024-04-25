@@ -54,7 +54,7 @@ plugins=(colored-man-pages copybuffer copypath copyfile bgnotify)
 zsh_completion="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
 [[ -d $zsh_completion ]] && fpath+=${zsh_completion}
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 
 ####[ Personal Configurations ]#########################################################
@@ -65,11 +65,10 @@ source $ZSH/oh-my-zsh.sh
 ## General aliases.
 alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias edisk="cd /Volumes && ll"
-alias dll="lsd -lh"
-alias dl="lsd -lah"
-alias remove_ds_store="find . -name '*.DS_Store' -type f -delete"
+alias zls="eza"
+alias rmdsstore="find . -name '*.DS_Store' -type f -delete"
 alias code="open -a 'Visual Studio Code.app' ."
-alias clang_format_recursive="find . -name '*.cs' -type f -exec clang-format --style=file:/Users/hunter/Programs/Mine/Formatter\ Configs/CSharp_clang-format/_clang-format -i {} +"
+alias formatc="find . -name '*.cs' -type f -exec clang-format --style=file:~/Programs/Mine/Formatter\ Configs/CSharp_clang-format/_clang-format -i {} +"
 
 ## Update based aliases.
 alias updatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r"
@@ -94,7 +93,6 @@ alias lt="echo -e \"
 
 bandwhich  - Terminal bandwidth utilization tool.
 bat        - A cat(1) clone with wings.
-cheat      - Allows you to create and view interactive cheatsheets on the command-line.
 codespell  - Check code for common misspellings.
 duf        - Disk Usage/Free Utility - a better 'df' alternative.
 fzf        - A command-line fuzzy finder.
@@ -132,14 +130,15 @@ ugit     - ugit helps you undo git commands without much effort.
 ####[[[ SSH related commands ]]]########################################################
 
 
-# SSH related aliases.
+alias hthompson="ssh -p 16449 hunter@143.198.55.59"
+alias voidtech="ssh ranger@135.181.75.52"
 
 
 ####[[ Environmental Variables ]]#######################################################
 
 
 # 1Password auth socket.
-export SSH_AUTH_SOCK="~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 ## NVM setup...
 export NVM_DIR="$HOME/.nvm"
@@ -159,7 +158,6 @@ export LSCOLORS="exgxfxDxcxegDaabagacaD"
 ## You can find more information about LS_COLORS and why it's needed in addition to LSCOLORS,
 ## here: https://github.com/ohmyzsh/ohmyzsh/issues/6060#issuecomment-327934559
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 ## Editor configurations.
 export EDITOR=nvim
@@ -185,14 +183,27 @@ zsh_autosuggestions="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggesti
 # Zsh "plugin" installed via git and the following command:
 # git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 fzf_tab="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
-[[ -f $fzf_tab ]] && source "$fzf_tab"
+[[ -f $fzf_tab ]] && hash fzf 2>/dev/null && source "$fzf_tab"
 
 # Enable the use of '1password-cli' plugins.
-source /Users/hunter/.config/op/plugins.sh
+source "$HOME/.config/op/plugins.sh"
 
-## Azure Auto Completion.
-autoload bashcompinit && bashcompinit
-source $(brew --prefix)/etc/bash_completion.d/az
+
+####[[ Zsh Style Configurations ]]######################################################
+
+
+# Disable sort when completing `git checkout`.
+zstyle ':completion:*:git-checkout:*' sort false
+# Set descriptions format to enable group support.
+# NOTE: Don't use escape sequences here, fzf-tab will ignore them.
+zstyle ':completion:*:descriptions' format '[%d]'
+# Set list-colors to enable filename colorizing.
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+## Preview directory's content with `eza` when completing `cd`.
+hash eza 2>/dev/null \
+&& zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# Switch group using `<` and `>`.
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 
 ####[[ Others ]]########################################################################
