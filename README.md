@@ -34,7 +34,7 @@ Applicable Operating Systems: Linux
 {{ read_csv("includes/csv/useful-packages-npm.csv") }}
 ///
 
-## Customizing ZSH Shell (CONTINUE FROM HERE)
+## Customizing ZSH Shell
 
 ### Framework
 
