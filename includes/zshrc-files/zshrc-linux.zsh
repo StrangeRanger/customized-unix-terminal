@@ -53,13 +53,16 @@ plugins=(git colored-man-pages)  # Server
 zsh_completion="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
 [[ -d $zsh_completion ]] && fpath+=${zsh_completion}
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 
 ####[ Personal Configurations ]#########################################################
 ####[[ Aliases ]]#######################################################################
 ####[[[ Group 1 ]]]#####################################################################
 
+
+## General aliases.
+alias zls="eza"
 
 ## Update based aliases.
 alias updatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r"
@@ -159,10 +162,10 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 # Set list-colors to enable filename colorizing.
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# Preview directory's content with `eza` when completing `cd`.
+## Preview directory's content with `eza` when completing `cd`.
 hash eza 2>/dev/null \
 && zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-# Wwitch group using `<` and `>`
+# Wwitch group using `<` and `>`.
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 

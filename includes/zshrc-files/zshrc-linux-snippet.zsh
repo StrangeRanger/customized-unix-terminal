@@ -3,6 +3,9 @@
 ####[[[ Group 1 ]]]#####################################################################
 
 
+## General aliases.
+alias zls="eza"
+
 ## Update based aliases.
 alias updatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r"
 alias updatecopilot="bash ~/Programs/mass-git/mass-git -p ~/.config/nvim/pack/github/ -r"

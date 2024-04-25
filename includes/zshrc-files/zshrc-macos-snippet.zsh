@@ -6,11 +6,10 @@
 ## General aliases.
 alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias edisk="cd /Volumes && ll"
-alias dll="lsd -lh"
-alias dl="lsd -lah"
-alias remove_ds_store="find . -name '*.DS_Store' -type f -delete"
+alias zls="eza"
+alias rmdsstore="find . -name '*.DS_Store' -type f -delete"
 alias code="open -a 'Visual Studio Code.app' ."
-alias clang_format_recursive="find . -name '*.cs' -type f -exec clang-format --style=file:/Users/hunter/Programs/Mine/Formatter\ Configs/CSharp_clang-format/_clang-format -i {} +"
+alias formatc="find . -name '*.cs' -type f -exec clang-format --style=file:~/Programs/Mine/Formatter\ Configs/CSharp_clang-format/_clang-format -i {} +"
 
 ## Update based aliases.
 alias updatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r"
