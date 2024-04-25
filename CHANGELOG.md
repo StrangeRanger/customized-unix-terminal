@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 As a note, if the changelog only says "removed(program)", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified within the parentheses of the change.
 
-## Unreleased
+## 2024.4.25
 
 - **added(programs)**: `cheat`
 - **added(programs)**: `fzf-tab`
