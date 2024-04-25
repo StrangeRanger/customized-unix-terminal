@@ -8,11 +8,16 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
 
 - **added(programs)**: `cheat`
 - **added(programs)**: `fzf-tab`
+- **added(programs)**: `eza`
 - **added(init.vim)**: `mechatroner/rainbow_csv`
 - **added(zshrc)**: Updated and added new zstyle settings. They are now located in a section called "Zsh Style Configurations".
-- **changed(zshrc)**: Checks if `fzf` is installed before sourcing it.
+- **added(readme)**: Added a few new sections for future documentation.
+- **changed(zshrc)**: Checks if `fzf` is installed before sourcing `fzf-tab`.
 - **changed(zshrc)**: Removed azure `autoload` and `source`.
 - **changed(readme)**: Add recommended method of installing `fzf` on Linux.
+- **changed(aliases)**: Rename several aliases.
+- **changed(aliases)**: Add new alias for `eza`.
+- **removed(aliases)**: Removed `lsd` based aliases.
 - **removed(zshrc)**: `PATH` variable updated.
 
 ## 2024.4.22
