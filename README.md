@@ -10,19 +10,19 @@ This document serves as a guide for how I customize my macOS and Linux terminals
 
 ### NOTICE
 
-If you are viewing this document on GitHub or as a standard markdown file, you will not be able to see the interactive elements, such as the details and tabs. To view the document in its entirety, please visit the [website](https://cut.hthompson.dev).
+If you view this document on GitHub or as a standard markdown file, you will not see the interactive elements, such as the details and tabs. To view the document in its entirety, please visit the [website](https://cut.hthompson.dev).
 
 ## Useful Programs
 
 The following table contains a list of terminal programs that I find particularly useful. These programs are separated into two categories: Third Party Package Managers (TPPM) and Native Package Managers (NPM).
 
-The Third Party Package Managers section includes programs that are not installed using the system's default package manager, or installing them using a different package manager is suggested. These programs are typically installed using package managers like Homebrew, Pip, Cargo, Npm, Gem, or Git. I've included a brief description of each program and the relevant package manager(s) that can install it.
+The Third Party Package Managers section includes programs not installed using the system's default package manager. These programs are typically installed using tools like Homebrew, Pip, Cargo, Npm, Gem, or Git. I've included a brief description of each program and the relevant package manager(s) that can install it.
 
 /// details | Git Installations
 While most of these programs can be installed via git, they will not be marked as such unless recommended by the program's documentation or myself, or if it's the only other way to install the program.
 ///
 
-The Native Package Managers section includes programs that are installed using the system's default package manager. Since the primary Linux distributions I use are Debian based, all of the programs in this section are confirmed installable via apt. For other Linux distributions, you can check [Repology](https://repology.org/) to see if the program is available in your distribution's package manager. Just like with TPPM, I've included a brief description for each program and a link with the number of repository families featuring the package.
+The Native Package Managers section includes programs that can be installed using the system's default package manager. Since the primary Linux distributions I use are Debian based, all of the programs in this section are confirmed installable via apt. For other Linux distributions, you can check [Repology](https://repology.org/) to see if the program is available in your distribution's package manager. Like with TPPM, I've included a brief description for each program and a link with the number of repository families featuring the package.
 
 /// tab | Third Party Package Manager
 {{ read_csv("includes/csv/useful-packages-tppm.csv") }}
@@ -34,7 +34,7 @@ Applicable Operating Systems: Linux
 {{ read_csv("includes/csv/useful-packages-npm.csv") }}
 ///
 
-## Customizing ZSH Shell
+## Customizing ZSH Shell (CONTINUE FROM HERE)
 
 ### Framework
 
@@ -48,7 +48,7 @@ In combination with oh-my-zsh, I use [Powerlevel10k](https://github.com/romkatv/
 
 ### ZSH Resource File
 
-Below are the configurations for my `.zshrc` file, divided into two sections: macOS and Linux. The macOS configurations are tailored for macOS, while the other is designed for Linux.
+Below are tshe configurations for my `.zshrc` file, divided into two sections: macOS and Linux. The macOS configurations are tailored for macOS, while the other is designed for Linux.
 
 You are welcome to use this resource in any manner you prefer. My intention is to offer it as a guide for structuring your own `.zshrc` file and to present additional configurations not detailed elsewhere in this document.
 
@@ -154,6 +154,10 @@ If you prefer not to use all the features offered by vim-plug, you can opt for a
 ```
 
 ### Neovim GitHub Copilot
+
+...coming soon...
+
+### Installed TreeSitter Parsers
 
 ...coming soon...
 
