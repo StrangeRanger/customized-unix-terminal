@@ -23,6 +23,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       - run: pip install -r mkdocs-requirements.txt
-      - run: mkdocs build --strict  # Optional build step
+      - run: mkdocs build --strict
       - run: mkdocs gh-deploy --force
 
