@@ -1,10 +1,8 @@
-name: Deploy customized unix terminal github page
+name: Deploy Customized Unix Terminal GitHub Page
 
 on:
   push:
-    # Runs on pushes targeting the default branch
     branches: ["main"]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 permissions:
@@ -20,7 +18,11 @@ jobs:
           python-version: 3.x
       - uses: actions/cache@v2
         with:
-          key: ${{ github.ref }}
           path: .cache
-      - run: pip install -r mkdocs-requirements.txt 
+          key: ${{ runner.os }}-pip-${{ hashFiles('mkdocs-requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - run: pip install -r mkdocs-requirements.txt
+      - run: mkdocs build --strict
       - run: mkdocs gh-deploy --force
+
