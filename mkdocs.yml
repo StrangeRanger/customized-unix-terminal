@@ -1,4 +1,6 @@
 site_name: Customized Unix Terminal
+site_url: https://cut.hthompson.dev
+site_author: Hunter T.
 docs_dir: .
 site_dir: ../site
 repo_url: https://github.com/StrangeRanger/customized-unix-terminal
