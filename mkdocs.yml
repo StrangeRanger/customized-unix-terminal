@@ -56,7 +56,7 @@ theme:
     # button, which allows to deep link to the current search query and result.
     - search.share
   icon:
-    annotation: material/plug-circle
+    annotation: material/plus-circle
     repo: fontawesome/brands/github
 
 extra:
@@ -121,6 +121,6 @@ markdown_extensions:
   - pymdownx.superfences
 
 nav:
-  - Home: README.md
-  - Changelog: CHANGELOG.md
-  - License: LICENSE.md
+  - Home: index.md
+  - Changelog: changelog.md
+  - License: license.md
