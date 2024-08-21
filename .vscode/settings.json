@@ -4,6 +4,7 @@
         "Hilite",
         "inlinehilite",
         "linenums",
+        "matomo",
         "nvim",
         "pygments",
         "pymdownx",
