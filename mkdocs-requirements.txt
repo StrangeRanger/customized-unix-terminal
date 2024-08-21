@@ -7,6 +7,6 @@ pymdown-extensions==10.0.1
 
 
 ## Requirements for 'pymdown-extensions'.
-Pygments==2.15.1
+Pygments==2.18.0
 requests>=2.32.0 # not directly required, pinned by Snyk to avoid a vulnerability
 zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
