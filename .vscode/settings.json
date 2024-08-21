@@ -4,12 +4,14 @@
         "Hilite",
         "inlinehilite",
         "linenums",
+        "matomo",
+        "mkdocs",
         "nvim",
         "pygments",
+        "pymdown",
         "pymdownx",
         "smartsymbols",
         "superfences",
         "viewports"
-    ],
-    "editor.formatOnSave": false,
+    ]
 }

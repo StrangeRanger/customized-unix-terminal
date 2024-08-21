@@ -1,13 +1,9 @@
-# Directory created from `mkdocs gh-deploy`
-site/
-
-# Pipenv stuff
-Pipfile
-Pipfile.lock
-
-# macOS specific
+# macOS files.
 .DS_Store
 
-.obsidian/
+# mkdocs files.
+site/
 
+# TMP ignore.
+setup.bash
 Untitled.md
