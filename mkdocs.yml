@@ -1,12 +1,15 @@
 site_name: Customized Unix Terminal
 site_url: https://cut.hthompson.dev
 site_author: Hunter T.
-docs_dir: .
-site_dir: ../site
+# TODO: Add a site description.
+site_description: ...
+
+repo_name: Customized Unix Terminal
 repo_url: https://github.com/StrangeRanger/customized-unix-terminal
 
 theme:
   name: material
+  custom_dir: overrides
   palette:
     # Palette toggle for dark mode.
     - media: "(prefers-color-scheme: dark)"
@@ -25,6 +28,8 @@ theme:
       primary: blue
       accent: blue
   features:
+    # When enabled, all content tabs across the whole documentation site will be linked
+    # and switch to the same label when the user clicks on a tab.
     - content.tabs.link
     # Code blocks can automatically render a button on the right side to allow the user
     # to copy a code block's contents to the clipboard.
@@ -51,7 +56,12 @@ theme:
     # button, which allows to deep link to the current search query and result.
     - search.share
   icon:
+    annotation: material/plug-circle
     repo: fontawesome/brands/github
+
+extra:
+  analytics:
+    provider: matomo
 
 extra_css:
   - stylesheets/extra.css
@@ -60,18 +70,18 @@ plugins:
   ## Built-in plugins.
   - search
   ## External plugins.
-  - same-dir
+  # MkDocs plugin that enables displaying the date of the last git modification of a
+  # page.
   - git-revision-date-localized:
       type: date
       timezone: America/Los_Angeles
       fallback_to_build_date: true
       enabled: true
+  # MkDocs plugin that enables a markdown tag like {{ read_csv('table.csv') }} to
+  # directly insert various table formats into a page.
   - table-reader
 
 markdown_extensions:
-  # This configuration enables Markdown table support, which should normally be enabled
-  # by default, but to be sure, it's added here.
-  - tables
   # The BetterEm extension improves the detection of Markup to emphasize text in
   # Markdown using special characters, i.e. for **bold** and _italic_ formatting.
   - pymdownx.betterem:
