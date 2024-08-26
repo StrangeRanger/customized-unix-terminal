@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ee37d37228bcbae13618bae259d249b448394e210efcc6fe9937fe6d53ecff31"
+            "sha256": "134572eb2b71548759a6c08b5178b93bfa3009c7bccd6b7f34b0271037f03911"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -169,11 +169,11 @@
         },
         "idna": {
             "hashes": [
-                "sha256:028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc",
-                "sha256:82fee1fc78add43492d3a1898bfa6d8a904cc97d8427f683ed8e798d07761aa0"
+                "sha256:050b4e5baadcd44d760cedbd2b8e639f2ff89bbc7a5730fcc662954303377aac",
+                "sha256:d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
             ],
-            "markers": "python_version >= '3.5'",
-            "version": "==3.7"
+            "markers": "python_version >= '3.6'",
+            "version": "==3.8"
         },
         "jinja2": {
             "hashes": [
@@ -293,12 +293,12 @@
         },
         "mkdocs-material": {
             "hashes": [
-                "sha256:1b1f49066fdb3824c1e96d6bacd2d4375de4ac74580b47e79ff44c4d835c5fcb",
-                "sha256:31833ec664772669f5856f4f276bf3fdf0e642a445e64491eda459249c3a1ca8"
+                "sha256:d23a8b5e3243c9b2f29cdfe83051104a8024b767312dc8fde05ebe91ad55d89d",
+                "sha256:dbc79cf0fdc6e2c366aa987de8b0c9d4e2bb9f156e7466786ba2fd0f9bf7ffca"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==9.5.31"
+            "version": "==9.5.33"
         },
         "mkdocs-material-extensions": {
             "hashes": [
@@ -385,9 +385,10 @@
         },
         "paginate": {
             "hashes": [
-                "sha256:5e6007b6a9398177a7e1648d04fdd9f8c9766a1a945bceac82f1929e8c78af2d"
+                "sha256:22bd083ab41e1a8b4f3690544afb2c60c25e5c9a63a30fa2f483f6c60c8e5945",
+                "sha256:b885e2af73abcf01d9559fd5216b57ef722f8c42affbb63942377668e35c7591"
             ],
-            "version": "==0.5.6"
+            "version": "==0.5.7"
         },
         "pandas": {
             "hashes": [
