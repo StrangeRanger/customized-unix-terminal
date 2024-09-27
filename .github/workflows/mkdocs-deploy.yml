@@ -28,7 +28,7 @@ jobs:
       - name: Install pipenv
         run: python -m pip install --upgrade pip pipenv
       - name: Install dependencies with pipenv
-        run: pipenv install --deploy --ignore-pipfile
+        run: pipenv install --deploy
       - name: Build the site with mkdocs
         run: pipenv run mkdocs build --strict
       - name: Deploy to GitHub Pages
