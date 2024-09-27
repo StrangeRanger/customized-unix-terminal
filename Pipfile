@@ -4,12 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-mkdocs = "==1.6.1"
-mkdocs-git-revision-date-localized-plugin = "==1.2.9"
+mkdocs-git-revision-date-localized-plugin = "==1.2.0"
 mkdocs-material = "==9.5.38"
 mkdocs-table-reader-plugin = "==3.1.0"
-pymdown-extensions = "==10.10.2"
-pygments = "==2.18.0"
 
 [dev-packages]
 

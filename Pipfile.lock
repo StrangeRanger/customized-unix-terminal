@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a390f803b8c444a6dc1ac97ccc5cb2f06b695c4f41ee4d53dd54776be7b903e6"
+            "sha256": "df733857bac541d4cda7a4edfd3adbbb91081bacff80bad87dabe38b900a1ee9"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -270,7 +270,6 @@
                 "sha256:7b432f01d928c084353ab39c57282f29f92136665bdd6abf7c1ec8d822ef86f2",
                 "sha256:db91759624d1647f3f34aa0c3f327dd2601beae39a366d6e064c03468d35c20e"
             ],
-            "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==1.6.1"
         },
@@ -284,12 +283,12 @@
         },
         "mkdocs-git-revision-date-localized-plugin": {
             "hashes": [
-                "sha256:dea5c8067c23df30275702a1708885500fadf0abfb595b60e698bffc79c7a423",
-                "sha256:df9a50873fba3a42ce9123885f8c53d589e90ef6c2443fe3280ef1e8d33c8f65"
+                "sha256:540b9c930d8d48630c090b72ac2c3900ac2ed0799b23738a33b88e31f5198fe7",
+                "sha256:7752edd7c4dcaa9383e9a5b6a4f729831a62d604b0c43b319331127720c6a2bf"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.8'",
-            "version": "==1.2.9"
+            "markers": "python_version >= '3.6'",
+            "version": "==1.2.0"
         },
         "mkdocs-material": {
             "hashes": [
@@ -460,7 +459,6 @@
                 "sha256:786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199",
                 "sha256:b8e6aca0523f3ab76fee51799c488e38782ac06eafcf95e7ba832985c8e7b13a"
             ],
-            "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==2.18.0"
         },
@@ -469,7 +467,6 @@
                 "sha256:513a9e9432b197cf0539356c8f1fc376e0d10b70ad150cadeb649a5628aacd45",
                 "sha256:65d82324ef2497931bc858c8320540c6264ab0d9a292707edb61f4fe0cd56633"
             ],
-            "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==10.10.2"
         },
