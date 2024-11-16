@@ -48,6 +48,10 @@ def zsh_config():
             if any(marker in line for marker in CHEZMOI_STATEMENTS):
                 continue
 
+            if not file_operation.endswith("snippet"):
+                output_data.append(line)
+                continue
+
             if ZSH_ALIAS_MARKERS.start_marker in line:
                 ZSH_ALIAS_MARKERS.is_within_section = True
                 output_data.append(MKDOCS_SECTION_MARKER["user_config_start"] + "\n")
