@@ -33,8 +33,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages copybuffer copypath copyfile bgnotify command-not-found)  # Desktop
-#plugins=(colored-man-pages command-not-found)  # Server
 #plugins=(colored-man-pages copybuffer copypath copyfile bgnotify command-not-found)  # Desktop
 plugins=(colored-man-pages command-not-found)  # Server
 
