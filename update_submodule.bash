@@ -28,6 +28,8 @@ readonly C_NOTE="${C_CYAN}==>${C_NC} "
 ####[ Functions ]#######################################################################
 
 
+####
+# Check the status of the submodule and perform the necessary actions.
 submodule_status() {
     local git_status
     git_status="$(git submodule status "$C_SUBMODULE_PATH")"
