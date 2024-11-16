@@ -75,17 +75,9 @@ fi
 while true; do
     submodule_status
     case $? in
-        0)
-            break
-            ;;
-        1)
-            continue
-            ;;
-        2)
-            continue
-            ;;
-        3)
-            exit 1
-            ;;
+        0) break ;;
+        1) continue ;;
+        2) continue ;;
+        3) exit 1 ;;
     esac
 done
