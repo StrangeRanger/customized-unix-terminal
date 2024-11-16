@@ -9,14 +9,11 @@ NOTE: This script does not require the initialization of a virtual environment. 
 """
 # [ Imports ]###########################################################################
 
-from utils.config import (
-    CHEZMOI_STATEMENTS,
-    MKDOCS_SECTION_MARKER,
-    NEOVIM_FILE_PATH_DICT,
-    ZSH_FILE_PATH_DICT,
-)
+from utils.config import (CHEZMOI_STATEMENTS, MKDOCS_SECTION_MARKER,
+                          NEOVIM_FILE_PATH_DICT, ZSH_FILE_PATH_DICT)
 from utils.file_utils import read_file, write_file
-from utils.marker_config import NEOVIM_MARKERS, ZSH_ALIAS_MARKERS, ZSH_LS_COLORS_MARKERS
+from utils.marker_config import (NEOVIM_MARKERS, ZSH_ALIAS_MARKERS,
+                                 ZSH_LS_COLORS_MARKERS)
 
 # [ Functions ]#########################################################################
 
