@@ -45,19 +45,50 @@ def neovim_config():
         else:
             write_file(file_paths["to"], data)
 
+def chezmoi_edge_case(line, data, line_number):
+    """Handles edge cases when chezmoi statements are encountered. These are hard coded
+    strings that need to be processed in a very specific way. This means that changes to
+    the configuration files can easily break negate the functionality of this function.
+    Keep a close eye when making changes to the configuration files.
+
+    Args:
+        line (str): The line to process.
+        data (list[str]): The data from the file.
+        line_number (int): The current line number.
+
+    Returns:
+        int: The number of lines to skip.
+    """
+    if "{{ if $data.isGUIEnvironment -}}" in line:
+        if "plugins=(" in data[line_number + 1] and "plugins=(" in data[line_number + 2]:
+            return 3
+        elif "hash xdg-open" in data[line_number + 1] and "{{- end }}" in data[line_number + 2]:
+            return 1
+    return 1
+
 
 def zsh_config():
     """Updates the zsh configurations files."""
     for file_operation, file_paths in ZSH_FILE_PATH_DICT.items():
-        data = read_file(file_paths["from"], read_lines=True)
-        output_data = []
+        data: list[str] = read_file(file_paths["from"], read_lines=True)
+        output_data: list[str] = []
+        line_number = 0
 
-        for line in data:
+        while line_number < len(data):
+            line = data[line_number]
+
+            # Uncomment the code below to help debug edge cases.
+            #print(f"Processing line {line_number + 1} of {file_paths['from']}")
+            #print(f"Line: {line}")
+
             if any(marker in line for marker in CHEZMOI_STATEMENTS):
+                skip_line = chezmoi_edge_case(line, data, line_number)
+                line_number += skip_line
                 continue
 
             if not file_operation.endswith("snippet"):
                 output_data.append(line)
+                line_number += 1
                 continue
 
             if ZSH_ALIAS_MARKERS.start_marker in line:
@@ -85,6 +116,8 @@ def zsh_config():
                 or ZSH_LS_COLORS_MARKERS.is_within_section
             ):
                 output_data.append(line)
+
+            line_number += 1
 
         write_file(file_paths["to"], "".join(output_data))
 
