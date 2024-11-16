@@ -26,9 +26,9 @@ ZSH_ALIAS_MARKERS = Markers(
     end_marker="####[[ Environmental Variables ]]",
 )
 
-# NOTE: This is an estimated value, that relies on the position of comments that may not
-#       always be present. Compared to the previous markers, this one is more likely to
-#       be wrong, if the `.zshrc` file is modified.
+# NOTE: This is an "estimated" value, that relies on the position of comments and other
+#   commands that may not always be present. Compared to the previous markers, this one
+#   is more likely to be wrong, if the `.zshrc` related files are modified.
 ZSH_LS_COLORS_MARKERS = Markers(
     start_marker="# Modifies the colors",
     end_marker="## Set default",

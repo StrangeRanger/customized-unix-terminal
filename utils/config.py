@@ -1,6 +1,6 @@
 from pathlib import Path
 
-NEOVIM_FILE_PATH_DICT = {
+NEOVIM_CONFIG_PATHS = {
     "init_lua": {
         "from": Path("submodules/dotfiles/private_dot_config/nvim/second_init.lua"),
         "to": Path("includes/neovim-init-files/neovim-init-lua.lua"),
@@ -15,7 +15,7 @@ NEOVIM_FILE_PATH_DICT = {
     },
 }
 
-ZSH_FILE_PATH_DICT = {
+ZSH_CONFIG_PATHS = {
     "zshrc_linux": {
         "from": Path("submodules/dotfiles/.zshrc_linux.tmpl"),
         "to": Path("includes/zshrc-files/zshrc-linux.zsh"),
@@ -34,7 +34,7 @@ ZSH_FILE_PATH_DICT = {
     },
 }
 
-MKDOCS_SECTION_MARKER = {
+MKDOCS_SECTION_MARKERS = {
     "user_config_start": "# --8<-- [start:user_config]",
     "user_config_end": "# --8<-- [end:user_config]",
     "ls_colors_start": "# --8<-- [start:ls_colors]",
