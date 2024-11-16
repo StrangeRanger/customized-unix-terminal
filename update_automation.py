@@ -2,120 +2,84 @@
 """
 ...
 """
-# [ Imports ]###########################################################################
 
-from pathlib import Path
-
-# [ Global Variables ]##################################################################
-
-NEOVIM_FILE_PATH_DICT = {
-    "init_lua": {
-        "from": Path("submodules/dotfiles/private_dot_config/nvim/second_init.lua"),
-        "to": Path("includes/neovim-init-files/neovim-init-lua.lua"),
-    },
-    "init_vim_plug": {
-        "from": Path("submodules/dotfiles/private_dot_config/nvim/init.vim"),
-        "to": Path("includes/neovim-init-files/neovim-init-vim-plug.vim"),
-    },
-    "init_vim_no_plug": {
-        "from": Path("submodules/dotfiles/private_dot_config/nvim/init.vim"),
-        "to": Path("includes/neovim-init-files/neovim-init-non-vim-plug.vim"),
-    },
-}
-
-ZSH_FILE_PATH_DICT = {
-    "zshrc_linux": {
-        "from": Path("submodules/dotfiles/.zshrc_linux.tmpl"),
-        "to": Path("includes/zshrc-files/zshrc-linux.zsh"),
-    },
-    "zshrc_linux_snippet": {
-        "from": Path("submodules/dotfiles/.zshrc_linux.tmpl"),
-        "to": Path("includes/zshrc-files/zshrc-linux-snippet.zsh"),
-    },
-    "zshrc_macos": {
-        "from": Path("submodules/dotfiles/.zshrc_darwin"),
-        "to": Path("includes/zshrc-files/zshrc-macos.zsh"),
-    },
-    "zshrc_macos_snippet": {
-        "from": Path("submodules/dotfiles/.zshrc_darwin"),
-        "to": Path("includes/zshrc-files/zshrc-macos-snippet.zsh"),
-    },
-}
-
-# [ Functions ]#########################################################################
+from pkg.config import (
+    CHEZMOI_STATEMENTS,
+    MKDOCS_SECTION_MARKER,
+    NEOVIM_FILE_PATH_DICT,
+    ZSH_FILE_PATH_DICT,
+)
+from pkg.file_utils import read_file, write_file
+from pkg.marker_config import NEOVIM_MARKERS, ZSH_ALIAS_MARKERS, ZSH_LS_COLORS_MARKERS
 
 
 def neovim_config():
     """Updates the neovim configurations files."""
-    # Define the start and end markers.
-    start_marker = '""""[ General Configurations ]'
-    end_marker = '""""[ vim-plug Plugin Configurations ]'
-    is_within_section = False
-
     for file_operation, file_paths in NEOVIM_FILE_PATH_DICT.items():
-        if file_operation != "init_vim_no_plug":
-            with open(file_paths["from"], "r") as file:
-                data = file.read()  # .read to read the whole file
-            with open(file_paths["to"], "w") as file:
-                file.write(data)
+        data = read_file(
+            file_paths["from"], read_lines=(file_operation == "init_vim_no_plug")
+        )
+
+        if file_operation == "init_vim_no_plug":
+            filtered_data = []
+            for line in data:
+                if NEOVIM_MARKERS.start_marker in line:
+                    NEOVIM_MARKERS.is_within_section = True
+                if (
+                    NEOVIM_MARKERS.end_marker in line
+                    and NEOVIM_MARKERS.is_within_section
+                ):
+                    NEOVIM_MARKERS.is_within_section = False
+                    break
+                if NEOVIM_MARKERS.is_within_section:
+                    filtered_data.append(line)
+            write_file(file_paths["to"], "".join(filtered_data))
         else:
-            with open(file_paths["from"], "r") as file:
-                data = file.readlines()  # .readlines to read the file line by line
-            with open(file_paths["to"], "w") as file:
-                for line in data:
-                    if start_marker in line:
-                        is_within_section = True
-                    if end_marker in line:
-                        is_within_section = False
-                        break
-                    if is_within_section:
-                        file.write(line)
+            write_file(file_paths["to"], data)
+
 
 def zsh_config():
     """Updates the zsh configurations files."""
-    chezmoi_statements = ["{{ ", "{{- "]
-    mkdocs_section_marker = {
-        "user_config_start": "# --8<-- [start:user_config]",
-        "user_config_end": "# --8<-- [end:user_config]",
-        "ls_colors_start": "# --8<-- [start:ls_colors]",
-        "ls_colors_end": "# --8<-- [end:ls_colors]",
-    }
-
-
     for file_operation, file_paths in ZSH_FILE_PATH_DICT.items():
-        if file_operation.endswith("_snippet"):
-            print("Snippet file.")
-            # with open(file_paths["from"], "r") as file:
-            #     # We read line by line if there is a need to exclude some lines, otherwise we read the whole file.
-            #     data = file.readlines() #if file_paths["from"].name.endswith("tmpl") else file.read()
-            # with open(file_paths["to"], "w") as file:
-            #     if file_paths["from"].name.endswith("tmpl"):
-            #         for line in data:
-            #             if any(marker in line for marker in chezmoi_statements):
-            #                 continue
-            #     else:
-            #         file.write("PINGAS")
-            #         # for line in data:
-            #         #     # These are lines used by Chezmoi to indicate a statement of sorts.
-            #         #     if any(marker in line for marker in chezmoi_statements):
-            #         #         continue
-        # TODO: Make sure the plugins duplicate problem gets taken care of!
-        else:
-            with open(file_paths["from"], "r") as file:
-                # We read line by line if there is a need to exclude some lines, otherwise we read the whole file.
-                data = file.readlines() if file_paths["from"].name.endswith("tmpl") else file.read()
-            with open(file_paths["to"], "w") as file:
-                if file_paths["from"].name.endswith("tmpl"):
-                    for line in data:
-                        # Skip the lines that are marked by chezmoi_statements.
-                        if any(marker in line for marker in chezmoi_statements):
-                            continue
-                        file.write(line)
-                else:
-                    file.write(data)
+        data = read_file(file_paths["from"], read_lines=True)
+        output_data = []
+
+        for line in data:
+            if any(marker in line for marker in CHEZMOI_STATEMENTS):
+                continue
+
+            if ZSH_ALIAS_MARKERS.start_marker in line:
+                ZSH_ALIAS_MARKERS.is_within_section = True
+                output_data.append(MKDOCS_SECTION_MARKER["user_config_start"] + "\n")
+            elif ZSH_LS_COLORS_MARKERS.start_marker in line:
+                ZSH_LS_COLORS_MARKERS.is_within_section = True
+                output_data.append(MKDOCS_SECTION_MARKER["ls_colors_start"] + "\n")
+
+            if (
+                ZSH_ALIAS_MARKERS.end_marker in line
+                and ZSH_ALIAS_MARKERS.is_within_section
+            ):
+                ZSH_ALIAS_MARKERS.is_within_section = False
+                output_data.append(MKDOCS_SECTION_MARKER["user_config_end"] + "\n")
+            elif (
+                ZSH_LS_COLORS_MARKERS.end_marker in line
+                and ZSH_LS_COLORS_MARKERS.is_within_section
+            ):
+                ZSH_LS_COLORS_MARKERS.is_within_section = False
+                output_data.append(MKDOCS_SECTION_MARKER["ls_colors_end"] + "\n")
+
+            if (
+                ZSH_ALIAS_MARKERS.is_within_section
+                or ZSH_LS_COLORS_MARKERS.is_within_section
+            ):
+                output_data.append(line)
+
+        write_file(file_paths["to"], "".join(output_data))
+
 
 def main():
-    #neovim_config()
+    """Main function."""
+    neovim_config()
     zsh_config()
 
 
