@@ -2,6 +2,10 @@
 #
 # Automate the process of updating the submodule.
 #
+# Version: v1.0.0
+# License: MIT License
+#          Copyright (c) 2024 Hunter T. (StrangeRanger)
+#
 ########################################################################################
 ####[ Global Variables ]################################################################
 
