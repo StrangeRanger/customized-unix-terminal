@@ -1,14 +1,22 @@
 #!/usr/bin/env python3
 """
-...
+Automates the process of updating zsh and neovim configuration files in the 'includes'
+directory. This is done by reading my 'dotfiles' in the 'submodules/dotfiles' submodule
+and applying the necessary changes to the 'includes' directory.
+
+NOTE: This script does not require the initialization of a virtual environment. The
+      Pipfiles are only required when deploying the MkDocs site.
 """
 # [ Imports ]###########################################################################
 
-from pkg.config import (CHEZMOI_STATEMENTS, MKDOCS_SECTION_MARKER,
-                        NEOVIM_FILE_PATH_DICT, ZSH_FILE_PATH_DICT)
-from pkg.file_utils import read_file, write_file
-from pkg.marker_config import (NEOVIM_MARKERS, ZSH_ALIAS_MARKERS,
-                               ZSH_LS_COLORS_MARKERS)
+from utils.config import (
+    CHEZMOI_STATEMENTS,
+    MKDOCS_SECTION_MARKER,
+    NEOVIM_FILE_PATH_DICT,
+    ZSH_FILE_PATH_DICT,
+)
+from utils.file_utils import read_file, write_file
+from utils.marker_config import NEOVIM_MARKERS, ZSH_ALIAS_MARKERS, ZSH_LS_COLORS_MARKERS
 
 # [ Functions ]#########################################################################
 
