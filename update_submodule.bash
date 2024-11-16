@@ -34,6 +34,12 @@ readonly C_NOTE="${C_CYAN}==>${C_NC} "
 
 ####
 # Check the status of the submodule and perform the necessary actions.
+#
+# RETURNS:
+#   - 0: The submodule is up to date.
+#   - 1: The submodule is out of date.
+#   - 2: The submodule is not initialized.
+#   - 3: The submodule has merge conflicts.
 submodule_status() {
     local git_status
     git_status="$(git submodule status "$C_SUBMODULE_PATH")"
