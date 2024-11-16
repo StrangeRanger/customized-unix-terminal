@@ -6,10 +6,10 @@ and applying the necessary changes to the 'includes' directory.
 """
 # [ Imports ]###########################################################################
 
-from pkg.config import (CHEZMOI_STATEMENTS, MKDOCS_SECTION_MARKER,
+from utils.config import (CHEZMOI_STATEMENTS, MKDOCS_SECTION_MARKER,
                         NEOVIM_FILE_PATH_DICT, ZSH_FILE_PATH_DICT)
-from pkg.file_utils import read_file, write_file
-from pkg.marker_config import (NEOVIM_MARKERS, ZSH_ALIAS_MARKERS,
+from utils.file_utils import read_file, write_file
+from utils.marker_config import (NEOVIM_MARKERS, ZSH_ALIAS_MARKERS,
                                ZSH_LS_COLORS_MARKERS)
 
 # [ Functions ]#########################################################################
