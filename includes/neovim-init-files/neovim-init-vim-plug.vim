@@ -24,6 +24,10 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Highlight columns in CSV and TSV files and run queries in SQL-like language.
 Plug 'mechatroner/rainbow_csv'
+" A simple and lightweight Neovim plugin that brings syntax highlighting to generic log
+" patterns and provides straight-forward configuration to manage the filetype detection
+" rules over your preferred log files.
+Plug 'fei6409/log-highlight.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -38,30 +42,30 @@ call plug#end()
 "   PlugSnapshot - Generate script for restoring the current snapshot of the plugins
 
 
-""""[ Non-vim-plug Related Configurations ]"""""""""""""""""""""""""""""""""""""""""""""
+""""[ General Configurations ]"""""""""""""""""""""""""""""""""""""""""""""
 
 
-"" Overwrites specified default setting.
-set tabstop=4       " Tells vim how many columns a tab counts for.
-set shiftwidth=4    " 'Levels of indentation', where a level of indentation is
-                    " shiftwidth columns of whitespace.
-set expandtab       " Ensure that when you hit tab it will actually use spaces.
+"""
+""" Overwrites specified default setting.
+"""
+
+"" Overwrite for all file types.
+set expandtab       " Use spaces instead of tabs.
+set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
+set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
+set softtabstop=4   " Number of spaces that a <Tab> in the file counts for.
+set endofline       " Keep the last line of a file if it has no newline.
+set fixendofline    " Ensures a newline at the end of the file, if endofline is enabled.
 set colorcolumn=88  " Set a colored line at column 88 in every row.
 
-"" Markdown files
-autocmd Filetype markdown setlocal colorcolumn=0
-"" TXT files
-autocmd Filetype text setlocal colorcolumn=0
-"" Java
-autocmd Filetype java setlocal colorcolumn=94
-"" C#
+"" Filetype-specific configurations.
+autocmd Filetype markdown,text,csv setlocal colorcolumn=0
+autocmd Filetype java setlocal colorcolumn=100
 autocmd Filetype cs setlocal colorcolumn=120
-"" HTML
-autocmd Filetype html setlocal colorcolumn=100 tabstop=2 shiftwidth=2 nowrap
-"" CSS
-autocmd Filetype css setlocal colorcolumn=100 tabstop=2 shiftwidth=2 nowrap
-"" Vue
-autocmd Filetype vue setlocal colorcolumn=100 tabstop=2 shiftwidth=2
+" As recommended by the luarocks Style Guide:
+" https://github.com/luarocks/lua-style-guide/blob/master/README.md
+autocmd Filetype lua setlocal tabstop=3 shiftwidth=3 softtabstop=3
+autocmd Filetype html,css,vue,javascript,typescript setlocal colorcolumn=100 tabstop=2 shiftwidth=2 softtabstop=2
 
 
 """"[ vim-plug Plugin Configurations ]""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -91,6 +95,12 @@ let g:strip_whitespace_on_save = 1
 
 "" Plugin: ale
 "let g:ale_use_neovim_diagnostics_api = 0
+
+
+""""[ Lua Configurations ]""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+lua dofile(vim.fn.stdpath('config') .. '/second_init.lua')
 
 
 """"[ Useful Commands ]"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
