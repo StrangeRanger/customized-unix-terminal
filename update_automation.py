@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-...
+Automates the process of updating zsh and neovim configuration files in the 'includes'
+directory. This is done by reading my 'dotfiles' in the 'submodules/dotfiles' submodule
+and applying the necessary changes to the 'includes' directory.
 """
 # [ Imports ]###########################################################################
 
