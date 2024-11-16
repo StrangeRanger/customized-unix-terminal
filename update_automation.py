@@ -71,52 +71,52 @@ def neovim_config():
                     if is_within_section:
                         file.write(line)
 
-# def zsh_config():
-#     """Updates the zsh configurations files."""
-#     chezmoi_statements = ["{{ ", "{{- "]
-#     mkdocs_section_marker = {
-#         "user_config_start": "# --8<-- [start:user_config]",
-#         "user_config_end": "# --8<-- [end:user_config]",
-#         "ls_colors_start": "# --8<-- [start:ls_colors]",
-#         "ls_colors_end": "# --8<-- [end:ls_colors]",
-#     }
-#
-#
-#     for file_operation, file_paths in ZSH_FILE_PATH_DICT.items():
-#         if file_operation.endswith("_snippet"):
-#             print("Snippet file.")
-#             # with open(file_paths["from"], "r") as file:
-#             #     # We read line by line if there is a need to exclude some lines, otherwise we read the whole file.
-#             #     data = file.readlines() #if file_paths["from"].name.endswith("tmpl") else file.read()
-#             # with open(file_paths["to"], "w") as file:
-#             #     if file_paths["from"].name.endswith("tmpl"):
-#             #         for line in data:
-#             #             if any(marker in line for marker in chezmoi_statements):
-#             #                 continue
-#             #     else:
-#             #         file.write("PINGAS")
-#             #         # for line in data:
-#             #         #     # These are lines used by Chezmoi to indicate a statement of sorts.
-#             #         #     if any(marker in line for marker in chezmoi_statements):
-#             #         #         continue
-#         # TODO: Make sure the plugins duplicate problem gets taken care of!
-#         else:
-#             with open(file_paths["from"], "r") as file:
-#                 # We read line by line if there is a need to exclude some lines, otherwise we read the whole file.
-#                 data = file.readlines() if file_paths["from"].name.endswith("tmpl") else file.read()
-#             with open(file_paths["to"], "w") as file:
-#                 if file_paths["from"].name.endswith("tmpl"):
-#                     for line in data:
-#                         # Skip the lines that are marked by chezmoi_statements.
-#                         if any(marker in line for marker in chezmoi_statements):
-#                             continue
-#                         file.write(line)
-#                 else:
-#                     file.write(data)
+def zsh_config():
+    """Updates the zsh configurations files."""
+    chezmoi_statements = ["{{ ", "{{- "]
+    mkdocs_section_marker = {
+        "user_config_start": "# --8<-- [start:user_config]",
+        "user_config_end": "# --8<-- [end:user_config]",
+        "ls_colors_start": "# --8<-- [start:ls_colors]",
+        "ls_colors_end": "# --8<-- [end:ls_colors]",
+    }
+
+
+    for file_operation, file_paths in ZSH_FILE_PATH_DICT.items():
+        if file_operation.endswith("_snippet"):
+            print("Snippet file.")
+            # with open(file_paths["from"], "r") as file:
+            #     # We read line by line if there is a need to exclude some lines, otherwise we read the whole file.
+            #     data = file.readlines() #if file_paths["from"].name.endswith("tmpl") else file.read()
+            # with open(file_paths["to"], "w") as file:
+            #     if file_paths["from"].name.endswith("tmpl"):
+            #         for line in data:
+            #             if any(marker in line for marker in chezmoi_statements):
+            #                 continue
+            #     else:
+            #         file.write("PINGAS")
+            #         # for line in data:
+            #         #     # These are lines used by Chezmoi to indicate a statement of sorts.
+            #         #     if any(marker in line for marker in chezmoi_statements):
+            #         #         continue
+        # TODO: Make sure the plugins duplicate problem gets taken care of!
+        else:
+            with open(file_paths["from"], "r") as file:
+                # We read line by line if there is a need to exclude some lines, otherwise we read the whole file.
+                data = file.readlines() if file_paths["from"].name.endswith("tmpl") else file.read()
+            with open(file_paths["to"], "w") as file:
+                if file_paths["from"].name.endswith("tmpl"):
+                    for line in data:
+                        # Skip the lines that are marked by chezmoi_statements.
+                        if any(marker in line for marker in chezmoi_statements):
+                            continue
+                        file.write(line)
+                else:
+                    file.write(data)
 
 def main():
-    neovim_config()
-    #zsh_config()
+    #neovim_config()
+    zsh_config()
 
 
 # [ Dunder Main ]#######################################################################
