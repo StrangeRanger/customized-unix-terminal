@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-def read_file(file_path, read_lines = False):
+def read_file(file_path, read_lines=False):
     """Reads the file and returns the data.
 
     Args:
