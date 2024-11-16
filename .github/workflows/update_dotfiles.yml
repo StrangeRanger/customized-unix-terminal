@@ -1,10 +1,8 @@
 name: Update Submodule
 
 on:
-  # Run this workflow daily at midnight UTC
   schedule:
     - cron: '0 0 * * *'
-  # Allow manual triggering
   workflow_dispatch:
 
 jobs:
@@ -15,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          submodules: recursive # Ensures submodules are checked out
+          submodules: recursive
 
       - name: Configure Git User
         run: |
@@ -25,10 +23,11 @@ jobs:
       - name: Update Submodule
         run: |
           git submodule update --remote --merge submodules/dotfiles
-          git add submodules/dotfiles
-          git commit -m "CI: Update submodule to latest commit"
-          git push
-
-      - name: Verify Submodule Status
-        run: git submodule status
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add submodules/dotfiles
+            git commit -m "CI: Update submodule to latest commit"
+            git push
+          else
+            echo "No changes to commit"
+          fi
 
