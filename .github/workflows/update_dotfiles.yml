@@ -22,6 +22,7 @@ jobs:
 
       - name: Update Submodule
         run: |
+          git submodule update --init --recursive
           git submodule update --remote --merge submodules/dotfiles
           if [[ -n "$(git status --porcelain)" ]]; then
             git add submodules/dotfiles
