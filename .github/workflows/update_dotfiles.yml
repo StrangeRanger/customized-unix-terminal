@@ -1,0 +1,32 @@
+name: Update Submodule
+
+on:
+  # Run this workflow daily at midnight UTC
+  schedule:
+    - cron: '0 0 * * *'
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  update-submodule:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the parent repository with submodules
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive # Ensures submodules are checked out
+
+      # Step 2: Update the submodule
+      - name: Update Submodule
+        run: |
+          git submodule update --remote --merge submodule/dotfiles
+          git add submodule/dotfiles
+          git commit -m "CI: Update submodule to latest commit"
+          git push
+
+      # Step 3: Verify the update (Optional)
+      - name: Verify Submodule Status
+        run: git submodule status
+

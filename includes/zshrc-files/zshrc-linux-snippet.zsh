@@ -1,24 +1,28 @@
 # --8<-- [start:user_config]
 ####[[ Aliases ]]#######################################################################
-####[[[ Group 1 ]]]#####################################################################
 
+
+###
+### [ Group 1 ]
+###
 
 ## General aliases.
 alias zls="eza"
+alias formatc="find . -name '*.cs' -type f -exec clang-format --style='file:$HOME/Programs/Mine/Formatter Configs/CSharp_clang-format/_clang-format' -i {} +"
+hash xdg-open 2>/dev/null && alias open="xdg-open"
 
 ## Update based aliases.
-alias updatezshplugins="bash ~/Programs/mass-git/mass-git -p ~/.oh-my-zsh/custom/plugins/ -r"
-alias updatecopilot="bash ~/Programs/mass-git/mass-git -p ~/.config/nvim/pack/github/ -r"
-alias updateapt="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
-alias updateomz="omz update"
-alias updateall="updateapt; updateomz; updatecopilot; updatezshplugins"
+alias updateapt="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
+alias updatepacman="sudo pacman -Syu && yay && yay -Yc"
 
-
-####[[[ Group 2 ]]]#####################################################################
-#### Due to the number of commands that I find to be useful, I've created aliases
-#### containing some of these commands. They are specifically commands that I don't
-#### often use, but are useful to have on hand. Having these aliases allows me to see
-#### a list of these commands, without having to commit them to memeory.
+###
+### [ Group 2 ]
+###
+### Due to the number of commands that I find to be useful, I've created aliases
+### containing some of these commands. They are specifically commands that I don't
+### often use, but are useful to have on hand. Having these aliases allows me to see
+### a list of these commands, without having to commit them to memeory.
+###
 
 alias lt="echo -e \"
 ####[ Package Manager installed commands ]##############################################
@@ -58,10 +62,11 @@ lazygit  - Simple terminal UI for git commands.
 git open - Opens the GitHub page for a repo/branch in your browser.
 ugit     - ugit helps you undo git commands without much effort.
 \""
-# --8<-- [end:user_config]
 
+
+# --8<-- [end:user_config]
 # --8<-- [start:ls_colors]
-## Modifies the colors of files and directories in the terminal.
+# Modifies the colors of files and directories in the terminal.
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
 # --8<-- [end:ls_colors]
