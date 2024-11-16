@@ -1,4 +1,53 @@
-# --8<-- [start:user_config]
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME=""
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Disable audo updates for ohmyzsh. This is taken care of by chezmoi.
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+HIST_STAMPS="yyyy-mm-dd"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+# MAYBE: Add `command-not-found` plugin.
+plugins=(colored-man-pages copybuffer copypath copyfile bgnotify)
+
+# Zsh "plugin" installed via git and the following command:
+# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+zsh_completion="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
+[[ -d $zsh_completion ]] && fpath+=${zsh_completion}
+
+source "$ZSH/oh-my-zsh.sh"
+
+
+####[ Personal Configurations ]#########################################################
 ####[[ Aliases ]]#######################################################################
 
 
@@ -63,8 +112,20 @@ ugit     - ugit helps you undo git commands without much effort.
 \""
 
 
-# --8<-- [end:user_config]
-# --8<-- [start:ls_colors]
+####[[ Environmental Variables ]]#######################################################
+
+
+# 1Password auth socket.
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+# Path purpose:
+#   /usr/local/opt/curl/bin:       ...
+#   /usr/local/sbin:               ???
+#   /usr/local/opt/openjdk@17/bin: Prefered java version.
+#   /usr/local/opt/node@18/bin:    Prefered node version.
+#   /usr/local/opt/ruby/bin:       Prefered ruby version.
+export PATH="/usr/local/opt/curl/bin:/usr/local/sbin:/usr/local/opt/openjdk@17/bin:/usr/local/opt/node@18/bin:/usr/local/opt/ruby/bin:$PATH"
+
 # Modifies the colors of files and directories when using `ls`.
 export LSCOLORS="exgxfxDxcxegDaabagacaD"
 ## Version of LSCOLORS compatible with zsh and GNU based commands.
@@ -72,4 +133,70 @@ export LSCOLORS="exgxfxDxcxegDaabagacaD"
 ## here: https://github.com/ohmyzsh/ohmyzsh/issues/6060#issuecomment-327934559
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
 
-# --8<-- [end:ls_colors]
+## Set default editor.
+if hash nvim 2>/dev/null; then
+    export EDITOR=nvim
+    export VISUAL=$EDITOR
+fi
+
+# Node Version Manager (NVM) configurations.
+export NVM_DIR="$HOME/.nvm"
+
+
+####[[ Sourced Files ]]#################################################################
+
+
+## Load NVM.
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## Zsh "plugin" installed via git and the following command:
+## git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+zsh_syntax_highlighting="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[[ -f $zsh_syntax_highlighting ]] && source "$zsh_syntax_highlighting"
+
+## Zsh "plugin" installed via git and the following command:
+## git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+zsh_autosuggestions="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[[ -f $zsh_autosuggestions ]] && source "$zsh_autosuggestions"
+
+## Zsh "plugin" installed via git and the following command:
+## git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
+fzf_tab="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
+[[ -f $fzf_tab ]] && hash fzf 2>/dev/null && source "$fzf_tab"
+
+# Enable the use of '1password-cli' plugins.
+source "$HOME/.config/op/plugins.sh"
+
+
+####[[ Zsh Style Configurations ]]######################################################
+
+
+# Disable sort when completing `git checkout`.
+zstyle ':completion:*:git-checkout:*' sort false
+# Set descriptions format to enable group support.
+# NOTE: Don't use escape sequences here, fzf-tab will ignore them.
+zstyle ':completion:*:descriptions' format '[%d]'
+# Set list-colors to enable filename colorizing.
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+## Preview directory's content with `eza` when completing `cd`.
+hash eza 2>/dev/null \
+    && zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# Switch group using `<` and `>`.
+zstyle ':fzf-tab:*' switch-group '<' '>'
+
+
+####[[ End of File Configurations ]]####################################################
+#### These are configurations that are specified to be placed at the end of the file, by
+#### the developer/documentation.
+
+
+# Initialize Starship prompt, if it is installed and $ZSH_THEME is not set.
+hash starship 2>/dev/null \
+    && [[ -z $ZSH_THEME ]] \
+    && eval "$(starship init zsh)"
+
+
+####[[ Others ]]########################################################################
+#### These are generally configurations set up by setup scripts or other programs.
+
