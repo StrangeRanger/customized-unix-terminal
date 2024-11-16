@@ -2,15 +2,15 @@
 """
 ...
 """
+# [ Imports ]###########################################################################
 
-from pkg.config import (
-    CHEZMOI_STATEMENTS,
-    MKDOCS_SECTION_MARKER,
-    NEOVIM_FILE_PATH_DICT,
-    ZSH_FILE_PATH_DICT,
-)
+from pkg.config import (CHEZMOI_STATEMENTS, MKDOCS_SECTION_MARKER,
+                        NEOVIM_FILE_PATH_DICT, ZSH_FILE_PATH_DICT)
 from pkg.file_utils import read_file, write_file
-from pkg.marker_config import NEOVIM_MARKERS, ZSH_ALIAS_MARKERS, ZSH_LS_COLORS_MARKERS
+from pkg.marker_config import (NEOVIM_MARKERS, ZSH_ALIAS_MARKERS,
+                               ZSH_LS_COLORS_MARKERS)
+
+# [ Functions ]#########################################################################
 
 
 def neovim_config():
