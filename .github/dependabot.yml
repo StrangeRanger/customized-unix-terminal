@@ -9,3 +9,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+  - package-ecosystem: "gitsubmodule"
+    directory: "submodules/dotfiles"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "[Submodule Update]"
+    open-pull-requests-limit: 2
