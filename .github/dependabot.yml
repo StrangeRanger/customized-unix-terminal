@@ -12,7 +12,7 @@ updates:
   - package-ecosystem: "gitsubmodule"
     directory: "submodules/dotfiles"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     commit-message:
       prefix: "[Submodule Update]"
     open-pull-requests-limit: 2
