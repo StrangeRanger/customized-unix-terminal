@@ -39,9 +39,9 @@ Applicable Operating Systems: Linux
 
 ### Shell Theme
 
-In combination with oh-my-zsh, I use [Starship](https://github.com/starship/starship) [Powerlevel10k](https://github.com/romkatv/powerlevel10k) as my shell theme. Starship is a fast, minimal, and customizable shell prompt that displays information about the current directory, git branch, and other relevant details. It is written in Rust, making it extremely fast and lightweight.
+In combination with oh-my-zsh, I use [Starship](https://github.com/starship/starship) as my shell theme. Starship is a fast, minimal, and highly customizable shell prompt that displays information about the current directory, git branch, and other relevant details. It is written in Rust, making it extremely fast and lightweight.
 
-As a note, I previously used [Powerlevel10k](https://github.com/romkatv/powerlevel10k), which is another **excellent** shell theme. However, as of May 21, 2024, Powerlevel10k has entered a  ["life support" mode](https://github.com/romkatv/powerlevel10k/commit/bde5ca4c2aa6e0c52dd7f15cf216dffdb1ec788c). In the maintainer's words, "The project has very limited support", with "no new features are in the works", "most bugs will go unfixed", and "help requests will be ignored". As such, I decided to switch to a project that is actively maintained and has a bright future ahead of it.
+As a note, I previously used [Powerlevel10k](https://github.com/romkatv/powerlevel10k), which is another **excellent** shell theme. However, as of May 21, 2024, Powerlevel10k has entered a  ["life support" mode](https://github.com/romkatv/powerlevel10k/commit/bde5ca4c2aa6e0c52dd7f15cf216dffdb1ec788c). In the maintainer's words, "The project has very limited support", with "no new features are in the works", "most bugs will go unfixed", and "help requests will be ignored". As such, I decided to switch to an actively maintained project and mature alternative, Starship.
 
 ### ZSH Resource File
 
@@ -51,15 +51,19 @@ You are welcome to use this resource in any manner you prefer. My intention is t
 
 /// details | My ZSH Resource File
 //// tab | macOS
+
 ```bash title=".zshrc"
 --8<-- "includes/zshrc-files/zshrc-macos.zsh"
 ```
+
 ////
 
 //// tab | Linux
+
 ```bash title=".zshrc"
 --8<-- "includes/zshrc-files/zshrc-linux.zsh"
 ```
+
 ////
 ///
 
@@ -74,15 +78,19 @@ This is a list of all the oh-my-zsh plugins that I use and find to provide usefu
 Below is a list of aliases that are in my `.zshrc` files. They are broken up into two groups: Group 1 and Group 2. Group 1 contains general aliases, while Group 2 contains aliases listing categorized commands. Most of these commands are programs mentioned in [Useful Programs](#useful-programs), that I don't frequently use, but still want to have quick access to.
 
 /// tab | macOS
+
 ```bash title=".zshrc"
 --8<-- "includes/zshrc-files/zshrc-macos-snippet.zsh:user_config"
 ```
+
 ///
 
 /// tab | Linux
+
 ```bash title=".zshrc"
 --8<-- "includes/zshrc-files/zshrc-linux-snippet.zsh:user_config"
 ```
+
 ///
 
 ### Modifying CLI Colors
@@ -90,6 +98,7 @@ Below is a list of aliases that are in my `.zshrc` files. They are broken up int
 The terminal colors that are used for folders, files, and other items in the command line interface can be customized using the `LS_COLORS` (macOS & Linux) and `LSCOLORS` (macOS) environment variables. If you want to modify these colors, you can do so by setting the `LS_COLORS` or `LSCOLORS` variable in your `.zshrc` file.
 
 /// details | LS_COLORS & LSCOLORS Explained
+
 On macOS, both `LSCOLORS` and `LS_COLORS` are necessary for specifying terminal colors. `LSCOLORS` is used for commands like `ls`, determining the colors in the command line interface, whereas `LS_COLORS` is used by zsh for similar purposes. In contrast, Linux only requires `LS_COLORS`, which is employed by both the `ls` command and zsh.
 
 The underlying reason for this difference lies in the distinct versions of the `ls` command on macOS (FreeBSD version) and Linux (GNU version). macOS's `ls` command relies on `LSCOLORS` for color settings, while Linux uses `LS_COLORS`, each with its unique formatting. Moreover, since zsh recognizes only the `LS_COLORS` format, it's imperative to use it on macOS to ensure proper display and functionality of CLI colors.
@@ -99,20 +108,25 @@ Included below is a key that explains the values of `LSCOLORS` and `LS_COLORS` i
 {{ read_csv("includes/csv/cli-colors-explained.csv") }}
 
 For an in-depth understanding of LS_COLORS and LSCOLORS, I recommend visiting this [gist](https://gist.github.com/thomd/7667642).
+
 ///
 
 Below are my configurations for both macOS and Linux systems. To apply these settings, simply insert the following code into your `~/.zshrc` file:
 
 /// tab | macOS
+
 ```bash title="CLI Color Configuration"
 --8<-- "includes/zshrc-files/zshrc-macos-snippet.zsh:ls_colors"
 ```
+
 ///
 
 /// tab | Linux
+
 ```bash title="CLI Color Configuration"
 --8<-- "includes/zshrc-files/zshrc-linux-snippet.zsh:ls_colors"
 ```
+
 ///
 
 You can additionally modify the shading and appearance of the CLI colors by adjusting the ANSI-color scheme in your terminal profile. This can be done manually, with guides available for both [macOS](https://support.apple.com/guide/terminal/change-profiles-text-preferences-trmltxt/mac) and [Linux](https://help.gnome.org/users/gnome-terminal/stable/app-colors.html.en) (gnome specific instructions). Alternatively, you can use my custom profile schemes, which are detailed in the [Terminal Profile](#terminal-profile) section.
