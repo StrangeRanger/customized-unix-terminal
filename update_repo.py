@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
+#
+# NOTE:
+#   - This script does not require the initialization of a virtual environment. The
+#     Pipfiles are only required when deploying the MkDocs site.
+#   - This script has some hard-coded values that may make it fragile in some cases.
+#     I've attempted to do my best an indicate where these values are, but it's always a
+#     good idea to keep an eye on this script when making changes to the configuration.
+#
+########################################################################################
 """
 Automates the process of updating zsh and neovim configuration files in the 'includes'
 directory. This is done by reading my 'dotfiles' in the 'submodules/dotfiles' submodule
 and applying the necessary changes to the 'includes' directory.
-
-NOTE:
-    This script does not require the initialization of a virtual environment. The
-    Pipfiles are only required when deploying the MkDocs site.
 """
 # [ Imports ]###########################################################################
 
@@ -117,6 +122,8 @@ def zsh_config():
                 and ZSH_LS_COLORS_MARKERS.is_within_section
             ):
                 ZSH_LS_COLORS_MARKERS.is_within_section = False
+                if ZSH_LS_COLORS_MARKERS.hard_coded_inclusion:
+                    output_data.extend(ZSH_LS_COLORS_MARKERS.hard_coded_inclusion)
                 output_data.append(MKDOCS_SECTION_MARKERS["ls_colors_end"] + "\n")
 
             if (
