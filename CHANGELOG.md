@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 As a note, if the changelog only says "removed(program)", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified within the parentheses of the change.
 
+## Latest
+
+- Replaced `Powerlevel10k` shell theme with `Starship`.
+- Added `dotfiles` submodule, for easy access to my dotfiles
+- Added `update_repo.py` to make updating the repositories `neovim`, `zsh`, and other information easier.
+  - This script retrieves this information from the `dotfiles` submodule.
+- Added `update_submodule.bash` to help manually-automate the updating of the `dotfiles` submodule, with the latest updates from the `dotfiles` repository.
+  - All the code examples are now currently up to date with the latest changes.
+- Added a workflow that can do the same thing as `update_submodule.bash`, but automatically via dependabot.
+
 ## 2024.4.25
 
 - **added(programs)**: `cheat`
