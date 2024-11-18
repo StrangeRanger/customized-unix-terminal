@@ -20,16 +20,19 @@ The **TPPM** section features programs that can be installed using package manag
 The **NPM** section lists programs that can be installed using the system's default package manager. Since the primary Debian- and Arch-based Linux based distributions, all the programs in this section are confirmed to be installable via `apt` or `pacman`. For other Linux distributions, you can check [Repology](https://repology.org/) to see if the program is available in your distribution's package manager. Similar to the **TPPM** section, I've included additional information such as a brief description for each program and a link to its Repology page.
 
 /// tab | Third Party Package Manager
+
 {{ read_csv("includes/csv/useful-packages-tppm.csv") }}
+
 ///
 
 /// tab | Native Package Manager
 Applicable Operating Systems: Linux
 
 {{ read_csv("includes/csv/useful-packages-npm.csv") }}
+
 ///
 
-## Customizing ZSH Shell
+## Customizing ZSH
 
 ### Framework
 
@@ -45,9 +48,9 @@ As a note, I previously used [Powerlevel10k](https://github.com/romkatv/powerlev
 
 ### ZSH Resource File
 
-Below are the configurations for my `.zshrc` file, divided into two sections: macOS and Linux. The macOS configurations are tailored for macOS, while the other is designed for Linux.
+Below are the configurations for my `.zshrc` file, divided into two sections: one for macOS and one for Linux. Each section is tailored to its respective operating system.
 
-You are welcome to use this resource in any manner you prefer. My intention is to offer it as a guide for structuring your own `.zshrc` file and to present additional configurations not detailed elsewhere in this document.
+You're welcome to use this resource however you like. My intention is to offer it as a guide for structuring your own `.zshrc` file and to present additional configurations not detailed elsewhere in this document.
 
 /// details | My ZSH Resource File
 //// tab | macOS
@@ -69,13 +72,13 @@ You are welcome to use this resource in any manner you prefer. My intention is t
 
 #### Oh-my-zsh Plugins
 
-This is a list of all the oh-my-zsh plugins that I use and find to provide useful functionality.
+Below is a list of all the oh-my-zsh plugins that I use and find particularly useful.
 
 {{ read_csv("includes/csv/oh-my-zsh-plugins.csv") }}
 
 #### Custom Aliases
 
-Below is a list of aliases that are in my `.zshrc` files. They are broken up into two groups: Group 1 and Group 2. Group 1 contains general aliases, while Group 2 contains aliases listing categorized commands. Most of these commands are programs mentioned in [Useful Programs](#useful-programs), that I don't frequently use, but still want to have quick access to.
+Below is a list of aliases from my `.zshrc` files, organized into two groups: Group 1 and Group 2. Group 1 contains general aliases, while Group 2 includes aliases for categorized commands. Many of these commands are programs mentioned in the [Useful Programs](#useful-programs) section that I don't use frequently but still want quick access to.
 
 /// tab | macOS
 
@@ -95,23 +98,23 @@ Below is a list of aliases that are in my `.zshrc` files. They are broken up int
 
 ### Modifying CLI Colors
 
-The terminal colors that are used for folders, files, and other items in the command line interface can be customized using the `LS_COLORS` (macOS & Linux) and `LSCOLORS` (macOS) environment variables. If you want to modify these colors, you can do so by setting the `LS_COLORS` or `LSCOLORS` variable in your `.zshrc` file.
+You can customize the terminal colors for folders, files, and other items in the terminal by setting the `LS_COLORS` (Linux & macOS) or `LSCOLORS` (macOS) environment variables. To modify these colors, add the appropriate `LS_COLORS` or `LSCOLORS` variable to your `.zshrc` file.
 
 /// details | LS_COLORS & LSCOLORS Explained
 
-On macOS, both `LSCOLORS` and `LS_COLORS` are necessary for specifying terminal colors. `LSCOLORS` is used for commands like `ls`, determining the colors in the command line interface, whereas `LS_COLORS` is used by zsh for similar purposes. In contrast, Linux only requires `LS_COLORS`, which is employed by both the `ls` command and zsh.
+On macOS, both `LSCOLORS` and `LS_COLORS` are necessary for specifying terminal colors. The `LSCOLORS` environment variable is used by commands like `ls` to determine the colors displayed in the terminal, while `LS_COLORS` is used by zsh for similar purposes. In contrast, Linux only requires `LS_COLORS`, which is utilized by both commands like `ls` and zsh.
 
-The underlying reason for this difference lies in the distinct versions of the `ls` command on macOS (FreeBSD version) and Linux (GNU version). macOS's `ls` command relies on `LSCOLORS` for color settings, while Linux uses `LS_COLORS`, each with its unique formatting. Moreover, since zsh recognizes only the `LS_COLORS` format, it's imperative to use it on macOS to ensure proper display and functionality of CLI colors.
+This difference arises from the distinct versions of the `ls` command on macOS and Linux. macOS employs the FreeBSD version of `ls`, which relies on `LSCOLORS` for color settings, whereas Linux uses the GNU version, which depends on `LS_COLORS`. Each variable has its own unique formatting. Additionally, since zsh recognizes only the `LS_COLORS` format, it's important to set this variable on macOS to ensure proper display and functionality of CLI colors.
 
 Included below is a key that explains the values of `LSCOLORS` and `LS_COLORS` in my configurations:
 
 {{ read_csv("includes/csv/cli-colors-explained.csv") }}
 
-For an in-depth understanding of LS_COLORS and LSCOLORS, I recommend visiting this [gist](https://gist.github.com/thomd/7667642).
+For an in-depth understanding of `LS_COLORS` and `LSCOLORS`, I recommend visiting this [gist](https://gist.github.com/thomd/7667642).
 
 ///
 
-Below are my configurations for both macOS and Linux systems. To apply these settings, simply insert the following code into your `~/.zshrc` file:
+Below are my configurations for both macOS and Linux systems. To apply these settings, simply add the following code to your `~/.zshrc` file:
 
 /// tab | macOS
 
@@ -129,7 +132,7 @@ Below are my configurations for both macOS and Linux systems. To apply these set
 
 ///
 
-You can additionally modify the shading and appearance of the CLI colors by adjusting the ANSI-color scheme in your terminal profile. This can be done manually, with guides available for both [macOS](https://support.apple.com/guide/terminal/change-profiles-text-preferences-trmltxt/mac) and [Linux](https://help.gnome.org/users/gnome-terminal/stable/app-colors.html.en) (gnome specific instructions). Alternatively, you can use my custom profile schemes, which are detailed in the [Terminal Profile](#terminal-profile) section.
+You can further modify the shading and appearance of CLI colors by adjusting the ANSI color scheme in your terminal profile. This can be done manually, with guides available for both [macOS](https://support.apple.com/guide/terminal/change-profiles-text-preferences-trmltxt/mac) and [Linux](https://help.gnome.org/users/gnome-terminal/stable/app-colors.html.en) (specific to GNOME). Alternatively, you can use my custom profile schemes, which are detailed in the [Terminal Profile](#terminal-profile) section.
 
 ## Neovim Resource File
 
