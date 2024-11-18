@@ -39,11 +39,13 @@ Applicable Operating Systems: Linux
 
 ### Shell Theme
 
-In combination with oh-my-zsh, I use [Powerlevel10k](https://github.com/romkatv/powerlevel10k) as my shell theme. It's highly configurable and very appealing to the eyes.
+In combination with oh-my-zsh, I use [Starship](https://github.com/starship/starship) [Powerlevel10k](https://github.com/romkatv/powerlevel10k) as my shell theme. Starship is a fast, minimal, and customizable shell prompt that displays information about the current directory, git branch, and other relevant details. It is written in Rust, making it extremely fast and lightweight.
+
+As a note, I previously used [Powerlevel10k](https://github.com/romkatv/powerlevel10k), which is another **excellent** shell theme. However, as of May 21, 2024, Powerlevel10k has entered a  ["life support" mode](https://github.com/romkatv/powerlevel10k/commit/bde5ca4c2aa6e0c52dd7f15cf216dffdb1ec788c). In the maintainer's words, "The project has very limited support", with "no new features are in the works", "most bugs will go unfixed", and "help requests will be ignored". As such, I decided to switch to a project that is actively maintained and has a bright future ahead of it.
 
 ### ZSH Resource File
 
-Below are tshe configurations for my `.zshrc` file, divided into two sections: macOS and Linux. The macOS configurations are tailored for macOS, while the other is designed for Linux.
+Below are the configurations for my `.zshrc` file, divided into two sections: macOS and Linux. The macOS configurations are tailored for macOS, while the other is designed for Linux.
 
 You are welcome to use this resource in any manner you prefer. My intention is to offer it as a guide for structuring your own `.zshrc` file and to present additional configurations not detailed elsewhere in this document.
 
