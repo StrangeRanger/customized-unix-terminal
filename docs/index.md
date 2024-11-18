@@ -1,28 +1,23 @@
 <!-- NOTE TO EDITORS
 If you are a user editing this file, I highly recommend you disable word wrapping as
-I've formatted all the tables to look uniform when not using word wrapping. -->
+I've formatted all the tables to look uniform when not using word wrapping.
+-->
 
-# Customized Unix Terminal
+# Custom Unix Terminal
 
-[![Project Tracker](https://img.shields.io/badge/repo%20status-Project%20Tracker-lightgrey)](https://wiki.hthompson.dev/en/project-tracker)
 
-This document serves as a guide for how I customize my macOS and Linux terminals. It includes a variety of configurations, settings, and programs that I find useful for my daily workflow. The document is divided into several sections, each focusing on a different aspect of terminal customization.
-
-### NOTICE
-
-If you view this document on GitHub or as a standard markdown file, you will not see the interactive elements, such as the details and tabs. To view the document in its entirety, please visit the [website](https://cut.hthompson.dev).
+This document serves as a guide for how I customize my terminal in macOS and Linux. It includes a variety of configurations, settings, and programs that I find helpful for my daily workflow. The document is divided into several sections, each focusing on a different aspect of terminal customization.
 
 ## Useful Programs
 
 The following table contains a list of terminal programs that I find particularly useful. These programs are separated into two categories: Third Party Package Managers (TPPM) and Native Package Managers (NPM).
 
-The Third Party Package Managers section includes programs not installed using the system's default package manager. These programs are typically installed using tools like Homebrew, Pip, Cargo, Npm, Gem, or Git. I've included a brief description of each program and the relevant package manager(s) that can install it.
+The **TPPM** section features programs that can be installed using package managers like Homebrew, Pip, Cargo, Npm, Gem, or Git(1). For each program, I've included a brief description, the operating systems it supports, and the package managers available for installation.
+{ .annotate }
 
-/// details | Git Installations
-While most of these programs can be installed via git, they will not be marked as such unless recommended by the program's documentation or myself, or if it's the only other way to install the program.
-///
+1. While most of these programs can be installed via `git`, they will only be marked as such if recommended by the program's documentation or myself, or if it's the only available installation method.
 
-The Native Package Managers section includes programs that can be installed using the system's default package manager. Since the primary Linux distributions I use are Debian based, all of the programs in this section are confirmed installable via apt. For other Linux distributions, you can check [Repology](https://repology.org/) to see if the program is available in your distribution's package manager. Like with TPPM, I've included a brief description for each program and a link with the number of repository families featuring the package.
+The **NPM** section lists programs that can be installed using the system's default package manager. Since the primary Debian- and Arch-based Linux based distributions, all the programs in this section are confirmed to be installable via `apt` or `pacman`. For other Linux distributions, you can check [Repology](https://repology.org/) to see if the program is available in your distribution's package manager. Similar to the **TPPM** section, I've included additional information such as a brief description for each program and a link to its Repology page.
 
 /// tab | Third Party Package Manager
 {{ read_csv("includes/csv/useful-packages-tppm.csv") }}
@@ -44,11 +39,13 @@ Applicable Operating Systems: Linux
 
 ### Shell Theme
 
-In combination with oh-my-zsh, I use [Powerlevel10k](https://github.com/romkatv/powerlevel10k) as my shell theme. It's highly configurable and very appealing to the eyes.
+In combination with oh-my-zsh, I use [Starship](https://github.com/starship/starship) [Powerlevel10k](https://github.com/romkatv/powerlevel10k) as my shell theme. Starship is a fast, minimal, and customizable shell prompt that displays information about the current directory, git branch, and other relevant details. It is written in Rust, making it extremely fast and lightweight.
+
+As a note, I previously used [Powerlevel10k](https://github.com/romkatv/powerlevel10k), which is another **excellent** shell theme. However, as of May 21, 2024, Powerlevel10k has entered a  ["life support" mode](https://github.com/romkatv/powerlevel10k/commit/bde5ca4c2aa6e0c52dd7f15cf216dffdb1ec788c). In the maintainer's words, "The project has very limited support", with "no new features are in the works", "most bugs will go unfixed", and "help requests will be ignored". As such, I decided to switch to a project that is actively maintained and has a bright future ahead of it.
 
 ### ZSH Resource File
 
-Below are tshe configurations for my `.zshrc` file, divided into two sections: macOS and Linux. The macOS configurations are tailored for macOS, while the other is designed for Linux.
+Below are the configurations for my `.zshrc` file, divided into two sections: macOS and Linux. The macOS configurations are tailored for macOS, while the other is designed for Linux.
 
 You are welcome to use this resource in any manner you prefer. My intention is to offer it as a guide for structuring your own `.zshrc` file and to present additional configurations not detailed elsewhere in this document.
 
