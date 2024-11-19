@@ -136,23 +136,27 @@ You can further modify the shading and appearance of CLI colors by adjusting the
 
 ## Neovim Resource File
 
-Due to the extensibility and community of Neovim, I have chosen it as my primary text editor, favoring it over the traditional Vi or Vim. Below are the configurations for my `init.vim` file, which is located in the `~/.config/nvim/` directory. The configurations are divided into two sections: with and without vim-plug plugins.
+Due to Neovim's extensibility and active community, I have chosen it as my primary text editor, preferring it over the traditional Vi or Vim. Below are the configurations for my `init.vim` file. The configurations are organized into two sections: one with plugins and one without.
 
-### With Vim-Plug Plugins
+### With Plugins
 
-The following configurations modify the behavior and appearance of vim. To use these settings, you'll first need to install [vim-plug](https://github.com/junegunn/vim-plug#installation), a plugin manager for vim. While other vim package managers can be used, the configurations are tailored specifically for vim-plug.
+The following configurations modify the behavior and appearance of Neovim. To use these settings, you'll first need to install [vim-plug](https://github.com/junegunn/vim-plug#installation), a plugin manager for Vim. While other Vim package managers are available, these configurations are specifically tailored for vim-plug.
 
-After installing vim-plug, copy the code below into your `~/.config/nvim/init.vim` file. With `init.vim` open in `nvim`, initiate the plugin installation by entering `:source %` and `:PlugInstall` as separate commands. This will prompt vim-plug to begin the installation of the plugins outlined in the configurations below.
+After installing vim-plug, copy the code below into your `~/.config/nvim/init.vim` file. With init.vim open in Neovim, initiate the plugin installation by entering `:source %` followed by `:PlugInstall`.
 
 /// admonition | Note
-When using `:source %`, you can ignore any errors that might occur, as they are (most likely) a result of nvim looking for the plugins that have yet to be installed.
+
+When using `:source %`, you can safely ignore any errors that may appear, as they are most likely caused by Neovim searching for plugins that have not yet been installed.
+
 ///
 
 /// details | Vim Plugin Information
     type: info
-Here is a list of all the plugins listed in `init.vim`, along with a description of what they do.
+
+Below is a list of all the plugins included in my `init.vim`, each accompanied by a description of its functionality.
 
 {{ read_csv("includes/csv/neovim-plugin-info.csv") }}
+
 ///
 
 ```vim title="init.vim"
@@ -161,7 +165,7 @@ Here is a list of all the plugins listed in `init.vim`, along with a description
 
 ### Without Vim-Plug Plugins
 
-If you prefer not to use all the features offered by vim-plug, you can opt for a more basic setup by incorporating the configurations listed below into your `.vimrc` file. These adjustments modify certain default settings of vim without altering the core functionality, providing a simpler, more streamlined experience while maintaining the essence of vim's default behavior.
+If you prefer a simpler setup without all the features provided by plugins, you can add the configurations below to your `init.vim` file. These adjustments tweak Vim's default settings without changing its core functionality, offering a more streamlined experience while preserving Vim's essential behavior.
 
 ```vim title="init.vim"
 --8<-- "includes/neovim-init-files/neovim-init-non-vim-plug.vim"
@@ -178,22 +182,35 @@ If you prefer not to use all the features offered by vim-plug, you can opt for a
 ## Terminal Profile
 
 /// tab | macOS
-My custom terminal profile is a modified version of the Basic profile that comes pre-installed on macOS. To add it to your list of profiles, follow the instructions below:
 
-1. Download the terminal profile using the following link: <a href="Terminal%20Profiles/Basic%20%28Modified%29.terminal">Terminal Profile</a>
-2. Open a terminal window.
-3. Click on **Preferences... ==> Profiles ==> _the gear icon at the bottom left of the window_ ==> Import... ==> _locate and click on the 'Basic (Modified).terminal' tab_**
-4. Click on the new terminal profile, then press the "Default" button located at the bottom of the window.
+My custom terminal profile is a modified version of the Basic profile that comes pre-installed on macOS. To add it to your list of profiles, follow these steps:
+
+1. Download the terminal profile: <a href="Terminal%20Profiles/Basic%20%28Modified%29.terminal" download>Basic (Modified).terminal</a>
+2. Open a new terminal window.
+3. Import the profile:
+      1. Go to **Preferences**.
+      2. Navigate to the **Profiles** tab.
+      3. Click on the gear icon at the bottom left of the window.
+      4. Select **Import...**.
+      5. Locate and select the downloaded **Basic (Modified).terminal** file.
+4. Set as default profile:
+      1. Select the newly imported terminal profile from the list.
+      2. Click the **Default** button at the bottom of the window to set it as your default profile.
+
 ///
 
 /// tab | Linux
-My custom terminal profile is a based on the Terminal Profile that I use on macOS. To add it to your list of profiles, follow the instructions below:
 
-1. Download the terminal profile using the following link: <a href="Terminal%20Profiles/gnome-terminal-profiles.dconf">Terminal Profile</a>
-2. Open a terminal window.
-3. Enter the following command to import the profiles: `dconf load /org/gnome/terminal/legacy/profiles:/ < LOCATION_OF_DOWNLOADED_FILE`
+My custom terminal profile is a based on the one I use on macOS. To add it to your list of profiles, follow the instructions below:
 
-/// admonition | Warning
-    type: warning
-Using the above `dconf` command will overwrite all existing profiles
+1. Download the terminal profile: <a href="Terminal%20Profiles/Gnome%20Basic%20%28Modified%29.dconf" download>Gnome Basic (Modified).dconf</a>
+2. Download the profile setup script: <a href="Terminal%20Profiles/gnome-terminal-profile-setup.bash" download>gnome-terminal-profile-setup.bash</a>
+3. Open a new terminal window.
+4. Navigate to the directory where you downloaded both files.
+5. Execute the code:
+      ```bash
+      chmod +x gnome-terminal-profile-setup.bash
+      ./gnome-terminal-profile-setup.bash
+      ```
+
 ///
