@@ -12,7 +12,10 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
   - This script retrieves this information from the `dotfiles` submodule.
 - Added `update_submodule.bash` to help manually-automate the updating of the `dotfiles` submodule, with the latest updates from the `dotfiles` repository.
   - All the code examples are now currently up to date with the latest changes.
+- Added `gnome-terminal-profile-setup.bash` to help automate the setup of a custom gnome terminal profile.
+- Reworked the Gnome Terminal Profile, so it no longer overwrite existing profiles.
 - Added a workflow that can do the same thing as `update_submodule.bash`, but automatically via dependabot.
+- Update the wording and information in main document.
 
 ## 2024.4.25
 
