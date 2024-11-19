@@ -1,23 +1,33 @@
 #!/usr/bin/env python3
+#
+# NOTE:
+#   - This script does not require the initialization of a virtual environment. The
+#     Pipfiles are only required when deploying the MkDocs site.
+#   - This script has some hard-coded values that may make it fragile in some cases.
+#     I've attempted to do my best an indicate where these values are, but it's always a
+#     good idea to keep an eye on this script when making changes to the configuration.
+#
+########################################################################################
 """
 Automates the process of updating zsh and neovim configuration files in the 'includes'
 directory. This is done by reading my 'dotfiles' in the 'submodules/dotfiles' submodule
 and applying the necessary changes to the 'includes' directory.
-
-NOTE:
-    This script does not require the initialization of a virtual environment. The
-    Pipfiles are only required when deploying the MkDocs site.
 """
 # [ Imports ]###########################################################################
 
-from utils.config import (
+
+from utils.file_utils import read_file, write_file
+from utils.constants import (
     CHEZMOI_STATEMENTS,
-    MKDOCS_SECTION_MARKERS,
     NEOVIM_CONFIG_PATHS,
     ZSH_CONFIG_PATHS,
+    NEOVIM_MARKERS,
+    ZSH_ALIAS_MARKERS,
+    ZSH_LS_COLORS_MARKERS,
+    MKDOCS_USER_CONFIG_MARKERS,
+    MKDOCS_LS_COLORS_MARKERS,
 )
-from utils.file_utils import read_file, write_file
-from utils.marker_config import NEOVIM_MARKERS, ZSH_ALIAS_MARKERS, ZSH_LS_COLORS_MARKERS
+
 
 # [ Functions ]#########################################################################
 
@@ -101,23 +111,25 @@ def zsh_config():
 
             if ZSH_ALIAS_MARKERS.start_marker in line:
                 ZSH_ALIAS_MARKERS.is_within_section = True
-                output_data.append(MKDOCS_SECTION_MARKERS["user_config_start"] + "\n")
+                output_data.append(MKDOCS_USER_CONFIG_MARKERS.start_marker)
             elif ZSH_LS_COLORS_MARKERS.start_marker in line:
                 ZSH_LS_COLORS_MARKERS.is_within_section = True
-                output_data.append(MKDOCS_SECTION_MARKERS["ls_colors_start"] + "\n")
+                output_data.append(MKDOCS_LS_COLORS_MARKERS.start_marker)
 
             if (
                 ZSH_ALIAS_MARKERS.end_marker in line
                 and ZSH_ALIAS_MARKERS.is_within_section
             ):
                 ZSH_ALIAS_MARKERS.is_within_section = False
-                output_data.append(MKDOCS_SECTION_MARKERS["user_config_end"] + "\n")
+                output_data.append(MKDOCS_USER_CONFIG_MARKERS.end_marker)
             elif (
                 ZSH_LS_COLORS_MARKERS.end_marker in line
                 and ZSH_LS_COLORS_MARKERS.is_within_section
             ):
                 ZSH_LS_COLORS_MARKERS.is_within_section = False
-                output_data.append(MKDOCS_SECTION_MARKERS["ls_colors_end"] + "\n")
+                if ZSH_LS_COLORS_MARKERS.hard_coded_inclusion:
+                    output_data.extend(ZSH_LS_COLORS_MARKERS.hard_coded_inclusion)
+                output_data.append(MKDOCS_LS_COLORS_MARKERS.end_marker)
 
             if (
                 ZSH_ALIAS_MARKERS.is_within_section

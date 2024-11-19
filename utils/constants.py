@@ -1,4 +1,7 @@
 from pathlib import Path
+from utils.marker_config import Markers
+
+CHEZMOI_STATEMENTS = ["{{ ", "{{- "]
 
 NEOVIM_CONFIG_PATHS = {
     "init_lua": {
@@ -34,11 +37,34 @@ ZSH_CONFIG_PATHS = {
     },
 }
 
-MKDOCS_SECTION_MARKERS = {
-    "user_config_start": "# --8<-- [start:user_config]",
-    "user_config_end": "# --8<-- [end:user_config]",
-    "ls_colors_start": "# --8<-- [start:ls_colors]",
-    "ls_colors_end": "# --8<-- [end:ls_colors]",
-}
+NEOVIM_MARKERS = Markers(
+    start_marker='""""[ General Configurations ]',
+    end_marker='""""[ vim-plug Plugin Configurations ]',
+)
 
-CHEZMOI_STATEMENTS = ["{{ ", "{{- "]
+ZSH_ALIAS_MARKERS = Markers(
+    start_marker="####[[ Aliases ]]",
+    end_marker="####[[ Environmental Variables ]]",
+)
+
+# NOTE: This is an "estimated" value, that relies on the position of comments and other
+#   commands that may not always be present. Compared to the previous markers, this one
+#   is more likely to be wrong, if the `.zshrc` related files are modified.
+ZSH_LS_COLORS_MARKERS = Markers(
+    start_marker="# Modifies the colors",
+    end_marker="## Set default",
+    hard_coded_inclusion=(
+        "# Set list-colors to enable filename colorizing.\n",
+        "zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}\n",
+    ),
+)
+
+MKDOCS_USER_CONFIG_MARKERS = Markers(
+    start_marker="# --8<-- [start:user_config]\n",
+    end_marker="# --8<-- [end:user_config]\n",
+)
+
+MKDOCS_LS_COLORS_MARKERS = Markers(
+    start_marker="# --8<-- [start:ls_colors]\n",
+    end_marker="# --8<-- [end:ls_colors]\n",
+)

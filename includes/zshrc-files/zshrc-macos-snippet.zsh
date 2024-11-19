@@ -72,4 +72,6 @@ export LSCOLORS="exgxfxDxcxegDaabagacaD"
 ## here: https://github.com/ohmyzsh/ohmyzsh/issues/6060#issuecomment-327934559
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
 
+# Set list-colors to enable filename colorizing.
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # --8<-- [end:ls_colors]

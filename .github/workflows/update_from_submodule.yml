@@ -1,0 +1,54 @@
+name: Update Submodule Changes
+
+# Trigger the workflow on push events to Dependabot branches
+on:
+  push:
+    branches:
+      - 'dependabot/**'
+
+jobs:
+  update-file-after-submodule:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run Update Script
+        run: |
+          chmod +x ./update_repo.py
+          ./update_repo.py
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions@github.com"
+
+      # Step 5: Commit the changes if there are any
+      - name: Commit Changes
+        run: |
+          git add .
+          git commit -m "Update file after submodule update" || echo "No changes to commit"
+
+      - name: Push Changes
+        run: |
+          git push origin HEAD:update-file-after-submodule
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          #token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update file after submodule update"
+          title: "Update File After Submodule Update"
+          body: |
+            This pull request updates the relevant files after a submodule update by Dependabot.
+          base: main
+          head: update-file-after-submodule
+
