@@ -42,7 +42,7 @@ Applicable Operating Systems: Linux
 
 ### Shell Theme
 
-In combination with oh-my-zsh, I use [Starship](https://github.com/starship/starship) as my shell theme. Starship is a fast, minimal, and highly customizable shell prompt that displays information about the current directory, git branch, and other relevant details. It is written in Rust, making it extremely fast and lightweight.
+In combination with oh-my-zsh, I use [Starship](https://github.com/starship/starship) as my shell theme. Starship is a fast, minimal, and highly customizable shell prompt that displays information about the current directory, git branch, and other relevant details. It is written in Rust, making it very fast and lightweight.
 
 As a note, I previously used [Powerlevel10k](https://github.com/romkatv/powerlevel10k), which is another **excellent** shell theme. However, as of May 21, 2024, Powerlevel10k has entered a  ["life support" mode](https://github.com/romkatv/powerlevel10k/commit/bde5ca4c2aa6e0c52dd7f15cf216dffdb1ec788c). In the maintainer's words, "The project has very limited support", with "no new features are in the works", "most bugs will go unfixed", and "help requests will be ignored". As such, I decided to switch to an actively maintained project and mature alternative, Starship.
 
