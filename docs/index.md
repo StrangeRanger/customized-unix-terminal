@@ -17,7 +17,7 @@ The **TPPM** section features programs that can be installed using package manag
 
 1. While most of these programs can be installed via `git`, they will only be marked as such if recommended by the program's documentation or myself, or if it's the only available installation method.
 
-The **NPM** section lists programs that can be installed using the system's default package manager. Since the primary Debian- and Arch-based Linux based distributions, all the programs in this section are confirmed to be installable via `apt` or `pacman`. For other Linux distributions, you can check [Repology](https://repology.org/) to see if the program is available in your distribution's package manager. Similar to the **TPPM** section, I've included additional information such as a brief description for each program and a link to its Repology page.
+The **NPM** section lists programs that can be installed using the system's default package manager. Since the Linux distributions that I primarily use are Debian- and Arch-based, all the programs in this section are confirmed to be installable via `apt` or `pacman`. For other Linux distributions, you can check [Repology](https://repology.org/) to see if the program is available in your distribution's package manager. Similar to the **TPPM** section, I've included additional information such as a brief description for each program and a link to its Repology page.
 
 /// tab | Third Party Package Manager
 
