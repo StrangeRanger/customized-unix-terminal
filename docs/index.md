@@ -185,7 +185,7 @@ If you prefer a simpler setup without all the features provided by plugins, you 
 
 My custom terminal profile is a modified version of the Basic profile that comes pre-installed on macOS. To add it to your list of profiles, follow these steps:
 
-1. Download the terminal profile: <a href="Terminal%20Profiles/Basic%20%28Modified%29.terminal" download>Basic (Modified).terminal</a>
+1. Download the terminal profile: [Basic (Modified).terminal](Terminal%20Profiles/Basic%20%28Modified%29.terminal).
 2. Open a new terminal window.
 3. Import the profile:
       1. Go to **Preferences**.
@@ -203,8 +203,8 @@ My custom terminal profile is a modified version of the Basic profile that comes
 
 My custom terminal profile is a based on the one I use on macOS. To add it to your list of profiles, follow the instructions below:
 
-1. Download the terminal profile: <a href="Terminal%20Profiles/Gnome%20Basic%20%28Modified%29.dconf" download>Gnome Basic (Modified).dconf</a>
-2. Download the profile setup script: <a href="Terminal%20Profiles/gnome-terminal-profile-setup.bash" download>gnome-terminal-profile-setup.bash</a>
+1. Download the terminal profile: [Gnome Basic (Modified).dconf](Terminal%20Profiles/Gnome%20Basic%20%28Modified%29.dconf).
+2. Download the profile setup script: [gnome-terminal-profile-setup.bash](Terminal%20Profiles/gnome-terminal-profile-setup.bash)
 3. Open a new terminal window.
 4. Navigate to the directory where you downloaded both files.
 5. Execute the code:
