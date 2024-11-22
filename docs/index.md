@@ -5,7 +5,6 @@ I've formatted all the tables to look uniform when not using word wrapping.
 
 # Custom Unix Terminal
 
-
 This document serves as a guide for how I customize my terminal in macOS and Linux. It includes a variety of configurations, settings, and programs that I find helpful for my daily workflow. The document is divided into several sections, each focusing on a different aspect of terminal customization.
 
 ## Useful Programs
@@ -26,6 +25,7 @@ The **NPM** section lists programs that can be installed using the system's defa
 ///
 
 /// tab | Native Package Manager
+
 Applicable Operating Systems: Linux
 
 {{ read_csv("includes/csv/useful-packages-npm.csv") }}
