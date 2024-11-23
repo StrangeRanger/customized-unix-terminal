@@ -171,13 +171,28 @@ If you prefer a simpler setup without all the features provided by plugins, you 
 --8<-- "includes/neovim-init-files/neovim-init-non-vim-plug.vim"
 ```
 
-### Neovim GitHub Copilot
+### Syntax Highlighting
 
-...coming soon...
+Neovim leverages [TreeSitter](https://github.com/tree-sitter/tree-sitter) to provide features such as advanced syntax highlighting, offering more precision and speed compared to traditional regex-based methods. However, its default installation includes only a limited set of parsers for programming languages. This is where the [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) plugin shines. Acting as an enhanced interface for TreeSitter, `nvim-treesitter` provides:
 
-### Installed TreeSitter Parsers
+- **Parser Management**: It automatically handles downloading, installing, and updating TreeSitter parsers for a wide range of languages.
+- **Enhanced Syntax Highlighting**: With custom configurations, it delivers consistent and accurate syntax highlighting tailored to each language.
+- **Advanced Code Features**: In addition to highlighting, it enables and enhances features like structural code navigation, incremental selection, code folding, and extensions like rainbow parentheses.
 
-...coming soon...
+Below are my configurations for `nvim-treesitter` in Neovim. Currently, they ensure that the specified parsers are automatically installed and loaded. To use these settings, add the following code to `~/.config/nvim/second_init.lua` (1):
+{ .annotate }
+
+1. `nvim-treesitter` requires Lua to function. As a result, the configurations are written in Lua and stored in a separate file, `second_init.lua`. My `init.vim` file, as displayed [above](#with-plugins), sources this Lua file to enable the necessary settings.
+
+```lua title="second_init.lua"
+--8<-- "includes/neovim-init-files/neovim-init-lua.lua"
+```
+
+If you're **NOT** using the `init.vim` file that I provided [above](#with-plugins), and your `init` file is written in vimscript, you'll want to add the following code to your `init.vim` file:
+
+```vim title="init.vim"
+lua dofile(vim.fn.stdpath('config') .. '/second_init.lua')
+```
 
 ## Terminal Profile
 
