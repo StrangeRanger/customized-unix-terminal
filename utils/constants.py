@@ -43,8 +43,8 @@ NEOVIM_MARKERS = Markers(
 )
 
 ZSH_ALIAS_MARKERS = Markers(
-    start_marker="####[[ Aliases ]]",
-    end_marker="####[[ Environmental Variables ]]",
+    start_marker="####[ Aliases ]",
+    end_marker="####[ Environmental Variables ]",
 )
 
 # NOTE: This is an "estimated" value, that relies on the position of comments and other

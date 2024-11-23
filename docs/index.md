@@ -5,7 +5,6 @@ I've formatted all the tables to look uniform when not using word wrapping.
 
 # Custom Unix Terminal
 
-
 This document serves as a guide for how I customize my terminal in macOS and Linux. It includes a variety of configurations, settings, and programs that I find helpful for my daily workflow. The document is divided into several sections, each focusing on a different aspect of terminal customization.
 
 ## Useful Programs
@@ -17,7 +16,7 @@ The **TPPM** section features programs that can be installed using package manag
 
 1. While most of these programs can be installed via `git`, they will only be marked as such if recommended by the program's documentation or myself, or if it's the only available installation method.
 
-The **NPM** section lists programs that can be installed using the system's default package manager. Since the primary Debian- and Arch-based Linux based distributions, all the programs in this section are confirmed to be installable via `apt` or `pacman`. For other Linux distributions, you can check [Repology](https://repology.org/) to see if the program is available in your distribution's package manager. Similar to the **TPPM** section, I've included additional information such as a brief description for each program and a link to its Repology page.
+The **NPM** section lists programs that can be installed using the system's default package manager. Since the Linux distributions that I primarily use are Debian- and Arch-based, all the programs in this section are confirmed to be installable via `apt` or `pacman`. For other Linux distributions, you can check [Repology](https://repology.org/) to see if the program is available in your distribution's package manager. Similar to the **TPPM** section, I've included additional information such as a brief description for each program and a link to its Repology page.
 
 /// tab | Third Party Package Manager
 
@@ -26,6 +25,7 @@ The **NPM** section lists programs that can be installed using the system's defa
 ///
 
 /// tab | Native Package Manager
+
 Applicable Operating Systems: Linux
 
 {{ read_csv("includes/csv/useful-packages-npm.csv") }}
@@ -171,13 +171,28 @@ If you prefer a simpler setup without all the features provided by plugins, you 
 --8<-- "includes/neovim-init-files/neovim-init-non-vim-plug.vim"
 ```
 
-### Neovim GitHub Copilot
+### Syntax Highlighting
 
-...coming soon...
+Neovim leverages [TreeSitter](https://github.com/tree-sitter/tree-sitter) to provide features such as advanced syntax highlighting, offering more precision and speed compared to traditional regex-based methods. However, its default installation includes only a limited set of parsers for programming languages. This is where the [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) plugin shines. Acting as an enhanced interface for TreeSitter, `nvim-treesitter` provides:
 
-### Installed TreeSitter Parsers
+- **Parser Management**: It automatically handles downloading, installing, and updating TreeSitter parsers for a wide range of languages.
+- **Enhanced Syntax Highlighting**: With custom configurations, it delivers consistent and accurate syntax highlighting tailored to each language.
+- **Advanced Code Features**: In addition to highlighting, it enables and enhances features like structural code navigation, incremental selection, code folding, and extensions like rainbow parentheses.
 
-...coming soon...
+Below are my configurations for `nvim-treesitter` in Neovim. Currently, they ensure that the specified parsers are automatically installed and loaded. To use these settings, add the following code to `~/.config/nvim/second_init.lua` (1):
+{ .annotate }
+
+1. `nvim-treesitter` requires Lua to function. As a result, the configurations are written in Lua and stored in a separate file, `second_init.lua`. My `init.vim` file, as displayed [above](#with-plugins), sources this Lua file to enable the necessary settings.
+
+```lua title="second_init.lua"
+--8<-- "includes/neovim-init-files/neovim-init-lua.lua"
+```
+
+If you're **NOT** using the `init.vim` file that I provided [above](#with-plugins), and your `init` file is written in vimscript, you'll want to add the following code to your `init.vim` file:
+
+```vim title="init.vim"
+lua dofile(vim.fn.stdpath('config') .. '/second_init.lua')
+```
 
 ## Terminal Profile
 
