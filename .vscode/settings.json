@@ -3,6 +3,7 @@
         "DCONF",
         "mktemp",
         "Neovim",
-        "nvim"
+        "nvim",
+        "vimscript"
     ]
 }
