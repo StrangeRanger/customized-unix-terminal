@@ -16,6 +16,8 @@ As a note, if the changelog only says "removed(program)", assume it's been remov
 - Reworked the Gnome Terminal Profile, so it no longer overwrite existing profiles.
 - Added a workflow that can do the same thing as `update_submodule.bash`, but automatically via dependabot.
 - Update the wording and information in main document.
+- Add more context to a few sections...
+- Added a new section regarding syntax highlighting for `neovim`.
 
 ## 2024.4.25
 
