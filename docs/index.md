@@ -110,8 +110,6 @@ Below are aliases I've create, organized into two groups: Group 1 and Group 2. G
 
 ### Modifying CLI Colors
 
-<!-- TODO: Potentially re-word this section. -->
-
 You can customize the colors of folders, files, and other items in the terminal by setting the `LS_COLORS` or `LSCOLORS` environment variables.(1) Each variable uses a unique format to specify the colors and styles of different file types and directories. For more information regarding these variables, refer to the "CLI Colors Explained" drop-down.
 { .annotate }
 
@@ -153,11 +151,9 @@ You can further modify the shading and appearance of CLI colors by adjusting the
 
 ## Text Editor
 
-<!-- TODO: Potentially re-word this section. -->
-
 There are many terminal-based text editors to choose from, each with unique features and capabilities. I've found that [Neovim](https://github.com/neovim/neovim) is the most powerful and versatile option for my needs.
 
-Neovim a fork of [Vim](https://github.com/vim/vim) that aims to improve upon Vim's features and performance, with a focus on extensibility and usability. It is designed to be more user-friendly and accessible to new users while still providing the power and flexibility that experienced users expect.
+<!-- Neovim a fork of [Vim](https://github.com/vim/vim) that aims to improve upon Vim's features and performance, with a focus on extensibility and usability. It is designed to be more user-friendly and accessible to new users while still providing the power and flexibility that experienced users expect. -->
 
 ### Neovim Resource File
 
@@ -186,20 +182,22 @@ Neovim leverages [TreeSitter](https://github.com/tree-sitter/tree-sitter) to pro
 - **Enhanced Syntax Highlighting**: With custom configurations, it delivers consistent and accurate syntax highlighting tailored to each language.
 - **Advanced Code Features**: Besides highlighting, it enables and enhances features like structural code navigation, incremental selection, code folding, and extensions like rainbow parentheses.
 
-Below are my configurations for `nvim-treesitter` in Neovim. Currently, they ensure that the specified parsers are automatically installed and loaded. To use these settings, add the following code to `~/.config/nvim/second_init.lua` (1):
+Below are my configurations for `nvim-treesitter`. Currently, they ensure that the specified parsers are automatically installed and loaded. To use these settings, add the following code to `~/.config/nvim/second_init.lua` (1):
 { .annotate }
 
-1. `nvim-treesitter` requires Lua to function. As a result, the configurations are written in Lua and stored in a separate file, `second_init.lua`. My `init.vim` file, as displayed [above](#__tabbed_5_1), sources this Lua file to enable the necessary settings.
+1. `nvim-treesitter` requires Lua to function. As a result, the configurations are written in Lua and stored in a separate file, `second_init.lua`. My `init.vim` file, as displayed [above](#__tabbed_5_1), sources this Lua file to enable the `nvim-treesitter` settings.
 
 ```lua title="second_init.lua"
 --8<-- "includes/neovim-init-files/neovim-init-lua.lua"
 ```
 
-If you're **NOT** using the `init.vim` file that I provided [above](#__tabbed_5_1), and your `init` file is written in vimscript, you'll want to add the following code to your `init.vim` file:
+If you're **NOT** using the `init.vim` file I provided, you'll want to add the following code to your version of the file:
 
 ```vim title="init.vim"
 lua dofile(vim.fn.stdpath('config') .. '/second_init.lua')
 ```
+
+This will ensure the `nvim-treesitter` configurations are loaded correctly.
 
 ///
 
