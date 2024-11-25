@@ -215,13 +215,11 @@ These configurations are designed for users who prefer a more straightforward se
 
 ## Terminal Profile
 
-<!-- TODO: Potentially re-word this section. -->
-
-A terminal profile is the collective configurations that result in the visual appearance of the terminal window, including the color scheme, font style, and other visual elements. Customizing the terminal profile can enhance the overall user experience and make working in the terminal more enjoyable.
+A terminal profile is a set of configurations that define the visual appearance and behavior of the terminal window, including the color scheme, font style, and other visual elements. Customizing the terminal profile can improve the user experience, making the terminal more visually appealing and easier to work with.
 
 /// tab | macOS
 
-My custom terminal profile is a modified version of the Basic profile that comes pre-installed on macOS. To add it to your list of profiles, follow these steps:
+My custom profile is a modified version of the "Basic" profile that comes pre-installed on macOS. To add it to your list of profiles, follow the instructions below:
 
 1. Download the terminal profile: [Basic (Modified).terminal](Terminal%20Profiles/Basic%20%28Modified%29.terminal).
 2. Open a new terminal window.
@@ -239,13 +237,13 @@ My custom terminal profile is a modified version of the Basic profile that comes
 
 /// tab | Linux
 
-My custom terminal profile is a based on the one I use on macOS. To add it to your list of profiles, follow the instructions below:
+My custom profile is based on the one I use for macOS. To add it to your list of profiles, follow the instructions below:
 
 1. Download the terminal profile: [Gnome Basic (Modified).dconf](Terminal%20Profiles/Gnome%20Basic%20%28Modified%29.dconf).
 2. Download the profile setup script: [gnome-terminal-profile-setup.bash](Terminal%20Profiles/gnome-terminal-profile-setup.bash)
 3. Open a new terminal window.
-4. Navigate to the directory where you downloaded both files.
-5. Execute the code:
+4. Navigate to the directory where both files were downloaded to (e.g., `~/Downloads`).
+5. Execute the following code:
       ```bash
       chmod +x gnome-terminal-profile-setup.bash
       ./gnome-terminal-profile-setup.bash
