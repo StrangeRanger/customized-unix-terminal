@@ -221,7 +221,7 @@ A terminal profile is a set of configurations that define the visual appearance 
 
 My custom profile is a modified version of the "Basic" profile that comes pre-installed on macOS. To add it to your list of profiles, follow the instructions below:
 
-1. Download the terminal profile: [Basic (Modified).terminal](terminal-profiles/Basic%20(Modified).terminal).
+1. Download the terminal profile: [Basic (Modified).terminal](terminal-profiles/Basic%20(Modified).terminal)
 2. Open a new terminal window.
 3. Import the profile:
       1. Go to **Preferences**.
