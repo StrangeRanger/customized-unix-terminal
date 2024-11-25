@@ -48,11 +48,11 @@ Due to its popularity, reliability, and consistent updates, my framework of choi
 
 ### Shell Theme
 
-Similar to how a shell framework enhances the shell's functionality, a shell theme improves its appearance and the user experience. A well-designed theme can provide valuable information at a glance, such as the current directory, git branch, and other relevant details.
+Similar to how a shell framework enhances the shell's functionality, a shell theme improves its appearance and user experience. A well-designed theme can provide valuable information at a glance, such as the current directory, git branch, and other relevant details.
 
 My preferred shell theme is [Starship](https://github.com/starship/starship), which draws inspiration from several well-known and popular [shell themes](https://github.com/starship/starship#-inspired-by). It is written in Rust, making it fast, lightweight, and highly customizable. Starship is designed to support a wide range of shells and external tools, making it a versatile choice for users across different platforms.
 
-Before Starship, I used [Powerlevel10k](https://github.com/romkatv/powerlevel10k), which is another **excellent** shell theme. However, as of May 21, 2024, Powerlevel10k has entered a ["life support" mode](https://github.com/romkatv/powerlevel10k/issues/2690). In the [maintainer's words](https://github.com/romkatv/powerlevel10k#powerlevel10k), "The project has very limited support", with "no new features are in the works", "most bugs will go unfixed", and "help requests will be ignored". As a result, I searched for an alternative and found Starship to be a suitable replacement.
+Before Starship, I used [Powerlevel10k](https://github.com/romkatv/powerlevel10k), which is another **excellent** shell theme. However, as of May 21, 2024, Powerlevel10k has entered a ["life support" mode](https://github.com/romkatv/powerlevel10k/issues/2690). In the [maintainer's words](https://github.com/romkatv/powerlevel10k#powerlevel10k), "The project has very limited support", with "no new features [in the works]", "most bugs will go unfixed", and "help requests will be ignored". As a result, I searched for an alternative and found Starship to be a suitable replacement.
 
 ### Zsh Resource File
 
@@ -165,18 +165,36 @@ Below is the content of my `init.vim` file, divided into two sections: with plu
 
 I manage all of my Neovim plugins using [vim-plug](https://github.com/junegunn/vim-plug#installation), a self-described minimalist Vim plugin manager. It simplifies the process of installing, updating, and removing plugins, making it easier to manage and maintain a large number of plugins. While other Vim package managers are available, my configurations are specifically tailored to `vim-plug`.
 
-To use these configurations, you'll need to first [install vim-plug](https://github.com/junegunn/vim-plug?tab=readme-ov-file#installation). Once installed, you can add the below code to your `init.vim` file. With `init.vim` open in Neovim, initiate the plugin installation by entering `:source %` (1) followed by `:PlugInstall`.
+To use these configurations, you'll first need to [install vim-plug](https://github.com/junegunn/vim-plug?tab=readme-ov-file#installation). Once installed, you can add the following code to your `init.vim` file. With `init.vim` open in Neovim, initiate the plugin installation by entering `:source %` (1) followed by `:PlugInstall`.
 { .annotate }
 
-1. When using `:source %`, you can safely ignore any errors that may appear, as they are most likely caused by Neovim searching for plugins that have not yet been installed.
+1. When using `:source %`, you can safely ignore any errors that may appear, as they are most likely caused by Neovim searching for plugins that have yet to be installed.
 
 ```vim title="init.vim"
 --8<-- "includes/neovim-init-files/neovim-init-vim-plug.vim"
 ```
 
-#### Syntax Highlighting
+///
 
-Neovim leverages [TreeSitter](https://github.com/tree-sitter/tree-sitter) to provide features such as advanced syntax highlighting, offering more precision and speed than traditional regex-based methods. However, its default installation includes only a limited set of parsers for programming languages. This is where the [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) plugin shines. Acting as an enhanced interface for TreeSitter, `nvim-treesitter` provides:
+/// tab | Without Plugins
+
+These configurations are designed for users who prefer a more straightforward setup without the features provided by plugins. They tweak Neovim's default settings without changing its core functionality, offering a more streamlined experience while preserving Vim's essential behavior.
+
+```vim title="init.vim"
+--8<-- "includes/neovim-init-files/neovim-init-non-vim-plug.vim"
+```
+
+///
+
+### Syntax Highlighting
+
+/// admonition | Assumptions
+
+This section assumes you are using a plugin manager like `vim-plug`, or are comfortable installing plugins manually.
+
+///
+
+Neovim leverages [TreeSitter](https://github.com/tree-sitter/tree-sitter) to provide features such as advanced syntax highlighting, offering more precision and speed than traditional regex-based methods. However, its default installation includes a [limited set of parsers](https://neovim.io/doc/user/treesitter.html) for programming languages. This is where the [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) plugin shines. Acting as an enhanced interface for TreeSitter, `nvim-treesitter` provides:
 
 - **Parser Management**: It automatically handles downloading, installing, and updating TreeSitter parsers for a wide range of languages.
 - **Enhanced Syntax Highlighting**: With custom configurations, it delivers consistent and accurate syntax highlighting tailored to each language.
@@ -185,31 +203,22 @@ Neovim leverages [TreeSitter](https://github.com/tree-sitter/tree-sitter) to pro
 Below are my configurations for `nvim-treesitter`. Currently, they ensure that the specified parsers are automatically installed and loaded. To use these settings, add the following code to `~/.config/nvim/second_init.lua` (1):
 { .annotate }
 
-1. `nvim-treesitter` requires Lua to function. As a result, the configurations are written in Lua and stored in a separate file, `second_init.lua`. My `init.vim` file, as displayed [above](#__tabbed_5_1), sources this Lua file to enable the `nvim-treesitter` settings.
+1. `nvim-treesitter` configurations are written in Lua. Therefore, if your primary `init` file is written in Vimscript, you must(1) place these configurations in a separate Lua file; I've named mine `second_init.lua`. My `init.vim` file, provided [above](#__tabbed_5_1), sources this Lua file to load the `nvim-treesitter` settings.
+      { .annotate }
+
+      1. Technically, you can place the Lua code within the `init.vim` file, but using a separate Lua file keeps the configurations organized and easier to manage.
+
 
 ```lua title="second_init.lua"
 --8<-- "includes/neovim-init-files/neovim-init-lua.lua"
 ```
 
-If you're **NOT** using the `init.vim` file I provided, you'll want to add the following code to your version of the file:
+If you're **NOT** using the `init.vim` file I provided, you'll want to add the following line to your version of the file:
 
 ```vim title="init.vim"
+" Load 'nvim-treesitter' configurations.
 lua dofile(vim.fn.stdpath('config') .. '/second_init.lua')
 ```
-
-This will ensure the `nvim-treesitter` configurations are loaded correctly.
-
-///
-
-/// tab | Without Plugins
-
-These configurations are designed for users who prefer a more straightforward setup without the features provided by plugins. They tweak Vim's default settings without changing its core functionality, offering a more streamlined experience while preserving Vim's essential behavior.
-
-```vim title="init.vim"
---8<-- "includes/neovim-init-files/neovim-init-non-vim-plug.vim"
-```
-
-///
 
 ## Terminal Profile
 
@@ -228,8 +237,8 @@ My custom profile is a modified version of the "Basic" profile that comes pre-in
       4. Select **Import...**.
       5. Locate and select the downloaded **Basic (Modified).terminal** file.
 4. Set as default profile:
-      1. Select the newly imported terminal profile from the list.
-      2. Click the **Default** button at the bottom of the window to set it as your default profile.
+      1. Select the newly imported profile from the list.
+      2. Click the **Default** button at the bottom of the window.
 
 ///
 
@@ -241,7 +250,7 @@ My custom profile is based on the one I use for macOS. To add it to your list of
 2. Download the profile setup script: [terminal-profile-setup.bash](terminal-profiles/terminal-profile-setup.bash)
 3. Open a new terminal window.
 4. Navigate to the directory where both files were downloaded to (e.g., `~/Downloads`).
-5. Execute the following code:
+5. Execute the setup script:
       ```bash
       chmod +x terminal-profile-setup.bash
       ./terminal-profile-setup.bash
