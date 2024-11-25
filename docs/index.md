@@ -3,7 +3,7 @@
 This document serves as an informational guide on how I've customized my terminal in macOS and Linux. It includes a variety of configurations, settings, and programs that enhance my productivity and improve my overall experience within the terminal environment. The document is divided into several sections, each focusing on a different aspect of terminal customization, such as shell frameworks, themes, resource files, plugins, and more.
 
 /// admonition | Disclaimer
-      type: warning
+    type: warning
 
 This guide assumes you have a basic understanding of the Unix terminal and are comfortable working with configuration files. If you're new to the terminal or need clarification on any of the instructions provided, I recommend proceeding with caution and seeking additional resources or assistance.
 
@@ -204,9 +204,9 @@ Below are my configurations for `nvim-treesitter`. Currently, they ensure that t
 { .annotate }
 
 1. `nvim-treesitter` configurations are written in Lua. Therefore, if your primary `init` file is written in Vimscript, you must(1) place these configurations in a separate Lua file; I've named mine `second_init.lua`. My `init.vim` file, provided [above](#__tabbed_5_1), sources this Lua file to load the `nvim-treesitter` settings.
-      { .annotate }
+    { .annotate }
 
-      1. Technically, you can place the Lua code within the `init.vim` file, but using a separate Lua file keeps the configurations organized and easier to manage.
+   1. Technically, you can place the Lua code within the `init.vim` file, but using a separate Lua file keeps the configurations organized and easier to manage.
 
 
 ```lua title="second_init.lua"
@@ -251,9 +251,9 @@ My custom profile is based on the one I use for macOS. To add it to your list of
 3. Open a new terminal window.
 4. Navigate to the directory where both files were downloaded to (e.g., `~/Downloads`).
 5. Execute the setup script:
-      ```bash
-      chmod +x terminal-profile-setup.bash
-      ./terminal-profile-setup.bash
-      ```
+```bash
+chmod +x terminal-profile-setup.bash
+./terminal-profile-setup.bash
+```
 
 ///
