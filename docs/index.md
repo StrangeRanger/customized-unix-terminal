@@ -110,8 +110,6 @@ Below are aliases I've create, organized into two groups: Group 1 and Group 2. G
 
 ### Modifying CLI Colors
 
-<!-- TODO: Potentially re-word this section. -->
-
 You can customize the colors of folders, files, and other items in the terminal by setting the `LS_COLORS` or `LSCOLORS` environment variables.(1) Each variable uses a unique format to specify the colors and styles of different file types and directories. For more information regarding these variables, refer to the "CLI Colors Explained" drop-down.
 { .annotate }
 
@@ -153,11 +151,9 @@ You can further modify the shading and appearance of CLI colors by adjusting the
 
 ## Text Editor
 
-<!-- TODO: Potentially re-word this section. -->
-
 There are many terminal-based text editors to choose from, each with unique features and capabilities. I've found that [Neovim](https://github.com/neovim/neovim) is the most powerful and versatile option for my needs.
 
-Neovim a fork of [Vim](https://github.com/vim/vim) that aims to improve upon Vim's features and performance, with a focus on extensibility and usability. It is designed to be more user-friendly and accessible to new users while still providing the power and flexibility that experienced users expect.
+<!-- Neovim a fork of [Vim](https://github.com/vim/vim) that aims to improve upon Vim's features and performance, with a focus on extensibility and usability. It is designed to be more user-friendly and accessible to new users while still providing the power and flexibility that experienced users expect. -->
 
 ### Neovim Resource File
 
@@ -186,20 +182,22 @@ Neovim leverages [TreeSitter](https://github.com/tree-sitter/tree-sitter) to pro
 - **Enhanced Syntax Highlighting**: With custom configurations, it delivers consistent and accurate syntax highlighting tailored to each language.
 - **Advanced Code Features**: Besides highlighting, it enables and enhances features like structural code navigation, incremental selection, code folding, and extensions like rainbow parentheses.
 
-Below are my configurations for `nvim-treesitter` in Neovim. Currently, they ensure that the specified parsers are automatically installed and loaded. To use these settings, add the following code to `~/.config/nvim/second_init.lua` (1):
+Below are my configurations for `nvim-treesitter`. Currently, they ensure that the specified parsers are automatically installed and loaded. To use these settings, add the following code to `~/.config/nvim/second_init.lua` (1):
 { .annotate }
 
-1. `nvim-treesitter` requires Lua to function. As a result, the configurations are written in Lua and stored in a separate file, `second_init.lua`. My `init.vim` file, as displayed [above](#__tabbed_5_1), sources this Lua file to enable the necessary settings.
+1. `nvim-treesitter` requires Lua to function. As a result, the configurations are written in Lua and stored in a separate file, `second_init.lua`. My `init.vim` file, as displayed [above](#__tabbed_5_1), sources this Lua file to enable the `nvim-treesitter` settings.
 
 ```lua title="second_init.lua"
 --8<-- "includes/neovim-init-files/neovim-init-lua.lua"
 ```
 
-If you're **NOT** using the `init.vim` file that I provided [above](#__tabbed_5_1), and your `init` file is written in vimscript, you'll want to add the following code to your `init.vim` file:
+If you're **NOT** using the `init.vim` file I provided, you'll want to add the following code to your version of the file:
 
 ```vim title="init.vim"
 lua dofile(vim.fn.stdpath('config') .. '/second_init.lua')
 ```
+
+This will ensure the `nvim-treesitter` configurations are loaded correctly.
 
 ///
 
@@ -215,15 +213,13 @@ These configurations are designed for users who prefer a more straightforward se
 
 ## Terminal Profile
 
-<!-- TODO: Potentially re-word this section. -->
-
-A terminal profile is the collective configurations that result in the visual appearance of the terminal window, including the color scheme, font style, and other visual elements. Customizing the terminal profile can enhance the overall user experience and make working in the terminal more enjoyable.
+A terminal profile is a set of configurations that define the visual appearance and behavior of the terminal window, including the color scheme, font style, and other visual elements. Customizing the terminal profile can improve the user experience, making the terminal more visually appealing and easier to work with.
 
 /// tab | macOS
 
-My custom terminal profile is a modified version of the Basic profile that comes pre-installed on macOS. To add it to your list of profiles, follow these steps:
+My custom profile is a modified version of the "Basic" profile that comes pre-installed on macOS. To add it to your list of profiles, follow the instructions below:
 
-1. Download the terminal profile: [Basic (Modified).terminal](Terminal%20Profiles/Basic%20%28Modified%29.terminal).
+1. Download the terminal profile: [Basic (Modified).terminal](terminal-profiles/Basic%20(Modified).terminal)
 2. Open a new terminal window.
 3. Import the profile:
       1. Go to **Preferences**.
@@ -239,16 +235,16 @@ My custom terminal profile is a modified version of the Basic profile that comes
 
 /// tab | Linux
 
-My custom terminal profile is a based on the one I use on macOS. To add it to your list of profiles, follow the instructions below:
+My custom profile is based on the one I use for macOS. To add it to your list of profiles, follow the instructions below:
 
-1. Download the terminal profile: [Gnome Basic (Modified).dconf](Terminal%20Profiles/Gnome%20Basic%20%28Modified%29.dconf).
-2. Download the profile setup script: [gnome-terminal-profile-setup.bash](Terminal%20Profiles/gnome-terminal-profile-setup.bash)
+1. Download the terminal profile: [Gnome Basic (Modified).dconf](terminal-profiles/gnome-terminal-profile.dconf)
+2. Download the profile setup script: [terminal-profile-setup.bash](terminal-profiles/terminal-profile-setup.bash)
 3. Open a new terminal window.
-4. Navigate to the directory where you downloaded both files.
-5. Execute the code:
+4. Navigate to the directory where both files were downloaded to (e.g., `~/Downloads`).
+5. Execute the following code:
       ```bash
-      chmod +x gnome-terminal-profile-setup.bash
-      ./gnome-terminal-profile-setup.bash
+      chmod +x terminal-profile-setup.bash
+      ./terminal-profile-setup.bash
       ```
 
 ///
