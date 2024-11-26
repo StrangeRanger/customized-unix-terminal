@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - 'dependabot/**'
-
+  workflow_dispatch:
 
 permissions:
   contents: write
