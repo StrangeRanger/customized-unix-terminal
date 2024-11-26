@@ -1,7 +1,7 @@
 name: Update Submodule Files
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize]
     branches:
       - main
@@ -18,6 +18,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          # Checkout the repository at the merge commit
+          ref: ${{ github.event.pull_request.head.sha }}
           submodules: true
 
       - name: Set up Python
@@ -34,12 +36,16 @@ jobs:
         run: python update_repo.py
 
       - name: Commit and push changes
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'strangeranger@hthompson.dev'
           git config --global user.signingkey F768450FB05B817D0B4BC26FB9B6A9B428C8676A
           git config --global commit.gpgSign true
+          git config --global gpg.program gpg
           git add .
+          echo "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --pinentry-mode loopback --sign
           git commit -m "Update files based on submodule changes" -S
           git pull --rebase origin ${{ github.event.pull_request.head.ref }}
           git push origin HEAD:${{ github.event.pull_request.head.ref }}
