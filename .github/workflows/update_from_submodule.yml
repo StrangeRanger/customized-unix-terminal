@@ -41,7 +41,7 @@ jobs:
           git commit -m "Update file after submodule update" || echo "No changes to commit"
 
       - name: Configure Git Pull Strategy
-        run: git config pull.ff only
+        run: git config pull.rebase true
 
       - name: Pull latest changes
         run: git pull origin main
