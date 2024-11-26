@@ -8,7 +8,7 @@ on:
 
 jobs:
   update-files:
-    if: github.actor == 'dependabot[bot]' && github.event.pull_request.head.ref == 'dependabot/*-gitsubmodule-*'
+    if: github.actor == 'dependabot[bot]' && startsWith(github.event.pull_request.head.ref, 'dependabot/submodules/')
     runs-on: ubuntu-latest
 
     steps:
