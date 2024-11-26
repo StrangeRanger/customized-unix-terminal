@@ -15,4 +15,3 @@ updates:
       interval: "daily"
     commit-message:
       prefix: "[Submodule Update]"
-    open-pull-requests-limit: 2
