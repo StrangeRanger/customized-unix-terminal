@@ -55,7 +55,6 @@ zsh_completion="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completio
 
 # Rustup completions.
 # $ rustup completions zsh > ~/.zfunc/_rustup
-# TODO: Ensure that this works on macOS as it should.
 [[ -f ~/.zfunc/_rustup ]] && fpath+=~/.zfunc
 
 
