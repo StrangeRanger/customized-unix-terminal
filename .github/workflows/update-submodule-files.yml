@@ -1,10 +1,13 @@
 name: Update Submodule Files
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize]
     branches:
       - main
+
+permissions:
+  contents: write
 
 jobs:
   update-files:
