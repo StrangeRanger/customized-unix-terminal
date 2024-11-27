@@ -1,13 +1,10 @@
 name: Update Submodule Files
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, synchronize]
     branches:
       - main
-
-permissions:
-  contents: write
 
 jobs:
   update-files:
@@ -22,30 +19,26 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           submodules: true
 
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          fingerprint: "F768450FB05B817D0B4BC26FB9B6A9B428C8676A"
+          trust_level: 5
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Import GPG key
-        run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
-          echo "${{ secrets.GPG_PASSPHRASE }}" | gpg --batch --yes --passphrase-fd 0 --pinentry-mode loopback --edit-key F768450FB05B817D0B4BC26FB9B6A9B428C8676A trust quit
-
       - name: Run update script
         run: python update_repo.py
 
       - name: Commit and push changes
-        env:
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'strangeranger@hthompson.dev'
-          git config --global user.signingkey F768450FB05B817D0B4BC26FB9B6A9B428C8676A
-          git config --global commit.gpgSign true
-          git config --global gpg.program gpg
           git add .
-          echo "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --pinentry-mode loopback --sign
-          git commit -m "Update files based on submodule changes" -S
-          git pull --rebase origin ${{ github.event.pull_request.head.ref }}
-          git push origin HEAD:${{ github.event.pull_request.head.ref }}
+          git commit -m "Update files based on submodule changes"
+          git push
