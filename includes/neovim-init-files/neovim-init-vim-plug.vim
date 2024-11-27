@@ -100,6 +100,7 @@ let g:strip_whitespace_on_save = 1
 """"[ Lua Configurations ]""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
+" Load 'nvim-treesitter' configurations.
 lua dofile(vim.fn.stdpath('config') .. '/second_init.lua')
 
 

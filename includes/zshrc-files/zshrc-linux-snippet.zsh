@@ -1,5 +1,5 @@
 # --8<-- [start:user_config]
-####[[ Aliases ]]#######################################################################
+####[ Aliases ]#########################################################################
 
 
 ###
@@ -9,6 +9,8 @@
 ## General aliases.
 alias zls="eza"
 alias formatc="find . -name '*.cs' -type f -exec clang-format --style='file:$HOME/Programs/Mine/Formatter Configs/CSharp_clang-format/_clang-format' -i {} +"
+alias rm="trash"  # Used to prevent accidental and permanent deletion of files.
+alias rrm="rm"  # Stands for 'real rm'.
 hash xdg-open 2>/dev/null && alias open="xdg-open"
 
 ## Update based aliases.
@@ -25,7 +27,7 @@ alias updatepacman="sudo pacman -Syu && yay && yay -Yc"
 ###
 
 alias lt="echo -e \"
-####[ Package Manager installed commands ]##############################################
+####[ Installed Commands ]##############################################################
 
 bandwhich  - Terminal bandwidth utilization tool.
 bat        - A cat(1) clone with wings.
@@ -37,30 +39,28 @@ ncdu       - ncdu (NCurses Disk Usage) is a curses-based version of the well-kno
 pstree     - List processes as a tree.
 tmux       - Terminal multiplexer.
 
-####[[ Grouped commands ]]##############################################################
+####[[ Grouped Commands ]]##############################################################
 
 lt_conversion - List of programs used for converting the formats of videos, images, etc.
 lt_git        - List of programs used for git related commands.
 
 
-####[ Keyboard combinations ]###########################################################
+####[ Keyboard Combinations ]###########################################################
 
 Ctrl + O - Allows you to copy what you are currently typing, via 'Ctrl' + 'O'.
 \""
 alias lt_conversion="echo -e \"
-########################################################################################
-#### [ Image and video formatters ]
+####[ Image and Video Formatters ]######################################################
 
 ffmpeg - FFmpeg is a collection of libraries and tools to process multimedia content.
 magick - Convert between image formats as well as resize an image, blur, crop,
          despeckle, dither, draw on, flip, join, re-sample, and much more.
 \""
 alias lt_git="echo -e \"
-####[ Git Related Commands ]###########################################################
+####[ Git Related Commands ]############################################################
 
 lazygit  - Simple terminal UI for git commands.
 git open - Opens the GitHub page for a repo/branch in your browser.
-ugit     - ugit helps you undo git commands without much effort.
 \""
 
 
