@@ -30,6 +30,7 @@ require('nvim-treesitter.configs').setup {
       "query",
       "regex",
       "requirements",
+      "rust",
       "sql",
       --"strace",  -- Good to have on standbye.
       --"tmux",  -- Maybe...

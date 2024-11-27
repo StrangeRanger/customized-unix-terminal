@@ -1,3 +1,6 @@
+####[ Oh-My-Zsh Configurations ]########################################################
+
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -39,16 +42,29 @@ HIST_STAMPS="yyyy-mm-dd"
 #plugins=(colored-man-pages copybuffer copypath copyfile bgnotify command-not-found)  # Desktop
 plugins=(colored-man-pages command-not-found)  # Server
 
-# Zsh "plugin" installed via git and the following command:
-# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+
+####[ Pre `compinit` ]##################################################################
+#### These are configurations that have to be set before the `compinit` function is
+#### called, which is done when sourcing the 'oh-my-zsh.sh' file.
+
+
+## Zsh plugin for completions.
+## This plugin is installed via chezmoi, specified in the '.chezmoiexternal.toml' file.
 zsh_completion="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
 [[ -d $zsh_completion ]] && fpath+=${zsh_completion}
+
+# Rustup completions.
+# $ rustup completions zsh > ~/.zfunc/_rustup
+[[ -f ~/.zfunc/_rustup ]] && fpath+=~/.zfunc
+
+
+####[ Source Oh-My-Zsh ]################################################################
+
 
 source "$ZSH/oh-my-zsh.sh"
 
 
-####[ Personal Configurations ]#########################################################
-####[[ Aliases ]]#######################################################################
+####[ Aliases ]#########################################################################
 
 
 ###
@@ -58,6 +74,8 @@ source "$ZSH/oh-my-zsh.sh"
 ## General aliases.
 alias zls="eza"
 alias formatc="find . -name '*.cs' -type f -exec clang-format --style='file:$HOME/Programs/Mine/Formatter Configs/CSharp_clang-format/_clang-format' -i {} +"
+alias rm="trash"  # Used to prevent accidental and permanent deletion of files.
+alias rrm="rm"  # Stands for 'real rm'.
 hash xdg-open 2>/dev/null && alias open="xdg-open"
 
 ## Update based aliases.
@@ -74,7 +92,7 @@ alias updatepacman="sudo pacman -Syu && yay && yay -Yc"
 ###
 
 alias lt="echo -e \"
-####[ Package Manager installed commands ]##############################################
+####[ Installed Commands ]##############################################################
 
 bandwhich  - Terminal bandwidth utilization tool.
 bat        - A cat(1) clone with wings.
@@ -86,38 +104,39 @@ ncdu       - ncdu (NCurses Disk Usage) is a curses-based version of the well-kno
 pstree     - List processes as a tree.
 tmux       - Terminal multiplexer.
 
-####[[ Grouped commands ]]##############################################################
+####[[ Grouped Commands ]]##############################################################
 
 lt_conversion - List of programs used for converting the formats of videos, images, etc.
 lt_git        - List of programs used for git related commands.
 
 
-####[ Keyboard combinations ]###########################################################
+####[ Keyboard Combinations ]###########################################################
 
 Ctrl + O - Allows you to copy what you are currently typing, via 'Ctrl' + 'O'.
 \""
 alias lt_conversion="echo -e \"
-########################################################################################
-#### [ Image and video formatters ]
+####[ Image and Video Formatters ]######################################################
 
 ffmpeg - FFmpeg is a collection of libraries and tools to process multimedia content.
 magick - Convert between image formats as well as resize an image, blur, crop,
          despeckle, dither, draw on, flip, join, re-sample, and much more.
 \""
 alias lt_git="echo -e \"
-####[ Git Related Commands ]###########################################################
+####[ Git Related Commands ]############################################################
 
 lazygit  - Simple terminal UI for git commands.
 git open - Opens the GitHub page for a repo/branch in your browser.
-ugit     - ugit helps you undo git commands without much effort.
 \""
 
 
-####[[ Environmental Variables ]]#######################################################
+####[ Environmental Variables ]#########################################################
 
 
-# PATH value...
-export PATH="$PATH:$HOME/.local/bin:/opt/nvim-linux64/bin"
+## Path purpose:
+##   $HOME/.local/bin:      User installed binaries.
+##   /opt/nvim-linux64/bin: Neovim binary.
+export PATH="$HOME/.local/bin:$PATH"
+[[ -d /opt/nvim-linux64/bin ]] && export PATH="/opt/nvim-linux64/bin:$PATH"
 
 # Modifies the colors of files and directories in the terminal.
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
@@ -132,34 +151,34 @@ fi
 export NVM_DIR="$HOME/.nvm"
 
 
-####[[ Sourced Files ]]#################################################################
+####[ Sourced Files ]###################################################################
 
 
 ## Load NVM.
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+## Zsh plugin for syntax highlighting.
+## This plugin is installed via chezmoi, specified in the '.chezmoiexternal.toml' file.
+zsh_syntax_highlighting="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[[ -f $zsh_syntax_highlighting ]] && source "$zsh_syntax_highlighting"
+
+## Zsh plugin for autosuggestions.
+## This plugin is installed via chezmoi, specified in the '.chezmoiexternal.toml' file.
+zsh_autosuggestions="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[[ -f $zsh_autosuggestions ]] && source "$zsh_autosuggestions"
+
+## Zsh plugin for fzf-tab.
+## This plugin is installed via chezmoi, specified in the '.chezmoiexternal.toml' file.
+fzf_tab="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
+[[ -f $fzf_tab ]] && hash fzf 2>/dev/null && source "$fzf_tab"
+
 ## Source the plugins.sh file for the `op` command.
 [[ -f $HOME/.config/op/plugins.sh ]] \
     && source "$HOME/.config/op/plugins.sh"
 
-# Zsh "plugin" installed via git and the following command:
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-zsh_syntax_highlighting="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-[[ -f $zsh_syntax_highlighting ]] && source "$zsh_syntax_highlighting"
 
-# Zsh "plugin" installed via git and the following command:
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-zsh_autosuggestions="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-[[ -f $zsh_autosuggestions ]] && source "$zsh_autosuggestions"
-
-# Zsh "plugin" installed via git and the following command:
-# git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
-fzf_tab="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
-[[ -f $fzf_tab ]] && hash fzf 2>/dev/null && source "$fzf_tab"
-
-
-####[[ Zsh Style Configurations ]]######################################################
+####[ Zsh Style Configurations ]########################################################
 
 
 # Disable sort when completing `git checkout`.
@@ -176,7 +195,7 @@ hash eza 2>/dev/null \
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 
-####[[ End of File Configurations ]]####################################################
+####[ End of File Configurations ]######################################################
 #### These are configurations that are specified to be placed at the end of the file, by
 #### the developer/documentation.
 
@@ -187,6 +206,6 @@ hash starship 2>/dev/null \
     && eval "$(starship init zsh)"
 
 
-####[[ Others ]]########################################################################
+####[ Others ]##########################################################################
 #### These are generally configurations set up by setup scripts or other programs.
 
