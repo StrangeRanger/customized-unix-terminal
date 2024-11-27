@@ -1,4 +1,4 @@
-name: Update Submodule Files
+name: Update From Submodule
 
 on:
   pull_request_target:
