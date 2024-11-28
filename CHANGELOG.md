@@ -2,143 +2,184 @@
 
 All notable changes to this project will be documented in this file.
 
-As a note, if the changelog only says "removed(program)", assume it's been removed from the entire readme. If it's only from a specific section, it'll be specified within the parentheses of the change.
+/// admonition | Note
 
-## Latest
+Entries under the **Removed** section indicate items removed from the entire document unless specified otherwise. If an item is removed from a specific section, it will be specified within parentheses next to the change.
 
-- Replaced `Powerlevel10k` shell theme with `Starship`.
-- Added `dotfiles` submodule, for easy access to my dotfiles
-- Added `update_repo.py` to make updating the repositories `neovim`, `zsh`, and other information easier.
-  - This script retrieves this information from the `dotfiles` submodule.
-- Added `update_submodule.bash` to help manually-automate the updating of the `dotfiles` submodule, with the latest updates from the `dotfiles` repository.
-  - All the code examples are now currently up to date with the latest changes.
-- Added `gnome-terminal-profile-setup.bash` to help automate the setup of a custom gnome terminal profile.
-- Reworked the Gnome Terminal Profile, so it no longer overwrite existing profiles.
-- Added a workflow that can do the same thing as `update_submodule.bash`, but automatically via dependabot.
-- Update the wording and information in main document.
-- Add more context to a few sections...
+///
+
+## Unreleased
+
+## 2024.11.28
+
+This update includes a significant overhaul of several aspects of the project. As a result, the changes will look different from previous updates. Only the major changes are listed below, covering both the documentation and the repository as a whole.
+
+### Added
+
+- Added the `dotfiles` submodule for easy access to shell and terminal configurations.
+- Introduced `update_repo.py` to simplify updating `neovim`, `zsh`, and other configuration files by retrieving them from the `dotfiles` submodule.
+- Created `update_submodule.bash` to automate updating the `dotfiles` submodule with the latest changes from the dotfiles repository.
+- Added `terminal-profile-setup.bash` to automate the setup of the terminal profile on Linux (requires Gnome).
+- Implemented a workflow that automates updating the `dotfiles` submodule via Dependabot.
 - Added a new section regarding syntax highlighting for `neovim`.
 
-## 2024.4.25
+### Changed
 
-- **added(programs)**: `cheat`
-- **added(programs)**: `fzf-tab`
-- **added(programs)**: `eza`
-- **added(init.vim)**: `mechatroner/rainbow_csv`
-- **added(zshrc)**: Updated and added new zstyle settings. They are now located in a section called "Zsh Style Configurations".
-- **added(readme)**: Added a few new sections for future documentation.
-- **changed(zshrc)**: Checks if `fzf` is installed before sourcing `fzf-tab`.
-- **changed(zshrc)**: Removed azure `autoload` and `source`.
-- **changed(readme)**: Add recommended method of installing `fzf` on Linux.
-- **changed(aliases)**: Rename several aliases.
-- **changed(aliases)**: Add new alias for `eza`.
-- **removed(aliases)**: Removed `lsd` based aliases.
-- **removed(zshrc)**: `PATH` variable updated.
-
-## 2024.4.22
-
-This update is a major overhaul and rewrite of the entire repository. Because of this, I will not be listing all of the changes, as it would be too much to list. However, I will list some of the major changes:
-
-- **changed(programs)**: Added and removed many programs. The programs better reflect what I consistently use and/or like to have on hand at any given time.
-- **changed(vim => neovim)**: I've switched from using Vim to Neovim. All configurations and documentation referring to vim have been updated to reflect this change.
-- **changed(init.vim)**: The main configuration file for Neovim has been updated to reflect the changes made to the programs and plugins.
-- **changed(aliases)**: Updated and added new aliases.
-- **changed(readme)**: Rewrote 90% of the documentation to improve wording, clarity, and overall readability. I've also added new sections and removed old ones that were no longer relevant.
-- **changed(readme)**: Added a notice section to inform users to view the document on my website, to view it in its entirety.
-
-## 2023.6.27
-
-- **added(vimrc)**: `ntpeters/vim-better-whitespace`.
-- **added(vimrc)**: New file specific configurations.
-- **changed(readme)**: Update url link of website status badge.
-- **changed(readme/misc)**: Using new feature provided by updated dependencies/packages, I've removed many redundant files and replaced them with a single file that is used in multiple places. This should make maintaining this repository much easier.
+- Replaced the shell theme **Powerlevel10k** with **Starship**.
+- Updated all code examples to reflect the latest changes.
+- Reworked the Gnome Terminal Profile so it no longer overwrites existing profiles.
+- Updated the wording and information in the main document.
+- Improved the context of several sections.
 
 
-## 2022.8.25
+## 2024-04-25
 
-- **added(zshrc)**: New aliases.
-- **added(zshrc)**: `git` plugin.
-- **added(vimrc)**: Add specific configurations for markdown and txt files.
-- **changed(zshrc)**: Update existing aliases.
-- **changed(zshrc)**: The contents of `.zshrc` no longer contain the ENTIRE contents of my `.zshrc`, rather just most of the general configurations. It was becoming too much of a pain to continuously document every little change.
-- **changed(vimrc)**: Slight wording/formatting changes.
-- **removed(zshrc)**: Unnecessary code.
-- **removed(program)**: `fd`/`fd-find`
-- **removed(program)**: `git-quick-stats`
+### Added
 
-## 2022.7.17
+- Added programs: `cheat`, `fzf-tab`, and `eza`.
+- Included the `rainbow_csv` plugin (`mechatroner/rainbow_csv`) in `init.vim`.
+- Updated and added new `zstyle` settings in `zshrc`; these are now located in a section called "Zsh Style Configurations".
+- Added new sections in the README for future documentation.
 
-- **added(vimrc)**: `valloric/youcompleteme`.
-- **added(zshrc)**: New aliases.
-- **added(readme)**: A link to the repository of the newly added vimrc plugin.
-- **added(zshrc)**: Comments on the commands to download the zsh plugins.
-- **changed(vimrc)**: Slight formatting change.
-- **changed(zshrc)**: Modified plugins.
-- **changed(zshrc)**: General refactoring.
-- **changed(zshrc)**: A bunch of other small changes.
+### Changed
 
-## 2022.5.26
+- Modified `zshrc` to check if `fzf` is installed before sourcing `fzf-tab`.
+- Removed Azure autoload and source commands from `zshrc`.
+- Added the recommended method of installing `fzf` on Linux in the README.
+- Renamed several aliases and added a new alias for `eza`.
 
-- **changed(zshrc)**: Removed some code in the linux zshrc files that I don't consider to be general configurations.
-- **changed(vimrc)**: Add specific configurations for Markdown files.
-- **changed(readme)**: Changed the website status badge.
+### Removed
 
-## 2022.5.24
+- Eliminated `lsd`-based aliases.
+- Removed the `PATH` variable from `zshrc`.
 
-- **added(zshrc)**: `LS_COLORS`, to match `LSCOLORS`...
-- **added(vimrc)**: `set colorcolumn=89`.
-- **added(profile)**: Terminal profile for the gnome terminal.
-- **added(programs)**: `fzf`.
-- **added(programs)**: `zsh-completions`.
-- **added(programs)**: `gallery-dl`.
-- **added(ohmyzsh-plugin)**: `zsh-autosuggestions`, removing the need to source it.
-- **changed**: Update information in section **Modifying LSCOLORS** (which is now **Modifying CLI Colors**) to include information about `LS_COLORS`.
-- **changed**: Update information, wording, and other things small throughout the document...
-- **changed(vimrc)**: Now using vim-plug instead of Vundle. All information relating or referencing to Vundle, has been changed to vim-plug.
-- **changed(zshrc)**: `LSCOLOR` is now set from `exgxfxDxcxegDhabagacaD` to `exgxfxDxcxegDhabagacaD`.
-- **changed(zshrc)**: Created two separate versions of the linux zshrc file. One specific to desktop and the other to server.
-- **changed(aliases)**: Update alias information.
-- **removed(aliases)**: Unneeded aliases + alias content.
-- **removed(program)**: `bottom`.
-- **removed(program)**: `hstr`.
+## 2024-04-22
 
-## 2022.3.1
+This update is a major overhaul and rewrite of the entire repository. Due to the extensive changes, only the major updates are listed below.
 
-- **added(programs)**: comments to `mkdocs.yml`.
-- **changed(mkdocs)**: Updated plugins, features, and extensions used via `mkdocs.yml`.
-- **changed(mkdocs)**: Updated version number of all packages in `mkdocs-requirements.txt`.
-- **changed(zshrc)**: Updated deprecated zsh plugin `copydir` to `copypath`.
-- **changed(README)**: The section of the document displaying my `.zshrc` and `.vimrc` files, uses the code from the files in the `insides` folder.
+### Changed
 
-## 2021.12.21
+- Updated the list of programs to better reflect those consistently used.
+- Switched from using Vim to Neovim; all configurations and documentation have been updated accordingly.
+- Updated the main configuration file (`init.vim`) for Neovim to reflect changes in programs and plugins.
+- Updated and added new aliases.
+- Rewrote 90% of the documentation to improve wording, clarity, and readability; added new sections and removed outdated ones.
+- Added a notice section in the README to inform users to view the document on the website for the full content.
 
-- **added(programs)**: `git-quick-stats`.
-- **added(programs)**: `pyenv`.
-- **added(programs)**: `ffmpeg`.
-- **added(programs)**: `asciinema`.
-- **added(programs)**: `m-cli`.
-- **added(programs)**: `.tmux`.
-- **added(programs)**: `tmux`.
-- **added(programs)**: `imagemagick`.
-- **added(misc)**: *a few other things that I can't remember*.
-- **changed**: Updated the **Custom Aliases** section.
-- **changed**: Updated the **My .zshrc** section.
-- **changed**: Updated Terminal Profile.
-- **removed(program)**: `duti`.
-- **removed(program)**: `jq`.
-- **removed(program)**: `Homebrew Command Not Found`.
-- **removed(program)**: `symboliclinker`.
-- **removed(program)**: `tmux` and `wget` and `tree`, as they are usually installed by default.
-- **removed(program)**: `gistome`.
-- **removed(program)**: `git-extras`.
-- **removed(vimrc)**: `davidhalter/jedi-vim`.
-- **removed(vimrc)**: `tpope/vim-fugitive`.
-- **removed(program)**: `edkolev/tmuxline.vim`.
-- **removed(program)**: `pdfgrep`.
-- **removed(program)**: `hub`.
-- **removed(program)**: `cloc`.
-- **fixed(readme)**: Wording and grammar throughout `README.md`.
+## 2023-06-27
 
-## 2021.6.5
+### Added
 
-This is the first "release" where all configurations and such have been completely added.
+- Added `vim-better-whitespace` plugin (`ntpeters/vim-better-whitespace`) to `vimrc`.
+- Introduced new file-specific configurations in `vimrc`.
+
+### Changed
+
+- Updated the URL link of the website status badge in the README.
+- Simplified repository maintenance by removing redundant files and replacing them with a single file used in multiple places, leveraging new features from updated dependencies and packages.
+
+## 2022-08-25
+
+### Added
+
+- Added new aliases in `zshrc`.
+- Included the `git` plugin in `zshrc`.
+- Added specific configurations for Markdown and text files in `vimrc`.
+
+### Changed
+
+- Updated existing aliases in `zshrc`.
+- Modified `.zshrc` to contain only general configurations, simplifying maintenance.
+- Made slight wording and formatting changes in `vimrc`.
+
+### Removed
+
+- Removed unnecessary code from `zshrc`.
+- Eliminated programs `fd`/`fd-find` and `git-quick-stats`.
+
+## 2022-07-17
+
+### Added
+
+- Added `YouCompleteMe` plugin (`valloric/youcompleteme`) to `vimrc`.
+- Introduced new aliases in `zshrc`.
+- Added a link to the repository of the newly added `vimrc` plugin in the README.
+- Included comments on commands to download `zsh` plugins in `zshrc`.
+
+### Changed
+
+- Made slight formatting changes in `vimrc`.
+- Modified plugins and performed general refactoring in `zshrc`.
+- Implemented several small changes throughout `zshrc`.
+
+## 2022-05-26
+
+### Changed
+
+- Removed code from the Linux `zshrc` files that wasn't considered general configurations.
+- Added specific configurations for Markdown files in `vimrc`.
+- Changed the website status badge in the README.
+
+## 2022-05-24
+
+### Added
+
+- Set `LS_COLORS` in `zshrc` to match `LSCOLORS`.
+- Added `set colorcolumn=89` in `vimrc`.
+- Included a terminal profile for the Gnome terminal.
+- Added programs: `fzf`, `zsh-completions`, and `gallery-dl`.
+- Incorporated `zsh-autosuggestions` as an Oh My Zsh plugin, removing the need to source it.
+
+### Changed
+
+- Updated information in the **Modifying CLI Colors** section to include details about `LS_COLORS`.
+- Improved wording and updated various small details throughout the document.
+- Switched from Vundle to `vim-plug` for plugin management in `vimrc`; all references to Vundle have been updated.
+- Adjusted `LSCOLOR` in `zshrc` from `exgxfxDxcxegDhabagacaD` to `exgxfxDxcxegDhabagacaD`.
+- Created separate versions of the Linux `zshrc` file for desktop and server.
+- Updated alias information in `aliases`.
+
+### Removed
+
+- Eliminated unneeded aliases and alias content.
+- Removed programs: `bottom` and `hstr`.
+
+## 2022-03-01
+
+### Added
+
+- Added comments to `mkdocs.yml`.
+
+### Changed
+
+- Updated plugins, features, and extensions in `mkdocs.yml`.
+- Bumped version numbers of all packages in `mkdocs-requirements.txt`.
+- Updated deprecated `zsh` plugin `copydir` to `copypath` in `zshrc`.
+- Adjusted the **My .zshrc** and **My .vimrc** sections in the README to display code from files in the `insides` folder.
+
+## 2021-12-21
+
+### Added
+
+- Added programs: `git-quick-stats`, `pyenv`, `ffmpeg`, `asciinema`, `m-cli`, `.tmux`, `tmux`, and `imagemagick`.
+- Included several other additions that enhance functionality.
+
+### Changed
+
+- Updated the **Custom Aliases** and **My .zshrc** sections.
+- Modified the terminal profile.
+
+### Removed
+
+- Removed programs: `duti`, `jq`, `Homebrew Command Not Found`, `symboliclinker`, `gistome`, `git-extras`, `pdfgrep`, `hub`, and `cloc`.
+- Eliminated `tmux`, `wget`, and `tree`, as they are usually installed by default.
+- Removed `jedi-vim` (`davidhalter/jedi-vim`) and `vim-fugitive` (`tpope/vim-fugitive`) from `vimrc`.
+- Deleted `edkolev/tmuxline.vim` from the list of programs.
+
+### Fixed
+
+- Improved wording and grammar throughout the `README.md`.
+
+## 2021-06-05
+
+This is the first release where all configurations and related content have been fully added.
