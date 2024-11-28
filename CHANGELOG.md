@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 /// admonition | Note
 
-Entries under the **Removed** section indicate items removed from the entire README unless specified otherwise. If an item is removed from a specific section, it will be specified within parentheses next to the change.
+Entries under the **Removed** section indicate items removed from the entire document unless specified otherwise. If an item is removed from a specific section, it will be specified within parentheses next to the change.
 
 ///
 
