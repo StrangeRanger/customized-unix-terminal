@@ -1,3 +1,6 @@
+####[ Oh-My-Zsh Configurations ]########################################################
+
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -39,16 +42,29 @@ HIST_STAMPS="yyyy-mm-dd"
 # MAYBE: Add `command-not-found` plugin.
 plugins=(colored-man-pages copybuffer copypath copyfile bgnotify)
 
-# Zsh "plugin" installed via git and the following command:
-# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+
+####[ Pre `compinit` ]##################################################################
+#### These are configurations that have to be set before the `compinit` function is
+#### called, which is done when sourcing the 'oh-my-zsh.sh' file.
+
+
+## Zsh plugin for completions.
+## This plugin is installed via chezmoi, specified in the '.chezmoiexternal.toml' file.
 zsh_completion="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
 [[ -d $zsh_completion ]] && fpath+=${zsh_completion}
+
+# Rustup completions.
+# $ rustup completions zsh > ~/.zfunc/_rustup
+[[ -f ~/.zfunc/_rustup ]] && fpath+=~/.zfunc
+
+
+####[ Source Oh-My-Zsh ]################################################################
+
 
 source "$ZSH/oh-my-zsh.sh"
 
 
-####[ Personal Configurations ]#########################################################
-####[[ Aliases ]]#######################################################################
+####[ Aliases ]#########################################################################
 
 
 ###
@@ -63,6 +79,8 @@ alias rmdsstore="find . -name '*.DS_Store' -type f -delete"
 alias code="open -a 'Visual Studio Code.app' ."
 alias formatc="find . -name '*.cs' -type f -exec clang-format --style='file:$HOME/Programs/Mine/Formatter Configs/CSharp_clang-format/_clang-format' -i {} +"
 alias updatebrew="brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor"
+alias rm="trash"  # Used to prevent accidental and permanent deletion of files.
+alias rrm="rm"  # Stands for 'real rm'.
 
 ###
 ### [ Group 2 ]
@@ -74,45 +92,44 @@ alias updatebrew="brew update && brew upgrade && brew autoremove && brew cleanup
 ###
 
 alias lt="echo -e \"
-####[ Package Manager installed commands ]##############################################
+####[ Installed Commands ]##############################################################
 
-bandwhich - Terminal bandwidth utilization tool.
-bat       - A cat(1) clone with wings.
-codespell - Check code for common misspellings.
-duf       - Disk Usage/Free Utility - a better 'df' alternative.
-fzf       - A command-line fuzzy finder.
-ncdu      - ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du'.
-pstree    - List processes as a tree.
-tmux      - Terminal multiplexer.
+bandwhich  - Terminal bandwidth utilization tool.
+bat        - A cat(1) clone with wings.
+cheat      - Allows you to create and view interactive cheatsheets on the command-line.
+codespell  - Check code for common misspellings.
+duf        - Disk Usage/Free Utility - a better 'df' alternative.
+fzf        - A command-line fuzzy finder.
+ncdu       - ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du'.
+pstree     - List processes as a tree.
+tmux       - Terminal multiplexer.
 
-####[[ Grouped commands ]]##############################################################
+####[[ Grouped Commands ]]##############################################################
 
 lt_conversion - List of programs used for converting the formats of videos, images, etc.
 lt_git        - List of programs used for git related commands.
 
 
-####[ Keyboard combinations ]###########################################################
+####[ Keyboard Combinations ]###########################################################
 
 Ctrl + O - Allows you to copy what you are currently typing, via 'Ctrl' + 'O'.
 \""
 alias lt_conversion="echo -e \"
-########################################################################################
-#### [ Image and video formatters ]
+####[ Image and Video Formatters ]######################################################
 
 ffmpeg - FFmpeg is a collection of libraries and tools to process multimedia content.
 magick - Convert between image formats as well as resize an image, blur, crop,
          despeckle, dither, draw on, flip, join, re-sample, and much more.
 \""
 alias lt_git="echo -e \"
-####[ Git Related Commands ]###########################################################
+####[ Git Related Commands ]############################################################
 
 lazygit  - Simple terminal UI for git commands.
 git open - Opens the GitHub page for a repo/branch in your browser.
-ugit     - ugit helps you undo git commands without much effort.
 \""
 
 
-####[[ Environmental Variables ]]#######################################################
+####[ Environmental Variables ]#########################################################
 
 
 # 1Password auth socket.
@@ -129,8 +146,8 @@ export PATH="/usr/local/opt/curl/bin:/usr/local/sbin:/usr/local/opt/openjdk@17/b
 # Modifies the colors of files and directories when using `ls`.
 export LSCOLORS="exgxfxDxcxegDaabagacaD"
 ## Version of LSCOLORS compatible with zsh and GNU based commands.
-## You can find more information about LS_COLORS and why it's needed in addition to LSCOLORS,
-## here: https://github.com/ohmyzsh/ohmyzsh/issues/6060#issuecomment-327934559
+## You can find more information about LS_COLORS and why it's needed in addition to
+## LSCOLORS, here: https://github.com/ohmyzsh/ohmyzsh/issues/6060#issuecomment-327934559
 export LS_COLORS="di=34:ln=36:so=35:pi=1;33:ex=32:bd=34;46:cd=1;33;40:su=30;41:sg=30;46:tw=30;42:ow=30;1;43"
 
 ## Set default editor.
@@ -143,33 +160,34 @@ fi
 export NVM_DIR="$HOME/.nvm"
 
 
-####[[ Sourced Files ]]#################################################################
+####[ Sourced Files ]###################################################################
 
 
 ## Load NVM.
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-## Zsh "plugin" installed via git and the following command:
-## git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+## Zsh plugin for syntax highlighting.
+## This plugin is installed via chezmoi, specified in the '.chezmoiexternal.toml' file.
 zsh_syntax_highlighting="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 [[ -f $zsh_syntax_highlighting ]] && source "$zsh_syntax_highlighting"
 
-## Zsh "plugin" installed via git and the following command:
-## git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+## Zsh plugin for autosuggestions.
+## This plugin is installed via chezmoi, specified in the '.chezmoiexternal.toml' file.
 zsh_autosuggestions="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 [[ -f $zsh_autosuggestions ]] && source "$zsh_autosuggestions"
 
-## Zsh "plugin" installed via git and the following command:
-## git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
+## Zsh plugin for fzf-tab.
+## This plugin is installed via chezmoi, specified in the '.chezmoiexternal.toml' file.
 fzf_tab="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
 [[ -f $fzf_tab ]] && hash fzf 2>/dev/null && source "$fzf_tab"
 
-# Enable the use of '1password-cli' plugins.
-source "$HOME/.config/op/plugins.sh"
+## Source the plugins.sh file for the `op` command.
+[[ -f $HOME/.config/op/plugins.sh ]] \
+    && source "$HOME/.config/op/plugins.sh"
 
 
-####[[ Zsh Style Configurations ]]######################################################
+####[ Zsh Style Configurations ]########################################################
 
 
 # Disable sort when completing `git checkout`.
@@ -186,7 +204,7 @@ hash eza 2>/dev/null \
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 
-####[[ End of File Configurations ]]####################################################
+####[ End of File Configurations ]######################################################
 #### These are configurations that are specified to be placed at the end of the file, by
 #### the developer/documentation.
 
@@ -197,6 +215,6 @@ hash starship 2>/dev/null \
     && eval "$(starship init zsh)"
 
 
-####[[ Others ]]########################################################################
+####[ Others ]##########################################################################
 #### These are generally configurations set up by setup scripts or other programs.
 
