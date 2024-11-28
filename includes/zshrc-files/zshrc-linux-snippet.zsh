@@ -11,6 +11,7 @@ alias zls="eza"
 alias formatc="find . -name '*.cs' -type f -exec clang-format --style='file:$HOME/Programs/Mine/Formatter Configs/CSharp_clang-format/_clang-format' -i {} +"
 alias rm="trash"  # Used to prevent accidental and permanent deletion of files.
 alias rrm="rm"  # Stands for 'real rm'.
+alias grub-conf="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 hash xdg-open 2>/dev/null && alias open="xdg-open"
 
 ## Update based aliases.
