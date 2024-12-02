@@ -10,7 +10,26 @@ Entries under the **Removed** section indicate items removed from the entire doc
 
 ## Unreleased
 
-## 2024.11.28
+## 2024-12-02
+
+### Added
+
+- Several new aliases have been added to the linux `.zshrc` file:
+    ```bash
+    alias update-grub-config="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
+    ## Systemd aliases.
+    alias start-bluetooth="sudo systemctl start bluetooth.service"
+    alias stop-bluetooth="sudo systemctl stop bluetooth.service"
+    alias start-vmware-networking="sudo systemctl start vmware-networks.service"
+    alias stop-vmware-networking="sudo systemctl stop vmware-networks.service"
+    ```
+
+### Removed
+
+- Removed the `rrm` and `rm` aliases from the linux `.zshrc` file.
+
+## 2024-11-28
 
 This update includes a significant overhaul of several aspects of the project. As a result, the changes will look different from previous updates. Only the major changes are listed below, covering both the documentation and the repository as a whole.
 
