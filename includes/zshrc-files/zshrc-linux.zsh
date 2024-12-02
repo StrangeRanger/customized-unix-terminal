@@ -86,6 +86,8 @@ alias start-bluetooth="sudo systemctl start bluetooth.service"
 alias stop-bluetooth="sudo systemctl stop bluetooth.service"
 alias start-vmware-networking="sudo systemctl start vmware-networks.service"
 alias stop-vmware-networking="sudo systemctl stop vmware-networks.service"
+alias start-firewalld="sudo systemctl start firewalld.service"
+alias stop-firewalld="sudo systemctl stop firewalld.service"
 
 ###
 ### [ Group 2 ]
