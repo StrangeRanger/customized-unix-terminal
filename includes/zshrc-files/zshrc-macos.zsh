@@ -79,8 +79,6 @@ alias rmdsstore="find . -name '*.DS_Store' -type f -delete"
 alias code="open -a 'Visual Studio Code.app' ."
 alias formatc="find . -name '*.cs' -type f -exec clang-format --style='file:$HOME/Programs/Mine/Formatter Configs/CSharp_clang-format/_clang-format' -i {} +"
 alias updatebrew="brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor"
-alias rm="trash"  # Used to prevent accidental and permanent deletion of files.
-alias rrm="rm"  # Stands for 'real rm'.
 
 ###
 ### [ Group 2 ]
