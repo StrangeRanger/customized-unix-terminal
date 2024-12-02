@@ -10,13 +10,19 @@
 alias zls="eza"
 alias formatc="find . -name '*.cs' -type f -exec clang-format --style='file:$HOME/Programs/Mine/Formatter Configs/CSharp_clang-format/_clang-format' -i {} +"
 alias rm="trash"  # Used to prevent accidental and permanent deletion of files.
-alias rrm="rm"  # Stands for 'real rm'.
+alias rrm="/usr/bin/rm"  # Stands for 'real rm'.
 alias update-grub-config="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 hash xdg-open 2>/dev/null && alias open="xdg-open"
 
 ## Update based aliases.
 alias updateapt="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
 alias updatepacman="sudo pacman -Syu && yay && yay -Yc"
+
+## Systemd aliases.
+alias start-bluetooth="sudo systemctl start bluetooth.service"
+alias stop-bluetooth="sudo systemctl stop bluetooth.service"
+alias start-vmware-networking="sudo systemctl start vmware-networks.service"
+alias stop-vmware-networking="sudo systemctl stop vmware-networks.service"
 
 ###
 ### [ Group 2 ]
