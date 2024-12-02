@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 /// admonition | Note
 
-Entries under the **Removed** section indicate items removed from the entire document unless specified otherwise. If an item is removed from a specific section, it will be specified within parentheses next to the change.
+Entries under the **Removed** section indicate items removed from the entire document unless specified otherwise. If an item is removed from a specific section, it will be specified in the entry.
 
 ///
 
@@ -31,7 +31,7 @@ Entries under the **Removed** section indicate items removed from the entire doc
 
 ## 2024-11-28
 
-This update includes a significant overhaul of several aspects of the project. As a result, the changes will look different from previous updates. Only the major changes are listed below, covering both the documentation and the repository as a whole.
+This update includes a significant overhaul of several aspects of the project. As a result, only the major changes are listed below. The changes cover both the documentation and the repository as a whole.
 
 ### Added
 
