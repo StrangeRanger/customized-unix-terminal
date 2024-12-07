@@ -95,9 +95,10 @@ def zsh_config():
         while line_number < len(data):
             line = data[line_number]
 
-            # Uncomment the code below to help debug edge cases.
-            # print(f"Processing line {line_number + 1} of {file_paths['from']}")
-            # print(f"Line: {line}")
+            ## DEBUG: The below lines help with debugging, especially when running in a
+            ##  CI/CD environment.
+            print(f"Processing line {line_number + 1} of {file_paths['from']}")
+            print(f"Line: {line}")
 
             if any(marker in line for marker in CHEZMOI_STATEMENTS):
                 skip_line = chezmoi_edge_case(line, data, line_number)
