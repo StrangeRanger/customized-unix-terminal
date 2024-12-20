@@ -18,7 +18,9 @@ Entries under the **Removed** section indicate items removed from the entire doc
 
 ### Added
 
-- added(aliases): add `update-grub-config` to `updatepacman` alias
+- added(zshrc): seperate update based variables
+- added(alias): add new alias `deletelocalbranches`
+- added(alias): add `update-grub-config` to `updatepacman` alias
 
 ## 2024-12-02
 
