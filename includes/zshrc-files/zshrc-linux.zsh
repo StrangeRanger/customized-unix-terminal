@@ -79,7 +79,7 @@ hash xdg-open 2>/dev/null && alias open="xdg-open"
 
 ## Update based aliases.
 alias updateapt="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean"
-alias updatepacman="sudo pacman -Syu && yay && yay -Yc"
+alias updatepacman="sudo pacman -Syu && yay && yay -Yc && update-grub-config"
 
 ## Systemd aliases.
 alias start-bluetooth="sudo systemctl start bluetooth.service"
@@ -95,7 +95,7 @@ alias stop-firewalld="sudo systemctl stop firewalld.service"
 ### Due to the number of commands that I find to be useful, I've created aliases
 ### containing some of these commands. They are specifically commands that I don't
 ### often use, but are useful to have on hand. Having these aliases allows me to see
-### a list of these commands, without having to commit them to memeory.
+### a list of these commands, without having to commit them to memory.
 ###
 
 alias lt="echo -e \"
