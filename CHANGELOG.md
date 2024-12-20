@@ -10,6 +10,10 @@ Entries under the **Removed** section indicate items removed from the entire doc
 
 ## Unreleased
 
+### Changed
+
+- Update `updatepacman` to execute `update-grub-config` after updating the system.
+
 ## 2024-12-02
 
 ### Added
