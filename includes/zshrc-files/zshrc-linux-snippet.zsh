@@ -10,6 +10,7 @@
 alias zls="eza"
 alias formatc="find . -name '*.cs' -type f -exec clang-format --style='file:$HOME/Programs/Mine/Formatter Configs/CSharp_clang-format/_clang-format' -i {} +"
 alias update-grub-config="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias deletelocalbranches="git branch | grep -v 'main' | xargs git branch -D"
 hash xdg-open 2>/dev/null && alias open="xdg-open"
 
 ## Update based aliases.
