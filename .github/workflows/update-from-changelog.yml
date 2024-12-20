@@ -20,24 +20,24 @@ jobs:
         with:
           submodules: true
 
-      # - name: Validate branch
-      #   run: |
-      #     BRANCH_NAME="${{ github.ref_name }}"
-      #     echo "Branch: $BRANCH_NAME"
-      #     if [[ "$BRANCH_NAME" != "main" ]]; then
-      #       echo "Not on main branch. Exiting."
-      #       exit 1
-      #     fi
+      - name: Validate branch
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          echo "Branch: $BRANCH_NAME"
+          if [[ "$BRANCH_NAME" != "main" ]]; then
+            echo "Not on main branch. Exiting."
+            exit 1
+          fi
 
-      # - name: Import GPG key
-      #   uses: crazy-max/ghaction-import-gpg@v6
-      #   with:
-      #     gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-      #     passphrase: ${{ secrets.GPG_PASSPHRASE }}
-      #     git_user_signingkey: true
-      #     git_commit_gpgsign: true
-      #     fingerprint: "F768450FB05B817D0B4BC26FB9B6A9B428C8676A"
-      #     trust_level: 5
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          fingerprint: "F768450FB05B817D0B4BC26FB9B6A9B428C8676A"
+          trust_level: 5
 
       - name: Run update script
         run: bash update-changelog.bash
@@ -45,9 +45,9 @@ jobs:
       - name: Show updated 'CHANGELOG.md'
         run: cat CHANGELOG.md
 
-      # - name: Commit and push changes
-      #   run: |
-      #     git add .
-      #     git commit -m "Update 'CHANGELOG.md' based on submodule commits"
-      #     git pull --rebase origin ${{ github.ref_name }}
-      #     git push origin HEAD:${{ github.ref_name }}
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Update 'CHANGELOG.md' based on submodule commits"
+          git pull --rebase origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}
