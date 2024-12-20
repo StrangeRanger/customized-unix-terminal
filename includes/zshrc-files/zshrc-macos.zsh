@@ -86,7 +86,7 @@ alias updatebrew="brew update && brew upgrade && brew autoremove && brew cleanup
 ### Due to the number of commands that I find to be useful, I've created aliases
 ### containing some of these commands. They are specifically commands that I don't
 ### often use, but are useful to have on hand. Having these aliases allows me to see
-### a list of these commands, without having to commit them to memeory.
+### a list of these commands, without having to commit them to memory.
 ###
 
 alias lt="echo -e \"

@@ -10,6 +10,16 @@ Entries under the **Removed** section indicate items removed from the entire doc
 
 ## Unreleased
 
+## 2024-12-20
+
+### Fixed
+
+- fixed(.zshrc): fix spelling problems
+
+### Added
+
+- added(aliases): add `update-grub-config` to `updatepacman` alias
+
 ## 2024-12-02
 
 ### Added
