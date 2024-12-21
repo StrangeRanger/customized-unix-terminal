@@ -28,7 +28,6 @@ readonly C_BLUE C_RED C_NC
 readonly C_ERROR="${C_RED}ERROR:${C_NC} "
 readonly C_INFO="${C_BLUE}==>${C_NC} "
 
-
 declare -A sections
 
 
